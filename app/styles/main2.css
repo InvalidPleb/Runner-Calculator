@@ -1,0 +1,28 @@
+.jumbotron {
+	min-height: 400px;
+}
+
+.col-md-4 {
+	background-color: #ccc;
+	text-align: left;
+	width: 150px;
+}
+
+
+.form-control {
+	width: 100px;
+}
+
+#inputLabels {
+	text-align: right;
+}
+
+#inputTime1 {
+	width: 30px;
+}
+#inputTime2 {
+	width: 30px;
+}
+#inputTime3 {
+	width: 30px;
+}
