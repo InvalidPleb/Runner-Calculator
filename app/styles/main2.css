@@ -1,16 +1,26 @@
 .jumbotron {
 	min-height: 400px;
+	background-color: #b7b7b7;
 }
+
 
 .col-md-4 {
 	background-color: #ccc;
-	text-align: left;
-	width: 150px;
+	border-radius: 5px;
 }
 
+.col-xs-4 {
+	background-color: #ccc;
+	font-size: 17px;
+	text-align: right;
+}
+
+.inline {
+	display: inline-block;
+}
 
 .form-control {
-	width: 100px;
+	width: 97px;
 }
 
 #inputLabels {
@@ -18,11 +28,15 @@
 }
 
 #inputTime1 {
-	width: 30px;
+	width: 42px;
 }
 #inputTime2 {
-	width: 30px;
+	width: 42px;
 }
 #inputTime3 {
-	width: 30px;
+	width: 42px;
+}
+
+#inputAge {
+	width: 42px;
 }

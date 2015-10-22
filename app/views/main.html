@@ -1,11 +1,36 @@
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+  
+
+  <div class="col-md-4">
+      <p></p>
+      <label class="col-xs-4">Age:</label>
+      <input type="text" class="form-control inline" id="inputAge" maxlength="2">
+      <p></p>
+      <label class="col-xs-4">Distance:</label>
+      <select class="form-control inline" ng-change="updateInputDist(inputDist)" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
+      <span>{{run}}</span>
+      <p></p>
+
+      <span>
+        <label class="col-xs-4">Time:</label>
+        <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" type="text" class="form-control inline" id="inputTime1" maxlength="2">
+        <strong>:</strong>
+        <input type="text" class="form-control inline" id="inputTime2" maxlength="2">
+        <strong>:</strong>
+        <input type="text" class="form-control inline" id="inputTime3" maxlength="2">
+      </span>
+    <p><a class="btn btn-lg btn-primary btn-success" ng-href="#/">Calculate</a></p>
+    <p><a class="btn btn-sm btn-danger" ng-href="#/">Clear</a></p>
+
+    <p class="lead">
+    </p>
 </div>
+  <div class="col-md-4">
+    <input type="text" class="form-control" maxlength="2">
+  </div>
+</div>
+
+
 
 <div class="row marketing">
   <h4>HTML5 Boilerplate</h4>
