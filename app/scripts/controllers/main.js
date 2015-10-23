@@ -121,6 +121,65 @@ angular.module('runnerCalcApp')
 
   	};
 
+  	$scope.inputTime1 = '00';
+  	$scope.inputTime2 = '00';
+  	$scope.inputTime3 = '00';
+
+  	$scope.calcButtonOne = function (){
+
+  		var timeInput1 = parseInt($scope.inputTime1, 10);
+	    var timeInput2 = parseInt($scope.inputTime2, 10);
+	    var timeInput3 = parseInt($scope.inputTime3, 10);
+
+	    var timeInput1Adjusted = (timeInput1 * 60) * 60;
+	    var timeInput2Adjusted = timeInput2 * 60;
+	    var totalTimeInput = timeInput1Adjusted + timeInput2Adjusted + timeInput3;
+	    console.log(totalTimeInput);
+
+  	};
+
+  	$scope.timeInput1Focus = function () {
+  		if ($scope.inputTime1 === '00') {
+  			$scope.inputTime1 = '';
+  		}
+  	};
+
+  	$scope.timeInput1Blur = function () {
+  		if ($scope.inputTime1 === '') {
+  			$scope.inputTime1 = '00';
+  		}
+  	};
+
+  	$scope.timeInput2Focus = function () {
+  		if ($scope.inputTime2 === '00') {
+  			$scope.inputTime2 = '';
+  		}
+  	};
+
+  	$scope.timeInput2Blur = function () {
+  		if ($scope.inputTime2 === '') {
+  			$scope.inputTime2 = '00';
+  		}
+  	};
+
+  	$scope.timeInput3Focus = function () {
+  		if ($scope.inputTime3 === '00') {
+  			$scope.inputTime3 = '';
+  		}
+  	};
+
+  	$scope.timeInput3Blur = function () {
+  		if ($scope.inputTime3 === '') {
+  			$scope.inputTime3 = '00';
+  		}
+  	};
+
+  	var genderUser = 2;
+
+
+
+
+
 
 
 

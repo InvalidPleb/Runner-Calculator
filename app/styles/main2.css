@@ -1,19 +1,97 @@
-.jumbotron {
-	min-height: 400px;
-	background-color: #b7b7b7;
+body {
+	background-color: #000000;
+
+}
+
+#move1 {
+	margin-left: 20px;
+}
+
+#move2 {
+	margin-left: 10px;
 }
 
 
+#buttonOne {
+    width: 152px;
+    height: 40px;
+    color: #51c64f;
+    border: 1px solid #434343;
+    background: #434343;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all .15s cubic-bezier(.27,1,1,.9);
+    box-shadow: 2px 2px 2px #888888;
+}
+
+#buttonOne:hover {
+    color: #000000;
+    background: #51c64f;
+    border: 1px solid #51c64f;
+    cursor: pointer;
+}
+
+#buttonOne:active {
+    background: #ffffff;
+    border: 1px solid white;
+    color: #51c64f;
+}
+
+#buttonOne:focus, #buttonTwo:focus, .form-control {
+    outline: 0;
+}
+
+#buttonTwo {
+    width: 76px;
+    height: 30px;
+    color: #CC0000;
+    border: 1px solid #434343;
+    background: #434343;
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: all .15s cubic-bezier(.27,1,1,.9);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+#buttonTwo:hover {
+    color:  #000000;
+    background: #CC0000;
+    border: 1px solid #CC0000;
+    cursor: pointer;
+}
+
+#buttonTwo:active {
+    background: #ffffff;
+    border: 1px solid white;
+    color: #CC0000;
+}
+
+.form-control {
+	box-shadow: 1px 1px 1px #888888;
+}
+
+.form-control:focus {
+	box-shadow: 2px 2px 2px #888888;
+	border-color: #a0a0a0;
+}
+
+.btn {
+	width: 50px;
+	font-family: bold;
+	font-size: 20px;
+}
+
+
+.jumbotron {
+	min-height: 400px;
+	background-color: #8b9fbc;
+}
+
 .col-md-4 {
-	background-color: #ccc;
 	border-radius: 5px;
 }
 
-.col-xs-4 {
-	background-color: #ccc;
-	font-size: 17px;
-	text-align: right;
-}
 
 .inline {
 	display: inline-block;
@@ -23,20 +101,10 @@
 	width: 97px;
 }
 
-#inputLabels {
-	text-align: right;
+.col-xs-4 {
+	text-align: left;
 }
 
-#inputTime1 {
-	width: 42px;
-}
-#inputTime2 {
-	width: 42px;
-}
-#inputTime3 {
-	width: 42px;
-}
-
-#inputAge {
+#inputTime1, #inputTime2, #inputTime3, #inputAge {
 	width: 42px;
 }

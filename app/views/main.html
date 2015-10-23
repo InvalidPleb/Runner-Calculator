@@ -1,27 +1,42 @@
 <div class="jumbotron">
-  
 
   <div class="col-md-4">
+      <label class=".text-left">Age:</label>
+      <span id="move1">
+        <input type="text" class="form-control inline" id="inputAge" maxlength="2">
+      </span>
       <p></p>
-      <label class="col-xs-4">Age:</label>
-      <input type="text" class="form-control inline" id="inputAge" maxlength="2">
-      <p></p>
-      <label class="col-xs-4">Distance:</label>
-      <select class="form-control inline" ng-change="updateInputDist(inputDist)" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
-      <span>{{run}}</span>
+      <label class=".text-left">Event:</label>
+      <span id="move2">
+        <select class="form-control inline" ng-change="updateInputDist(inputDist)" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
+        <span>{{run}}</span>
+      </span>
       <p></p>
 
       <span>
-        <label class="col-xs-4">Time:</label>
-        <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" type="text" class="form-control inline" id="inputTime1" maxlength="2">
+        <label class=".text-left">Time:</label>
+        <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" type="text" class="form-control inline" id="inputTime1" maxlength="2">
         <strong>:</strong>
-        <input type="text" class="form-control inline" id="inputTime2" maxlength="2">
+        <input ng-change="updateInputTime(inputTime2)" ng-model="inputTime2" ng-focus="timeInput2Focus()" ng-blur="timeInput2Blur()" type="text" class="form-control inline" id="inputTime2" maxlength="2">
         <strong>:</strong>
-        <input type="text" class="form-control inline" id="inputTime3" maxlength="2">
+        <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" type="text" class="form-control inline" id="inputTime3" maxlength="2">
       </span>
-    <p><a class="btn btn-lg btn-primary btn-success" ng-href="#/">Calculate</a></p>
-    <p><a class="btn btn-sm btn-danger" ng-href="#/">Clear</a></p>
-
+      <p></p>
+      <div class="col-sm-offset-0">
+      <label class=".text-left">Gender:</label>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="radio"/> <strong>♂</strong>
+            </label>
+            <label class="btn btn-default">
+                <input type="radio"/> <strong>♀</strong>
+            </label>
+        </div>
+      </div>
+      <p></p>
+      <input class= "col-md-offset-2" ng-click="calcButtonOne()" type="button" id="buttonOne" value="Calculate">
+      <p></p>
+      <input class= "col-md-offset-2" type="button" id="buttonTwo" value="Clear">
     <p class="lead">
     </p>
 </div>
