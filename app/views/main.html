@@ -3,7 +3,7 @@
   <div class="col-md-4">
       <label class=".text-left">Age:</label>
       <span id="move1">
-        <input type="text" class="form-control inline" id="inputAge" maxlength="2">
+        <input type="text" class="form-control inline" id="inputAge" maxlength="2" ng-change="updateInputAge(inputAge)" ng-model="inputAge">
       </span>
       <p></p>
       <label class=".text-left">Event:</label>
@@ -24,13 +24,14 @@
       <p></p>
       <div class="col-sm-offset-0">
       <label class=".text-left">Gender:</label>
-        <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default">
-                <input type="radio"/> <strong>♂</strong>
+        <div class="btn-group" data-toggle="buttons" >
+            <label for="maleCheck">
+                <input type="radio" class="btn-default" ng-change="updateGenCheck(maleCheck)" ng-model = "genCheck" value="Male" id="maleCheck"/> <strong>♂</strong>
             </label>
-            <label class="btn btn-default">
-                <input type="radio"/> <strong>♀</strong>
+            <label for="femaleCheck">
+                <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model = "genCheck" value="Female" id="femaleCheck"/> <strong>♀</strong>
             </label>
+            {{genCheck}}
         </div>
       </div>
       <p></p>

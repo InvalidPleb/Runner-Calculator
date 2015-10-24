@@ -4,11 +4,19 @@ body {
 }
 
 #move1 {
-	margin-left: 20px;
+	margin-left: 21px;
 }
 
 #move2 {
 	margin-left: 10px;
+}
+.btn-secondary {
+	background-color: #ededed;
+}
+
+.btn-secondary:active {
+	background-color: #51c64f;
+	color: #ffffff;
 }
 
 
@@ -85,7 +93,7 @@ body {
 
 .jumbotron {
 	min-height: 400px;
-	background-color: #8b9fbc;
+	background-color: #bfbfbf;
 }
 
 .col-md-4 {
