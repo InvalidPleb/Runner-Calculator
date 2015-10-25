@@ -1,6 +1,8 @@
-<div class="jumbotron">
+<div class="ageGradeMain">
 
   <div class="col-md-4">
+      <br>
+      <p><h4>Age-Graded Calculator</h4></p>
       <label class=".text-left">Age:</label>
       <span id="move1">
         <input type="text" class="form-control inline" id="inputAge" maxlength="2" ng-change="updateInputAge(inputAge)" ng-model="inputAge">
@@ -13,8 +15,9 @@
       </span>
       <p></p>
 
-      <span>
-        <label class=".text-left">Time:</label>
+      
+      <label class=".text-left">Time:</label>
+      <span id="move3">
         <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" type="text" class="form-control inline" id="inputTime1" maxlength="2">
         <strong>:</strong>
         <input ng-change="updateInputTime(inputTime2)" ng-model="inputTime2" ng-focus="timeInput2Focus()" ng-blur="timeInput2Blur()" type="text" class="form-control inline" id="inputTime2" maxlength="2">
@@ -25,40 +28,31 @@
       <div class="col-sm-offset-0">
       <label class=".text-left">Gender:</label>
         <div class="btn-group" data-toggle="buttons" >
+            <span class="bigGen">
             <label for="maleCheck">
                 <input type="radio" class="btn-default" ng-change="updateGenCheck(maleCheck)" ng-model = "genCheck" value="Male" id="maleCheck"/> <strong>♂</strong>
             </label>
-            <label for="femaleCheck">
+            <label for="femaleCheck" type="button" class="genButton" value="♀">
                 <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model = "genCheck" value="Female" id="femaleCheck"/> <strong>♀</strong>
             </label>
+            </span>
             {{genCheck}}
         </div>
       </div>
       <p></p>
-      <input class= "col-md-offset-2" ng-click="calcButtonOne()" type="button" id="buttonOne" value="Calculate">
+      <input class= "col-md-offset-2" ng-click="calcButton()" type="button" id="calcButton" value="Calculate">
       <p></p>
-      <input class= "col-md-offset-2" type="button" id="buttonTwo" value="Clear">
+      <input class= "col-md-offset-2" ng-click="clearButton()" type="button" id="clearButton" value="Clear">
     <p class="lead">
     </p>
 </div>
   <div class="col-md-4">
-    <input type="text" class="form-control" maxlength="2">
+    <input type="text" class="form-control" maxlength="2" ng-model="outputAgeGrade">
   </div>
 </div>
 
 
 
 <div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+  <h4>runnerCalc</h4>
 </div>

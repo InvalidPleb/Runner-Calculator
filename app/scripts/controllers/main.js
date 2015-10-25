@@ -88,8 +88,6 @@ var womenEventOptions = {
 angular.module('runnerCalcApp')
   .controller('MainCtrl', function ($scope) {
 
-  	var chosenOption = '';
-
   	$scope.run = '';
   	$scope.list = [
 	    {
@@ -251,7 +249,7 @@ angular.module('runnerCalcApp')
   	};
 
 
-  	$scope.calcButtonOne = function (){
+  	$scope.calcButton = function (){
 
   		var timeInput1 = parseInt($scope.inputTime1, 10);
 	    var timeInput2 = parseInt($scope.inputTime2, 10);
@@ -261,6 +259,7 @@ angular.module('runnerCalcApp')
 	    var timeInput2Adjusted = timeInput2 * 60;
 	    var totalTimeInput = timeInput1Adjusted + timeInput2Adjusted + timeInput3;
 
+	    var chosenOption = '';
 	    if ($scope.genCheck === "Male" && $scope.inputDist !== undefined) {
   			chosenOption = menEventOptions[$scope.inputDist];
   		} else if ($scope.genCheck === "Female" && $scope.inputDist !== undefined) {
@@ -271,18 +270,31 @@ angular.module('runnerCalcApp')
 
   		var i = 0;
   		var ageInt = parseInt($scope.inputAge);
-    	//var dataArray = [];
+
     	while (i < chosenOption.length) {
       		if (ageInt === ageObj.ageList[i]) {
         		var ageGrade = chosenOption[i] * totalTimeInput;
         		var returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
         		if (returnAgeGrade !== 0) {
-        			console.log(returnAgeGrade);
+        			$scope.outputAgeGrade = returnAgeGrade;
         		}
       		}
       	i += 1;
     	}
 
+
+
+  	};
+
+  	$scope.clearButton = function (){
+
+  		$scope.inputAge = undefined;
+  		$scope.inputDist = undefined;
+  		$scope.genCheck = undefined;
+  		$scope.outputAgeGrade = undefined;
+  		$scope.inputTime1 = '00';
+  		$scope.inputTime2 = '00';
+  		$scope.inputTime3 = '00';
 
 
   	};
