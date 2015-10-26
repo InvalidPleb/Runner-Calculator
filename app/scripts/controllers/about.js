@@ -8,7 +8,7 @@
  * Controller of the runnerCalcApp
  */
 angular.module('runnerCalcApp')
-  .controller('AboutCtrl', function () {
+  .controller('altDensControl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

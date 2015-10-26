@@ -29,6 +29,11 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/altdens', {
+        templateUrl: 'views/about.html',
+        controller: 'altDensControl',
+        controllerAs: 'altDens'
+      })
       .otherwise({
         redirectTo: '/'
       });

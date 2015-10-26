@@ -2,21 +2,21 @@
 
   <div class="col-md-4">
       <br>
-      <p><h4>Age-Graded Calculator</h4></p>
-      <label class=".text-left">Age:</label>
+      <h4>Age-Graded Calculator</h4>
+      <br>
+      <label class=".text-left"><span class="labelText">Age:</span></label>
       <span id="move1">
         <input type="text" class="form-control inline" id="inputAge" maxlength="2" ng-change="updateInputAge(inputAge)" ng-model="inputAge">
       </span>
       <p></p>
-      <label class=".text-left">Event:</label>
+      <label class=".text-left"><span class="labelText">Event:</span></label>
       <span id="move2">
         <select class="form-control inline" ng-change="updateInputDist(inputDist)" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
         <span>{{run}}</span>
       </span>
       <p></p>
 
-      
-      <label class=".text-left">Time:</label>
+      <label class=".text-left"><span class="labelText">Time:</span></label>
       <span id="move3">
         <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" type="text" class="form-control inline" id="inputTime1" maxlength="2">
         <strong>:</strong>
@@ -26,7 +26,7 @@
       </span>
       <p></p>
       <div class="col-sm-offset-0">
-      <label class=".text-left">Gender:</label>
+      <label class=".text-left"><span class="labelText">Gender:</span></label>
         <div class="btn-group" data-toggle="buttons" >
             <span class="bigGen">
             <label for="maleCheck">
@@ -47,12 +47,18 @@
     </p>
 </div>
   <div class="col-md-4">
-    <input type="text" class="form-control" maxlength="2" ng-model="outputAgeGrade">
+  <br>
+    <h4>Your-age graded time is: {{outputAgeGrade}}</h4>
+    <input type="text" class="form-control ng-hide" maxlength="2" ng-model="outputAgeGrade">
+    <br>
+    <h4>Your-age graded percent is: {{outputAgePercent}}</h4>
+    <input type="text" class="form-control ng-hide" maxlength="2" ng-model="outputAgePercent">
+    <br>
   </div>
 </div>
 
 
 
 <div class="row marketing">
-  <h4>runnerCalc</h4>
+  <h4></h4>
 </div>
