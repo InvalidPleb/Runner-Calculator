@@ -10,6 +10,7 @@
 
 var ageObj = {
 
+	test1: [757,0.6526,0.6899,0.725,0.7579,0.7886,0.8171,0.8434,0.8675,0.8894,0.9091,0.9266,0.9419,0.955,0.967,0.979,0.9893,0.9961,0.9996,1,1,1,1,1,0.9999,0.9991,0.9975,0.9952,0.9922,0.9885,0.984,0.9788,0.9729,0.9662,0.9592,0.9521,0.9451,0.938,0.931,0.924,0.9169,0.9099,0.9028,0.8958,0.8888,0.8817,0.8747,0.8676,0.8606,0.8536,0.8465,0.8395,0.8324,0.8254,0.8184,0.8113,0.8043,0.7972,0.7902,0.7832,0.7761,0.7691,0.762,0.755,0.7479,0.7402,0.7319,0.723,0.7134,0.7031,0.6923,0.6808,0.6687,0.6559,0.6425,0.6285,0.6138,0.5985,0.5825,0.566,0.5488,0.5309,0.5124,0.4933,0.4735,0.4531,0.4321,0.4104,0.3881,0.3652,0.3416,0.3174,0.2926,0.2671,0.2409,0.2142,0.1868],
 	ageList: [0, 0, 0, 0, 0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
 };
 
@@ -62,8 +63,25 @@ var womenEventOptions = {
 };
 
 
+function numRound (value,dec){
+
+    value=Math.floor(value * dec + 0.05) / dec;
+    return(value);
+}
+
 angular.module('runnerCalcApp')
   .controller('MainCtrl', function ($scope) {
+
+  	$scope.class = "defaultClass";
+    
+    $scope.toggleClass = function(){
+        if ($scope.class === "defaultClass")
+            $scope.class = "newClass";
+        else
+            $scope.class = "defaultClass";
+    };
+
+
 
   	$scope.run = '';
   	$scope.list = [
@@ -98,7 +116,7 @@ angular.module('runnerCalcApp')
 	      Event: 'run20km',
 	      Title: '20 km'
 	    }, {
-	      Event: 'runHalf.Mar',
+	      Event: 'runHalfMar',
 	      Title: 'half mar'
 	    }, {
 	      Event: 'run25km',
@@ -148,6 +166,7 @@ angular.module('runnerCalcApp')
   		return (genCheck);
 
   	};
+
 
   	$scope.inputTime1 = '00';
   	$scope.inputTime2 = '00';
@@ -214,16 +233,19 @@ angular.module('runnerCalcApp')
 
     	while (i < chosenOption.length) {
       		if (ageInt === ageObj.ageList[i]) {
-        		var ageGrade = chosenOption[i] * totalTimeInput;
-        		var ageGradePercent = chosenOption[0] / totalTimeInput;
-        		$scope.outputAgePercent = ageGradePercent;
+
+        		var ageGrade = chosenOption[i-4] * numRound(totalTimeInput, 100);
+        		var ageGradePercent = chosenOption[0] / ageGrade;
+        		$scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
         		var returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
+
         		if (returnAgeGrade !== 0) {
         			$scope.outputAgeGrade = returnAgeGrade;
         		}
       		}
       	i += 1;
     	}
+
 
 
 
@@ -237,6 +259,7 @@ angular.module('runnerCalcApp')
   		$scope.inputDist = undefined;
   		$scope.genCheck = undefined;
   		$scope.outputAgeGrade = undefined;
+  		$scope.outputAgePercent = undefined;
   		$scope.inputTime1 = '00';
   		$scope.inputTime2 = '00';
   		$scope.inputTime3 = '00';

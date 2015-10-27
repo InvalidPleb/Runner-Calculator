@@ -47,11 +47,24 @@
         </div>
       </div>
     </div>
+    
     <div class="container">
     <ul class="nav nav-tabs">
+      <!--
       <li class="mainTabs" id="mainTab1"><a href="#/" class="tabTabs"><span class="tabText">Age-Grade</span></a></li>
       <li class="mainTabs"><a href="#/altdens" class="tabTabs"><span class="tabText">Altitude Density</span></a></li>
       <li class="mainTabs" id="mainTabLast"><a href="#/" class="tabTabs"><span class="tabText">Age-Grade</span></a></li>
+      -->
+
+    <button>Toggle Class</button>
+    <div id="yo" ng-click="newClass=!newClass" class="defaultClass" ng-class="{newClass:newClass}">Some Text</div>
+
+      <span class="tabRow">
+        <li class = "tabRowLi" ng-class="{'selected': isActive}" ng-click="activeButton()" id="ageGradeTab">Age-Grade</li>
+        <li ng-click="selected=!selected" class="tabRowLi" ng-class="{selected:selected}" ng-click="activeButton()">Density Altitude</li>
+        <li ng-click="selected=!selected" class="tabRowLi" ng-class="{selected:selected}" ng-click="activeButton()">Another</li>
+        <li ng-click="selected=!selected" class="tabRowLi" ng-class="{selected:selected}" ng-click="activeButton()">One More</li>
+      </span>
     </ul>
     </div>
     <div class="container">
