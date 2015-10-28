@@ -72,200 +72,246 @@ function numRound (value,dec){
 angular.module('runnerCalcApp')
   .controller('MainCtrl', function ($scope) {
 
-  	$scope.class = "defaultClass";
-    
-    $scope.toggleClass = function(){
-        if ($scope.class === "defaultClass")
-            $scope.class = "newClass";
-        else
-            $scope.class = "defaultClass";
-    };
+  	angular.element(document).ready(function () {
+	    
+	  	$scope.run = '';
+	  	$scope.list = [
+		    {
+		      Event: 'run5km',
+		      Title: '5 km'
+		    }, {
+		      Event: 'run6km',
+		      Title: '6 km'
+		    }, {
+		      Event: 'run4Mile',
+		      Title: '4 mile'
+		    }, {
+		      Event: 'run8km',
+		      Title: '8 km'
+		    }, {
+		      Event: 'run5Mile',
+		      Title: '5 mile'
+		    }, {
+		      Event: 'run10km',
+		      Title: '10 km'
+		    }, {
+		      Event: 'run12km',
+		      Title: '12 km'
+		    }, {
+		      Event: 'run15km',
+		      Title: '15km'
+		    }, {
+		      Event: 'run10Mile',
+		      Title: '10 mile'
+		    }, {
+		      Event: 'run20km',
+		      Title: '20 km'
+		    }, {
+		      Event: 'runHalfMar',
+		      Title: 'half mar'
+		    }, {
+		      Event: 'run25km',
+		      Title: '25 km'
+		    }, {
+		      Event: 'run30km',
+		      Title: '30 km'
+		    }, {
+		      Event: 'runMarathon',
+		      Title: 'marathon'
+		    }, {
+		      Event: 'run50km',
+		      Title: '50 km'
+		    }, {
+		      Event: 'run50Mile',
+		      Title: '50 mile'
+		    }, {
+		      Event: 'run100km',
+		      Title: '100 km'
+		    }, {
+		      Event: 'run150km',
+		      Title: '150 km'
+		    }, {
+		      Event: 'run100Mile',
+		      Title: '100 mile'
+		    }, {
+		      Event: 'run200km',
+		      Title: '200 km'
+		    }
+		];
+
+		$scope.updateInputAge = function() {
+
+	  	};
+
+	  	$scope.updateInputDist = function() {
+
+	  	};
+
+	  	$scope.updateInputTime = function() {
+
+	  	};
+
+	  	$scope.updateGenCheck = function(genCheck) {
+
+
+	  		return (genCheck);
+
+	  	};
+	  	
+
+	  	$scope.isSelected0 = true;
+	  	$scope.isSelected1 = false;
+	  	$scope.isSelected2 = false;
+	  	$scope.isSelected3 = false;
+
+	  	var trackClick;
+
+
+	  	$scope.toggleSelect0 = function () {
+
+	  		if (trackClick !== 0) {
+	  			$scope.isSelected0 = !$scope.isSelected0;
+	  			trackClick = 0;
+
+	  			//change the last button back to grey
+	  			//requires keeping track of what the last button clicked was
+	  			//if lastButton = 0,1,2,3 then $scope.isSelected[lastButton] = !$scope.isSelected[lastButton];
+	  		} 
+
+
+	  	};
+
+	  	$scope.toggleSelect1 = function () {
+
+	  		if (trackClick !== 1) {
+	  			$scope.isSelected1 = !$scope.isSelected1;
+	  			trackClick = 1;
+	  		}
+	  	};
+
+	  	/*
+
+	  	$scope.toggleSelect2 = function () {
+	  		$scope.isSelected2 =! $scope.isSelected2;
+	  		clickEnabled0 = true;
+	  		clickEnabled1 = true;
+	  		clickEnabled2 = false;
+	  		clickEnabled3 = true;
+	  	};
+
+	  	$scope.toggleSelect3 = function () {
+	  		$scope.isSelected3 =! $scope.isSelected3;
+	  		clickEnabled0 = true;
+	  		clickEnabled1 = true;
+	  		clickEnabled2 = true;
+	  		clickEnabled3 = false;
+	  	};
+
+	  	*/
+
+	  	
+
+
+	  	$scope.inputTime1 = '00';
+	  	$scope.inputTime2 = '00';
+	  	$scope.inputTime3 = '00';
+
+	  	$scope.timeInput1Focus = function () {
+	  		if ($scope.inputTime1 === '00') {
+	  			$scope.inputTime1 = '';
+	  		}
+	  	};
+
+	  	$scope.timeInput1Blur = function () {
+	  		if ($scope.inputTime1 === '') {
+	  			$scope.inputTime1 = '00';
+	  		}
+	  	};
+
+	  	$scope.timeInput2Focus = function () {
+	  		if ($scope.inputTime2 === '00') {
+	  			$scope.inputTime2 = '';
+	  		}
+	  	};
+
+	  	$scope.timeInput2Blur = function () {
+	  		if ($scope.inputTime2 === '') {
+	  			$scope.inputTime2 = '00';
+	  		}
+	  	};
+
+	  	$scope.timeInput3Focus = function () {
+	  		if ($scope.inputTime3 === '00') {
+	  			$scope.inputTime3 = '';
+	  		}
+	  	};
+
+	  	$scope.timeInput3Blur = function () {
+	  		if ($scope.inputTime3 === '') {
+	  			$scope.inputTime3 = '00';
+	  		}
+	  	};
+
+
+	  	$scope.calcButton = function (){
+
+	  		var timeInput1 = parseInt($scope.inputTime1, 10);
+		    var timeInput2 = parseInt($scope.inputTime2, 10);
+		    var timeInput3 = parseInt($scope.inputTime3, 10);
+
+		    var timeInput1Adjusted = (timeInput1 * 60) * 60;
+		    var timeInput2Adjusted = timeInput2 * 60;
+		    var totalTimeInput = timeInput1Adjusted + timeInput2Adjusted + timeInput3;
+
+		    var chosenOption = '';
+		    if ($scope.genCheck === "Male" && $scope.inputDist !== undefined) {
+	  			chosenOption = menEventOptions[$scope.inputDist];
+	  		} else if ($scope.genCheck === "Female" && $scope.inputDist !== undefined) {
+	  			chosenOption = womenEventOptions[$scope.inputDist];
+	  		} else {
+	  			chosenOption = '';
+	  		}
+
+	  		var i = 1;
+	  		var ageInt = parseInt($scope.inputAge);
+
+	    	while (i < chosenOption.length) {
+	      		if (ageInt === ageObj.ageList[i]) {
+
+	        		var ageGrade = chosenOption[i-4] * numRound(totalTimeInput, 100);
+	        		var ageGradePercent = chosenOption[0] / ageGrade;
+	        		$scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
+	        		var returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
+
+	        		if (returnAgeGrade !== 0) {
+	        			$scope.outputAgeGrade = returnAgeGrade;
+	        		}
+	      		}
+	      	i += 1;
+	    	}
 
 
 
-  	$scope.run = '';
-  	$scope.list = [
-	    {
-	      Event: 'run5km',
-	      Title: '5 km'
-	    }, {
-	      Event: 'run6km',
-	      Title: '6 km'
-	    }, {
-	      Event: 'run4Mile',
-	      Title: '4 mile'
-	    }, {
-	      Event: 'run8km',
-	      Title: '8 km'
-	    }, {
-	      Event: 'run5Mile',
-	      Title: '5 mile'
-	    }, {
-	      Event: 'run10km',
-	      Title: '10 km'
-	    }, {
-	      Event: 'run12km',
-	      Title: '12 km'
-	    }, {
-	      Event: 'run15km',
-	      Title: '15km'
-	    }, {
-	      Event: 'run10Mile',
-	      Title: '10 mile'
-	    }, {
-	      Event: 'run20km',
-	      Title: '20 km'
-	    }, {
-	      Event: 'runHalfMar',
-	      Title: 'half mar'
-	    }, {
-	      Event: 'run25km',
-	      Title: '25 km'
-	    }, {
-	      Event: 'run30km',
-	      Title: '30 km'
-	    }, {
-	      Event: 'runMarathon',
-	      Title: 'marathon'
-	    }, {
-	      Event: 'run50km',
-	      Title: '50 km'
-	    }, {
-	      Event: 'run50Mile',
-	      Title: '50 mile'
-	    }, {
-	      Event: 'run100km',
-	      Title: '100 km'
-	    }, {
-	      Event: 'run150km',
-	      Title: '150 km'
-	    }, {
-	      Event: 'run100Mile',
-	      Title: '100 mile'
-	    }, {
-	      Event: 'run200km',
-	      Title: '200 km'
-	    }
-	];
-
-	$scope.updateInputAge = function() {
-
-  	};
-
-  	$scope.updateInputDist = function() {
-
-  	};
-
-  	$scope.updateInputTime = function() {
-
-  	};
-
-  	$scope.updateGenCheck = function(genCheck) {
-
-
-  		return (genCheck);
-
-  	};
-
-
-  	$scope.inputTime1 = '00';
-  	$scope.inputTime2 = '00';
-  	$scope.inputTime3 = '00';
-
-  	$scope.timeInput1Focus = function () {
-  		if ($scope.inputTime1 === '00') {
-  			$scope.inputTime1 = '';
-  		}
-  	};
-
-  	$scope.timeInput1Blur = function () {
-  		if ($scope.inputTime1 === '') {
-  			$scope.inputTime1 = '00';
-  		}
-  	};
-
-  	$scope.timeInput2Focus = function () {
-  		if ($scope.inputTime2 === '00') {
-  			$scope.inputTime2 = '';
-  		}
-  	};
-
-  	$scope.timeInput2Blur = function () {
-  		if ($scope.inputTime2 === '') {
-  			$scope.inputTime2 = '00';
-  		}
-  	};
-
-  	$scope.timeInput3Focus = function () {
-  		if ($scope.inputTime3 === '00') {
-  			$scope.inputTime3 = '';
-  		}
-  	};
-
-  	$scope.timeInput3Blur = function () {
-  		if ($scope.inputTime3 === '') {
-  			$scope.inputTime3 = '00';
-  		}
-  	};
-
-
-  	$scope.calcButton = function (){
-
-  		var timeInput1 = parseInt($scope.inputTime1, 10);
-	    var timeInput2 = parseInt($scope.inputTime2, 10);
-	    var timeInput3 = parseInt($scope.inputTime3, 10);
-
-	    var timeInput1Adjusted = (timeInput1 * 60) * 60;
-	    var timeInput2Adjusted = timeInput2 * 60;
-	    var totalTimeInput = timeInput1Adjusted + timeInput2Adjusted + timeInput3;
-
-	    var chosenOption = '';
-	    if ($scope.genCheck === "Male" && $scope.inputDist !== undefined) {
-  			chosenOption = menEventOptions[$scope.inputDist];
-  		} else if ($scope.genCheck === "Female" && $scope.inputDist !== undefined) {
-  			chosenOption = womenEventOptions[$scope.inputDist];
-  		} else {
-  			chosenOption = '';
-  		}
-
-  		var i = 1;
-  		var ageInt = parseInt($scope.inputAge);
-
-    	while (i < chosenOption.length) {
-      		if (ageInt === ageObj.ageList[i]) {
-
-        		var ageGrade = chosenOption[i-4] * numRound(totalTimeInput, 100);
-        		var ageGradePercent = chosenOption[0] / ageGrade;
-        		$scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
-        		var returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
-
-        		if (returnAgeGrade !== 0) {
-        			$scope.outputAgeGrade = returnAgeGrade;
-        		}
-      		}
-      	i += 1;
-    	}
 
 
 
+	  	};
+
+	  	$scope.clearButton = function (){
+
+	  		$scope.inputAge = undefined;
+	  		$scope.inputDist = undefined;
+	  		$scope.genCheck = undefined;
+	  		$scope.outputAgeGrade = undefined;
+	  		$scope.outputAgePercent = undefined;
+	  		$scope.inputTime1 = '00';
+	  		$scope.inputTime2 = '00';
+	  		$scope.inputTime3 = '00';
 
 
+	  	};
 
-  	};
-
-  	$scope.clearButton = function (){
-
-  		$scope.inputAge = undefined;
-  		$scope.inputDist = undefined;
-  		$scope.genCheck = undefined;
-  		$scope.outputAgeGrade = undefined;
-  		$scope.outputAgePercent = undefined;
-  		$scope.inputTime1 = '00';
-  		$scope.inputTime2 = '00';
-  		$scope.inputTime3 = '00';
-
-
-  	};
+  	});
 
 
   });
