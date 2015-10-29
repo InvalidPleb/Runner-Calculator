@@ -39,6 +39,7 @@ h4 {
   font-family: "Open Sans";
   font-weight: 300;
   font-size: 12px;
+  text-decoration: none;
   display: inline-block;
   position:relative;
   z-index: 0;
@@ -90,6 +91,7 @@ h4 {
 
 /* -------------------------- */
 
+
 .ageGradeMain, .altDensMain {
 	min-height: 400px;
 	background-color: #bfbfbf;
@@ -121,10 +123,19 @@ h4 {
 }
 
 
-.tabTabs:hover, .tabTabs:focus {
+.tabRowLi a {
+  margin: 0px; 
+  display: block; 
+  width: 100%; 
+  height: 100%; 
+}
+
+.tabRowLi a:hover, .tabRowLi a:focus {
 	text-decoration: none;
 
 }
+
+
 
 
 .tabText {

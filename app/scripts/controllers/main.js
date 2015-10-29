@@ -157,59 +157,6 @@ angular.module('runnerCalcApp')
 	  		return (genCheck);
 
 	  	};
-	  	
-
-	  	$scope.isSelected0 = true;
-	  	$scope.isSelected1 = false;
-	  	$scope.isSelected2 = false;
-	  	$scope.isSelected3 = false;
-
-	  	var trackClick;
-
-
-	  	$scope.toggleSelect0 = function () {
-
-	  		if (trackClick !== 0) {
-	  			$scope.isSelected0 = !$scope.isSelected0;
-	  			trackClick = 0;
-
-	  			//change the last button back to grey
-	  			//requires keeping track of what the last button clicked was
-	  			//if lastButton = 0,1,2,3 then $scope.isSelected[lastButton] = !$scope.isSelected[lastButton];
-	  		} 
-
-
-	  	};
-
-	  	$scope.toggleSelect1 = function () {
-
-	  		if (trackClick !== 1) {
-	  			$scope.isSelected1 = !$scope.isSelected1;
-	  			trackClick = 1;
-	  		}
-	  	};
-
-	  	/*
-
-	  	$scope.toggleSelect2 = function () {
-	  		$scope.isSelected2 =! $scope.isSelected2;
-	  		clickEnabled0 = true;
-	  		clickEnabled1 = true;
-	  		clickEnabled2 = false;
-	  		clickEnabled3 = true;
-	  	};
-
-	  	$scope.toggleSelect3 = function () {
-	  		$scope.isSelected3 =! $scope.isSelected3;
-	  		clickEnabled0 = true;
-	  		clickEnabled1 = true;
-	  		clickEnabled2 = true;
-	  		clickEnabled3 = false;
-	  	};
-
-	  	*/
-
-	  	
 
 
 	  	$scope.inputTime1 = '00';
