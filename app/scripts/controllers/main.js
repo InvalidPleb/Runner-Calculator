@@ -236,8 +236,16 @@ angular.module('runnerCalcApp')
 	      		}
 	      	i += 1;
 	    	}
+ 
+	    /*
+	    if (isError1 || isError2 || isError3 || isError4 === true) {
+      		$("#errMess").fadeIn(500);
+      		return setTimeout(function() {
+        		return $("#errMess").fadeOut(2500);
+      		}, 5000);
+    	}
 
-
+    	*/
 
 
 
