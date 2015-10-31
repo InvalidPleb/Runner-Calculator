@@ -245,6 +245,30 @@ angular.module('runnerCalcApp')
       		}, 5000);
     	}
 
+		if (distanceUser.val() === "?" || distanceUser.val() === null || distanceUser.val() === "") {
+			dropDown.css({
+	        	"border-color": "#FF0000"
+	      	});
+	      	isError1 = true;
+    	} else {
+		    dropDown.css({
+		        "border-color": "#ccc"
+		    });
+			isError1 = false;
+    	}
+
+    	if (ageInput.val() === "") {
+      		ageInput.css({
+        	"border-color": "#FF0000"
+      		});
+      		isError2 = true;
+    	} else {
+      		ageInput.css({
+        		"border-color": "#ccc"
+      		});
+      		isError2 = false;
+    	}
+
     	*/
 
 
