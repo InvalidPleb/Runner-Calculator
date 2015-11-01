@@ -269,6 +269,14 @@ angular.module('runnerCalcApp')
       		isError2 = false;
     	}
 
+    	if ($("#sexFemale").is(":checked") !== true && $("#sexMale").is(":checked") !== true) {
+      		isError4 = true;
+      		genderErr.fadeIn(100);
+    	} else {
+      		isError4 = false;
+      		genderErr.fadeOut(500);
+    	}
+
     	*/
 
 
