@@ -73,7 +73,7 @@ angular.module('runnerCalcApp')
   .controller('MainCtrl', function ($scope) {
 
   	angular.element(document).ready(function () {
-	    
+
 	  	$scope.run = '';
 	  	$scope.list = [
 		    {
@@ -139,9 +139,19 @@ angular.module('runnerCalcApp')
 		    }
 		];
 
+
 		$scope.updateInputAge = function() {
 
+
+			if ($scope.inputAge == "") {
+				return false;
+			} else {
+				return true;
+			}
+
 	  	};
+
+
 
 	  	$scope.updateInputDist = function() {
 
@@ -224,12 +234,10 @@ angular.module('runnerCalcApp')
 
 	    	while (i < chosenOption.length) {
 	      		if (ageInt === ageObj.ageList[i]) {
-
 	        		var ageGrade = chosenOption[i-4] * numRound(totalTimeInput, 100);
 	        		var ageGradePercent = chosenOption[0] / ageGrade;
 	        		$scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
 	        		var returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
-
 	        		if (returnAgeGrade !== 0) {
 	        			$scope.outputAgeGrade = returnAgeGrade;
 	        		}
