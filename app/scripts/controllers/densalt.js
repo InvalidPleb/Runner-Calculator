@@ -28,6 +28,8 @@ angular.module('runnerCalcApp')
 	                    dataType: 'jsonp', 
 	                }).success(function(json){
 
+	                	//what if this calculation was put into a global method & referenced
+
 		        		var pressure = parseInt(json.current_observation.pressure_in);
 		                var alt1 = json.current_observation.observation_location.elevation;
 		                var alt2 = alt1.slice(0,-3);

@@ -4,11 +4,16 @@
 	width: 42px;
 }
 
+#inputTime1, #inputTime2, #inputTime3 {
+	width: 42px;
+  	visibility:visible;
+}
+
 .formErr {
 	border-color: #CC0000;
 }
 
-#inputTimeErr {
+.inputTimeErrInvis {
 	position: relative;
 	background-color: rgba(0, 0, 0, 0);
 	width: 158px;
@@ -18,10 +23,57 @@
 	margin-top: -30px;
 	border-radius: 5px;
 	border: 1px solid #CC0000;
+	visibility:collapse;
+
 }
 
-#inputTimeErr > input, #inputTimeErr > span {
+.inputTimeErr {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0);
+	width: 158px;
+	height: 38px;
+	z-index: 1;
+	margin-left: 59px;
+	margin-top: -30px;
+	border-radius: 5px;
+	border: 1px solid #CC0000;
+	visibility:visible;
+}
+
+
+.inputTimeErr > input, .inputTimeErrInvis > input {
 	margin-left: 1px;
 	margin-top: 0.5px;
+	visibility:visible;
 
+}
+
+.inputTimeErr > span, .inputTimeErrInvis > span {
+	font-family: "Open Sans";
+  	font-weight: 500;
+  	font-size: 18px;
+	visibility:visible;
+}
+
+.genCheckErr {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0);
+	width: 83px;
+	height: 39px;
+	z-index: 1;
+	border-radius: 5px;
+	border: 1px solid #CC0000;
+
+
+}
+
+.genCheckErrInvis {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0);
+	width: 83px;
+	height: 39px;
+	z-index: 1;
+	border-radius: 5px;
+	border: 1px solid #CC0000;
+	visibility: collapse;
 }
