@@ -9,9 +9,11 @@
   	visibility:visible;
 }
 
-.formErr {
+.formErr, .formErr:active, .formErr:focus {
 	border-color: #CC0000;
 }
+
+
 
 .inputTimeErrInvis {
 	position: relative;

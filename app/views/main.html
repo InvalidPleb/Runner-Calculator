@@ -6,12 +6,16 @@
       <br>
       <label class=".text-left"><span class="labelText">Age:</span></label>
       <span id="move1">
-        <input type="text" class="form-control inline" ng-class="{true: 'form-control inline', false: 'form-control inline formErr'}[updateInputAge()]" id="inputAge" maxlength="2" ng-model="inputAge">
+
+        <!-- <input type="text" ng-class="{'form-control inline formErr' : inputAge,'form-control inline': !inputAge }" id="inputAge" maxlength="2" ng-model="inputAge"> -->
+
+
+        <input type="text" class="form-control inline" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputAge()]" id="inputAge" maxlength="2" ng-model="inputAge">
       </span>
       <p></p>
       <label class=".text-left"><span class="labelText">Event:</span></label>
       <span id="move2">
-        <select class="form-control inline" ng-class="{true: 'form-control inline', false: 'form-control inline formErr'}[updateInputDist()]" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
+        <select class="form-control inline" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
         <span>{{run}}</span>
       </span>
       <p></p>

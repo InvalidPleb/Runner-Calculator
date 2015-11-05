@@ -139,14 +139,18 @@ angular.module('runnerCalcApp')
 		    }
 		];
 
+		
+
 
 		$scope.updateInputAge = function() {
 
 			if ($scope.inputAge === "") {
-				return false;
-			} else {
 				return true;
+			} else {
+				return false;
 			}
+
+			console.log("yo");
 
 	  	};
 
@@ -207,10 +211,6 @@ angular.module('runnerCalcApp')
 	  		}
 	  	};
 
-	  	//global var
-	  	$scope.genCheckErr = false;
-
-
 	  	$scope.calcButton = function (){
 
 	  		var timeInput1 = parseInt($scope.inputTime1, 10);
@@ -238,19 +238,22 @@ angular.module('runnerCalcApp')
 	      		if (ageInt === ageObj.ageList[i]) {
 	        		var ageGrade = chosenOption[i-4] * numRound(totalTimeInput, 100);
 	        		var ageGradePercent = chosenOption[0] / ageGrade;
-	        		$scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
 	        		var returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
 	        		if (returnAgeGrade !== 0) {
 	        			$scope.outputAgeGrade = returnAgeGrade;
+	        			$scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
 	        		}
 	      		}
 	      	i += 1;
 	    	}
 
 
-
 	    	if ($scope.inputAge === "" || $scope.inputAge === undefined) {
-
+	    		$scope.updateInputAge = function() {
+	    			return true;
+	    		};
+	    		
+	    	} else {
 	    		$scope.updateInputAge = function() {
 	    			return false;
 	    		};
@@ -258,21 +261,25 @@ angular.module('runnerCalcApp')
 
 	    	if ($scope.inputDist === undefined) {
 	    		$scope.updateInputDist = function() {
+	    			return true;
+	    		};
+	    	} else {
+	    		$scope.updateInputDist = function() {
 	    			return false;
 	    		};
 	    	}
 
-	    	$scope.inputTimeErr = false;
-
-	    	if ($scope.inputTimeErr === false) {
-	    		$scope.inputTimeErr = !$scope.inputTimeErr;
+	    	if (totalTimeInput === 0 || totalTimeInput === undefined) {
+	    		$scope.inputTimeErr = true;
+	    	} else {
+	    		$scope.inputTimeErr = false;
 	    	}
 
-	    	if ($scope.genCheckErr === false) {
-	    		$scope.genCheckErr = !$scope.genCheckErr;
-	    		console.log($scope.genCheckErr);
+	    	if ($scope.genCheck === undefined) {
+	    		$scope.genCheckErr = true;
+	    	} else {
+	    		$scope.genCheckErr = false;
 	    	}
-
 
 
 	  	};
@@ -281,12 +288,21 @@ angular.module('runnerCalcApp')
 
 	  		$scope.inputAge = undefined;
 	  		$scope.inputDist = undefined;
-	  		$scope.genCheck = "Male";
 	  		$scope.outputAgeGrade = undefined;
 	  		$scope.outputAgePercent = undefined;
 	  		$scope.inputTime1 = '00';
 	  		$scope.inputTime2 = '00';
 	  		$scope.inputTime3 = '00';
+	  		$scope.inputTimeErr = false;
+	  		$scope.genCheckErr = false;
+
+	  		$scope.updateInputAge = function() {
+	    			return false;
+	    	};
+
+	    	$scope.updateInputDist = function() {
+	    			return false;
+	    	};
 
 
 	  	};
