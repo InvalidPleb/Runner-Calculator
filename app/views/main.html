@@ -7,15 +7,14 @@
       <label class=".text-left"><span class="labelText">Age:</span></label>
       <span id="move1">
 
-        <!-- <input type="text" ng-class="{'form-control inline formErr' : inputAge,'form-control inline': !inputAge }" id="inputAge" maxlength="2" ng-model="inputAge"> -->
-
+        <!-- <input type="text" class= "form-control inline" ng-class="{'form-control inline formErr' : inputAge=='','form-control inline': inputAge }" id="inputAge" maxlength="2" ng-model="inputAge"> -->
 
         <input type="text" class="form-control inline" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputAge()]" id="inputAge" maxlength="2" ng-model="inputAge">
       </span>
       <p></p>
       <label class=".text-left"><span class="labelText">Event:</span></label>
       <span id="move2">
-        <select class="form-control inline" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
+        <select ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
         <span>{{run}}</span>
       </span>
       <p></p>
@@ -29,18 +28,23 @@
         <span>:</span>
         <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" type="text" class="form-control inline" id="inputTime3" maxlength="2">
       </div>
-      <div class="col-sm-offset-0">
+      <div class="col-md-offset-0">
 
       <p></p>
       <label class=".text-left"><span class="labelText">Gender:</span></label>
         <div class="btn-group">
-          <div ng-class="{true: 'genCheckErr', false: 'genCheckErrInvis'}[genCheckErr]" ng-model="genCheckErr">
+        <!-- <input type="text" class= "form-control inline" ng-class="{'form-control inline formErr' : inputAge=='','form-control inline': inputAge }" id="inputAge" maxlength="2" ng-model="inputAge"> -->
+
+          <div ng-class="{'genCheckErr' : genCheckErr, 'genCheckErrInvis' : !genCheckErr}" ng-model="yo">
+          <!-- <div ng-class="{true: 'genCheckErr', false: 'genCheckErrInvis'}[genCheckErr]" ng-model="genCheckErr"> -->
+            <div ng-class="{'genCheckErr' : genCheckErr, 'genCheckErrInvis' : !genCheckErr}" ng-model="yo">
             <label class="genLabel" for="maleCheck" ng-class="{Male: 'genSelected', Female: 'genLabel'}[genCheck]"><img src="/images/male154.png" alt="♂" width="32" height="32">
                 <input type="radio" class="inputGender" ng-change="updateGenCheck(maleCheck)" ng-model="genCheck" value="Male" id="maleCheck"/>
             </label>
             <label class="genLabel" for="femaleCheck" ng-class="{Male: 'genLabel', Female: 'genSelected'}[genCheck]"><img src="/images/female128.png" alt="♀" width="32" height="32">
                 <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model = "genCheck" value="Female" id="femaleCheck"/>
             </label>
+          </div>
           </div>
         </div>
       </div>

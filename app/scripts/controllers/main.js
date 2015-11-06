@@ -139,9 +139,6 @@ angular.module('runnerCalcApp')
 		    }
 		];
 
-		
-
-
 		$scope.updateInputAge = function() {
 
 			if ($scope.inputAge === "") {
@@ -149,27 +146,27 @@ angular.module('runnerCalcApp')
 			} else {
 				return false;
 			}
-
-			console.log("yo");
-
 	  	};
-
-
 
 	  	$scope.updateInputDist = function() {
-
-	  	};
-
-	  	$scope.updateInputTime = function() {
+	  		
+	  		if ($scope.inputDist === "") {
+				return true;
+			} else {
+				return false;
+			}
 
 	  	};
 
 	  	$scope.updateGenCheck = function() {
 
-	  		console.log($scope.genCheck);
+	  		if ($scope.genCheck === undefined) {
+	    		$scope.genCheckErr = true;
+	    	} else {
+	    		$scope.genCheckErr = false;
+	    	}
 
 	  	};
-
 
 	  	$scope.inputTime1 = '00';
 	  	$scope.inputTime2 = '00';
@@ -211,6 +208,15 @@ angular.module('runnerCalcApp')
 	  		}
 	  	};
 
+	  	$scope.updateInputTime = function() {
+
+	  		if (parseInt($scope.inputTime1 + $scope.inputTime2 + $scope.inputTime3) === 0) {
+	  			$scope.inputTimeErr = true;
+	    	} else {
+	    		$scope.inputTimeErr = false;
+	    	}
+	  	};
+
 	  	$scope.calcButton = function (){
 
 	  		var timeInput1 = parseInt($scope.inputTime1, 10);
@@ -248,27 +254,14 @@ angular.module('runnerCalcApp')
 	    	}
 
 
-	    	if ($scope.inputAge === "" || $scope.inputAge === undefined) {
-	    		$scope.updateInputAge = function() {
-	    			return true;
-	    		};
-	    		
-	    	} else {
-	    		$scope.updateInputAge = function() {
-	    			return false;
-	    		};
+	    	if ($scope.inputAge % 1 !== 0) {
+	    		$scope.inputAge = "";
 	    	}
 
 	    	if ($scope.inputDist === undefined) {
-	    		$scope.updateInputDist = function() {
-	    			return true;
-	    		};
-	    	} else {
-	    		$scope.updateInputDist = function() {
-	    			return false;
-	    		};
+	    		$scope.inputDist = "";
 	    	}
-
+	   
 	    	if (totalTimeInput === 0 || totalTimeInput === undefined) {
 	    		$scope.inputTimeErr = true;
 	    	} else {
@@ -276,7 +269,9 @@ angular.module('runnerCalcApp')
 	    	}
 
 	    	if ($scope.genCheck === undefined) {
+
 	    		$scope.genCheckErr = true;
+	    		console.log($scope.genCheckErr);
 	    	} else {
 	    		$scope.genCheckErr = false;
 	    	}
@@ -295,15 +290,6 @@ angular.module('runnerCalcApp')
 	  		$scope.inputTime3 = '00';
 	  		$scope.inputTimeErr = false;
 	  		$scope.genCheckErr = false;
-
-	  		$scope.updateInputAge = function() {
-	    			return false;
-	    	};
-
-	    	$scope.updateInputDist = function() {
-	    			return false;
-	    	};
-
 
 	  	};
 
