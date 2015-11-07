@@ -9,7 +9,6 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -25,8 +24,8 @@
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
+      
+        <div class="container navbar-default">
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -48,10 +47,14 @@
             </ul>
           </div>
         </div>
-      </div>
+      
     </div>
-    
-    <div class="container">
+
+    <div class="container-fluid">
+    </div>
+
+
+    <div class="mainForm container">
     <ul class="nav nav-tabs">
       <!--
       <li class="mainTabs" id="mainTab1"><a href="#/" class="tabTabs"><span class="tabText">Age-Grade</span></a></li>
@@ -59,7 +62,7 @@
       <li class="mainTabs" id="mainTabLast"><a href="#/" class="tabTabs"><span class="tabText">Age-Grade</span></a></li>
       -->
     
-      <span class="tabRow" ng-controller="MainTabCtrl">
+      <div class="tabRow" ng-controller="MainTabCtrl">
 
         
         <a href="#/" class="tabTabs">
@@ -83,16 +86,15 @@
 
         <li class = "tabRowLi" ng-click="toggleSelect3()" ng-class="{true: 'selected', false: 'tabRowLi'}[isSelected3]">One More</li>
 
-      </span>
+      </div>
     </ul>
     </div>
     <div class="container">
-    <div ng-view=""></div>
+    <div ng-view="" class="viewSwitch"></div>
     </div>
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span></p>
       </div>
     </div>
 
