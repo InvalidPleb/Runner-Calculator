@@ -27,6 +27,8 @@ h3 {
 
 .navbar-default {
   box-shadow: 0px 0px 1px #888;
+  background-color: rgba(68, 208, 141, 0.5);
+  width: 380px;
 }
 
 .container {
@@ -35,17 +37,16 @@ h3 {
 
 .container-fluid {
   width: 100%;
-  height: 600px; 
+  height: 800px; 
   position:relative;
-  background-color: rgba(68, 208, 141, 0.30);
+  background-color: rgba(68, 208, 141, 0.3);
   box-shadow: 0px 0px 1px #888;
   margin-top: 2px;
 
 }
 
 .mainForm {
-  position: relative;
-  margin-top: -575px;
+  margin-top: 10px;
 }
 .navbar {
   background-color: #FFF;
@@ -130,45 +131,6 @@ h3 {
 /* -------------------------- */
 
 
-.ageGradeMain, .altDensMain {
-	min-height: 900px;
-	background-color: #FFF;
-	border-radius: 0px 16px 16px 16px;
-  margin-top: -1px;
-  box-shadow: 1px 1px 1px #888888;
-  border: 1px solid #cd1553;
-}
-
-.ageGradeTitle {
-  background-color: #cd1553;
-  width: 100%;
-  height: 90px;
-  border-radius: 0px 16px 0px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ageGradeTitle > .page-header, .densAltTitle > .page-header {
-  font-family: "Open Sans";
-  font-weight: 600;
-  font-size: 20px;
-  color: #FFF;
-  text-align: center;
-
-}
-
-.densAltTitle {
-  background-color: #cd1553;
-  width: 100%;
-  height: 90px;
-  border-radius: 0px 16px 0px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
 .nav-tabs {
 	border-bottom: 0px;
 }
@@ -218,12 +180,6 @@ h3 {
   font-size: 12px;
 }
 
-.labelText {
-	font-family: "Open Sans";
-  	font-weight: 500;
-  	font-size: 16px;
-}
-
 
 #move1 {
 	margin-left: 25px;
@@ -237,164 +193,5 @@ h3 {
 }
 
 
-
-
-.btn-secondary {
-	background-color: #ededed;
-}
-
-.btn-secondary:active {
-	background-color: #51c64f;
-	color: #ffffff;
-}
-
-
-
-#calcButton {
-    width: 152px;
-    height: 40px;
-    color: #51c64f;
-    border: 1px solid #434343;
-    background: #434343;
-    font-family: "Open Sans";
-  	font-weight: 500;
-  	font-size: 16px;
-    border-radius: 5px;
-    transition: all .15s cubic-bezier(.27,1,1,.9);
-    box-shadow: 2px 2px 2px #888888;
-
-}
-
-#calcButton:hover {
-    color: #000000;
-    background: #51c64f;
-    border: 1px solid #51c64f;
-    cursor: pointer;
-}
-
-#calcButton:active {
-    background: #ffffff;
-    border: 1px solid white;
-    color: #51c64f;
-}
-
-#calcButton:focus, #clearButton:focus, .form-control {
-    outline: 0;
-}
-
-#clearButton {
-    width: 76px;
-    height: 40px;
-    color: #CC0000;
-    border: 1px solid #434343;
-    background: #434343;
-    font-family: "Open Sans";
-  	font-weight: 500;
-  	font-size: 16px;
-    transition: all .15s cubic-bezier(.27,1,1,.9);
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px #888;
-}
-
-#clearButton:hover {
-    color:  #000000;
-    background: #CC0000;
-    border: 1px solid #CC0000;
-    cursor: pointer;
-}
-
-
-#clearButton:active {
-    background: #ffffff;
-    border: 1px solid white;
-    color: #CC0000;
-}
-
-.form-control {
-	width: 97px;
-	box-shadow: 1px 1px 1px #888;
-}
-
-.form-control:focus {
-	box-shadow: 2px 2px 2px #888;
-	border-color: #a0a0a0;
-}
-
-.form-control:hover {
-  border-color: #a0a0a0;
-}
-
-.btn {
-	width: 50px;
-	font-family: bold;
-	font-size: 20px;
-}
-
-
-.col-md-4 {
-	border-radius: 5px;
-}
-
-
-.inline {
-	display: inline-block;
-}
-
-
-.col-xs-4 {
-	text-align: left;
-}
-
-
-.inputGender {
-  opacity: 0;
-  width: 1px;
-  height: 1px;
-  visibility:visible;
-}
-
-.genLabel {
-  background-color: #FFFFFF;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  width: 38px;
-  height: 36px;
-  box-shadow: 1px 1px 1px #888;
-  transition: all .15s cubic-bezier(.27,1,1,.9);
-  visibility:visible;
-  padding-left: 1px;
-}
-
-.genSelected {
-  border-radius: 5px;
-  border: 1px solid #51c64f;
-  width: 38px;
-  height: 36px;
-  box-shadow: 1px 1px 1px #888;
-  transition: all .15s cubic-bezier(.27,1,1,.9);
-  background-color: #51c64f;
-  visibility:visible;
-  padding-left: 1px;
-}
-
-.genLabel:hover {
-  border: 1px solid #51c64f;
-  background-color: #51c64f;
-}
-
-.genLabel:active {
-  border: 1px solid #51c64f;
-  background-color: #9cf78a;
-}
-
-.genLabel > img {
-  padding-top: 2px;
-  padding-left: 3px;
-}
-
-.genSelected > img {
-  padding-top: 2px;
-  padding-left: 3px;
-}
 
 

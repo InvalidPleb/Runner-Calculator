@@ -14,6 +14,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main2.css">
     <link rel="stylesheet" href="styles/errHandling.css">
+    <link rel="stylesheet" href="styles/ageGradeMain.css">
     <!-- endbuild -->
   </head>
   <body ng-app="runnerCalcApp">
@@ -51,46 +52,47 @@
     </div>
 
     <div class="container-fluid">
-    </div>
+      
 
 
-    <div class="mainForm container">
-    <ul class="nav nav-tabs">
-      <!--
-      <li class="mainTabs" id="mainTab1"><a href="#/" class="tabTabs"><span class="tabText">Age-Grade</span></a></li>
-      <li class="mainTabs"><a href="#/altdens" class="tabTabs"><span class="tabText">Altitude Density</span></a></li>
-      <li class="mainTabs" id="mainTabLast"><a href="#/" class="tabTabs"><span class="tabText">Age-Grade</span></a></li>
-      -->
-    
-      <div class="tabRow" ng-controller="MainTabCtrl">
+      <div class="mainForm container">
+      <ul class="nav nav-tabs">
+        <!--
+        <li class="mainTabs" id="mainTab1"><a href="#/" class="tabTabs"><span class="tabText">Age-Grade</span></a></li>
+        <li class="mainTabs"><a href="#/altdens" class="tabTabs"><span class="tabText">Altitude Density</span></a></li>
+        <li class="mainTabs" id="mainTabLast"><a href="#/" class="tabTabs"><span class="tabText">Age-Grade</span></a></li>
+        -->
+      
+        <div class="tabRow" ng-controller="MainTabCtrl">
 
-        
-        <a href="#/" class="tabTabs">
-        <li class="tabRowLi" 
-          ng-click="toggleSelect0()" 
-          ng-class="{true: 'selected', false: 'tabRowLi'}[isSelected0]" 
-          ng-disabled="{{trackClick[0]}}" 
-          id="ageGradeTab">
-            <span class="tabText">Age-Grade</span>
-        </li>
-        </a>
-        <a href="/#/densalt" class="tabTabs">
-        <li class="tabRowLi" 
-          ng-click="toggleSelect1()" 
-          ng-class="{true: 'selected', false: 'tabRowLi'}[isSelected1]">
-            <span class="tabText">Density Altitude</span>
-        </li>
-        </a>
+          
+          <a href="#/" class="tabTabs">
+          <li class="tabRowLi" 
+            ng-click="toggleSelect0()" 
+            ng-class="{true: 'selected', false: 'tabRowLi'}[isSelected0]" 
+            ng-disabled="{{trackClick[0]}}" 
+            id="ageGradeTab">
+              <span class="tabText">Age-Grade</span>
+          </li>
+          </a>
+          <a href="/#/densalt" class="tabTabs">
+          <li class="tabRowLi" 
+            ng-click="toggleSelect1()" 
+            ng-class="{true: 'selected', false: 'tabRowLi'}[isSelected1]">
+              <span class="tabText">Density Altitude</span>
+          </li>
+          </a>
 
-        <li class="tabRowLi" ng-click="toggleSelect2()" ng-class="{true: 'selected', false: 'tabRowLi'}[isSelected2]">Another</li>
+          <li class="tabRowLi" ng-click="toggleSelect2()" ng-class="{true: 'selected', false: 'tabRowLi'}[isSelected2]">Another</li>
 
-        <li class = "tabRowLi" ng-click="toggleSelect3()" ng-class="{true: 'selected', false: 'tabRowLi'}[isSelected3]">One More</li>
+          <li class = "tabRowLi" ng-click="toggleSelect3()" ng-class="{true: 'selected', false: 'tabRowLi'}[isSelected3]">One More</li>
 
+        </div>
+      </ul>
       </div>
-    </ul>
-    </div>
-    <div class="container">
-    <div ng-view="" class="viewSwitch"></div>
+      <div class="container">
+      <div ng-view="" class="viewSwitch"></div>
+      </div>
     </div>
 
     <div class="footer">

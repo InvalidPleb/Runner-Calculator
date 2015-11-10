@@ -1,32 +1,43 @@
 <div class="ageGradeMain">
   <div class="ageGradeTitle">
       <div class="page-header">Age-Graded Calculator</div>
+      <div class="calcHeader">
+      <a><span id="shareText">SHARE</span><img src="/images/share46.png" alt="" width="24" height="24"></a>
+      <div id="socialMedia"></div>
+      </div>
   </div>
-  <div class="col-md-4">
+
+  <div class="ageGradeCalc container">
     <br>
+    <div class="row">
       <label class=".text-left"><span class="labelText">Age:</span></label>
       <span id="move1">
         <input type="text" class="form-control inline" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputAge()]" id="inputAge" maxlength="2" ng-model="inputAge">
       </span>
+    </div>
       <p></p>
+    <div class="row">
       <label class=".text-left"><span class="labelText">Event:</span></label>
       <span id="move2">
         <select ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
         <span>{{run}}</span>
       </span>
       <p></p>
-
-      <label class=".text-left"><span class="labelText">Time:</span></label>
-      <div class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
-        
-        <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" type="text" class="form-control inline" id="inputTime1" maxlength="2">
-        <span>:</span>
-        <input ng-change="updateInputTime(inputTime2)" ng-model="inputTime2" ng-focus="timeInput2Focus()" ng-blur="timeInput2Blur()" type="text" class="form-control inline" id="inputTime2" maxlength="2">
-        <span>:</span>
-        <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" type="text" class="form-control inline" id="inputTime3" maxlength="2">
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label class=".text-left"><span class="labelText">Time:</span></label>
+        <div class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
+          
+          <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" type="text" class="form-control inline" id="inputTime1" maxlength="2">
+          <span>:</span>
+          <input ng-change="updateInputTime(inputTime2)" ng-model="inputTime2" ng-focus="timeInput2Focus()" ng-blur="timeInput2Blur()" type="text" class="form-control inline" id="inputTime2" maxlength="2">
+          <span>:</span>
+          <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" type="text" class="form-control inline" id="inputTime3" maxlength="2">
+        </div>
       </div>
-      <div class="col-md-offset-0">
-
+    </div>
+    <div class="row">
       <p></p>
       <label class=".text-left"><span class="labelText">Gender:</span></label>
         <div class="btn-group">
@@ -44,14 +55,17 @@
           </div>
           </div>
         </div>
-      </div>
+    </div>
+    <div class="row">
       <p></p>
-      <input class= "col-md-offset-2" ng-click="calcButton()" type="button" id="calcButton" value="Calculate">
+      <input ng-click="calcButton()" type="button" id="calcButton" value="Calculate">
+    </div>
+    <div class="row">
       <p></p>
-      <input class= "col-md-offset-2" ng-click="clearButton()" type="button" id="clearButton" value="Clear">
-    <p class="lead">
-    </p>
+      <input ng-click="clearButton()" type="button" id="clearButton" value="Clear">
+    </div>
 </div>
+<!--
   <div class="col-md-4">
   <br>
     <h4>Your-age graded time is: {{outputAgeGrade}}</h4>
@@ -62,6 +76,7 @@
     <br>
   </div>
 </div>
+-->
 
 
 
