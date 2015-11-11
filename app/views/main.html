@@ -7,6 +7,12 @@
       </div>
   </div>
 
+  <div class="ageGradeTextLeft">
+    <p>
+    Yo son
+    </p>
+  </div>
+
   <div class="ageGradeCalc container">
     <br>
     <div class="row">
@@ -24,9 +30,9 @@
       </span>
       <p></p>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <label class=".text-left"><span class="labelText">Time:</span></label>
+    <div class="row allTimeInput">
+      
+        <span class="labelText">Time:</span>
         <div class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
           
           <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" type="text" class="form-control inline" id="inputTime1" maxlength="2">
@@ -35,7 +41,7 @@
           <span>:</span>
           <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" type="text" class="form-control inline" id="inputTime3" maxlength="2">
         </div>
-      </div>
+      
     </div>
     <div class="row">
       <p></p>
