@@ -271,7 +271,6 @@ angular.module('runnerCalcApp')
 	    	if ($scope.genCheck === undefined) {
 
 	    		$scope.genCheckErr = true;
-	    		console.log($scope.genCheckErr);
 	    	} else {
 	    		$scope.genCheckErr = false;
 	    	}
@@ -290,7 +289,7 @@ angular.module('runnerCalcApp')
 	  		$scope.inputTime3 = '00';
 	  		$scope.inputTimeErr = false;
 	  		$scope.genCheckErr = false;
-	  		
+
 
 	  	};
 
