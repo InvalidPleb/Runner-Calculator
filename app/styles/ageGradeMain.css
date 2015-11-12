@@ -1,19 +1,14 @@
 .ageGradeMain, .altDensMain {
 	min-height: 900px;
-  background: #eeeeee; /* Old browsers */
-  background: -moz-linear-gradient(top, #eeeeee 32%, #d67577 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #eeeeee 32%,#d67577 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #eeeeee 32%,#d67577 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#d67577',GradientType=0 );
+  background: #FFF;
 	border-radius: 0px 16px 16px 16px;
   margin-top: -1px;
-  box-shadow: 1px 1px 1px #888888;
-  border: 1px solid #cd1553;
+  box-shadow: 2px 2px 2px #888888;
 
 }
 
 .ageGradeTitle {
-  background-color: #cd1553;
+  background-color: rgba(255, 87, 34, 1);
   width: 100%;
   height: 50px;
   border-radius: 0px 16px 0px 0px;
@@ -24,7 +19,7 @@
 
 
 .densAltTitle {
-  background-color: #cd1553;
+  background-color: rgba(255, 87, 34, 1);
   width: 100%;
   height: 50px;
   border-radius: 0px 16px 0px 0px;
@@ -39,8 +34,14 @@
   font-size: 20px;
   color: #FFF;
   text-align: center;
-  margin-left: 250px;
+  margin-left: 300px;
+  border: 0px;
 
+}
+
+.ageGradeTextLeft {
+  padding: 10px 10px 10px 10px;
+  background-color: rgba(255, 112, 67, 0.8);
 }
 
 .ageGradeCalc {
@@ -167,14 +168,9 @@
   font-size: 20px;
 }
 
-
-
-
 .inline {
   display: inline-block;
 }
-
-
 
 .inputGender {
   opacity: 0;
