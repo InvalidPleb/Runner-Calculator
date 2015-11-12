@@ -1,13 +1,13 @@
 <div class="ageGradeMain">
-  <div class="ageGradeTitle">
-      <div class="page-header">Age-Graded Calculator</div>
-      <div class="calcHeader">
+  <div class="row ageGradeTitle">
+      <div class="page-header col-md-4">Age-Graded Calculator</div>
+      <div class="calcHeader col-md-4">
       <a><span id="shareText">SHARE</span><img src="/images/share46.png" alt="" width="24" height="24"></a>
       <div id="socialMedia"></div>
       </div>
   </div>
 
-  <div class="ageGradeTextLeft">
+  <div class="ageGradeTextLeft col-md-4">
     <h4>
       What is Age-Grading?
     </h4>
@@ -33,13 +33,13 @@
       <br>
       Some aging runners who have been enjoyed the sport for many years notice a slow down of their times, which can sometimes be demoralizing when it really shouldn't be. Age-grading can show runners that a slower time doesn't necessarily point to worse performance or technique, but instead normal aging processes that can't be helped. 
       <br>
-
     </p>
-
 
   </div>
 
-  <div class="ageGradeCalc container">
+  
+
+  <div class="ageGradeCalc container col-md-4">
     <br>
     <div class="row">
       <label class=".text-left"><span class="labelText">Age:</span></label>
@@ -59,16 +59,17 @@
     <div class="row allTimeInput">
       
         <span class="labelText">Time:</span>
-        <div class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
+        <span class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
           
           <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" type="text" class="form-control inline" id="inputTime1" maxlength="2">
           <span>:</span>
           <input ng-change="updateInputTime(inputTime2)" ng-model="inputTime2" ng-focus="timeInput2Focus()" ng-blur="timeInput2Blur()" type="text" class="form-control inline" id="inputTime2" maxlength="2">
           <span>:</span>
           <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" type="text" class="form-control inline" id="inputTime3" maxlength="2">
-        </div>
-      
+        </span>
+        <span class="labelTimeFormat">hh:mm:ss</span>
     </div>
+
     <div class="row">
       <p></p>
       <label class=".text-left"><span class="labelText">Gender:</span></label>
@@ -84,6 +85,7 @@
             <label class="genLabel" for="femaleCheck" ng-class="{Male: 'genLabel', Female: 'genSelected'}[genCheck]"><img src="/images/female128.png" alt="♀" width="32" height="32">
                 <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model = "genCheck" value="Female" id="femaleCheck"/>
             </label>
+
           </div>
           </div>
         </div>
@@ -97,8 +99,7 @@
       <input ng-click="clearButton()" type="button" id="clearButton" value="Clear">
     </div>
 </div>
-<!--
-  <div class="col-md-4">
+ <div class="col-md-4">
   <br>
     <h4>Your-age graded time is: {{outputAgeGrade}}</h4>
     <input type="text" class="form-control ng-hide" maxlength="2" ng-model="outputAgeGrade">
@@ -107,8 +108,9 @@
     <input type="text" class="form-control ng-hide" maxlength="2" ng-model="outputAgePercent">
     <br>
   </div>
+
 </div>
--->
+
 
 
 

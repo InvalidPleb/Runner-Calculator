@@ -18,25 +18,28 @@
 .inputTimeErrInvis {
 	position: relative;
 	background-color: rgba(0, 0, 0, 0);
-	width: 158px;
-	height: 38px;
 	z-index: 1;
-	margin-left: 59px;
+	margin-left: 0px;
 	margin-top: -30px;
+	padding: 9px 0px 10px 0px;
 	border-radius: 5px;
 	border: 1px solid #CC0000;
 	visibility:collapse;
 
 }
 
+.yo {
+	border: 1px solid #cc0000;
+}
+
 .inputTimeErr {
 	position: relative;
 	background-color: rgba(0, 0, 0, 0);
-	width: 158px;
-	height: 38px;
 	z-index: 1;
-	margin-left: 59px;
+	margin-left: 0px;
 	margin-top: -30px;
+	padding: 9px 0px 10px 0px;
+	padding-right: 0px;
 	border-radius: 5px;
 	border: 1px solid #CC0000;
 	visibility:visible;
@@ -44,17 +47,15 @@
 
 
 .inputTimeErr > input, .inputTimeErrInvis > input {
-	margin-left: 1px;
-	margin-top: 0.5px;
 	visibility:visible;
-
 }
 
 .inputTimeErr > span, .inputTimeErrInvis > span {
-	font-family: "Open Sans";
+	font-family: "Helvetica";
   	font-weight: 500;
   	font-size: 18px;
 	visibility:visible;
+
 }
 
 .genCheckErr {

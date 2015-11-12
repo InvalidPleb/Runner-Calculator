@@ -290,6 +290,7 @@ angular.module('runnerCalcApp')
 	  		$scope.inputTime3 = '00';
 	  		$scope.inputTimeErr = false;
 	  		$scope.genCheckErr = false;
+	  		
 
 	  	};
 
