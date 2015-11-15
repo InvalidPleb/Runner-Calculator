@@ -59,11 +59,12 @@
 
 }
 
-.ng-hide-add {
+.textShown {
+  
   animation: 0.5s lightSpeedIn ease
 }
 
-.ng-hide-remove {
+.textHidden {
   animation:0.5s lightSpeedOut ease
 }
 
@@ -121,12 +122,11 @@
     font-weight: 500;
     font-size: 16px;
     border-radius: 5px;
-    animation: 0.5s lightSpeedIn ease 
+    transition: all .15s cubic-bezier(.27,1,1,.9);
     box-shadow: 2px 2px 2px #888888;
 
 }
 
-/* transition: all .15s cubic-bezier(.27,1,1,.9); */
 #calcButton:hover {
     color: #000000;
     background: #51c64f;
@@ -249,65 +249,4 @@
 
 .allTimeInput {
   
-}
-
-
-
-/* ---------- */ 
-
-
-.lightSpeedIn {
-  -webkit-animation-name: lightSpeedIn;
-  animation-name: lightSpeedIn;
-  -webkit-animation-timing-function: ease-out;
-  animation-timing-function: ease-out;
-}
-
-@-webkit-keyframes lightSpeedOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    -webkit-transform: translate3d(100%, 0, 0) skewX(30deg);
-    transform: translate3d(100%, 0, 0) skewX(30deg);
-    opacity: 0;
-  }
-}
-
-@keyframes lightSpeedOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    -webkit-transform: translate3d(100%, 0, 0) skewX(30deg);
-    transform: translate3d(100%, 0, 0) skewX(30deg);
-    opacity: 0;
-  }
-}
-
-.lightSpeedOut {
-  -webkit-animation-name: lightSpeedOut;
-  animation-name: lightSpeedOut;
-  -webkit-animation-timing-function: ease-in;
-  animation-timing-function: ease-in;
-}
-
-@-webkit-keyframes rotateIn {
-  from {
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    -webkit-transform: rotate3d(0, 0, 1, -200deg);
-    transform: rotate3d(0, 0, 1, -200deg);
-    opacity: 0;
-  }
-
-  to {
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    -webkit-transform: none;
-    transform: none;
-    opacity: 1;
-  }
 }

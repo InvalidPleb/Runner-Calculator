@@ -15,7 +15,7 @@
 
   </div>
 
-  <div class="ageGradeTextLeft col-md-4" ng-show="!hideTextCheck">
+  <div class="ageGradeTextLeft col-md-4" ng-class="{true: 'ageGradeTextLeft col-md-4 animated bounceOutLeft', false: 'ageGradeTextLeft col-md-4 animated bounceInLeft'}[hideTextCheck]" >
     
     <div>
       <h4>
