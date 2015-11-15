@@ -1,55 +1,66 @@
 <div class="ageGradeMain">
   <div class="row ageGradeTitle">
-      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        
+        <label class="stackButton" for="hideTextCheck" >
+          <input type="checkbox" class="hideAgeGradeRadio" ng-model="hideTextCheck" id="hideTextCheck" ng-click="stackButton()">
+        </label>
+      </div>
       <div class="page-header col-md-4">Age-Graded Calculator</div>
       <div class="socialMedia col-md-4">
-      <a><span id="shareText">SHARE</span><img src="/images/share46.png" alt="" width="24" height="24"></a>
+        <a><span id="shareText">SHARE</span><img src="/images/share46.png" alt="" width="24" height="24">
+        </a>
       </div>
-  </div>
 
-  <div class="ageGradeTextLeft col-md-4">
-    <h4>
-      What is Age-Grading?
-    </h4>
-    <p>
-      Age-grading is a method that runners use to compare their times with other runners across all ages. 
-    </p>
-    <p>
-      It's just a fact that as we age into our mid to late 30's and beyond, our running times (as a group) slow down. This isn't necessarily the case for individuals, who can definitely improve upon their times from younger days. But in groups of scores, these differences begin to be more clear. For example, if a 21 year old and a 71 year old both ran a 10k in an hour, it wouldn't make much sense to say that they performed on the same level. That's why age-grading is used to <i>more</i> fairly compare times between age groups. 
-    </p>
-    <h4>
-      How does it work?
-    </h4>
-    <p>
-      "Age grading systems quantify exactly where you stand relative to the predicted all-time best for all runners of your age." - RunnersConnect.com
-      <br>
-      <br>
-      What that quote means is that when you age grade your score, you are dividing it by a time that is <i>close to</i> the world record for your age and running event. The result of this division is a running time that equalizes the differences between age groups by using the world record setters as a benchmark of the rate at which people slow down as they age. It's certainly not a perfect measure, but it gives runners a better idea of what a normal rate of slowing down might be for them.
-      <br>
-    </p>
-    <h4>What use is age-grading for me?</h4>
-    <p>
-      Many runners use age-grading as a way to compare their times with other runners regardless of their age or gender (yes, age-grading controls for differences in male and female times as well!). 
-      <br>
-      Some aging runners who have been enjoyed the sport for many years notice a slow down of their times, which can sometimes be demoralizing when it really shouldn't be. Age-grading can show runners that a slower time doesn't necessarily point to worse performance or technique, but instead normal aging processes that can't be helped. 
-      <br>
-    </p>
 
   </div>
+
+  <div class="ageGradeTextLeft col-md-4" ng-show="!hideTextCheck">
+    
+    <div>
+      <h4>
+        What is Age-Grading?
+      </h4>
+      <p>
+        Age-grading is a method that runners use to compare their times with other runners across all ages. 
+      </p>
+      <p>
+        It's just a fact that as we age into our mid to late 30's and beyond, our running times (as a group) slow down. This isn't necessarily the case for individuals, who can definitely improve upon their times from younger days. But in groups of scores, these differences begin to be more clear. For example, if a 21 year old and a 71 year old both ran a 10k in an hour, it wouldn't make much sense to say that they performed on the same level. That's why age-grading is used to <i>more</i> fairly compare times between age groups. 
+      </p>
+      <h4>
+        How does it work?
+      </h4>
+      <p>
+        "Age grading systems quantify exactly where you stand relative to the predicted all-time best for all runners of your age." - RunnersConnect.com
+        <br>
+        <br>
+        What that quote means is that when you age grade your score, you are dividing it by a time that is <i>close to</i> the world record for your age and running event. The result of this division is a running time that equalizes the differences between age groups by using the world record setters as a benchmark of the rate at which people slow down as they age. It's certainly not a perfect measure, but it gives runners a better idea of what a normal rate of slowing down might be for them.
+        <br>
+      </p>
+      <h4>What use is age-grading for me?</h4>
+      <p>
+        Many runners use age-grading as a way to compare their times with other runners regardless of their age or gender (yes, age-grading controls for differences in male and female times as well!). 
+        <br>
+        Some aging runners who have been enjoyed the sport for many years notice a slow down of their times, which can sometimes be demoralizing when it really shouldn't be. Age-grading can show runners that a slower time doesn't necessarily point to worse performance or technique, but instead normal aging processes that can't be helped. 
+        <br>
+      </p>
+    </div>
+  </div>
+  
 
   
 
   <div class="ageGradeCalc container col-md-4">
     <br>
     <div class="row">
-      <label class=".text-left"><span class="labelText">Age:</span></label>
+      <span class="labelText">Age:</span>
       <span id="move1">
         <input type="text" class="form-control inline" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputAge()]" id="inputAge" maxlength="2" ng-model="inputAge">
       </span>
     </div>
       <p></p>
     <div class="row">
-      <label class=".text-left"><span class="labelText">Event:</span></label>
+      <span class="labelText">Event:</span>
       <span id="move2">
         <select ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
         <span>{{run}}</span>
@@ -72,7 +83,7 @@
 
     <div class="row">
       <p></p>
-      <label class=".text-left"><span class="labelText">Gender:</span></label>
+      <span class="labelText">Gender:</span></label>
         <div class="btn-group">
         <!-- <input type="text" class= "form-control inline" ng-class="{'form-control inline formErr' : inputAge=='','form-control inline': inputAge }" id="inputAge" maxlength="2" ng-model="inputAge"> -->
 

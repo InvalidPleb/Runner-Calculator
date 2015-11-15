@@ -139,6 +139,10 @@ angular.module('runnerCalcApp')
 		    }
 		];
 
+		$scope.changeHideTextCheck = function() {
+			$scope.hideTextCheck = !$scope.hideTextCheck
+		}
+
 		$scope.updateInputAge = function() {
 
 			if ($scope.inputAge === "") {
@@ -215,6 +219,15 @@ angular.module('runnerCalcApp')
 	    	} else {
 	    		$scope.inputTimeErr = false;
 	    	}
+	  	};
+
+	  	$scope.hideTextCheck = false;
+	  	var textVisible = false;
+
+	  	$scope.stackButton = function (){
+
+	  		textVisible = !textVisible
+
 	  	};
 
 	  	$scope.calcButton = function (){
