@@ -164,6 +164,8 @@ angular.module('runnerCalcApp')
 
 	  	$scope.updateGenCheck = function() {
 
+	  		console.log($scope.genCheck);
+
 	  		if ($scope.genCheck === undefined) {
 	    		$scope.genCheckErr = true;
 	    	} else {

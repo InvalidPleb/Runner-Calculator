@@ -9,6 +9,10 @@
   	visibility:visible;
 }
 
+#inputTime3 {
+	margin-right: -3px;
+}
+
 .formErr, .formErr:active, .formErr:focus {
 	border-color: #CC0000;
 }
@@ -16,10 +20,11 @@
 
 
 .inputTimeErrInvis {
+
 	position: relative;
 	background-color: rgba(0, 0, 0, 0);
 	z-index: 1;
-	margin-left: 0px;
+	margin-left: 16px;
 	margin-top: -30px;
 	padding: 9px 0px 10px 0px;
 	border-radius: 5px;
@@ -36,7 +41,7 @@
 	position: relative;
 	background-color: rgba(0, 0, 0, 0);
 	z-index: 1;
-	margin-left: 0px;
+	margin-left: 17px;
 	margin-top: -30px;
 	padding: 9px 0px 10px 0px;
 	padding-right: 0px;

@@ -1,8 +1,8 @@
 .ageGradeMain, .altDensMain {
 	min-height: 900px;
   background: #FFF;
-	border-radius: 0px 16px 16px 16px;
-  margin-top: -1px;
+	border-radius: 0px 16px 0px 0px;
+  margin-top: -2px;
   box-shadow: 2px 2px 2px #888888;
   overflow:auto;
 
@@ -21,7 +21,7 @@
 .densAltTitle {
   background-color: rgba(255, 87, 34, 1);
   width: 100%;
-  height: 50px;
+  height: 80px;
   border-radius: 0px 16px 0px 0px;
   display: flex;
   align-items: center;
@@ -52,20 +52,20 @@
   box-shadow: 1px 2px 2px #888;
 }
 
+.hideAgeGradeRadio {
+  opacity: 0;
+}
 .stackButton {
-  width: 50px;
-  height: 50px;
-  background-color: #FFF;
-
+  background-image: url('/images/menu24.png');
+  height: 24px;
+  width: 24px;
+  margin-top: 60px;
 }
 
-.textShown {
-  
-  animation: 0.5s lightSpeedIn ease
-}
-
-.textHidden {
-  animation:0.5s lightSpeedOut ease
+.stackButton:hover{
+  background-image: url('/images/menu24Grey.png');
+  height: 24px;
+  width: 24px;
 }
 
 
@@ -110,10 +110,12 @@
   color: #ffffff;
 }
 
-
+.allCalcBtns {
+  padding-left: 62px;
+}
 
 #calcButton {
-    width: 152px;
+    width: 153px;
     height: 40px;
     color: #51c64f;
     border: 1px solid #434343;
@@ -153,6 +155,7 @@
     font-family: "Open Sans";
     font-weight: 500;
     font-size: 16px;
+    margin-top: 5px;
     transition: all .15s cubic-bezier(.27,1,1,.9);
     border-radius: 5px;
     box-shadow: 2px 2px 2px #888;
@@ -170,6 +173,10 @@
     background: #ffffff;
     border: 1px solid white;
     color: #CC0000;
+}
+
+.labelTimeFormat {
+  margin-left: 5px;
 }
 
 .form-control {
@@ -196,13 +203,65 @@
   display: inline-block;
 }
 
+.allGenInput {
+  margin-top: 10px;
+}
+
+.genLabel {
+  width: 75px;
+  height: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.genLabel:hover {
+  background: #51c64f;
+}
+
+.genSelected {
+  width: 75px;
+  height: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #51c64f;
+}
+
+.inputGender {
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+
+}
+
+#genBtnTextM {
+  padding-left: 15px;
+}
+
+#genBtnTextF {
+  padding-left: 7px;
+}
+
+.justGenBtns {
+  margin-left: -1px;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
 .inputGender {
   opacity: 0;
   width: 1px;
   height: 1px;
   visibility:visible;
 }
-
 .genLabel {
   background-color: #FFFFFF;
   border-radius: 5px;
@@ -247,6 +306,4 @@
   padding-left: 3px;
 }
 
-.allTimeInput {
-  
-}
+*/

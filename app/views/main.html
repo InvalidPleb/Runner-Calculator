@@ -1,7 +1,6 @@
 <div class="ageGradeMain">
-  <div class="row ageGradeTitle">
+  <div class="row ageGradeTitle col-lg-12">
       <div class="col-md-4">
-        
         <label class="stackButton" for="hideTextCheck" >
           <input type="checkbox" class="hideAgeGradeRadio" ng-model="hideTextCheck" id="hideTextCheck" ng-click="stackButton()">
         </label>
@@ -12,10 +11,9 @@
         </a>
       </div>
 
-
   </div>
 
-  <div class="ageGradeTextLeft col-md-4" ng-class="{true: 'ageGradeTextLeft col-md-4 animated bounceOutLeft', false: 'ageGradeTextLeft col-md-4 animated bounceInLeft'}[hideTextCheck]" >
+  <div ng-class="{true: 'ageGradeTextLeft col-md-4 animated slideOutLeft', false: 'ageGradeTextLeft col-md-4 animated slideInLeft'}[hideTextCheck]">
     
     <div>
       <h4>
@@ -63,11 +61,10 @@
       <span class="labelText">Event:</span>
       <span id="move2">
         <select ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
-        <span>{{run}}</span>
       </span>
       <p></p>
     </div>
-    <div class="row allTimeInput">
+    <div class="allTimeInput row">
       
         <span class="labelText">Time:</span>
         <span class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
@@ -81,35 +78,54 @@
         <span class="labelTimeFormat">hh:mm:ss</span>
     </div>
 
+    <div class="allGenInput row">
+    <span class="labelText">Gender:</span>
+      <span class="justGenBtns">
+        <span>
+          <label class="genLabel" ng-class="{Male: 'genSelected', Female: 'genLabel'}[genCheck]">
+            <input type="radio" class="inputGender" ng-change="updateGenCheck(maleCheck)" ng-model="genCheck" value="Male" id="maleCheck">
+            <span id="genBtnTextM">Male</span>
+          </label>
+        </span>
+        <span>
+          <label class="genLabel" ng-class="{Male: 'genLabel', Female: 'genSelected'}[genCheck]">
+            <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model="genCheck" value="Female" id="femaleCheck">
+            <span id="genBtnTextF">Female</span>
+          </label>
+        </span>
+      </span>
+    </div>
+    
+    <!--
     <div class="row">
       <p></p>
-      <span class="labelText">Gender:</span></label>
+      <span class="labelText">Gender:</span>
         <div class="btn-group">
-        <!-- <input type="text" class= "form-control inline" ng-class="{'form-control inline formErr' : inputAge=='','form-control inline': inputAge }" id="inputAge" maxlength="2" ng-model="inputAge"> -->
-
           <div ng-class="{'genCheckErr' : genCheckErr, 'genCheckErrInvis' : !genCheckErr}" ng-model="yo">
-          <!-- <div ng-class="{true: 'genCheckErr', false: 'genCheckErrInvis'}[genCheckErr]" ng-model="genCheckErr"> -->
-            <div>
             <label class="genLabel" for="maleCheck" ng-class="{Male: 'genSelected', Female: 'genLabel'}[genCheck]"><img src="/images/male154.png" alt="♂" width="32" height="32">
                 <input type="radio" class="inputGender" ng-change="updateGenCheck(maleCheck)" ng-model="genCheck" value="Male" id="maleCheck"/>
             </label>
             <label class="genLabel" for="femaleCheck" ng-class="{Male: 'genLabel', Female: 'genSelected'}[genCheck]"><img src="/images/female128.png" alt="♀" width="32" height="32">
                 <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model = "genCheck" value="Female" id="femaleCheck"/>
             </label>
-
-          </div>
           </div>
         </div>
     </div>
-    <div class="row">
-      <p></p>
-      <input ng-click="calcButton()" type="button" id="calcButton" value="Calculate">
+
+    -->
+    <div class="allCalcBtns">
+      <div class="row">
+        <input ng-click="calcButton()" type="button" id="calcButton" value="Calculate">
+      </div>
+      <div class="row">
+        <input ng-click="clearButton()" type="button" id="clearButton" value="Clear">
+      </div>
     </div>
-    <div class="row">
-      <p></p>
-      <input ng-click="clearButton()" type="button" id="clearButton" value="Clear">
-    </div>
+
+
 </div>
+
+
  <div class="col-md-4">
   <br>
     <h4>Your-age graded time is: {{outputAgeGrade}}</h4>
