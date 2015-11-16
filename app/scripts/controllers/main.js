@@ -63,6 +63,7 @@ var womenEventOptions = {
 };
 
 
+
 function numRound (value,dec){
 
     value=Math.floor(value * dec + 0.05) / dec;
@@ -230,6 +231,9 @@ angular.module('runnerCalcApp')
 
 	  	};
 
+
+	  	$('.errWarning').hide();
+
 	  	$scope.calcButton = function (){
 
 	  		var timeInput1 = parseInt($scope.inputTime1, 10);
@@ -289,6 +293,18 @@ angular.module('runnerCalcApp')
 	    	}
 
 	    	
+	    	
+	    	if ($scope.genCheckErr === undefined || $scope.inputTimeErr === true || 
+	    		$scope.inputDist === "" || $scope.inputAge === "") {
+
+	    		$('.errWarning').show();
+	    		
+	    	} else {
+
+	    		$('.errWarning').hide();
+	    	}
+
+	    	
 
 
 	  	};
@@ -304,6 +320,8 @@ angular.module('runnerCalcApp')
 	  		$scope.inputTime3 = '00';
 	  		$scope.inputTimeErr = false;
 	  		$scope.genCheckErr = false;
+	  		$('.errWarning').hide();
+
 
 
 	  	};

@@ -80,18 +80,20 @@
 
     <div class="allGenInput row">
     <span class="fontForText">Gender:</span>
-      <span class="justGenBtns">
-        <span>
-          <label class="genLabel" ng-class="{Male: 'genSelected animated bounceIn', Female: 'genLabel'}[genCheck]">
-            <input type="radio" class="inputGender" ng-change="updateGenCheck(maleCheck)" ng-model="genCheck" value="Male" id="maleCheck">
-            <span class="fontForText" id="genBtnTextM">Male</span>
-          </label>
-        </span>
-        <span>
-          <label class="genLabel" ng-class="{Male: 'genLabel', Female: 'genSelected animated bounceIn'}[genCheck]">
-            <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model="genCheck" value="Female" id="femaleCheck">
-            <span class="fontForText" id="genBtnTextF">Female</span>
-          </label>
+      <span class="" ng-class="{'genCheckErr' : genCheckErr, 'genCheckErrInvis' : !genCheckErr}">
+        <span class="justGenBtns">
+          <span>
+            <label class="genLabel" ng-class="{Male: 'genSelected animated bounceIn', Female: 'genLabel'}[genCheck]">
+              <input type="radio" class="inputGender" ng-change="updateGenCheck(maleCheck)" ng-model="genCheck" value="Male" id="maleCheck">
+              <span class="fontForText" id="genBtnTextM">Male</span>
+            </label>
+          </span>
+          <span>
+            <label class="genLabel" ng-class="{Male: 'genLabel', Female: 'genSelected animated bounceIn'}[genCheck]">
+              <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model="genCheck" value="Female" id="femaleCheck">
+              <span class="fontForText" id="genBtnTextF">Female</span>
+            </label>
+          </span>
         </span>
       </span>
     </div>
@@ -124,6 +126,9 @@
       </div>
     </div>
 
+    <div class="errWarning">
+      <img src="Images/errWarning.png" alt="Oops! You are missing some info above" width="228" height="80">
+    </div>
 
 </div>
 

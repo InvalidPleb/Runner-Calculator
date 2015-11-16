@@ -64,25 +64,19 @@
 }
 
 .genCheckErr {
-	position: relative;
-	background-color: rgba(0, 0, 0, 0);
-	width: 83px;
-	height: 39px;
-	z-index: 1;
-	border-radius: 5px;
-	border: 1px solid #CC0000;
+	margin-left: -1px;
+  	border: 1px solid #CC0000;
+  	border-radius: 5px;
+  	padding: 3px 0px 6px 0px;
 	visibility: visible;
 
 
 }
 
 .genCheckErrInvis {
-	position: relative;
-	background-color: rgba(0, 0, 0, 0);
-	width: 83px;
-	height: 39px;
-	z-index: 1;
-	border-radius: 5px;
-	border: 1px solid #CC0000;
+	margin-left: -1px;
+  	border: 1px solid #CC0000;
+  	border-radius: 5px;
+  	padding: 3px 0px 6px 0px;
 	visibility: collapse;
 }
