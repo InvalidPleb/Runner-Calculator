@@ -5,15 +5,15 @@
           <input type="checkbox" class="hideAgeGradeRadio" ng-model="hideTextCheck" id="hideTextCheck" ng-click="stackButton()">
         </label>
       </div>
-      <div class="page-header col-md-4">Age-Graded Calculator</div>
+      <div class="page-header col-md-4 fontForText">Age-Graded Calculator</div>
       <div class="socialMedia col-md-4">
-        <a><span id="shareText">SHARE</span><img src="/images/share46.png" alt="" width="24" height="24">
+        <a><span class="fontForText" id="shareText">SHARE</span><img src="/images/share46.png" alt="" width="24" height="24">
         </a>
       </div>
 
   </div>
 
-  <div ng-class="{true: 'ageGradeTextLeft col-md-4 animated slideOutLeft', false: 'ageGradeTextLeft col-md-4 animated slideInLeft'}[hideTextCheck]">
+  <div ng-class="{true: 'ageGradeTextLeft col-md-4 animated slideOutLeft', false: 'ageGradeTextLeft col-md-4 animated slideInLeft'}[hideTextCheck]" ng-show="!hideTextCheck">
     
     <div>
       <h4>
@@ -51,14 +51,14 @@
   <div class="ageGradeCalc container col-md-4">
     <br>
     <div class="row">
-      <span class="labelText">Age:</span>
+      <span class="fontForText">Age:</span>
       <span id="move1">
         <input type="text" class="form-control inline" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputAge()]" id="inputAge" maxlength="2" ng-model="inputAge">
       </span>
     </div>
       <p></p>
     <div class="row">
-      <span class="labelText">Event:</span>
+      <span class="fontForText">Event:</span>
       <span id="move2">
         <select ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
       </span>
@@ -66,7 +66,7 @@
     </div>
     <div class="allTimeInput row">
       
-        <span class="labelText">Time:</span>
+        <span class="fontForText">Time:</span>
         <span class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
           
           <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" type="text" class="form-control inline" id="inputTime1" maxlength="2">
@@ -79,7 +79,7 @@
     </div>
 
     <div class="allGenInput row">
-    <span class="labelText">Gender:</span>
+    <span class="fontForText">Gender:</span>
       <span class="justGenBtns">
         <span>
           <label class="genLabel" ng-class="{Male: 'genSelected', Female: 'genLabel'}[genCheck]">
@@ -115,10 +115,10 @@
     -->
     <div class="allCalcBtns">
       <div class="row">
-        <input ng-click="calcButton()" type="button" id="calcButton" value="Calculate">
+        <input ng-click="calcButton()" type="button" class="fontForText" id="calcButton" value="Calculate">
       </div>
       <div class="row">
-        <input ng-click="clearButton()" type="button" id="clearButton" value="Clear">
+        <input ng-click="clearButton()" type="button" class="fontForText" id="clearButton" value="Clear">
       </div>
     </div>
 

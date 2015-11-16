@@ -29,9 +29,6 @@
 }
 
 .ageGradeTitle > .page-header, .densAltTitle > .page-header {
-  font-family: "Open Sans";
-  font-weight: 300;
-  font-size: 20px;
   color: #FFF;
   text-align: center;
   border: 0px;
@@ -41,8 +38,10 @@
 
 }
 
-.socialMedia {
-  padding: 35px 0px 0px 250px;
+.fontForText {
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .ageGradeTextLeft {
@@ -81,25 +80,17 @@
 .calcHeader > img {
 }
 
+.socialMedia {
+  padding: 35px 0px 0px 250px;
+}
+
 #shareText {
   color: #FFF;
-  font-family: "Open Sans";
-  font-weight: 300;
-  font-size: 12px;
+  text-decoration: none;
 }
 
 
 /* Calc Style */
-
-.row {
-  min-width: 500px;
-}
-
-.labelText {
-  font-family: "Open Sans";
-  font-weight: 500;
-  font-size: 16px;
-}
 
 .btn-secondary {
   background-color: #ededed;
@@ -120,9 +111,6 @@
     color: #51c64f;
     border: 1px solid #434343;
     background: #434343;
-    font-family: "Open Sans";
-    font-weight: 500;
-    font-size: 16px;
     border-radius: 5px;
     transition: all .15s cubic-bezier(.27,1,1,.9);
     box-shadow: 2px 2px 2px #888888;
@@ -152,9 +140,6 @@
     color: #CC0000;
     border: 1px solid #434343;
     background: #434343;
-    font-family: "Open Sans";
-    font-weight: 500;
-    font-size: 16px;
     margin-top: 5px;
     transition: all .15s cubic-bezier(.27,1,1,.9);
     border-radius: 5px;
