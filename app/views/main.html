@@ -82,15 +82,15 @@
     <span class="fontForText">Gender:</span>
       <span class="justGenBtns">
         <span>
-          <label class="genLabel" ng-class="{Male: 'genSelected', Female: 'genLabel'}[genCheck]">
+          <label class="genLabel" ng-class="{Male: 'genSelected animated bounceIn', Female: 'genLabel'}[genCheck]">
             <input type="radio" class="inputGender" ng-change="updateGenCheck(maleCheck)" ng-model="genCheck" value="Male" id="maleCheck">
-            <span id="genBtnTextM">Male</span>
+            <span class="fontForText" id="genBtnTextM">Male</span>
           </label>
         </span>
         <span>
-          <label class="genLabel" ng-class="{Male: 'genLabel', Female: 'genSelected'}[genCheck]">
+          <label class="genLabel" ng-class="{Male: 'genLabel', Female: 'genSelected animated bounceIn'}[genCheck]">
             <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model="genCheck" value="Female" id="femaleCheck">
-            <span id="genBtnTextF">Female</span>
+            <span class="fontForText" id="genBtnTextF">Female</span>
           </label>
         </span>
       </span>
@@ -110,15 +110,17 @@
             </label>
           </div>
         </div>
-    </div>
 
+        ng-class="{Male: 'genLabel', Female: 'genSelected animated rubberBand'}[genCheck]"
+    </div>
     -->
+
     <div class="allCalcBtns">
       <div class="row">
-        <input ng-click="calcButton()" type="button" class="fontForText" id="calcButton" value="Calculate">
+        <input ng-click="calcButton()" type="button" class="calcButton fontForText" value="Calculate">
       </div>
       <div class="row">
-        <input ng-click="clearButton()" type="button" class="fontForText" id="clearButton" value="Clear">
+        <input ng-click="clearButton()" type="button" class="clearButton fontForText" value="Clear">
       </div>
     </div>
 
