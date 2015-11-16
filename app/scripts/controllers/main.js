@@ -140,17 +140,28 @@ angular.module('runnerCalcApp')
 		    }
 		];
 
+		var errWarning = $('.errWarning');
+	  	errWarning.hide();
+
+	  	
+
+		
+
 		$scope.changeHideTextCheck = function() {
-			$scope.hideTextCheck = !$scope.hideTextCheck
-		}
+			$scope.hideTextCheck = !$scope.hideTextCheck;
+		};
 
 		$scope.updateInputAge = function() {
 
 			if ($scope.inputAge === "") {
 				return true;
 			} else {
+				hideErrWhenFilled();
 				return false;
+
 			}
+
+			
 	  	};
 
 	  	$scope.updateInputDist = function() {
@@ -158,6 +169,7 @@ angular.module('runnerCalcApp')
 	  		if ($scope.inputDist === "") {
 				return true;
 			} else {
+				hideErrWhenFilled();
 				return false;
 			}
 
@@ -168,6 +180,7 @@ angular.module('runnerCalcApp')
 	  		if ($scope.genCheck === undefined) {
 	    		$scope.genCheckErr = true;
 	    	} else {
+	    		hideErrWhenFilled();
 	    		$scope.genCheckErr = false;
 	    	}
 
@@ -218,6 +231,7 @@ angular.module('runnerCalcApp')
 	  		if (parseInt($scope.inputTime1 + $scope.inputTime2 + $scope.inputTime3) === 0) {
 	  			$scope.inputTimeErr = true;
 	    	} else {
+	    		hideErrWhenFilled();
 	    		$scope.inputTimeErr = false;
 	    	}
 	  	};
@@ -227,12 +241,15 @@ angular.module('runnerCalcApp')
 
 	  	$scope.stackButton = function (){
 
-	  		textVisible = !textVisible
+	  		textVisible = !textVisible;
 
 	  	};
 
+	  	var hideErrWhenFilled = function() {
 
-	  	$('.errWarning').hide();
+	  		errWarning.fadeOut(2000);
+	  	};
+
 
 	  	$scope.calcButton = function (){
 
@@ -293,19 +310,15 @@ angular.module('runnerCalcApp')
 	    	}
 
 	    	
-	    	
-	    	if ($scope.genCheckErr === undefined || $scope.inputTimeErr === true || 
-	    		$scope.inputDist === "" || $scope.inputAge === "") {
+	    	if ($scope.updateInputAge() === true || $scope.updateInputTime() === true || 
+	    		$scope.updateInputDist() === true || $scope.updateGenCheck() === true) {
 
-	    		$('.errWarning').show();
-	    		
+	    		errWarning.fadeIn(500);
+	
 	    	} else {
 
-	    		$('.errWarning').hide();
+	    		errWarning.fadeOut(2000);
 	    	}
-
-	    	
-
 
 	  	};
 
@@ -320,7 +333,7 @@ angular.module('runnerCalcApp')
 	  		$scope.inputTime3 = '00';
 	  		$scope.inputTimeErr = false;
 	  		$scope.genCheckErr = false;
-	  		$('.errWarning').hide();
+	  		errWarning.fadeOut(2000);
 
 
 

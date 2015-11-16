@@ -80,3 +80,13 @@
   	padding: 3px 0px 6px 0px;
 	visibility: collapse;
 }
+
+.errWarning {
+	margin-top: 10px;
+	padding-top: 7px;
+	width: 280px;
+	height: 60px;
+	background: #ffa0a0;
+	text-align: center;
+	box-shadow: 2px 2px 2px #888;
+}
