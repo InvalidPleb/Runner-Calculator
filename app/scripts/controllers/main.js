@@ -143,9 +143,6 @@ angular.module('runnerCalcApp')
 		var errWarning = $('.errWarning');
 	  	errWarning.hide();
 
-	  	
-
-		
 
 		$scope.changeHideTextCheck = function() {
 			$scope.hideTextCheck = !$scope.hideTextCheck;
@@ -175,9 +172,11 @@ angular.module('runnerCalcApp')
 
 	  	};
 
+	  	
+
 	  	$scope.updateGenCheck = function() {
 
-	  		if ($scope.genCheck === undefined) {
+	  		if ($scope.genCheck === false || $scope.genCheck === undefined) {
 	    		$scope.genCheckErr = true;
 	    	} else {
 	    		hideErrWhenFilled();
@@ -247,11 +246,13 @@ angular.module('runnerCalcApp')
 
 	  	var hideErrWhenFilled = function() {
 
-	  		errWarning.fadeOut(2000);
+	  		errWarning.fadeOut(3000);
 	  	};
 
 
 	  	$scope.calcButton = function (){
+
+	  		console.log($scope.genCheck);
 
 	  		var timeInput1 = parseInt($scope.inputTime1, 10);
 		    var timeInput2 = parseInt($scope.inputTime2, 10);
@@ -302,7 +303,7 @@ angular.module('runnerCalcApp')
 	    		$scope.inputTimeErr = false;
 	    	}
 
-	    	if ($scope.genCheck === undefined) {
+	    	if ($scope.genCheck === false || $scope.genCheck === undefined) {
 
 	    		$scope.genCheckErr = true;
 	    	} else {
@@ -333,6 +334,9 @@ angular.module('runnerCalcApp')
 	  		$scope.inputTime3 = '00';
 	  		$scope.inputTimeErr = false;
 	  		$scope.genCheckErr = false;
+
+	  		$scope.genCheck = false;
+
 	  		errWarning.fadeOut(2000);
 
 

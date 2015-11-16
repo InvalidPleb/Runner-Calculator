@@ -14,7 +14,8 @@
   height: 100px;
   border-radius: 0px 16px 0px 0px;
   margin: 0px;
-  box-shadow: 1px 2px 2px #888;
+  box-shadow: 1px 1px 1px #888;
+  z-index: 1;
 }
 
 
@@ -49,6 +50,7 @@
   background-color: rgba(255, 112, 67, 0.8);
   color: rgba(0, 0, 0, 0.87);
   box-shadow: 1px 2px 2px #888;
+  z-index: 0;
 }
 
 .hideAgeGradeRadio {
@@ -188,20 +190,24 @@
 }
 
 .genLabel {
-  width: 75px;
+  width: 58px;
   height: 25px;
   border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #888;
   border-radius: 5px;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
 }
 
 .genLabel:hover {
   background: #51c64f;
+  box-shadow: 0px 0px 0px;
 }
 
 .genSelected {
-  width: 75px;
+  width: 58px;
   height: 25px;
   border: 1px solid #ccc;
+  box-shadow: 0px 0px 0px;
   border-radius: 5px;
   background: #51c64f;
 }
@@ -215,13 +221,13 @@
 
 #genBtnTextM {
   font-size: 13px;
-  padding-left: 18px;
+  padding-left: 9px;
 
 }
 
 #genBtnTextF {
   font-size: 13px;
-  padding-left: 9px;
+  padding-left: 2px;
 }
 
 .justGenBtns {

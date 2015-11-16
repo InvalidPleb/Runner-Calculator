@@ -13,7 +13,7 @@
 
   </div>
 
-  <div ng-class="{true: 'ageGradeTextLeft col-md-4 animated slideOutLeft', false: 'ageGradeTextLeft col-md-4 animated slideInLeft'}[hideTextCheck]" ng-show="!hideTextCheck">
+  <div ng-class="{true: 'ageGradeTextLeft col-md-4 animated bounceOutUp', false: 'ageGradeTextLeft col-md-4 animated bounceInDown'}[hideTextCheck]" ng-show="!hideTextCheck">
     
     <div>
       <h4>
@@ -83,13 +83,13 @@
       <span class="" ng-class="{'genCheckErr' : genCheckErr, 'genCheckErrInvis' : !genCheckErr}">
         <span class="justGenBtns">
           <span>
-            <label class="genLabel" ng-class="{Male: 'genSelected animated bounceIn', Female: 'genLabel'}[genCheck]">
+            <label class="genLabel" ng-class="{false: 'genLabel', Male: 'genSelected animated bounceIn', Female: 'genLabel'}[genCheck]">
               <input type="radio" class="inputGender" ng-change="updateGenCheck(maleCheck)" ng-model="genCheck" value="Male" id="maleCheck">
               <span class="fontForText" id="genBtnTextM">Male</span>
             </label>
           </span>
           <span>
-            <label class="genLabel" ng-class="{Male: 'genLabel', Female: 'genSelected animated bounceIn'}[genCheck]">
+            <label class="genLabel" ng-class="{false: 'genLabel', Male: 'genLabel', Female: 'genSelected animated bounceIn'}[genCheck]">
               <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model="genCheck" value="Female" id="femaleCheck">
               <span class="fontForText" id="genBtnTextF">Female</span>
             </label>
