@@ -5,6 +5,9 @@ var ageObj = {
 	ageList: [0, 0, 0, 0, 0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
 };
 
+
+// Setting up object arrays for each running event.
+
 var menEventOptions = {
 
 	run5km: [779, 0.6062, 0.6602, 0.7102, 0.7562, 0.7982, 0.8362, 0.8702, 0.9002, 0.9262, 0.9482, 0.9662, 0.9802, 0.9922, 0.9996, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.9997, 0.9987, 0.997, 0.9947, 0.9918, 0.9882, 0.9839, 0.979, 0.9734, 0.9672, 0.9605, 0.9538, 0.9471, 0.9404, 0.9337, 0.927, 0.9203, 0.9136, 0.9069, 0.9002, 0.8935, 0.8868, 0.8801, 0.8734, 0.8667, 0.86, 0.8533, 0.8466, 0.8399, 0.8332, 0.8265, 0.8198, 0.8131, 0.8064, 0.7997, 0.793, 0.7863, 0.7796, 0.7729, 0.7662, 0.7592, 0.7515, 0.7433, 0.7344, 0.7249, 0.7147, 0.704, 0.6926, 0.6806, 0.668, 0.6547, 0.6408, 0.6263, 0.6112, 0.5955, 0.5791, 0.5621, 0.5445, 0.5262, 0.5074, 0.4879, 0.4678, 0.447, 0.4257, 0.4037, 0.3811, 0.3578, 0.334, 0.3095, 0.2844, 0.2586, 0.2323, 0.2053],
@@ -54,6 +57,7 @@ var womenEventOptions = {
 };
 
 
+// This function rounds to the nearest 100th.
 
 function numRound (value,dec){
 
@@ -61,10 +65,14 @@ function numRound (value,dec){
     return(value);
 }
 
+// Setting up Age Grade controller.
+
 angular.module('runnerCalcApp')
   .controller('MainCtrl', function ($scope) {
 
   	angular.element(document).ready(function () {
+
+  		// Populating the dropdown menu that selects the event.
 
 	  	$scope.run = '';
 	  	$scope.list = [
@@ -131,50 +139,66 @@ angular.module('runnerCalcApp')
 		    }
 		];
 
+		var outputAgeGrade = $(".outputAgeGrade");
 		var errWarning = $('.errWarning');
 	  	errWarning.hide();
+	  	outputAgeGrade.hide();
 
+	  	$scope.hideTextCheck = "Static";
+
+	  	// This controls the ng-show on the animated info text on AgeGradeMain.
 
 		$scope.changeHideTextCheck = function() {
 			$scope.hideTextCheck = !$scope.hideTextCheck;
 		};
 
-		$scope.updateInputAge = function() {
+		// The following four functions check for missing info on 
+		// the age input, distance/event dropdown menu,
+		// gender selection, and time input, respectively. If any missing
+		// info is found, true or false is returned and an error span
+		// is shown to the user. 
 
+		$scope.updateInputAge = function() {
 			if ($scope.inputAge === "") {
 				return true;
 			} else {
 				hideErrWhenFilled();
 				return false;
-
 			}
-
-			
 	  	};
 
 	  	$scope.updateInputDist = function() {
-	  		
 	  		if ($scope.inputDist === "") {
 				return true;
 			} else {
 				hideErrWhenFilled();
 				return false;
 			}
-
 	  	};
 
-	  	
-
 	  	$scope.updateGenCheck = function() {
-
 	  		if ($scope.genCheck === false || $scope.genCheck === undefined) {
 	    		$scope.genCheckErr = true;
 	    	} else {
 	    		hideErrWhenFilled();
 	    		$scope.genCheckErr = false;
 	    	}
-
 	  	};
+
+	  	$scope.updateInputTime = function() {
+
+	  		if (parseInt($scope.inputTime1 + $scope.inputTime2 + $scope.inputTime3) === 0) {
+	  			$scope.inputTimeErr = true;
+	    	} else {
+	    		hideErrWhenFilled();
+	    		$scope.inputTimeErr = false;
+	    	}
+	  	};
+
+
+	  	// The following six functions control the responsiveness of
+	  	// the three time input fields, changing the value of the text boxes
+	  	// depending upon blur or focus. 
 
 	  	$scope.inputTime1 = '00';
 	  	$scope.inputTime2 = '00';
@@ -216,20 +240,12 @@ angular.module('runnerCalcApp')
 	  		}
 	  	};
 
-	  	$scope.updateInputTime = function() {
-
-	  		if (parseInt($scope.inputTime1 + $scope.inputTime2 + $scope.inputTime3) === 0) {
-	  			$scope.inputTimeErr = true;
-	    	} else {
-	    		hideErrWhenFilled();
-	    		$scope.inputTimeErr = false;
-	    	}
-	  	};
-
-	  	
-	  	$scope.hideTextCheck = "Static";
 	  	
 
+	  	// This allows the stack icon button to
+	  	// hide and show the main text section on
+	  	// age grade main. 
+	  	
 	  	var textVisible = false;
 
 	  	$scope.stackButton = function (){
@@ -238,26 +254,38 @@ angular.module('runnerCalcApp')
 
 	  	};
 
+	  	// Fades out the error warning div that
+	  	// appears below the calculator when info is missing.
+
 	  	var hideErrWhenFilled = function() {
 
 	  		errWarning.fadeOut(3000);
 	  	};
 
 
+	  	// Click function of the calculate button.
+
 	  	$scope.calcButton = function (){
 
-	  		console.log($scope.genCheck);
+	  		// Converting the time input fields to int because
+	  		// they are strings by default.
 
 	  		var timeInput1 = parseInt($scope.inputTime1, 10);
 		    var timeInput2 = parseInt($scope.inputTime2, 10);
 		    var timeInput3 = parseInt($scope.inputTime3, 10);
 
+		    // Multiplying the left (timeInput1) and middle (timeInput2) input fields so
+		    // that all fields have the unit of seconds. 
+		    // They are then added together for the full time. 
+		     
 		    var timeInput1Adjusted = (timeInput1 * 60) * 60;
 		    var timeInput2Adjusted = timeInput2 * 60;
 		    var totalTimeInput = timeInput1Adjusted + timeInput2Adjusted + timeInput3;
 
-		    var chosenOption = '';
+		    // Checks if the input fields have been filled properly, and
+		    // chooses the running event data array that corresponds to the info given.
 
+		    var chosenOption = '';
 		    if ($scope.genCheck === "Male" && $scope.inputDist !== undefined) {
 	  			chosenOption = menEventOptions[$scope.inputDist];
 	  		} else if ($scope.genCheck === "Female" && $scope.inputDist !== undefined) {
@@ -266,14 +294,22 @@ angular.module('runnerCalcApp')
 	  			chosenOption = '';
 	  		}
 
+
+	  		// This loop takes the chosen option and iterates through the 
+	  		// age list until the age list value matches the user input age. 
+	  		// 
+
 	  		var i = 1;
 	  		var ageInt = parseInt($scope.inputAge);
+	  		var ageGrade;
+	  		var ageGradePercent;
+	  		var returnAgeGrade;
 
 	    	while (i < chosenOption.length) {
 	      		if (ageInt === ageObj.ageList[i]) {
-	        		var ageGrade = chosenOption[i-4] * numRound(totalTimeInput, 100);
-	        		var ageGradePercent = chosenOption[0] / ageGrade;
-	        		var returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
+	        		ageGrade = chosenOption[i-4] * numRound(totalTimeInput, 100);
+	        		ageGradePercent = chosenOption[0] / ageGrade;
+	        		returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
 	        		if (returnAgeGrade !== 0) {
 	        			$scope.outputAgeGrade = returnAgeGrade;
 	        			$scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
@@ -307,12 +343,16 @@ angular.module('runnerCalcApp')
 	    	
 	    	if ($scope.updateInputAge() === true || $scope.updateInputTime() === true || 
 	    		$scope.updateInputDist() === true || $scope.updateGenCheck() === true) {
-
 	    		errWarning.fadeIn(500);
-	
 	    	} else {
-
 	    		errWarning.fadeOut(2000);
+	    	}
+
+
+	    	
+
+	    	if ($scope.outputAgeGrade !== undefined) {
+	    		outputAgeGrade.fadeIn(100);
 	    	}
 
 	  	};
@@ -328,9 +368,9 @@ angular.module('runnerCalcApp')
 	  		$scope.inputTime3 = '00';
 	  		$scope.inputTimeErr = false;
 	  		$scope.genCheckErr = false;
-
 	  		$scope.genCheck = false;
 
+	  		outputAgeGrade.hide();
 	  		errWarning.fadeOut(2000);
 
 

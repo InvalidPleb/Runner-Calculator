@@ -75,6 +75,7 @@
           <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" type="text" class="form-control inline" id="inputTime3" maxlength="2">
         </span>
         <span class="labelTimeFormat">hh:mm:ss</span>
+        
     </div>
 
     <div class="allGenInput row">
@@ -128,23 +129,22 @@
     <div class="errWarning fontForText">
       <span>Oops! You're missing some info in the fields above</span>
     </div>
+  </div>
 
-</div>
 
-
- <div class="col-md-4">
-  <br>
-    <h4>Your-age graded time is: {{outputAgeGrade}}</h4>
-    <input type="text" class="form-control ng-hide" maxlength="2" ng-model="outputAgeGrade">
-    <br>
-    <h4>Your-age graded percent is: {{outputAgePercent}}</h4>
-    <input type="text" class="form-control ng-hide" maxlength="2" ng-model="outputAgePercent">
-    <br>
+  <div class="col-md-4">
+    <span class="outputAgeGrade">
+      <br>
+        <h4>Your-age graded time is: {{outputAgeGrade}}</h4>
+        <input type="text" class="form-control ng-hide" maxlength="2" ng-model="outputAgeGrade">
+        <br>
+        <h4>Your-age graded percent is: {{outputAgePercent}}</h4>
+        <input type="text" class="form-control ng-hide" maxlength="2" ng-model="outputAgePercent">
+      <br>
+    </span>
   </div>
 
 </div>
-
-
 
 
 <div class="row marketing">
