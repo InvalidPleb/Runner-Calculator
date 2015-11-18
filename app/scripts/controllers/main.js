@@ -304,6 +304,20 @@ angular.module('runnerCalcApp')
 	  		var ageGrade;
 	  		var ageGradePercent;
 	  		var returnAgeGrade;
+	  		
+      		if (ageInt === 0) {
+        		ageGrade = chosenOption[ageInt-4] * numRound(totalTimeInput, 100);
+        		console.log(ageGrade);
+        		ageGradePercent = chosenOption[0] / ageGrade;
+        		returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
+        		if (returnAgeGrade !== 0) {
+        			$scope.outputAgeGrade = returnAgeGrade;
+        			$scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
+        		}
+      		}
+	      	
+
+	  		/*
 
 	    	while (i < chosenOption.length) {
 	      		if (ageInt === ageObj.ageList[i]) {
@@ -318,6 +332,13 @@ angular.module('runnerCalcApp')
 	      	i += 1;
 	    	}
 
+	    	*/
+	    
+
+
+	    	// Checks for missing values in the input
+	    	// fields and shows error divs and red outlines
+	    	// if any are missing. 
 
 	    	if ($scope.inputAge % 1 !== 0) {
 	    		$scope.inputAge = "";
@@ -340,6 +361,7 @@ angular.module('runnerCalcApp')
 	    		$scope.genCheckErr = false;
 	    	}
 
+	    	// Fades in the error div if any of the errors are true.
 	    	
 	    	if ($scope.updateInputAge() === true || $scope.updateInputTime() === true || 
 	    		$scope.updateInputDist() === true || $scope.updateGenCheck() === true) {
@@ -357,7 +379,12 @@ angular.module('runnerCalcApp')
 
 	  	};
 
+	  	// Clear button click function.
+
 	  	$scope.clearButton = function (){
+
+	  		// Resets a bunch of elements to their default
+	  		// values and hides some other elements. 
 
 	  		$scope.inputAge = undefined;
 	  		$scope.inputDist = undefined;
