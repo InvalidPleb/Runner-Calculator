@@ -86,11 +86,11 @@ angular.module('runnerCalcApp')
 	
 
     var $this=$(this);
-    $this.attr('disabled','disabled');
+    $(this).attr('disabled','disabled');
 
     setTimeout(function() {
 
-        $this.removeAttr('disabled');
+        $(this).removeAttr('disabled');
 
     }, 3000);
 

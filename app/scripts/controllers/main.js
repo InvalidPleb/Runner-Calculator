@@ -259,9 +259,26 @@ angular.module('runnerCalcApp')
 	  	};
 
 
-	  	// Click function of the calculate button.
+	  	// Disables the calc button after a click so it cannot be spammed.
+	  	// The button is re-enabled in 500ms AND after any other scope has been
+	  	// updated. 
+	  	
+	  	$scope.button_clicked = 'false';
 
+	  	var disableCalcBtn = function() {
+
+	  		$scope.button_clicked = 'true';
+
+	  		setTimeout(function(){
+	  			$scope.button_clicked = 'false';
+	  		}, 500);
+	  	}
+
+	  	// Click function of the calculate button.
+	  	
 	  	$scope.calcButton = function (){
+	  		
+	  		disableCalcBtn();
 
 	  		// Converting the time input fields to int because
 	  		// they are strings by default.
@@ -291,29 +308,26 @@ angular.module('runnerCalcApp')
 	  		}
 
 
-	  		// The nested If statements below check if there are any missing
+	  		// The If statement below checks if there are any missing
 	  		// values in the input fields, and if not, does an age graded calculation on
 	  		// those values. The calculation is done by multiplying the age-graded index score
 	  		// in the data above by the user's input time. This number is then converted from
 	  		// seconds to the hh:mm:ss notation and shown to the user. 
 
-	  		var i = 1;
 	  		var ageInt = parseInt($scope.inputAge);
 	  		var ageGrade = 0;
 	  		var ageGradePercent = 0;
 	  		var returnAgeGrade = 0;
 	  		
-      		if (ageInt !== "" && isNaN(ageInt) === false) {
-      			if(chosenOption !== undefined && chosenOption !== 0 && totalTimeInput !== 0) {
-      				ageGrade = chosenOption[ageInt-4] * numRound(totalTimeInput, 100);
-        			ageGradePercent = chosenOption[0] / ageGrade;
-	        		if (ageGrade !== 0 && ageGradePercent !== 0) {
-		        		returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
-		        		$scope.outputAgeGrade = returnAgeGrade;
-		        		$scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
-		        	
-		        	}
-		        }
+      		if (ageInt !== "" && isNaN(ageInt) === false && chosenOption !== undefined &&
+      		chosenOption !== 0 && totalTimeInput !== 0) {
+
+      			ageGrade = chosenOption[ageInt-4] * numRound(totalTimeInput, 100);
+        		ageGradePercent = chosenOption[0] / ageGrade;
+		        returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
+		        $scope.outputAgeGrade = returnAgeGrade;
+		        $scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
+		        
       		}
 
 	    	// Checks for missing values in the input
