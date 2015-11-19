@@ -157,7 +157,8 @@ angular.module('runnerCalcApp')
 			if ($scope.inputAge === "") {
 				return true;
 			} else {
-				hideErrWhenFilled();
+				console.log("yo");
+				$scope.calcBtnDisabled = false;
 				return false;
 			}
 	  	};
@@ -166,7 +167,7 @@ angular.module('runnerCalcApp')
 	  		if ($scope.inputDist === "") {
 				return true;
 			} else {
-				hideErrWhenFilled();
+				$scope.calcBtnDisabled = false;
 				return false;
 			}
 	  	};
@@ -174,9 +175,12 @@ angular.module('runnerCalcApp')
 	  	$scope.updateGenCheck = function() {
 	  		if ($scope.genCheck === false || $scope.genCheck === undefined) {
 	    		$scope.genCheckErr = true;
+	    		return true;
 	    	} else {
-	    		hideErrWhenFilled();
+	    		console.log("yo8999889");
+	    		$scope.calcBtnDisabled = false;
 	    		$scope.genCheckErr = false;
+	    		return false;
 	    	}
 	  	};
 
@@ -184,9 +188,11 @@ angular.module('runnerCalcApp')
 
 	  		if (parseInt($scope.inputTime1 + $scope.inputTime2 + $scope.inputTime3) === 0) {
 	  			$scope.inputTimeErr = true;
+	  			return true;
 	    	} else {
-	    		hideErrWhenFilled();
+	    		$scope.calcBtnDisabled = false;
 	    		$scope.inputTimeErr = false;
+	    		return false;
 	    	}
 	  	};
 
@@ -259,26 +265,16 @@ angular.module('runnerCalcApp')
 	  	};
 
 
-	  	// Disables the calc button after a click so it cannot be spammed.
-	  	// The button is re-enabled in 500ms AND after any other scope has been
-	  	// updated. 
+	  	// Disables the calc button after a click so it cannot be spammed. 
 	  	
-	  	$scope.button_clicked = 'false';
-
-	  	var disableCalcBtn = function() {
-
-	  		$scope.button_clicked = 'true';
-
-	  		setTimeout(function(){
-	  			$scope.button_clicked = 'false';
-	  		}, 500);
-	  	}
+	  	$scope.calcBtnDisabled = false;
 
 	  	// Click function of the calculate button.
 	  	
 	  	$scope.calcButton = function (){
 	  		
-	  		disableCalcBtn();
+	  		$scope.calcBtnDisabled = true;
+	  		console.log($scope.calcBtnDisabled);
 
 	  		// Converting the time input fields to int because
 	  		// they are strings by default.
@@ -330,9 +326,7 @@ angular.module('runnerCalcApp')
 		        
       		}
 
-	    	// Checks for missing values in the input
-	    	// fields and shows error divs and red outlines
-	    	// if any are missing. 
+	    	// Normalizes the different values in the age and distance input fields
 
 	    	if ($scope.inputAge % 1 !== 0) {
 	    		$scope.inputAge = "";
@@ -341,6 +335,10 @@ angular.module('runnerCalcApp')
 	    	if ($scope.inputDist === undefined) {
 	    		$scope.inputDist = "";
 	    	}
+
+	    	// Checks for missing values in the input
+	    	// fields and shows error divs and red outlines
+	    	// if any are missing
 	   
 	    	if (totalTimeInput === 0 || totalTimeInput === undefined) {
 	    		$scope.inputTimeErr = true;
@@ -349,7 +347,6 @@ angular.module('runnerCalcApp')
 	    	}
 
 	    	if ($scope.genCheck === false || $scope.genCheck === undefined) {
-
 	    		$scope.genCheckErr = true;
 	    	} else {
 	    		$scope.genCheckErr = false;
@@ -364,8 +361,7 @@ angular.module('runnerCalcApp')
 	    		errWarning.fadeOut(2000);
 	    	}
 
-
-	    	
+	
 
 	    	if ($scope.outputAgeGrade !== undefined) {
 	    		outputAgeGrade.fadeIn(100);
@@ -393,8 +389,6 @@ angular.module('runnerCalcApp')
 
 	  		outputAgeGrade.hide();
 	  		errWarning.fadeOut(2000);
-
-
 
 	  	};
 
