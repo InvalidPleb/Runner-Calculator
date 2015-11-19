@@ -1,11 +1,5 @@
 'use strict';
 
-
-var ageObj = {
-	ageList: [0, 0, 0, 0, 0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
-};
-
-
 // Setting up object arrays for each running event.
 
 var menEventOptions = {
@@ -152,12 +146,13 @@ angular.module('runnerCalcApp')
 			$scope.hideTextCheck = !$scope.hideTextCheck;
 		};
 
+
 		// The following four functions check for missing info on 
 		// the age input, distance/event dropdown menu,
 		// gender selection, and time input, respectively. If any missing
 		// info is found, true or false is returned and an error span
 		// is shown to the user. 
-
+		
 		$scope.updateInputAge = function() {
 			if ($scope.inputAge === "") {
 				return true;
@@ -255,7 +250,8 @@ angular.module('runnerCalcApp')
 	  	};
 
 	  	// Fades out the error warning div that
-	  	// appears below the calculator when info is missing.
+	  	// appears below the calculator when info is missing. This is called by
+	  	// the error functions above.
 
 	  	var hideErrWhenFilled = function() {
 
@@ -285,56 +281,40 @@ angular.module('runnerCalcApp')
 		    // Checks if the input fields have been filled properly, and
 		    // chooses the running event data array that corresponds to the info given.
 
-		    var chosenOption = '';
+		    var chosenOption = 0;
 		    if ($scope.genCheck === "Male" && $scope.inputDist !== undefined) {
 	  			chosenOption = menEventOptions[$scope.inputDist];
 	  		} else if ($scope.genCheck === "Female" && $scope.inputDist !== undefined) {
 	  			chosenOption = womenEventOptions[$scope.inputDist];
 	  		} else {
-	  			chosenOption = '';
+	  			chosenOption = 0;
 	  		}
 
 
-	  		// This loop takes the chosen option and iterates through the 
-	  		// age list until the age list value matches the user input age. 
-	  		// 
+	  		// The nested If statements below check if there are any missing
+	  		// values in the input fields, and if not, does an age graded calculation on
+	  		// those values. The calculation is done by multiplying the age-graded index score
+	  		// in the data above by the user's input time. This number is then converted from
+	  		// seconds to the hh:mm:ss notation and shown to the user. 
 
 	  		var i = 1;
 	  		var ageInt = parseInt($scope.inputAge);
-	  		var ageGrade;
-	  		var ageGradePercent;
-	  		var returnAgeGrade;
+	  		var ageGrade = 0;
+	  		var ageGradePercent = 0;
+	  		var returnAgeGrade = 0;
 	  		
-      		if (ageInt === 0) {
-        		ageGrade = chosenOption[ageInt-4] * numRound(totalTimeInput, 100);
-        		console.log(ageGrade);
-        		ageGradePercent = chosenOption[0] / ageGrade;
-        		returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
-        		if (returnAgeGrade !== 0) {
-        			$scope.outputAgeGrade = returnAgeGrade;
-        			$scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
-        		}
+      		if (ageInt !== "" && isNaN(ageInt) === false) {
+      			if(chosenOption !== undefined && chosenOption !== 0 && totalTimeInput !== 0) {
+      				ageGrade = chosenOption[ageInt-4] * numRound(totalTimeInput, 100);
+        			ageGradePercent = chosenOption[0] / ageGrade;
+	        		if (ageGrade !== 0 && ageGradePercent !== 0) {
+		        		returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
+		        		$scope.outputAgeGrade = returnAgeGrade;
+		        		$scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
+		        	
+		        	}
+		        }
       		}
-	      	
-
-	  		/*
-
-	    	while (i < chosenOption.length) {
-	      		if (ageInt === ageObj.ageList[i]) {
-	        		ageGrade = chosenOption[i-4] * numRound(totalTimeInput, 100);
-	        		ageGradePercent = chosenOption[0] / ageGrade;
-	        		returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
-	        		if (returnAgeGrade !== 0) {
-	        			$scope.outputAgeGrade = returnAgeGrade;
-	        			$scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
-	        		}
-	      		}
-	      	i += 1;
-	    	}
-
-	    	*/
-	    
-
 
 	    	// Checks for missing values in the input
 	    	// fields and shows error divs and red outlines
