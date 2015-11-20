@@ -153,12 +153,18 @@ angular.module('runnerCalcApp')
 		// info is found, true or false is returned and an error span
 		// is shown to the user. 
 		
+		var calcBtnDisabled1 = false;
+		var calcBtnDisabled2 = false;
+		var calcBtnDisabled3 = false;
+		var calcBtnDisabled4 = false;
+
+		
+		
 		$scope.updateInputAge = function() {
 			if ($scope.inputAge === "") {
 				return true;
 			} else {
-				console.log("yo");
-				$scope.calcBtnDisabled = false;
+				calcBtnDisabled1 = false;
 				return false;
 			}
 	  	};
@@ -167,7 +173,7 @@ angular.module('runnerCalcApp')
 	  		if ($scope.inputDist === "") {
 				return true;
 			} else {
-				$scope.calcBtnDisabled = false;
+				calcBtnDisabled2 = false;
 				return false;
 			}
 	  	};
@@ -177,8 +183,7 @@ angular.module('runnerCalcApp')
 	    		$scope.genCheckErr = true;
 	    		return true;
 	    	} else {
-	    		console.log("yo8999889");
-	    		$scope.calcBtnDisabled = false;
+	    		calcBtnDisabled3 = false;
 	    		$scope.genCheckErr = false;
 	    		return false;
 	    	}
@@ -190,12 +195,20 @@ angular.module('runnerCalcApp')
 	  			$scope.inputTimeErr = true;
 	  			return true;
 	    	} else {
-	    		$scope.calcBtnDisabled = false;
+	    		calcBtnDisabled4 = false;
 	    		$scope.inputTimeErr = false;
 	    		return false;
 	    	}
 	  	};
 
+
+	  	$scope.updateBtnDisabled = function() {
+
+	  		if (calcBtnDisabled1 === false && calcBtnDisabled2 === false && calcBtnDisabled3 === false && calcBtnDisabled4 === false) {
+	  			$scope.calcBtnDisabled = false;
+	  		}
+
+	  	};
 
 	  	// The following six functions control the responsiveness of
 	  	// the three time input fields, changing the value of the text boxes
@@ -265,15 +278,21 @@ angular.module('runnerCalcApp')
 	  	};
 
 
-	  	// Disables the calc button after a click so it cannot be spammed. 
+	  	// Initially enables the calc button
 	  	
 	  	$scope.calcBtnDisabled = false;
 
 	  	// Click function of the calculate button.
 	  	
 	  	$scope.calcButton = function (){
+
+
 	  		
 	  		$scope.calcBtnDisabled = true;
+	  		calcBtnDisabled1 = true;
+	  		calcBtnDisabled2 = true;
+	  		calcBtnDisabled3 = true;
+	  		calcBtnDisabled4 = true;
 	  		console.log($scope.calcBtnDisabled);
 
 	  		// Converting the time input fields to int because
@@ -315,8 +334,8 @@ angular.module('runnerCalcApp')
 	  		var ageGradePercent = 0;
 	  		var returnAgeGrade = 0;
 	  		
-      		if (ageInt !== "" && isNaN(ageInt) === false && chosenOption !== undefined &&
-      		chosenOption !== 0 && totalTimeInput !== 0) {
+      		if (ageInt % 1 === 0 && ageInt !== "" && isNaN(ageInt) === false && chosenOption !== undefined &&
+      		chosenOption !== 0 && totalTimeInput !== 0 && $scope.inputDist !== undefined) {
 
       			ageGrade = chosenOption[ageInt-4] * numRound(totalTimeInput, 100);
         		ageGradePercent = chosenOption[0] / ageGrade;
@@ -386,6 +405,11 @@ angular.module('runnerCalcApp')
 	  		$scope.inputTimeErr = false;
 	  		$scope.genCheckErr = false;
 	  		$scope.genCheck = false;
+
+	  		calcBtnDisabled1 = false;
+	  		calcBtnDisabled2 = false;
+	  		calcBtnDisabled3 = false;
+	  		calcBtnDisabled4 = false;
 
 	  		outputAgeGrade.hide();
 	  		errWarning.fadeOut(2000);

@@ -118,11 +118,14 @@
     -->
 
     <div class="allCalcBtns">
-      <div class="row">
-        <input ng-click="calcButton()" type="button" class="calcButton fontForText" value="Calculate" ng-disabled="calcBtnDisabled">
+      <div class="calcBtnHoverSpan" ng-mouseover="updateBtnDisabled()">
       </div>
+        <div class="row">
+          <input ng-click="calcButton()" type="button" class="calcButton fontForText" value="Calculate" ng-disabled="calcBtnDisabled">
+        </div>
+      
       <div class="row">
-        <input ng-click="clearButton()" type="button" class="clearButton fontForText" value="Clear" ng-disabled="!calcBtnDisabled">
+        <input ng-click="clearButton()" type="button" class="clearButton fontForText" value="Clear">
       </div>
     </div>
 
