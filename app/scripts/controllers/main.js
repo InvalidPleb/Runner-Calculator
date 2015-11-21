@@ -133,6 +133,15 @@ angular.module('runnerCalcApp')
 		    }
 		];
 
+		$scope.debugButton = function() {
+
+			console.log(calcBtnDisabled1);
+			console.log(calcBtnDisabled2);
+			console.log(calcBtnDisabled3);
+			console.log(calcBtnDisabled4);
+		};
+
+
 		var outputAgeGrade = $(".outputAgeGrade");
 		var errWarning = $('.errWarning');
 	  	errWarning.hide();
@@ -176,6 +185,12 @@ angular.module('runnerCalcApp')
 				calcBtnDisabled2 = false;
 				return false;
 			}
+
+			// Added error check here too because possible to skip button disable hover div w/ dropdown
+
+			if (calcBtnDisabled1 === false && calcBtnDisabled2 === false && calcBtnDisabled3 === false && calcBtnDisabled4 === false) {
+	  			$scope.calcBtnDisabled = false;
+	  		}
 	  	};
 
 	  	$scope.updateGenCheck = function() {
@@ -265,6 +280,13 @@ angular.module('runnerCalcApp')
 	  	$scope.stackButton = function (){
 
 	  		textVisible = !textVisible;
+
+	  		if (textVisible === true) {
+	  			return true;
+	  		} else {
+	  			return false;
+	  		}
+
 
 	  	};
 

@@ -9,6 +9,7 @@
       <div class="socialMedia col-md-4">
         <a><span class="fontForText" id="shareText">SHARE</span><img src="/images/share46.png" alt="" width="24" height="24">
         </a>
+        <input class="debugBtn" type="button" value="debug" ng-click="debugButton()">
       </div>
   </div>
 
@@ -130,12 +131,9 @@
     </div>
 
     <div class="errWarning fontForText">
-      <span>Oops! You're missing some info in the field above</span>
+      <span>Oops! You're missing some info in the fields above</span>
     </div>
-  </div>
 
-
-  <div class="col-md-4">
     <span class="outputAgeGrade">
       <br>
         <h4>Your-age graded time is: {{outputAgeGrade}}</h4>
@@ -145,6 +143,12 @@
         <input type="text" class="form-control ng-hide" maxlength="2" ng-model="outputAgePercent">
       <br>
     </span>
+
+  </div>
+
+
+  <div class="col-md-4">
+    
   </div>
 
 </div>
