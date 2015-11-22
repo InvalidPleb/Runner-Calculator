@@ -15,6 +15,7 @@
 
 .formErr, .formErr:active, .formErr:focus {
 	border-color: #CC0000;
+	transition: all .1s cubic-bezier(.27,1,1,.9);
 }
 
 
@@ -29,6 +30,7 @@
 	padding: 9px 0px 10px 0px;
 	border-radius: 5px;
 	border: 1px solid #CC0000;
+	transition: all .15s cubic-bezier(.27,1,1,.9);
 	visibility:collapse;
 
 }
@@ -43,6 +45,7 @@
 	padding-right: 0px;
 	border-radius: 5px;
 	border: 1px solid #CC0000;
+	transition: all .15s cubic-bezier(.27,1,1,.9);
 	visibility:visible;
 }
 
@@ -64,6 +67,7 @@
   	border: 1px solid #CC0000;
   	border-radius: 5px;
   	padding: 3px 0px 7px 0px;
+  	transition: all .15s cubic-bezier(.27,1,1,.9);
 	visibility: visible;
 
 
@@ -74,6 +78,7 @@
   	border: 1px solid #CC0000;
   	border-radius: 5px;
   	padding: 3px 0px 7px 0px;
+  	transition: all .15s cubic-bezier(.27,1,1,.9);
 	visibility: collapse;
 }
 
