@@ -139,6 +139,10 @@ angular.module('runnerCalcApp')
 			console.log(calcBtnDisabled2);
 			console.log(calcBtnDisabled3);
 			console.log(calcBtnDisabled4);
+
+			console.log($scope.genCheck);
+			console.log($scope.inputAge);
+
 		};
 
 
@@ -311,10 +315,7 @@ angular.module('runnerCalcApp')
 
 	  		
 	  		$scope.calcBtnDisabled = true;
-	  		calcBtnDisabled1 = true;
-	  		calcBtnDisabled2 = true;
-	  		calcBtnDisabled3 = true;
-	  		calcBtnDisabled4 = true;
+	  		
 	  		console.log($scope.calcBtnDisabled);
 
 	  		// Converting the time input fields to int because
@@ -371,11 +372,13 @@ angular.module('runnerCalcApp')
 
 	    	if ($scope.inputAge % 1 !== 0) {
 	    		$scope.inputAge = "";
-	    	}
+	    		calcBtnDisabled1 = true;
+	    	} 
 
 	    	if ($scope.inputDist === undefined) {
 	    		$scope.inputDist = "";
-	    	}
+	    		calcBtnDisabled2 = true;
+	    	} 
 
 	    	// Checks for missing values in the input
 	    	// fields and shows error divs and red outlines
@@ -383,12 +386,14 @@ angular.module('runnerCalcApp')
 	   
 	    	if (totalTimeInput === 0 || totalTimeInput === undefined) {
 	    		$scope.inputTimeErr = true;
+	    		calcBtnDisabled4 = true;
 	    	} else {
 	    		$scope.inputTimeErr = false;
 	    	}
 
 	    	if ($scope.genCheck === false || $scope.genCheck === undefined) {
 	    		$scope.genCheckErr = true;
+	    		calcBtnDisabled3 = true;
 	    	} else {
 	    		$scope.genCheckErr = false;
 	    	}
