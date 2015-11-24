@@ -35,8 +35,6 @@
   border: 0px;
   margin: 0px;
   padding-top: 35px;
-
-
 }
 
 .fontForText {
@@ -45,11 +43,17 @@
   font-size: 16px;
 }
 
+.outputColumn {
+  
+}
+
 .ageGradeTextLeft {
   padding: 15px 15px 15px 15px;
-  background-color: rgba(255, 112, 67, 0.8);
+  background-color: rgba(158,158,158, 0.2);
   color: rgba(0, 0, 0, 0.87);
-  box-shadow: 1px 2px 2px #888;
+  -webkit-box-shadow: inset 0px 0px 38px -2px rgba(0,0,0,0.51);
+  -moz-box-shadow: inset 0px 0px 38px -2px rgba(0,0,0,0.51);
+  box-shadow: inset 0px 0px 38px -2px rgba(0,0,0,0.51);
   z-index: 0;
 }
 
@@ -72,6 +76,10 @@
 
 .ageGradeCalc {
   padding-left: 50px;
+  height: 368px;
+  -webkit-box-shadow: 12px 13px 35px -5px rgba(0,0,0,0.46);
+  -moz-box-shadow: 12px 13px 35px -5px rgba(0,0,0,0.46);
+  box-shadow: 12px 13px 35px -5px rgba(0,0,0,0.46);
 }
 
 
@@ -149,6 +157,7 @@
     border: 1px solid #434343;
     background: #434343;
     margin-top: 5px;
+    margin-bottom: 15px;
     transition: all .15s cubic-bezier(.27,1,1,.9);
     border-radius: 5px;
     box-shadow: 2px 2px 2px #888;

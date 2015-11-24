@@ -149,7 +149,7 @@ angular.module('runnerCalcApp')
 		var outputAgeGrade = $(".outputAgeGrade");
 		var errWarning = $('.errWarning');
 	  	errWarning.hide();
-	  	outputAgeGrade.hide();
+	  	
 
 	  	$scope.hideTextCheck = "Static";
 
@@ -194,6 +194,7 @@ angular.module('runnerCalcApp')
 
 			if (calcBtnDisabled1 === false && calcBtnDisabled2 === false && calcBtnDisabled3 === false && calcBtnDisabled4 === false) {
 	  			$scope.calcBtnDisabled = false;
+	  			console.log("yo");
 	  		}
 	  	};
 
@@ -225,6 +226,7 @@ angular.module('runnerCalcApp')
 
 	  		if (calcBtnDisabled1 === false && calcBtnDisabled2 === false && calcBtnDisabled3 === false && calcBtnDisabled4 === false) {
 	  			$scope.calcBtnDisabled = false;
+	  			errWarning.fadeOut(2000);
 	  		}
 
 	  	};
@@ -312,11 +314,7 @@ angular.module('runnerCalcApp')
 	  	
 	  	$scope.calcButton = function (){
 
-
-	  		
 	  		$scope.calcBtnDisabled = true;
-	  		
-	  		console.log($scope.calcBtnDisabled);
 
 	  		// Converting the time input fields to int because
 	  		// they are strings by default.
@@ -344,7 +342,6 @@ angular.module('runnerCalcApp')
 	  		} else {
 	  			chosenOption = 0;
 	  		}
-
 
 	  		// The If statement below checks if there are any missing
 	  		// values in the input fields, and if not, does an age graded calculation on
@@ -438,7 +435,6 @@ angular.module('runnerCalcApp')
 	  		calcBtnDisabled3 = false;
 	  		calcBtnDisabled4 = false;
 
-	  		outputAgeGrade.hide();
 	  		errWarning.fadeOut(2000);
 
 	  	};
