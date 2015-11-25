@@ -194,7 +194,6 @@ angular.module('runnerCalcApp')
 
 			if (calcBtnDisabled1 === false && calcBtnDisabled2 === false && calcBtnDisabled3 === false && calcBtnDisabled4 === false) {
 	  			$scope.calcBtnDisabled = false;
-	  			console.log("yo");
 	  		}
 	  	};
 

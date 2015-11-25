@@ -1,9 +1,9 @@
 .ageGradeMain, .altDensMain {
   min-height: 900px;
-  background: #FFF;
+  background-color: #e0e0e0;
 	border-radius: 0px 16px 0px 0px;
   margin-top: -2px;
-  box-shadow: 2px 2px 2px #888888;
+  box-shadow: -1px 1px 3px 0.5px #888;
   overflow:auto;
 
 }
@@ -14,7 +14,7 @@
   height: 100px;
   border-radius: 0px 16px 0px 0px;
   margin: 0px;
-  box-shadow: 1px 1px 1px #888;
+  box-shadow: -1px 1px 3px 0.5px #888;
   z-index: 1;
 }
 
@@ -48,10 +48,6 @@
   -webkit-box-shadow: -7px 3px 43px -5px rgba(102,102,102,1);
   -moz-box-shadow: -7px 3px 43px -5px rgba(102,102,102,1);
   box-shadow: -7px 3px 43px -5px rgba(102,102,102,1);
-}
-
-.outputColumn {
-  
 }
 
 .ageGradeTextLeft {
@@ -260,6 +256,57 @@
 .justGenBtns {
   visibility: visible;
 
+}
+
+
+.outputText {
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+
+}
+
+#outputText1 {
+  padding-top: 25px;
+}
+
+#outputText2 {
+  
+  padding-top: 50px;
+
+}
+
+.outputColumn {
+  background-color: rgba(96,125,139,0.3);
+  -webkit-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
+  -moz-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
+  box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
+  /*
+  box-shadow: -1px 1px 3px 0.5px #888;
+  */
+
+}
+
+.outputAgeGrade {
+  height: 340px;
+
+}
+
+.outputInfo {
+  text-align: center;
+
+}
+
+.outputData {
+  position: relative;
+  left: 37%;
+  text-align: center;
+}
+
+.outputContainer {
+  position: relative;
+  margin-top: 25px;
 }
 
 
