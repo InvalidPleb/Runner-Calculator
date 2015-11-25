@@ -45,9 +45,13 @@
 
 .calcWithOutput {
   background-color: #fff;
-  -webkit-box-shadow: -7px 3px 43px -5px rgba(102,102,102,1);
-  -moz-box-shadow: -7px 3px 43px -5px rgba(102,102,102,1);
-  box-shadow: -7px 3px 43px -5px rgba(102,102,102,1);
+  -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  margin-top: 20px;
+  padding: 5px;
+
+
 }
 
 .ageGradeTextLeft {
@@ -118,6 +122,7 @@
     border: 1px solid #434343;
     background: #434343;
     border-radius: 5px;
+    margin-top: 5px;
     transition: all .15s cubic-bezier(.27,1,1,.9);
     box-shadow: -1px 1px 5px 1px #888;
     position: relative;
@@ -289,7 +294,8 @@
 }
 
 .outputAgeGrade {
-  height: 340px;
+  height: 367px;
+
 
 }
 
@@ -309,7 +315,14 @@
   margin-top: 25px;
 }
 
-
+.dataAnalysis {
+  background-color: #fff;
+  -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  height: 378px;
+  margin-top: 20px;
+}
 
 
 
