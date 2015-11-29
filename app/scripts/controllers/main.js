@@ -133,6 +133,8 @@ angular.module('runnerCalcApp')
 		    }
 		];
 
+		// Scope for the debug button. This button is mainly used to log to the console.
+
 		$scope.debugButton = function() {
 
 			console.log(calcBtnDisabled1);
@@ -402,8 +404,6 @@ angular.module('runnerCalcApp')
 	    	} else {
 	    		errWarning.fadeOut(2000);
 	    	}
-
-	
 
 	    	if ($scope.outputAgeGrade !== undefined) {
 	    		outputAgeGrade.fadeIn(100);
