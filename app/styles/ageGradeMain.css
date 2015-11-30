@@ -278,7 +278,7 @@
 
 #outputText2 {
   
-  padding-top: 50px;
+  padding-top: 5px;
 
 }
 
@@ -308,11 +308,18 @@
   position: relative;
   left: 37%;
   text-align: center;
+
 }
 
 .outputContainer {
   position: relative;
+  text-align: center;
   margin-top: 25px;
+  background-color: #ccc;
+  height: 100px;
+  width: 50%;
+  left: 25%;
+
 }
 
 .dataAnalysis {

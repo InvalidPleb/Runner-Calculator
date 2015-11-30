@@ -122,13 +122,15 @@
         <div class="outputInfo" id="outputText1">
           <h4 class="outputText">Your age-graded time</h4>
           <div class="outputContainer">
-            <input type="text" class="outputData form-control fontForText" maxlength="2" ng-model="outputAgeGrade" readonly type="text" >
+            <span class="outputData">{{outputAgeGrade}}</span>
+            <input type="text" class="form-control fontForText ng-hide" maxlength="2" ng-model="outputAgeGrade" readonly type="text" >
           </div>
         </div>
         <div class="outputInfo">
           <h4 class="outputText" id="outputText2">Your age-graded percent</h4>
           <div class="outputContainer">
-            <input type="text" class="outputData form-control fontForText" maxlength="2" ng-model="outputAgePercent" readonly type="text" >
+            <span class="outputData">{{outputAgePercent}}</span>
+            <input type="text" class="form-control fontForText ng-hide" maxlength="2" ng-model="outputAgePercent" readonly type="text" >
           </div>
         </div>
     </section>
