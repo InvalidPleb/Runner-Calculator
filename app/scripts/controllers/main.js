@@ -191,12 +191,6 @@ angular.module('runnerCalcApp')
 				calcBtnDisabled2 = false;
 				return false;
 			}
-
-			// Added error check here too because possible to skip button disable hover div w/ dropdown
-
-			if (calcBtnDisabled1 === false && calcBtnDisabled2 === false && calcBtnDisabled3 === false && calcBtnDisabled4 === false) {
-	  			$scope.calcBtnDisabled = false;
-	  		}
 	  	};
 
 	  	$scope.updateGenCheck = function() {
