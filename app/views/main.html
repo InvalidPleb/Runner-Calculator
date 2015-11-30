@@ -1,11 +1,13 @@
 <div class="ageGradeMain">
-  <div class="row ageGradeTitle col-lg-12">
+  <div class="ageGradeTitle col-lg-12">
       <div class="col-md-4">
         <label class="stackButton" for="hideTextCheck" >
           <input type="checkbox" class="hideAgeGradeRadio" ng-model="hideTextCheck" id="hideTextCheck" ng-click="stackButton()">
         </label>
       </div>
-      <div class="page-header col-md-4 fontForText">Age-Graded Calculator</div>
+      <div class="page-header col-md-4 fontForText">
+        <span class="ageGradeHeadTxt">Age-Graded Calculator</span>
+      </div>
       <div class="socialMedia col-md-4">
         <a><span class="fontForText" id="shareText">SHARE</span><img src="/images/share46.png" alt="" width="24" height="24">
         </a>
@@ -117,8 +119,8 @@
   
 
 
-    <div class="outputColumn col-md-6">
-    <section class="outputAgeGrade"> <!-- hidden w/ jquery not angular-->
+    <section class="outputColumn col-md-6">
+    <div class="outputAgeGrade"> <!-- hidden w/ jquery not angular-->
         <div class="outputInfo" id="outputText1">
           <h4 class="outputText">Your age-graded time</h4>
           <div class="outputContainer">
@@ -133,11 +135,16 @@
             <input type="text" class="form-control fontForText ng-hide" maxlength="2" ng-model="outputAgePercent" readonly type="text" >
           </div>
         </div>
-    </section>
-      
     </div>
+    </section>
+
   </section>
   <section class="dataAnalysis col-md-8">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+    </div>
+
   </section>
 
 
