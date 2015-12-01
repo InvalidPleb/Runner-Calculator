@@ -1,16 +1,16 @@
 
 
 #inputAge {
-	width: 42px;
+	width: 70px;
 }
 
 #inputTime1, #inputTime2, #inputTime3 {
-	width: 42px;
+	width: 70px;
   	visibility:visible;
 }
 
 #inputTime3 {
-	margin-right: -3px;
+	
 }
 
 .formErr, .formErr:active, .formErr:focus {

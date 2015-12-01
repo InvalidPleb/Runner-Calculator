@@ -50,6 +50,7 @@
   margin-top: 20px;
   padding: 5px;
   border-radius: 10px;
+  height: 420px;
 
 
 }
@@ -84,7 +85,7 @@
 
 .ageGradeCalc {
   padding-left: 50px;
-  height: 368px;
+  
 }
 
 
@@ -116,8 +117,8 @@
 }
 
 .calcButton {
-    width: 153px;
-    height: 40px;
+    width: 236px;
+    height: 50px;
     color: #51c64f;
     border: 1px solid #434343;
     background: #434343;
@@ -157,8 +158,8 @@
 }
 
 .clearButton {
-    width: 76px;
-    height: 40px;
+    width: 118px;
+    height: 50px;
     color: #CC0000;
     border: 1px solid #434343;
     background: #434343;
@@ -189,8 +190,13 @@
 }
 
 .form-control {
-  width: 97px;
+  width: 120px;
+  height: 40px;
   box-shadow: -1px 1px 3px 0.5px #888;
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
 }
 
 .form-control:focus {
@@ -218,11 +224,18 @@
 }
 
 .genLabel {
-  width: 58px;
-  height: 25px;
+  width: 65px;
+  height: 35px;
   border: 1px solid #ccc;
   box-shadow: -1px 1px 3px 0.5px #888;
   border-radius: 5px;
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 5px;
+  padding-right: 3px;
+  
   transition: all .15s cubic-bezier(.27,1,1,.9);
 }
 
@@ -232,12 +245,20 @@
 }
 
 .genSelected {
-  width: 58px;
-  height: 25px;
+  width: 65px;
+  height: 35px;
   border: 1px solid #ccc;
   box-shadow: 0px 0px 0px;
   border-radius: 5px;
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 5px;
+  padding-right: 3px;
+  
   background: #51c64f;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
 }
 
 .inputGender {
@@ -248,14 +269,13 @@
 }
 
 #genBtnTextM {
-  font-size: 13px;
-  padding-left: 9px;
+  padding-top: 50px;
 
 }
 
 #genBtnTextF {
-  font-size: 13px;
-  padding-left: 2px;
+
+
 }
 
 .justGenBtns {
