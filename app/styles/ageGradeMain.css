@@ -53,6 +53,8 @@
   height: 420px;
 
 
+
+
 }
 
 .ageGradeTextLeft {
@@ -149,9 +151,9 @@
 }
 
 .calcBtnHoverSpan {
-  width: 165px;
-  height: 55px;
-  margin: -5px 0px 0px -20px;
+  width: 250px;
+  height: 62px;
+  margin: 1px 0px 0px -22px;
   background-color: rgba(0,0,0,0);
   position: absolute;
   z-index: 0;
@@ -163,7 +165,7 @@
     color: #CC0000;
     border: 1px solid #434343;
     background: #434343;
-    margin-top: 5px;
+    margin-top: 8px;
     margin-bottom: 15px;
     transition: all .15s cubic-bezier(.27,1,1,.9);
     border-radius: 5px;
@@ -315,7 +317,7 @@
 }
 
 .outputAgeGrade {
-  height: 367px;
+  height: 410px;
 
 
 }
