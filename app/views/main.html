@@ -1,57 +1,22 @@
 <div class="ageGradeMain">
-  <div class="ageGradeTitle col-lg-12">
-      <div class="col-md-4">
+  <div class="ageGradeTitle col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
         <label class="stackButton" for="hideTextCheck" >
           <input type="checkbox" class="hideAgeGradeRadio" ng-model="hideTextCheck" id="hideTextCheck" ng-click="stackButton()">
         </label>
       </div>
-      <div class="page-header col-md-4 fontForText">
+      <div class="page-header col-lg-4 col-md-4 col-sm-4 col-xs-4 fontForText">
         <span class="ageGradeHeadTxt">Age-Graded Calculator</span>
       </div>
-      <div class="socialMedia col-md-4">
+      <div class="socialMedia col-lg-4 col-md-4 col-sm-4 col-xs-4">
         <a><span class="fontForText" id="shareText">SHARE</span><img src="/images/share46.png" alt="" width="24" height="24">
         </a>
         <input class="debugBtn" type="button" value="debug" ng-click="debugButton()">
       </div>
   </div>
-  <div class="ageGradeTxtContainter">
-    <div ng-class="{true: 'ageGradeTextLeft col-md-4 animated slideOutUp', false: 'ageGradeTextLeft col-md-4 animated slideInDown', Static: 'ageGradeTextLeft col-md-4'}[hideTextCheck]">
-      
-      <div>
-        <h4>
-          What is Age-Grading?
-        </h4>
-        <p>
-          Age-grading is a method that runners use to compare their times with other runners of any age or gender. 
-        </p>
-        <p>
-          It's just a fact that as we age into our mid to late 30's and beyond, our running times (as a group) slow down. This isn't necessarily the case for individuals, who can definitely improve upon their times from younger days. But in groups of scores, these differences begin to show up more clearly. Sometimes this normal slowdown can demoralize runners who might see it as an indication of a drop in performance or skill. Age-grading helps give runners a better idea of what a normal rate of slowing down might be for them as they age so that they can focus on improving their times. Age-grading is also used to put all different kinds of runners on a more level playing field by adjusting the runner's time by a rate appropriate for their age and gender, similar to a golf handicap.
-        </p>
-        <h4>
-          How does it work?
-        </h4>
-        <p>
-          "Age grading systems quantify exactly where you stand relative to the predicted all-time best for all runners of your age." - RunnersConnect.com
-          <br>
-          <br>
-          What that quote means is that when you age grade your score, you are dividing it by a time that is <i>close to</i> the world record for your age and running event. The result of this division is a running time that equalizes the differences between groups by using the world record setters as a benchmark of the rate at which people slow down as they age. This benchmark is useful because it gives a rough indication of how runners slow as they age, but because it's only a rough estimation it should not be taken as an objective measure of running performance.
-        </p>
-        <h4>What use is age-grading for me?</h4>
-        <p>
-          Many runners use age-grading as a way to compare their times with other runners regardless of their age or gender. Age-grading controls for differences in male and female times as well, so you can compare your times with literally anyone over the age of 5 and under the age of 100. 
-          <br>
-          Some aging runners who have been enjoyed the sport for many years notice a slow down of their times, which can sometimes be demoralizing when it really shouldn't be. Age-grading can show runners that a slower time doesn't necessarily point to worse performance or technique, but instead just normal aging processes. 
-          <br>
-        </p>
 
-      </div>
-    </div>
-  </div>
-  
-
-  
-  <section class="calcWithOutput col-md-8">
-    <div class="ageGradeCalc container col-md-6">
+  <section class="calcWithOutput col-lg-12 col-md-12">
+    <div class="ageGradeCalc container col-lg-6 col-md-6 col-sm-12 col-xs-12">
       <br>
       <div class="row">
         <span class="fontForText">Age:</span>
@@ -119,7 +84,7 @@
   
 
 
-    <section class="outputColumn col-md-6">
+    <section class="outputColumn col-lg-6 col-md-6 col-sm-12 col-xs-12">
     <div class="outputAgeGrade"> <!-- hidden w/ jquery not angular-->
         <div class="outputInfo" id="outputText1">
           <h4 class="outputText">Your age-graded time</h4>
@@ -139,12 +104,46 @@
     </section>
 
   </section>
-  <section class="dataAnalysis col-md-8">
-    <div class="col-md-6">
-    </div>
-    <div class="col-md-6">
-    </div>
 
+  <section class="ageGradeTxtContainter">
+    <div ng-class="{true: 'ageGradeTextLeft col-lg-6 col-md-6 col-sm-12 col-xs-12 animated slideOutUp', false: 'ageGradeTextLeft col-lg-6 col-md-6 col-sm-12 col-xs-12 animated slideInDown', Static: 'ageGradeTextLeft col-lg-6 col-md-6 col-sm-12 col-xs-12'}[hideTextCheck]">
+      
+      <div>
+        <h4>
+          What is Age-Grading?
+        </h4>
+        <p>
+          Age-grading is a method that runners use to compare their times with other runners of any age or gender. 
+        </p>
+        <p>
+          It's just a fact that as we age into our mid to late 30's and beyond, our running times (as a group) slow down. This isn't necessarily the case for individuals, who can definitely improve upon their times from younger days. But in groups of scores, these differences begin to show up more clearly. Sometimes this normal slowdown can demoralize runners who might see it as an indication of a drop in performance or skill. Age-grading helps give runners a better idea of what a normal rate of slowing down might be for them as they age so that they can focus on improving their times. Age-grading is also used to put all different kinds of runners on a more level playing field by adjusting the runner's time by a rate appropriate for their age and gender, similar to a golf handicap.
+        </p>
+        <h4>
+          How does it work?
+        </h4>
+        <p>
+          "Age grading systems quantify exactly where you stand relative to the predicted all-time best for all runners of your age." - RunnersConnect.com
+          <br>
+          <br>
+          What that quote means is that when you age grade your score, you are dividing it by a time that is <i>close to</i> the world record for your age and running event. The result of this division is a running time that equalizes the differences between groups by using the world record setters as a benchmark of the rate at which people slow down as they age. This benchmark is useful because it gives a rough indication of how runners slow as they age, but because it's only a rough estimation it should not be taken as an objective measure of running performance.
+        </p>
+        <h4>What use is age-grading for me?</h4>
+        <p>
+          Many runners use age-grading as a way to compare their times with other runners regardless of their age or gender. Age-grading controls for differences in male and female times as well, so you can compare your times with literally anyone over the age of 5 and under the age of 100. 
+          <br>
+          Some aging runners who have been enjoyed the sport for many years notice a slow down of their times, which can sometimes be demoralizing when it really shouldn't be. Age-grading can show runners that a slower time doesn't necessarily point to worse performance or technique, but instead just normal aging processes. 
+          <br>
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="dataAnalysis col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  </section>
+
+  <section class="dataAnalysis col-lg-6 col-md-6 col-sm-12 col-xs-12">
   </section>
 
 

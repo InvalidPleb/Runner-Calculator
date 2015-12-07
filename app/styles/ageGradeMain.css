@@ -55,6 +55,7 @@
 
 
 
+
 }
 
 .ageGradeTextLeft {
@@ -295,12 +296,12 @@
 }
 
 #outputText1 {
-  padding-top: 25px;
+  padding-top: 40px;
 }
 
 #outputText2 {
   
-  padding-top: 40px;
+  padding-top: 55px;
 
 }
 
@@ -317,8 +318,7 @@
 }
 
 .outputAgeGrade {
-  height: 410px;
-
+  padding-bottom: 50px;
 
 }
 

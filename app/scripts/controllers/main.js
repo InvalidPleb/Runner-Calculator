@@ -311,9 +311,8 @@ angular.module('runnerCalcApp')
 
 	  		$scope.calcBtnDisabled = true;
 
-	  		// Converting the time input fields to int because
-	  		// they are strings by default.
-
+	  		// Converting the time input fields to int becaus
+	  		// 
 	  		var timeInput1 = parseInt($scope.inputTime1, 10);
 		    var timeInput2 = parseInt($scope.inputTime2, 10);
 		    var timeInput3 = parseInt($scope.inputTime3, 10);

@@ -63,7 +63,7 @@
 }
 
 .genCheckErr {
-	margin-left: -1px;
+	
   	border: 1px solid #CC0000;
   	border-radius: 5px;
   	padding: 10px 0px 10px 0px;
@@ -74,7 +74,7 @@
 }
 
 .genCheckErrInvis {
-	margin-left: -1px;
+	
   	border: 1px solid #CC0000;
   	border-radius: 5px;
   	padding: 10px 0px 10px 0px;
