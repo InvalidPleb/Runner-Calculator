@@ -133,10 +133,13 @@ h3 {
 }
 
 #move1 {
-
+  position: relative;
+  left: 128px;
 }
 
 #move2 {
+  position: relative;
+  left: 115px;
 	
 }
 

@@ -427,7 +427,12 @@ angular.module('runnerCalcApp')
 	  		calcBtnDisabled3 = false;
 	  		calcBtnDisabled4 = false;
 
+	  		$scope.calcBtnDisabled = false;
+
+
+
 	  		errWarning.fadeOut(2000);
+	  		
 
 	  	};
 

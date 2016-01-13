@@ -47,14 +47,12 @@
   -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
-  margin-top: 20px;
+  margin-top: 5px;
   padding: 5px;
   border-radius: 10px;
   height: 420px;
-
-
-
-
+  position: relative;
+  z-index: 1;
 
 }
 
@@ -116,12 +114,13 @@
 }
 
 .allCalcBtns {
-  padding-left: 62px;
+  position: relative;
+  left: 100px;
 }
 
 .calcButton {
-    width: 236px;
-    height: 50px;
+    width: 70%;
+    height: 70px;
     color: #51c64f;
     border: 1px solid #434343;
     background: #434343;
@@ -283,7 +282,6 @@
 
 .justGenBtns {
   visibility: visible;
-
 }
 
 
@@ -311,9 +309,6 @@
   -moz-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
   box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
   border-radius: 10px;
-  /*
-  box-shadow: -1px 1px 3px 0.5px #888;
-  */
 
 }
 
