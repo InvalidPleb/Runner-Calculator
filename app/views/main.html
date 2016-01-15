@@ -34,8 +34,8 @@
         </span>
         <p></p>
       </div>
+
       <div class="allTimeInput row">
-        
           <span class="fontForText">Time:</span>
           <span class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
             
@@ -46,7 +46,6 @@
             <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" type="text" class="form-control inline" id="inputTime3" maxlength="2">
           </span>
           <!-- <span class="labelTimeFormat">hh:mm:ss</span> -->
-          
       </div>
 
       <div class="allGenInput row">
@@ -54,13 +53,13 @@
         <span class="" ng-class="{'genCheckErr' : genCheckErr, 'genCheckErrInvis' : !genCheckErr}">
           <span class="justGenBtns">
             <span>
-              <label class="genLabel" ng-class="{false: 'genLabel', Male: 'genSelected animated bounceIn', Female: 'genLabel'}[genCheck]">
+              <label class="genLabel" ng-class="{false: 'genLabel fontForText', Male: 'genSelected fontForText animated bounceIn', Female: 'genLabel fontForText'}[genCheck]">
                 <input type="radio" class="inputGender" ng-change="updateGenCheck(maleCheck)" ng-model="genCheck" value="Male" id="maleCheck">
                 <span class="fontForText" id="genBtnTextM">Male</span>
               </label>
             </span>
             <span>
-              <label class="genLabel" ng-class="{false: 'genLabel', Male: 'genLabel', Female: 'genSelected animated bounceIn'}[genCheck]">
+              <label class="genLabel" ng-class="{false: 'genLabel fontForText', Male: 'genLabel fontForText', Female: 'genSelected fontForText animated bounceIn'}[genCheck]" id="femaleLabel">
                 <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model="genCheck" value="Female" id="femaleCheck">
                 <span class="fontForText" id="genBtnTextF">Female</span>
               </label>
@@ -68,17 +67,18 @@
           </span>
         </span>
       </div>
+
       <div class="allCalcBtns">
         <div class="calcBtnHoverSpan" ng-mouseover="updateBtnDisabled()">
         </div>
-          <div class="row">
-            <input ng-click="calcButton()" type="button" class="calcButton fontForText" value="Calculate" ng-disabled="calcBtnDisabled">
-          </div>
-        
+        <div class="row">
+          <input ng-click="calcButton()" type="button" class="calcButton fontForText" value="Calculate" ng-disabled="calcBtnDisabled">
+        </div>
         <div class="row">
           <input ng-click="clearButton()" type="button" class="clearButton fontForText" value="Clear">
         </div>
       </div>
+
       <div class="errWarning fontForText"> <!-- hidden w/ jquery not angular-->
         <div>Oops! You're missing some info in the fields above</div>
       </div>

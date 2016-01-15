@@ -65,7 +65,7 @@
 	left: 35px;
   	border: 1px solid #CC0000;
   	border-radius: 5px;
-  	padding: 11px 0px 10px 0px;
+  	padding: 11px 9px 10px 0px;
   	transition: all .15s cubic-bezier(.27,1,1,.9);
 	visibility: visible;
 
@@ -77,7 +77,7 @@
 	left: 35px;
   	border: 1px solid #CC0000;
   	border-radius: 5px;
-  	padding: 11px 0px 10px 0px;
+  	padding: 11px 10px 10px 0px;
   	transition: all .15s cubic-bezier(.27,1,1,.9);
 	visibility: collapse;
 }
