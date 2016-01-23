@@ -66,14 +66,14 @@
   opacity: 0;
 }
 .stackButton {
-  background-image: url('/images/menu24.png');
+  background-image: url('/images/menu24Grey.png');
   height: 24px;
   width: 24px;
   margin: 36px 0px 0px 0px;
 }
 
 .stackButton:hover{
-  background-image: url('/images/menu24Grey.png');
+  background-image: url('/images/menu24f.png');
   height: 24px;
   width: 24px;
 }
