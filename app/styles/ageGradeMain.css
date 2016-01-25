@@ -1,3 +1,16 @@
+
+.runnerLogo {
+  background-image: url('/images/runnerIcon.png');
+  height: 128px;
+  width: 128px;
+  position: relative;
+  left: 550px;
+  bottom: 20px;
+}
+
+
+
+
 .ageGradeMain, .altDensMain {
   min-height: 900px;
   background-color: #e0e0e0;
@@ -65,6 +78,8 @@
 .hideAgeGradeRadio {
   opacity: 0;
 }
+
+
 .stackButton {
   background-image: url('/images/menu24Grey.png');
   height: 24px;
