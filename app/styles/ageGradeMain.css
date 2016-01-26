@@ -4,33 +4,51 @@
   height: 128px;
   width: 128px;
   position: relative;
-  left: 550px;
-  bottom: 20px;
+  z-index: 2;
+  left: 20%;
+  top: 5px;
 }
 
 
+#main{
+    display:block;
+    width:100%;
+    padding:50px 10%;
+    height:300px;
+    background: #000;
+    position: absolute;
+    z-index: 1;
+} 
 
 
+/* ----------- Container Style ----------- */
+
+
+/*  Main container for calc widget  */
 .ageGradeMain, .altDensMain {
   min-height: 900px;
   background-color: #e0e0e0;
 	border-radius: 0px 16px 0px 0px;
   margin-top: -2px;
   box-shadow: -1px 1px 3px 0.5px #888;
-  overflow:auto;
+  position: absolute;
+  z-index: 2;
+  overflow: auto;
 
 }
 
+/*  Title banner for the main container  */
 .ageGradeTitle {
   background-color: rgba(255, 87, 34, 1);
   height: 100px;
-  border-radius: 0px 16px 0px 0px;
-  margin: 0px;
-  box-shadow: -1px 1px 3px 0.5px #888;
+  border-radius: 0px 12px 0px 0px;
+  position: relative;
   z-index: 2;
+  bottom: 2px;
+  box-shadow: -1px 1px 3px 0.5px #888;
 }
 
-
+/*  Title banner for the density altitude container  */
 .densAltTitle {
   background-color: rgba(255, 87, 34, 1);
   width: 100%;
@@ -41,6 +59,8 @@
   justify-content: center;
 }
 
+
+/*  Text inside agegradetitle  */
 .ageGradeTitle > .page-header, .densAltTitle > .page-header {
   color: #FFF;
   text-align: center;
@@ -49,12 +69,18 @@
   padding-top: 35px;
 }
 
+
+/*  Font class for various text in the widget  */
 .fontForText {
   font-family: "Open Sans";
   font-weight: 500;
   font-size: 16px;
 }
 
+
+
+
+/*  The container that includes both the calc & and the output sections  */
 .calcWithOutput {
   background-color: #fff;
   -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
@@ -69,17 +95,24 @@
 
 }
 
+
+
+/*  Paragraph of text in the age grade section  */
 .ageGradeTextLeft {
   padding: 15px 15px 15px 15px;
   color: rgba(0, 0, 0, 0.87);
   z-index: 0;
 }
 
+
+
+/*  Hides the radio button that controls the text animation  */
 .hideAgeGradeRadio {
   opacity: 0;
 }
 
 
+/*  Label for the radio button above  */
 .stackButton {
   background-image: url('/images/menu24Grey.png');
   height: 24px;
@@ -94,16 +127,18 @@
 }
 
 
+/*  Just the calc widget section  */
 .ageGradeCalc {
   padding-left: 50px;
   
 }
 
-
+/*  Social media links section  */
 .socialMedia {
   padding: 35px 0px 0px 250px;
 }
 
+/*  Text for the social media   */
 #shareText {
   color: #000;
   text-decoration: none;
@@ -112,34 +147,28 @@
 }
 
 
-/* Calc Style */
+/* ----------- Calc Style ----------- */
 
-.btn-secondary {
-  background-color: #ededed;
-}
-
-.btn-secondary:active {
-  background-color: #51c64f;
-  color: #ffffff;
-}
-
+/* Positioning for the calc and clear btns  */
 .allCalcBtns {
   position: relative;
   left: 100px;
 }
 
+
+/* Button used to calculate age grade */
 .calcButton {
-    width: 70%;
-    height: 50px;
-    color: #51c64f;
-    border: 1px solid #434343;
-    background: #434343;
-    border-radius: 5px;
-    margin-top: 5px;
-    transition: all .15s cubic-bezier(.27,1,1,.9);
-    box-shadow: -1px 1px 5px 1px #888;
-    position: relative;
-    z-index: 1;
+  width: 70%;
+  height: 50px;
+  color: #51c64f;
+  border: 1px solid #434343;
+  background: #434343;
+  border-radius: 5px;
+  margin-top: 5px;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
+  box-shadow: -1px 1px 5px 1px #888;
+  position: relative;
+  z-index: 1;
 
 }
 
@@ -160,6 +189,9 @@
     outline: 0;
 }
 
+
+/* Span that covers the area around the calc btn.
+  Used for updating whether the btn can be clicked or not */
 .calcBtnHoverSpan {
   width: 250px;
   height: 62px;
@@ -169,6 +201,7 @@
   z-index: 0;
 }
 
+/* Button that clears the calc forms and output */
 .clearButton {
     width: 118px;
     height: 35px;
@@ -197,10 +230,13 @@
     color: #CC0000;
 }
 
+/* Label for the format needed for time input */
 .labelTimeFormat {
   margin-left: 5px;
 }
 
+
+/* Editing bootstrap default form */
 .form-control {
   width: 153px;
   height: 40px;
@@ -221,20 +257,18 @@
   border-color: #a0a0a0;
 }
 
-.btn {
-  width: 50px;
-  font-family: bold;
-  font-size: 20px;
-}
-
+/* General class added to sections to set inline */
 .inline {
   display: inline-block;
 }
 
+
+/* Section that contains the gender buttons */
 .allGenInput {
   margin-top: 10px;
 }
 
+/* Label for the the gender selection btns */
 .genLabel {
   width: 70px;
   height: 35px;
@@ -252,6 +286,7 @@
   box-shadow: 0px 0px 0px;
 }
 
+/* Class added by ng-class to indicate selected gen btn */
 .genSelected {
   width: 70px;
   height: 35px;
@@ -265,6 +300,7 @@
   transition: all .15s cubic-bezier(.27,1,1,.9);
 }
 
+/* Gender radio btns that the above are labels for */
 .inputGender {
   width: 1px;
   height: 1px;
@@ -272,6 +308,7 @@
   
 }
 
+/* Section of the gen btns that doesn't include the error span */
 .justGenBtns {
   position: relative;
   visibility: visible;
@@ -281,12 +318,15 @@
   width: 100%;
 }
 
+/* Text for the female label b/c it's longer than male */
 #femaleLabel {
   position: relative;
   left: 9px;
 }
 
+/* ----------- Output Style ----------- */
 
+/* Text for the output section */
 .outputText {
   font-family: "Open Sans";
   font-weight: 500;
@@ -295,16 +335,17 @@
 
 }
 
+/* Top output section text */
 #outputText1 {
   padding-top: 40px;
 }
 
+/* Bottom output section text */
 #outputText2 {
-  
   padding-top: 55px;
-
 }
 
+/* Inset output section  */
 .outputColumn {
   background-color: rgba(96,125,139,0.3);
   -webkit-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
@@ -314,22 +355,25 @@
 
 }
 
+/* Container for whole output section */
 .outputAgeGrade {
   padding-bottom: 50px;
 
 }
 
+/* Text inside the output section that labels the output numbers */
 .outputInfo {
   text-align: center;
-
 }
 
+/* Text for the output data */
 .outputData {
   font-family: "Open Sans";
   font-weight: 500;
   font-size: 24px;
 }
 
+/* Output sections inside the output column that display output numbers */
 .outputContainer {
   position: relative;
   margin-top: 25px;
@@ -347,6 +391,8 @@
   left: 25%;
 
 }
+
+/* Sections below the calc */
 
 .dataAnalysis {
   background-color: #fff;
