@@ -1,3 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+/* ----------- Logo/Navbar Top Section ----------- */
+
+/* Nav bar at top of page */
+.navbar-default {
+  box-shadow: 0px 0px 1px #888;
+  background-color: rgba(255, 204, 188, 1);
+  width: 380px;
+}
+
+.navbar {
+  background-color: #FFF;
+  border: 0px;
+
+}
+
+.nav-tabs {
+  border-bottom: 0px;
+}
 
 .runnerLogo {
   background-image: url('/images/runnerIcon.png');
@@ -9,7 +29,6 @@
   top: 5px;
 }
 
-
 #main{
     display:block;
     width:100%;
@@ -18,7 +37,75 @@
     background: #000;
     position: absolute;
     z-index: 1;
+}
+
+/* Main container that the main.html is routed into */
+.mainForm {
+  margin-top: 10px;
 } 
+
+/* ----------- General/Bootstrap Classes Style ----------- */
+
+/* Clearing margin and padding for all */
+* {
+  padding:0;
+  margin:0;
+}
+
+/*  Font class for various text in the widget  */
+.fontForText {
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* Editing bootstrap default form */
+.form-control {
+  width: 153px;
+  height: 40px;
+  box-shadow: -1px 1px 3px 0.5px #888;
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+}
+
+.form-control:focus {
+  box-shadow: -1px 1px 3px 1.5px #888;
+  outline: 0;
+  border-color: #a0a0a0;
+}
+
+.form-control:hover {
+  border-color: #a0a0a0;
+}
+
+/* Editing bootstrap container */
+.container {
+  position:relative;
+}
+
+/* Editing bootstrap container-fluid */
+.container-fluid {
+  width: 100%;
+  height: 800px; 
+  position:relative;
+  background-color: rgba(255, 204, 188, 1);
+  box-shadow: 0px 0px 1px #888;
+
+}
+
+/* General class added to sections to set inline */
+.inline {
+  display: inline-block;
+}
+
+/* General class added to forms for red error border */
+.formErr, .formErr:active, .formErr:focus {
+  border-color: #CC0000;
+  transition: all .1s cubic-bezier(.27,1,1,.9);
+}
+
 
 
 /* ----------- Container Style ----------- */
@@ -36,6 +123,61 @@
   overflow: auto;
 
 }
+
+/*  The container that includes both the calc & and the output sections  */
+.calcWithOutput {
+  background-color: #fff;
+  -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  margin-top: -1px;
+  padding: 5px;
+  border-radius: 10px;
+  height: 420px;
+  position: relative;
+  z-index: 1;
+}
+
+/*  Just the calc widget section  */
+.ageGradeCalc {
+  padding-left: 50px;
+  
+}
+
+
+/* ----------- Paragraph Text Style ----------- */
+
+
+/*  Paragraph of text in the age grade section  */
+.ageGradeTextLeft {
+  padding: 15px 15px 15px 15px;
+  color: rgba(0, 0, 0, 0.87);
+  z-index: 0;
+}
+
+/*  Hides the radio button that controls the text animation  */
+.hideAgeGradeRadio {
+  opacity: 0;
+}
+
+
+/*  Label for the radio button for text animation */
+.stackButton {
+  background-image: url('/images/menu24Grey.png');
+  height: 24px;
+  width: 24px;
+  margin: 36px 0px 0px 0px;
+}
+
+.stackButton:hover{
+  background-image: url('/images/menu24f.png');
+  height: 24px;
+  width: 24px;
+}
+
+
+/* ----------- Title Banner Style ----------- */
+
 
 /*  Title banner for the main container  */
 .ageGradeTitle {
@@ -69,70 +211,6 @@
   padding-top: 35px;
 }
 
-
-/*  Font class for various text in the widget  */
-.fontForText {
-  font-family: "Open Sans";
-  font-weight: 500;
-  font-size: 16px;
-}
-
-
-
-
-/*  The container that includes both the calc & and the output sections  */
-.calcWithOutput {
-  background-color: #fff;
-  -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
-  -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
-  box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
-  margin-top: -1px;
-  padding: 5px;
-  border-radius: 10px;
-  height: 420px;
-  position: relative;
-  z-index: 1;
-
-}
-
-
-
-/*  Paragraph of text in the age grade section  */
-.ageGradeTextLeft {
-  padding: 15px 15px 15px 15px;
-  color: rgba(0, 0, 0, 0.87);
-  z-index: 0;
-}
-
-
-
-/*  Hides the radio button that controls the text animation  */
-.hideAgeGradeRadio {
-  opacity: 0;
-}
-
-
-/*  Label for the radio button above  */
-.stackButton {
-  background-image: url('/images/menu24Grey.png');
-  height: 24px;
-  width: 24px;
-  margin: 36px 0px 0px 0px;
-}
-
-.stackButton:hover{
-  background-image: url('/images/menu24f.png');
-  height: 24px;
-  width: 24px;
-}
-
-
-/*  Just the calc widget section  */
-.ageGradeCalc {
-  padding-left: 50px;
-  
-}
-
 /*  Social media links section  */
 .socialMedia {
   padding: 35px 0px 0px 250px;
@@ -144,6 +222,86 @@
   text-decoration: none;
   font-size: 12px;
   padding-right: 10px;
+}
+
+
+/* ----------- Tab Style ----------- */
+
+
+/* Container for all the tabs in agegrademain */
+.tabRow {
+  list-style: none;
+  padding: 0;
+  line-height: 35px;
+  height: 37px;
+  overflow: hidden;
+  font-size: 12px;
+  position: relative;
+}
+
+/* Class for the unselected/default tabs */
+.tabRowLi {
+  background-color: rgba(255, 87, 34, 0.5);
+  color: #FFF;
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 12px;
+  text-decoration: none;
+  display: inline-block;
+  position:relative;
+  z-index: 1;
+  border: 0px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  margin-left: -5px;
+  padding: 0 35px 1px;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
+}
+
+.tabRowLi:hover {
+  background-color: rgba(230, 74, 25, 0.7);
+}
+
+#ageGradeTab {
+  margin-left: 0px;
+}
+
+/* Selected class for the tabs added by ng-class when user selects a tab */
+.selected {
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 12px;
+  display: inline-block;
+  position:relative;
+  border:0px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.4);
+  margin-left: -5px;
+  padding: 0 35px 1px;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
+  background: rgba(255, 87, 34, 1);
+  color: #FFF;
+  z-index: 2;
+}
+
+
+.tabRow:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.tabText {
+  color: #FFF;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 12px;
 }
 
 
@@ -188,7 +346,6 @@
 .calcButton:focus, .clearButton:focus, .form-control {
     outline: 0;
 }
-
 
 /* Span that covers the area around the calc btn.
   Used for updating whether the btn can be clicked or not */
@@ -235,33 +392,29 @@
   margin-left: 5px;
 }
 
-
-/* Editing bootstrap default form */
-.form-control {
-  width: 153px;
-  height: 40px;
-  box-shadow: -1px 1px 3px 0.5px #888;
-  font-family: "Open Sans";
-  font-weight: 500;
-  font-size: 16px;
-  text-align: center;
+/* Sizing of each individual time input */
+#inputTime1, #inputTime2, #inputTime3 {
+  width: 70px;
+  visibility:visible;
 }
 
-.form-control:focus {
-  box-shadow: -1px 1px 3px 1.5px #888;
-  outline: 0;
-  border-color: #a0a0a0;
+/* Sizing of age input */
+#inputAge {
+  width: 70px;
 }
 
-.form-control:hover {
-  border-color: #a0a0a0;
+/* Positioning of age input */
+#move1 {
+  position: relative;
+  left: 63px;
 }
 
-/* General class added to sections to set inline */
-.inline {
-  display: inline-block;
+/* Positioning of Distance input */
+#move2 {
+  position: relative;
+  left: 27px;
+  
 }
-
 
 /* Section that contains the gender buttons */
 .allGenInput {
@@ -392,7 +545,93 @@
 
 }
 
-/* Sections below the calc */
+/* ----------- Error Handling Style ----------- */
+
+/* Invisible version of time error div swapped out by by ng-class 
+  Protects against margin/padding problems -- 
+  Needs to be b4 the visible one in css or doesnt work?*/
+.inputTimeErrInvis {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+  left: 54px;
+  padding: 13px 0px 12px 0px;
+  border-radius: 5px;
+  border: 1px solid #CC0000;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
+  visibility:collapse;
+}
+
+/* Visible version of the time error div shown by ng-class */
+.inputTimeErr {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+  left: 54px;
+  padding: 13px 0px 12px 0px;
+  padding-right: 0px;
+  border-radius: 5px;
+  border: 1px solid #CC0000;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
+  visibility:visible;
+}
+
+/* Making everything inside inputtimeerr visible */
+.inputTimeErr > input, .inputTimeErrInvis > input {
+  visibility:visible;
+}
+
+/* Font for everything inside inputtimeerr */
+.inputTimeErr > span, .inputTimeErrInvis > span {
+  font-family: "Helvetica";
+    font-weight: 500;
+    font-size: 18px;
+  visibility:visible;
+}
+
+/* Visible version of the gender err div shown by ng-class */
+.genCheckErr {
+  position: relative;
+  left: 35px;
+    border: 1px solid #CC0000;
+    border-radius: 5px;
+    padding: 11px 9px 10px 0px;
+    transition: all .15s cubic-bezier(.27,1,1,.9);
+  visibility: visible;
+}
+
+/* Invisible version of age error div swapped out by by ng-class 
+  Protects against margin/padding problems */
+.genCheckErrInvis {
+  position: relative;
+  left: 35px;
+    border: 1px solid #CC0000;
+    border-radius: 5px;
+    padding: 11px 10px 10px 0px;
+    transition: all .15s cubic-bezier(.27,1,1,.9);
+  visibility: collapse;
+}
+
+/* Error div that fades in when any forms are missing data */
+.errWarning {
+  position: relative;
+  left: 85px;
+  width: 75%;
+  height: 60px;
+  background: #ffa0a0;
+  text-align: center;
+  box-shadow: -2px 2px 7px 2px #888;
+  border-radius: 10px;
+}
+
+.errWarning > div {
+  padding-top: 8px;
+
+}
+
+
+
+/* ---------- Sections below the calc ---------- */
 
 .dataAnalysis {
   background-color: #fff;
