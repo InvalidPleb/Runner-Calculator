@@ -5,11 +5,12 @@
       <div class="page-header col-lg-4 col-md-4 col-sm-4 col-xs-4 fontForText">
         <span class="ageGradeHeadTxt">Age-Graded Calculator</span>
       </div>
+      <!-- 
       <div class="socialMedia col-lg-4 col-md-4 hidden-sm hidden-xs">
         <a><span class="fontForText" id="shareText">SHARE</span><img src="/images/share46.png" alt="" width="24" height="24">
         </a>
-        <input class="debugBtn" type="button" value="debug" ng-click="debugButton()">
       </div>
+      -->
   </div>
   <section class="calcWithOutput col-lg-12 col-md-12">
     <div class="ageGradeCalc container col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -44,7 +45,7 @@
 
       <div class="allGenInput row">
       <span class="fontForText">Gender:</span>
-        <span class="" ng-class="{'genCheckErr' : genCheckErr, 'genCheckErrInvis' : !genCheckErr}">
+        <span id="genCheckErr" class="genCheckErrInvis">
           <span class="justGenBtns">
             <span>
               <label class="genLabel" ng-class="{false: 'genLabel fontForText', Male: 'genSelected fontForText animated bounceIn', Female: 'genLabel fontForText'}[genCheck]">

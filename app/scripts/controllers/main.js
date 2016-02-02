@@ -150,8 +150,8 @@ angular.module('runnerCalcApp')
 
 		var outputAgeGrade = $(".outputAgeGrade");
 		var errWarning = $('.errWarning');
+		var genCheckErr = $('#genCheckErr');
 	  	errWarning.hide();
-	  	
 
 	  	$scope.hideTextCheck = "Static";
 
@@ -200,6 +200,7 @@ angular.module('runnerCalcApp')
 	    	} else {
 	    		calcBtnDisabled3 = false;
 	    		$scope.genCheckErr = false;
+	    		genCheckErr.removeClass('genCheckErr').addClass('genCheckErrInvis');
 	    		return false;
 	    	}
 	  	};
@@ -309,7 +310,9 @@ angular.module('runnerCalcApp')
 	  	
 	  	$scope.calcButton = function (){
 
-	  		$scope.calcBtnDisabled = true;
+	  		if (calcBtnDisabled1 === true || calcBtnDisabled2 === true || calcBtnDisabled3 === true || calcBtnDisabled4 === true) {
+	  			$scope.calcBtnDisabled = true;
+	  		}
 
 	  		// Converting the time input fields to int becaus
 	  		// 
@@ -385,8 +388,10 @@ angular.module('runnerCalcApp')
 	    	if ($scope.genCheck === false || $scope.genCheck === undefined) {
 	    		$scope.genCheckErr = true;
 	    		calcBtnDisabled3 = true;
+	    		genCheckErr.removeClass('genCheckErrInvis').addClass('genCheckErr');
 	    	} else {
 	    		$scope.genCheckErr = false;
+
 	    	}
 
 	    	// Fades in the error div if any of the errors are true.
@@ -428,6 +433,7 @@ angular.module('runnerCalcApp')
 	  		calcBtnDisabled4 = false;
 
 	  		$scope.calcBtnDisabled = false;
+	  		genCheckErr.removeClass('genCheckErr').addClass('genCheckErrInvis');
 
 
 
