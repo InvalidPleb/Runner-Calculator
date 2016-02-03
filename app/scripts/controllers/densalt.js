@@ -3,12 +3,13 @@
 angular.module('runnerCalcApp')
   .controller('DensAltCtrl', function ($scope, $http) {
 
+
   	$scope.densButton = function (){
 
 	  	var latUser = 0;
 	    var longUser = 0;
 
-	    navigator.geolocation.getCurrentPosition(GetLocation, err);
+	    
 
 	    function GetLocation(location) {
 	        latUser = location.coords.latitude;
@@ -74,6 +75,9 @@ angular.module('runnerCalcApp')
 	                break;              
 	        }
 	    }
+
+	    //disabled because of jshint
+	    navigator.geolocation.getCurrentPosition(GetLocation, err);
 	};
 
 

@@ -25,26 +25,33 @@
   width: 192px;
   position: relative;
   z-index: 2;
-  left: 15%;
+  left: 20%;
+  margin-top: -90px;
 }
 
 #main{
     display:block;
     width:100%;
-    padding:50px 10%;
-    height:300px;
+    padding:50px;
+    
     background: #FFF;
     position: absolute;
     z-index: 1;
 }
 
 .siteTitle {
-  font-size: 24px;
+  font-size: 50px;
   color: #000;
   position: relative;
   z-index: 2;
-  left: 35%;
+  left: 40%;
+  top: 30px;
   
+}
+
+.siteTitleContainer {
+  height: 150px;
+
 }
 
 /* Main container that the main.html is routed into */

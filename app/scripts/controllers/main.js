@@ -296,10 +296,10 @@ angular.module('runnerCalcApp')
 	  	// appears below the calculator when info is missing. This is called by
 	  	// the error functions above.
 
-	  	var hideErrWhenFilled = function() {
+	  	//var hideErrWhenFilled = function() {
 
-	  		errWarning.fadeOut(3000);
-	  	};
+	  	//	errWarning.fadeOut(3000);
+	  	//};
 
 
 	  	// Initially enables the calc button
