@@ -20,14 +20,14 @@ angular.module('runnerCalcApp')
 	  	$scope.paceCalc = {
 
 	  		title: "Running Pace",
-	  		href: "#/about"
+	  		href: "#/pace"
 
 	  	};
 
 	  	$scope.paceConvert = {
 
 	  		title: "Pace Converter",
-	  		href: "#/densalt"
+	  		href: "#/paceconvert"
 
 	  	};
 

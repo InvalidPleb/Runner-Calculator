@@ -34,6 +34,16 @@ angular
         controller: 'DensAltCtrl',
         controllerAs: 'densAlt'
       })
+      .when('/pace', {
+        templateUrl: 'views/pacecalc.html',
+        controller: 'PaceCtrl',
+        controllerAs: 'pace'
+      })
+      .when('/paceconvert', {
+        templateUrl: 'views/paceconvert.html',
+        controller: 'PaceConvertCtrl',
+        controllerAs: 'paceConvert'
+      })
       .otherwise({
         redirectTo: '/'
       });
