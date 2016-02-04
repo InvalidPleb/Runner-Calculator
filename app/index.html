@@ -63,7 +63,11 @@
     </div>
 
 
+
+
     <div class="container-fluid">
+
+      
       
 
       <div class="mainForm container">
@@ -76,7 +80,13 @@
       
         <div class="tabRow" ng-controller="MainTabCtrl">
 
+        <main-tab info="ageGrade"></main-tab>
+        <main-tab info="paceCalc"></main-tab>
+        <main-tab info="paceConvert"></main-tab>
+        
+
           
+        <!--
           <a href="#/" class="tabTabs">
           <li class="tabRowLi" 
             ng-click="toggleSelect0()" 
@@ -86,7 +96,7 @@
               <span class="tabText">Age-Grade</span>
           </li>
           </a>
-          <!-- 
+          
           <a href="/#/densalt" class="tabTabs">
           <li class="tabRowLi" 
             ng-click="toggleSelect1()" 
@@ -94,16 +104,14 @@
               <span class="tabText">Density Altitude</span>
           </li>
           </a>
+
           -->
-
-
-
+        
           <!-- 
           <li class="tabRowLi" ng-click="toggleSelect2()" ng-class="{true: 'selected', false: 'tabRowLi'}[isSelected2]">Another</li>
 
           <li class = "tabRowLi" ng-click="toggleSelect3()" ng-class="{true: 'selected', false: 'tabRowLi'}[isSelected3]">One More</li>
           -->
-
         </div>
       </ul>
       </div>

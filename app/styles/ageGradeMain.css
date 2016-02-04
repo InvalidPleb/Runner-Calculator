@@ -256,29 +256,25 @@
 
 /* Class for the unselected/default tabs */
 .tabRowLi {
-  background-color: rgba(255, 87, 34, 0.5);
+  background-color: rgba(255, 87, 34, 0.6);
   color: #FFF;
   font-family: "Open Sans";
   font-weight: 300;
   font-size: 12px;
   text-decoration: none;
   display: inline-block;
-  position:relative;
+  position: relative;
   z-index: 1;
   border: 0px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  margin-left: -5px;
+  margin-left: -2px;
   padding: 0 35px 1px;
   transition: all .15s cubic-bezier(.27,1,1,.9);
 }
 
 .tabRowLi:hover {
-  background-color: rgba(230, 74, 25, 0.7);
-}
-
-#ageGradeTab {
-  margin-left: 0px;
+  background-color: #FF7939;
 }
 
 /* Selected class for the tabs added by ng-class when user selects a tab */
