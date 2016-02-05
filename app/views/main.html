@@ -1,9 +1,9 @@
-<div class="ageGradeMain">
-  <div class="ageGradeTitle col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="calcMain">
+  <div class="calcTitle col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
       </div>
       <div class="page-header col-lg-4 col-md-4 col-sm-4 col-xs-4 fontForText">
-        <span class="ageGradeHeadTxt">Age-Graded Calculator</span>
+        <span class="calcHeadTxt">Age-Graded Calculator</span>
       </div>
       <!-- 
       <div class="socialMedia col-lg-4 col-md-4 hidden-sm hidden-xs">
@@ -13,7 +13,7 @@
       -->
   </div>
   <section class="calcWithOutput col-lg-12 col-md-12">
-    <div class="ageGradeCalc container col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <div class="buttonCalc container col-lg-6 col-md-6 col-sm-12 col-xs-12">
       <br>
       <div class="row">
         <span class="fontForText">Age:</span>
@@ -82,7 +82,7 @@
 
 
     <section class="outputColumn col-lg-6 col-md-6 col-sm-12 col-xs-12">
-    <div class="outputAgeGrade"> <!-- hidden w/ jquery not angular-->
+    <div class="outputCalc"> <!-- hidden w/ jquery not angular-->
         <div class="outputInfo" id="outputText1">
           <h4 class="outputText">Your age-graded time</h4>
           <div class="outputContainer">
@@ -102,11 +102,11 @@
 
   </section>
 
-  <section class="ageGradeTxtContainer">
+  <section>
     <label class="stackButton" for="hideTextCheck" >
-      <input type="checkbox" class="hideAgeGradeRadio" ng-model="hideTextCheck" id="hideTextCheck" ng-click="stackButton()">
+      <input type="checkbox" class="hideCalcRadio" ng-model="hideTextCheck" id="hideTextCheck" ng-click="stackButton()">
     </label>
-    <div ng-class="{true: 'ageGradeTextLeft col-lg-6 col-md-6 col-sm-12 col-xs-12 animated slideOutUp', false: 'ageGradeTextLeft col-lg-6 col-md-6 col-sm-12 col-xs-12 animated slideInDown', Static: 'ageGradeTextLeft col-lg-6 col-md-6 col-sm-12 col-xs-12'}[hideTextCheck]">
+    <div ng-class="{true: 'calcTextLeft col-lg-6 col-md-6 col-sm-12 col-xs-12 animated slideOutUp', false: 'calcTextLeft col-lg-6 col-md-6 col-sm-12 col-xs-12 animated slideInDown', Static: 'calcTextLeft col-lg-6 col-md-6 col-sm-12 col-xs-12'}[hideTextCheck]">
       
       <div class="collapse in">
         <h4>

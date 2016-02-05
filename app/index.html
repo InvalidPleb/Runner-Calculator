@@ -5,23 +5,11 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/ageGradeMain.css">
     <link rel="stylesheet" href="styles/animate.css">
-    <!-- endbuild -->
   </head>
   <body ng-app="runnerCalcApp">
-
-    <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
     <!-- 
     <div class="header">
         <div class="container navbar-default">
@@ -62,30 +50,15 @@
       <div class="runnerLogo"></div>
     </div>
 
-
-
-
     <div class="container-fluid">
-
-      
-      
-
       <div class="mainForm container">
       <ul class="nav nav-tabs responsive">
-        <!--
-        <li class="mainTabs" id="mainTab1"><a href="#/" class="tabTabs"><span class="tabText">Age-Grade</span></a></li>
-        <li class="mainTabs"><a href="#/altdens" class="tabTabs"><span class="tabText">Altitude Density</span></a></li>
-        <li class="mainTabs" id="mainTabLast"><a href="#/" class="tabTabs"><span class="tabText">Age-Grade</span></a></li>
-        -->
-      
-        <div class="tabRow" ng-controller="MainTabCtrl">
 
+        <div class="tabRow" ng-controller="MainTabCtrl">
         <main-tab info="ageGrade"></main-tab>
         <main-tab info="paceCalc"></main-tab>
         <main-tab info="paceConvert"></main-tab>
         
-
-          
         <!--
           <a href="#/" class="tabTabs">
           <li class="tabRowLi" 
@@ -104,14 +77,8 @@
               <span class="tabText">Density Altitude</span>
           </li>
           </a>
-
           -->
-        
-          <!-- 
-          <li class="tabRowLi" ng-click="toggleSelect2()" ng-class="{true: 'selected', false: 'tabRowLi'}[isSelected2]">Another</li>
-
-          <li class = "tabRowLi" ng-click="toggleSelect3()" ng-class="{true: 'selected', false: 'tabRowLi'}[isSelected3]">One More</li>
-          -->
+      
         </div>
       </ul>
       </div>
@@ -132,13 +99,10 @@
        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
        }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -148,15 +112,12 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/densalt.js"></script>
-        <script src="scripts/controllers/maintabs.js"></script>
-        <!-- endbuild -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/densalt.js"></script>
+    <script src="scripts/controllers/maintabs.js"></script>
+ 
 </body>
 </html>

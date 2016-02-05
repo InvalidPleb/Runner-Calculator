@@ -114,6 +114,75 @@ angular.module('runnerCalcApp')
 
 	})
 
+	.controller('PaceCtrl', function($scope){
+
+		$scope.run = '';
+	  	$scope.list = [
+		    {
+		      Event: 'run5km',
+		      Title: '5 km'
+		    }, {
+		      Event: 'run6km',
+		      Title: '6 km'
+		    }, {
+		      Event: 'run4Mile',
+		      Title: '4 mile'
+		    }, {
+		      Event: 'run8km',
+		      Title: '8 km'
+		    }, {
+		      Event: 'run5Mile',
+		      Title: '5 mile'
+		    }, {
+		      Event: 'run10km',
+		      Title: '10 km'
+		    }, {
+		      Event: 'run12km',
+		      Title: '12 km'
+		    }, {
+		      Event: 'run15km',
+		      Title: '15km'
+		    }, {
+		      Event: 'run10Mile',
+		      Title: '10 mile'
+		    }, {
+		      Event: 'run20km',
+		      Title: '20 km'
+		    }, {
+		      Event: 'runHalfMar',
+		      Title: 'half mar'
+		    }, {
+		      Event: 'run25km',
+		      Title: '25 km'
+		    }, {
+		      Event: 'run30km',
+		      Title: '30 km'
+		    }, {
+		      Event: 'runMarathon',
+		      Title: 'marathon'
+		    }, {
+		      Event: 'run50km',
+		      Title: '50 km'
+		    }, {
+		      Event: 'run50Mile',
+		      Title: '50 mile'
+		    }, {
+		      Event: 'run100km',
+		      Title: '100 km'
+		    }, {
+		      Event: 'run150km',
+		      Title: '150 km'
+		    }, {
+		      Event: 'run100Mile',
+		      Title: '100 mile'
+		    }, {
+		      Event: 'run200km',
+		      Title: '200 km'
+		    }
+		];
+		
+	})
+
 	.directive('mainTab', function(){
 	    // Runs during compile
 	    return {
@@ -127,6 +196,26 @@ angular.module('runnerCalcApp')
 	      // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
 	      restrict: 'AEC', // E = Element, A = Attribute, C = Class, M = Comment
 	      templateUrl: '/views/tabdir.html',
+	      // templateUrl: '',
+	      replace: true, //doesnt include custom tab in html, instead replaces it
+	      // transclude: true,
+	      // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
+	    };
+  	})
+
+  	.directive('calcSection', function(){
+	    // Runs during compile
+	    return {
+	      // name: '',
+	      // priority: 1,
+	      // terminal: true,
+	      scope: {
+	      	tabInfo: '=info'
+	      }, // {} = isolate, true = child, false/undefined = no change
+	      // controller: function($scope, $element, $attrs, $transclude) {},
+	      // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
+	      restrict: 'AEC', // E = Element, A = Attribute, C = Class, M = Comment
+	      templateUrl: '/views/calcdir.html',
 	      // templateUrl: '',
 	      replace: true, //doesnt include custom tab in html, instead replaces it
 	      // transclude: true,

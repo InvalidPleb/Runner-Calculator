@@ -41,7 +41,7 @@ angular
       })
       .when('/paceconvert', {
         templateUrl: 'views/paceconvert.html',
-        controller: 'PaceConvertCtrl',
+        controller: 'DensAltCtrl',
         controllerAs: 'paceConvert'
       })
       .otherwise({
