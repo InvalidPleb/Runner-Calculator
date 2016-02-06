@@ -66,25 +66,21 @@ angular.module('runnerCalcApp')
 
   	angular.element(document).ready(function () {
 
-  		$scope.ageGradeInfo = {
+  		$scope.calcTitleInfo = {
 
-  			title: "Age-Graded Calculator",
-  			inputForm: "Age",
-
+  			title: "Age-Graded Calculator"
 
   		};
 
-  		$scope.paceCalcInfo = {
+  		
+  		$scope.calcInfo = {
 
-  			title: "Pace Calculator",
-  			inputForm: "Pace",
-
-
-  		};
-
-  		$scope.paceConvertInfo = {
+  			inputFormTop: "Age",
+  			inputFormTopClass: "moveAge",
+  			outputLabelTxtTop: "Your age-graded time"
 
   		};
+
 
   		// Populating the dropdown menu that selects the event.
 
@@ -155,7 +151,7 @@ angular.module('runnerCalcApp')
 
 		var outputAgeGrade = $(".outputAgeGrade");
 		var errWarning = $('.errWarning');
-		var genCheckErr = $('#genCheckErr');
+		var genCheckErr = $('.genCheckErrID');
 	  	errWarning.hide();
 
 	  	$scope.hideTextCheck = "Static";
@@ -180,8 +176,8 @@ angular.module('runnerCalcApp')
 
 		
 		
-		$scope.updateInputAge = function() {
-			if ($scope.inputAge === "") {
+		$scope.updateInputFormTop = function() {
+			if ($scope.inputFormTop === "") {
 				return true;
 			} else {
 				calcBtnDisabled1 = false;
@@ -231,6 +227,8 @@ angular.module('runnerCalcApp')
 	  		}
 
 	  	};
+
+
 
 	  	// The following six functions control the responsiveness of
 	  	// the three time input fields, changing the value of the text boxes
@@ -319,8 +317,8 @@ angular.module('runnerCalcApp')
 	  			$scope.calcBtnDisabled = true;
 	  		}
 
-	  		// Converting the time input fields to int becaus
-	  		// 
+	  		// Converting the time input fields to int for
+	  		// calculations.
 	  		var timeInput1 = parseInt($scope.inputTime1, 10);
 		    var timeInput2 = parseInt($scope.inputTime2, 10);
 		    var timeInput3 = parseInt($scope.inputTime3, 10);
@@ -351,7 +349,7 @@ angular.module('runnerCalcApp')
 	  		// in the data above by the user's input time. This number is then converted from
 	  		// seconds to the hh:mm:ss notation and shown to the user. 
 
-	  		var ageInt = parseInt($scope.inputAge);
+	  		var ageInt = parseInt($scope.inputFormTop);
 	  		var ageGrade = 0;
 	  		var ageGradePercent = 0;
 	  		var returnAgeGrade = 0;
@@ -369,8 +367,8 @@ angular.module('runnerCalcApp')
 
 	    	// Normalizes the different values in the age and distance input fields
 
-	    	if ($scope.inputAge % 1 !== 0) {
-	    		$scope.inputAge = "";
+	    	if ($scope.inputFormTop % 1 !== 0) {
+	    		$scope.inputFormTop = "";
 	    		calcBtnDisabled1 = true;
 	    	} 
 
@@ -401,7 +399,7 @@ angular.module('runnerCalcApp')
 
 	    	// Fades in the error div if any of the errors are true.
 	    	
-	    	if ($scope.updateInputAge() === true || $scope.updateInputTime() === true || 
+	    	if ($scope.updateInputFormTop() === true || $scope.updateInputTime() === true || 
 	    		$scope.updateInputDist() === true || $scope.updateGenCheck() === true) {
 	    		errWarning.fadeIn(500);
 	    	} else {
@@ -421,7 +419,7 @@ angular.module('runnerCalcApp')
 	  		// Resets a bunch of elements to their default
 	  		// values and hides some other elements. 
 
-	  		$scope.inputAge = undefined;
+	  		$scope.inputFormTop = undefined;
 	  		$scope.inputDist = undefined;
 	  		$scope.outputAgeGrade = undefined;
 	  		$scope.outputAgePercent = undefined;

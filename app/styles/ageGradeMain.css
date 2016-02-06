@@ -404,20 +404,26 @@
 }
 
 /* Sizing of each individual time input */
-#inputTime1, #inputTime2, #inputTime3 {
+.inputTime {
   width: 70px;
   visibility:visible;
 }
 
 /* Sizing of age input */
-#inputAge {
+.inputFormTop {
   width: 70px;
 }
 
 /* Positioning of age input */
-.move1 {
+.moveAge {
   position: relative;
   left: 63px;
+}
+
+.movePace {
+  position: relative;
+  left: 56px;
+
 }
 
 /* Positioning of Distance input */
@@ -483,7 +489,7 @@
 }
 
 /* Text for the female label b/c it's longer than male */
-#femaleLabel {
+.femaleLabel {
   position: relative;
   left: 9px;
 }
@@ -500,12 +506,12 @@
 }
 
 /* Top output section text */
-#outputText1 {
+.outputText1 {
   padding-top: 40px;
 }
 
 /* Bottom output section text */
-#outputText2 {
+.outputText2 {
   padding-top: 55px;
 }
 

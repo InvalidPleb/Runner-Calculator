@@ -116,7 +116,26 @@ angular.module('runnerCalcApp')
 
 	.controller('PaceCtrl', function($scope){
 
+		$scope.calcTitleInfo = {
+
+  			title: "Pace Calculator"
+
+  		};
+
+
+		$scope.calcInfo = {
+
+  			inputFormTop: "Pace",
+  			inputFormTopClass: "movePace",
+  			outputLabelTxtTop: "Your",
+  			outputLabelTxtTopRes: "output"
+
+  		};
+
+
+  		var calcBtnDisabled1;
 		var calcBtnDisabled2;
+		var calcBtnDisabled4;
 
 		$scope.updateInputDist = function() {
 	  		if ($scope.inputDist === "") {
@@ -126,6 +145,122 @@ angular.module('runnerCalcApp')
 				return false;
 			}
 	  	};
+
+		$scope.updateInputTime = function() {
+
+	  		if (parseInt($scope.inputTime1 + $scope.inputTime2 + $scope.inputTime3) === 0) {
+	  			$scope.inputTimeErr = true;
+	  			return true;
+	    	} else {
+	    		calcBtnDisabled4 = false;
+	    		$scope.inputTimeErr = false;
+	    		return false;
+	    	}
+	  	};
+
+
+		// The following six functions control the responsiveness of
+	  	// the three time input fields, changing the value of the text boxes
+	  	// depending upon blur or focus. 
+
+	  	$scope.inputTime1 = '00';
+	  	$scope.inputTime2 = '00';
+	  	$scope.inputTime3 = '00';
+
+	  	$scope.timeInput1Focus = function () {
+	  		if ($scope.inputTime1 === '00') {
+	  			$scope.inputTime1 = '';
+	  		}
+	  	};
+
+	  	$scope.timeInput1Blur = function () {
+	  		if ($scope.inputTime1 === '') {
+	  			$scope.inputTime1 = '00';
+	  		}
+	  	};
+
+	  	$scope.timeInput2Focus = function () {
+	  		if ($scope.inputTime2 === '00') {
+	  			$scope.inputTime2 = '';
+	  		}
+	  	};
+
+	  	$scope.timeInput2Blur = function () {
+	  		if ($scope.inputTime2 === '') {
+	  			$scope.inputTime2 = '00';
+	  		}
+	  	};
+
+	  	$scope.timeInput3Focus = function () {
+	  		if ($scope.inputTime3 === '00') {
+	  			$scope.inputTime3 = '';
+	  		}
+	  	};
+
+	  	$scope.timeInput3Blur = function () {
+	  		if ($scope.inputTime3 === '') {
+	  			$scope.inputTime3 = '00';
+	  		}
+	  	};
+
+	  	$scope.calcButton = function (){
+
+	  		if ($scope.inputFormTop % 1 !== 0) {
+		    		$scope.inputFormTop = "";
+		    		calcBtnDisabled1 = true;
+		    }
+
+
+		    // Converting the time input fields to int for
+	  		// calculations.
+	  		var timeInput1 = parseInt($scope.inputTime1, 10);
+		    var timeInput2 = parseInt($scope.inputTime2, 10);
+		    var timeInput3 = parseInt($scope.inputTime3, 10);
+
+		    // Multiplying the left (timeInput1) and middle (timeInput2) input fields so
+		    // that all fields have the unit of seconds. 
+		    // They are then added together for the full time. 
+		     
+		    var timeInput1Adjusted = (timeInput1 * 60) * 60;
+		    var timeInput2Adjusted = timeInput2 * 60;
+		    var totalTimeInput = timeInput1Adjusted + timeInput2Adjusted + timeInput3;
+
+		    var paceInput = parseInt($scope.inputFormTop);
+
+		    if ($scope.inputFormTop !== "" && totalTimeInput !== 0 && totalTimeInput !== undefined) {
+
+				$scope.calcInfo.outputLabelTxtTopRes = "distance";
+
+			} else if (totalTimeInput !== 0 && totalTimeInput !== undefined && $scope.inputDist !== undefined) {
+
+				$scope.calcInfo.outputLabelTxtTopRes = "pace";
+		
+			} else if ($scope.inputFormTop !== "" && $scope.inputDist !== undefined) {
+
+				$scope.calcInfo.outputLabelTxtTopRes = "time";
+		
+			} else {
+
+				$scope.calcInfo.outputLabelTxtTopRes = "output";
+		
+			}
+
+
+
+
+
+
+
+		    
+
+		};
+
+  		
+  		
+		
+
+  		
+
 
 		$scope.run = '';
 	  	$scope.list = [
@@ -192,8 +327,7 @@ angular.module('runnerCalcApp')
 		    }
 		];
 
-		var allGenInput = $(".genLabel");
-		allGenInput.hide();
+		
 		
 	})
 

@@ -17,8 +17,8 @@
       <br>
       <div class="row">
         <span class="fontForText">Age:</span>
-        <span class="move1">
-          <input type="text" class="form-control inline" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputAge()]" id="inputAge" maxlength="2" ng-model="inputAge">
+        <span class="moveAge">
+          <input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputFormTop formErr', false: 'form-control inline inputFormTop'}[updateInputFormTop()]" maxlength="2" ng-model="inputFormTop">
         </span>
       </div>
         <p></p>
@@ -34,29 +34,30 @@
           <span class="fontForText">Time:</span>
           <span class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
             
-            <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" type="text" class="form-control inline" id="inputTime1" maxlength="2">
+            <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" type="text" class="form-control inline inputTime" maxlength="2">
             <span>:</span>
-            <input ng-change="updateInputTime(inputTime2)" ng-model="inputTime2" ng-focus="timeInput2Focus()" ng-blur="timeInput2Blur()" type="text" class="form-control inline" id="inputTime2" maxlength="2">
+            <input ng-change="updateInputTime(inputTime2)" ng-model="inputTime2" ng-focus="timeInput2Focus()" ng-blur="timeInput2Blur()" type="text" class="form-control inline inputTime" maxlength="2">
             <span>:</span>
-            <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" type="text" class="form-control inline" id="inputTime3" maxlength="2">
+            <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" type="text" class="form-control inline inputTime" maxlength="2">
           </span>
           <!-- <span class="labelTimeFormat">hh:mm:ss</span> -->
       </div>
 
       <div class="allGenInput row">
       <span class="fontForText">Gender:</span>
-        <span id="genCheckErr" class="genCheckErrInvis">
+        <!-- class swap with jquery not angular -->
+        <span class="genCheckErrID genCheckErrInvis">
           <span class="justGenBtns">
             <span>
               <label class="genLabel" ng-class="{false: 'genLabel fontForText', Male: 'genSelected fontForText animated bounceIn', Female: 'genLabel fontForText'}[genCheck]">
-                <input type="radio" class="inputGender" ng-change="updateGenCheck(maleCheck)" ng-model="genCheck" value="Male" id="maleCheck">
-                <span class="fontForText" id="genBtnTextM">Male</span>
+                <input type="radio" class="inputGender" ng-change="updateGenCheck(maleCheck)" ng-model="genCheck" value="Male">
+                <span class="fontForText">Male</span>
               </label>
             </span>
             <span>
-              <label class="genLabel" ng-class="{false: 'genLabel fontForText', Male: 'genLabel fontForText', Female: 'genSelected fontForText animated bounceIn'}[genCheck]" id="femaleLabel">
-                <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model="genCheck" value="Female" id="femaleCheck">
-                <span class="fontForText" id="genBtnTextF">Female</span>
+              <label class="femaleLabel genLabel" ng-class="{false: 'genLabel fontForText', Male: 'genLabel fontForText', Female: 'genSelected fontForText animated bounceIn'}[genCheck]">
+                <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model="genCheck" value="Female">
+                <span class="fontForText">Female</span>
               </label>
             </span>
           </span>
@@ -79,19 +80,17 @@
       </div>
     </div>
   
-
-
     <section class="outputColumn col-lg-6 col-md-6 col-sm-12 col-xs-12">
     <div class="outputCalc"> <!-- hidden w/ jquery not angular-->
-        <div class="outputInfo" id="outputText1">
-          <h4 class="outputText">Your age-graded time</h4>
+        <div class="outputInfo">
+          <h4 class="outputText1 outputText">Your age-graded time</h4>
           <div class="outputContainer">
             <span class="outputData">{{outputAgeGrade}}</span>
             <input type="text" class="form-control fontForText ng-hide" maxlength="2" ng-model="outputAgeGrade" readonly type="text" >
           </div>
         </div>
         <div class="outputInfo">
-          <h4 class="outputText" id="outputText2">Your age-graded percent</h4>
+          <h4 class="outputText2 outputText">Your age-graded percent</h4>
           <div class="outputContainer">
             <span class="outputData">{{outputAgePercent}}</span>
             <input type="text" class="form-control fontForText ng-hide" maxlength="2" ng-model="outputAgePercent" readonly type="text" >
@@ -104,7 +103,7 @@
 
   <section>
     <label class="stackButton" for="hideTextCheck" >
-      <input type="checkbox" class="hideCalcRadio" ng-model="hideTextCheck" id="hideTextCheck" ng-click="stackButton()">
+      <input type="checkbox" class="hideCalcRadio" ng-model="hideTextCheck" ng-click="stackButton()">
     </label>
     <div ng-class="{true: 'calcTextLeft col-lg-6 col-md-6 col-sm-12 col-xs-12 animated slideOutUp', false: 'calcTextLeft col-lg-6 col-md-6 col-sm-12 col-xs-12 animated slideInDown', Static: 'calcTextLeft col-lg-6 col-md-6 col-sm-12 col-xs-12'}[hideTextCheck]">
       
