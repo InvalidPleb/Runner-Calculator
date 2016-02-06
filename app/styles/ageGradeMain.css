@@ -415,13 +415,13 @@
 }
 
 /* Positioning of age input */
-#move1 {
+.move1 {
   position: relative;
   left: 63px;
 }
 
 /* Positioning of Distance input */
-#move2 {
+.move2 {
   position: relative;
   left: 27px;
   

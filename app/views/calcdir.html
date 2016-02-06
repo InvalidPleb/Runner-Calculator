@@ -1,19 +1,4 @@
-<div class="calcMain">
-  <div class="calcTitle col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-      </div>
-      <div class="page-header col-lg-4 col-md-4 col-sm-4 col-xs-4 fontForText">
-        <span class="calcHeadTxt">Age-Graded Calculator</span>
-      </div>
-      <!-- 
-      <div class="socialMedia col-lg-4 col-md-4 hidden-sm hidden-xs">
-        <a><span class="fontForText" id="shareText">SHARE</span><img src="/images/share46.png" alt="" width="24" height="24">
-        </a>
-      </div>
-      -->
-  </div>
-  <section class="calcWithOutput col-lg-12 col-md-12">
-    <div class="buttonCalc container col-lg-6 col-md-6 col-sm-12 col-xs-12">
+<div class="buttonCalc container col-lg-6 col-md-6 col-sm-12 col-xs-12">
       <br>
       <div class="row">
         <span class="fontForText">Age:</span>
@@ -41,6 +26,26 @@
             <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" type="text" class="form-control inline" id="inputTime3" maxlength="2">
           </span>
           <!-- <span class="labelTimeFormat">hh:mm:ss</span> -->
+      </div>
+
+      <div class="allGenInput row">
+      <span class="fontForText">Gender:</span>
+        <span id="genCheckErr" class="genCheckErrInvis">
+          <span class="justGenBtns">
+            <span>
+              <label class="genLabel" ng-class="{false: 'genLabel fontForText', Male: 'genSelected fontForText animated bounceIn', Female: 'genLabel fontForText'}[genCheck]">
+                <input type="radio" class="inputGender" ng-change="updateGenCheck(maleCheck)" ng-model="genCheck" value="Male" id="maleCheck">
+                <span class="fontForText" id="genBtnTextM">Male</span>
+              </label>
+            </span>
+            <span>
+              <label class="genLabel" ng-class="{false: 'genLabel fontForText', Male: 'genLabel fontForText', Female: 'genSelected fontForText animated bounceIn'}[genCheck]" id="femaleLabel">
+                <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model="genCheck" value="Female" id="femaleCheck">
+                <span class="fontForText" id="genBtnTextF">Female</span>
+              </label>
+            </span>
+          </span>
+        </span>
       </div>
 
       <div class="allCalcBtns">

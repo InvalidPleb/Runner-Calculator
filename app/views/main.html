@@ -17,14 +17,14 @@
       <br>
       <div class="row">
         <span class="fontForText">Age:</span>
-        <span id="move1">
+        <span class="move1">
           <input type="text" class="form-control inline" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputAge()]" id="inputAge" maxlength="2" ng-model="inputAge">
         </span>
       </div>
         <p></p>
       <div class="row">
         <span class="fontForText">Distance:</span>
-        <span id="move2">
+        <span class="move2">
           <select ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
         </span>
         <p></p>
