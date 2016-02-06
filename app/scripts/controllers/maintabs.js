@@ -128,7 +128,7 @@ angular.module('runnerCalcApp')
   			inputFormTop: "Pace",
   			inputFormTopClass: "movePace",
   			outputLabelTxtTop: "Your",
-  			outputLabelTxtTopRes: "output"
+  			outputLabelTxtTopRes: "result"
 
   		};
 
@@ -157,6 +157,8 @@ angular.module('runnerCalcApp')
 	    		return false;
 	    	}
 	  	};
+
+
 
 
 		// The following six functions control the responsiveness of
@@ -203,14 +205,55 @@ angular.module('runnerCalcApp')
 	  		}
 	  	};
 
+
+
+
+	  	$scope.inputFormTop1 = '00';
+	  	$scope.inputFormTop2 = '00';
+	  	$scope.inputFormTop3 = '00';
+
+
+
+	  	$scope.inputFormTop1Focus = function () {
+	  		if ($scope.inputFormTop1 === '00') {
+	  			$scope.inputFormTop1 = '';
+	  		}
+	  	};
+
+	  	$scope.inputFormTop1Blur = function () {
+	  		if ($scope.inputFormTop1 === '') {
+	  			$scope.inputFormTop1 = '00';
+	  		}
+	  	};
+
+	  	$scope.inputFormTop2Focus = function () {
+	  		if ($scope.inputFormTop2 === '00') {
+	  			$scope.inputFormTop2 = '';
+	  		}
+	  	};
+
+	  	$scope.inputFormTop2Blur = function () {
+	  		if ($scope.inputFormTop2 === '') {
+	  			$scope.inputFormTop2 = '00';
+	  		}
+	  	};
+
+	  	$scope.inputFormTop3Focus = function () {
+	  		if ($scope.inputFormTop3 === '00') {
+	  			$scope.inputFormTop3 = '';
+	  		}
+	  	};
+
+	  	$scope.inputFormTop3Blur = function () {
+	  		if ($scope.inputFormTop3 === '') {
+	  			$scope.inputFormTop3 = '00';
+	  		}
+	  	};
+
+
 	  	$scope.calcButton = function (){
 
-	  		if ($scope.inputFormTop % 1 !== 0) {
-		    		$scope.inputFormTop = "";
-		    		calcBtnDisabled1 = true;
-		    }
-
-
+	  		
 		    // Converting the time input fields to int for
 	  		// calculations.
 	  		var timeInput1 = parseInt($scope.inputTime1, 10);
@@ -225,7 +268,17 @@ angular.module('runnerCalcApp')
 		    var timeInput2Adjusted = timeInput2 * 60;
 		    var totalTimeInput = timeInput1Adjusted + timeInput2Adjusted + timeInput3;
 
-		    var paceInput = parseInt($scope.inputFormTop);
+
+
+		    var inputFormTop1 = parseInt($scope.inputFormTop1, 10);
+		    var inputFormTop2 = parseInt($scope.inputFormTop2, 10);
+		    var inputFormTop3 = parseInt($scope.inputFormTop3, 10);
+
+		    var inputFormTop1Adjusted = (inputFormTop1 * 60) * 60;
+		    var inputFormTop2Adjusted = inputFormTop2 * 60;
+		    var totalInputFormTop = inputFormTop1Adjusted + inputFormTop2Adjusted + inputFormTop3;
+
+
 
 		    if ($scope.inputFormTop !== "" && totalTimeInput !== 0 && totalTimeInput !== undefined) {
 
@@ -241,23 +294,31 @@ angular.module('runnerCalcApp')
 		
 			} else {
 
-				$scope.calcInfo.outputLabelTxtTopRes = "output";
+				$scope.calcInfo.outputLabelTxtTopRes = "result";
 		
 			}
 
+			if (totalTimeInput === 0 || totalTimeInput === undefined) {
+	    		$scope.inputTimeErr = true;
+	    		calcBtnDisabled4 = true;
+	    	} else {
+	    		$scope.inputTimeErr = false;
+	    	}
 
+	    	if (totalInputFormTop === 0 || totalInputFormTop === undefined) {
+	    		$scope.inputFormTopErr = true;
+	    		calcBtnDisabled1 = true;
+	    	} else {
+	    		$scope.inputFormTopErr = false;
+	    	}
 
-
-
-
-
+	    	if ($scope.inputDist === undefined) {
+	    		$scope.inputDist = "";
+	    		calcBtnDisabled2 = true;
+	    	} 
 		    
 
 		};
-
-  		
-  		
-		
 
   		
 

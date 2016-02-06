@@ -3,7 +3,17 @@
   <div class="row">
     <span class="fontForText">{{calcInfo.inputFormTop}}{{outputLabelTxtTopRes}}:</span>
     <span class="{{calcInfo.inputFormTopClass}}">
-      <input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputFormTop formErr', false: 'form-control inline inputFormTop'}[updateInputFormTop()]" maxlength="2" ng-model="inputFormTop">
+
+      <input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="2" ng-model="inputFormTop" ng-hide="true">
+
+      <span class="inputFormTopErrInvis" ng-class="{true: 'inputFormTopErr', false: 'inputFormTopErrInvis'}[inputFormTopErr]" ng-model="inputFormTopErr">
+        <input type="text" class="form-control inline inputFormTop" ng-focus="inputFormTop1Focus()" ng-blur="inputFormTop1Blur()" maxlength="2" ng-model="inputFormTop1">
+        <span class="betweenInputTxt">:</span>
+        <input type="text" class="form-control inline inputFormTop" ng-focus="inputFormTop2Focus()" ng-blur="inputFormTop2Blur()" maxlength="2" ng-model="inputFormTop2">
+        <span class="betweenInputTxt">:</span>
+        <input type="text" class="form-control inline inputFormTop" ng-focus="inputFormTop3Focus()" ng-blur="inputFormTop3Blur()" maxlength="2" ng-model="inputFormTop3">
+      </span>
+
     </span>
   </div>
   <p></p>
@@ -19,11 +29,11 @@
       <span class="fontForText">Time:</span>
       <span class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
         
-        <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" type="text" class="form-control inline inputTime" maxlength="2">
-        <span>:</span>
-        <input ng-change="updateInputTime(inputTime2)" ng-model="inputTime2" ng-focus="timeInput2Focus()" ng-blur="timeInput2Blur()" type="text" class="form-control inline inputTime" maxlength="2">
-        <span>:</span>
-        <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" type="text" class="form-control inline inputTime" maxlength="2">
+        <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" class="form-control inline inputTime" maxlength="2">
+        <span class="betweenInputTxt">:</span>
+        <input ng-change="updateInputTime(inputTime2)" ng-model="inputTime2" ng-focus="timeInput2Focus()" ng-blur="timeInput2Blur()" class="form-control inline inputTime" maxlength="2">
+        <span class="betweenInputTxt">:</span>
+        <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" class="form-control inline inputTime" maxlength="2">
       </span>
       <!-- <span class="labelTimeFormat">hh:mm:ss</span> -->
   </div>

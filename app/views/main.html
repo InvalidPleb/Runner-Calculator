@@ -35,9 +35,9 @@
           <span class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
             
             <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" type="text" class="form-control inline inputTime" maxlength="2">
-            <span>:</span>
+            <span class="betweenInputTxt">:</span>
             <input ng-change="updateInputTime(inputTime2)" ng-model="inputTime2" ng-focus="timeInput2Focus()" ng-blur="timeInput2Blur()" type="text" class="form-control inline inputTime" maxlength="2">
-            <span>:</span>
+            <span class="betweenInputTxt">:</span>
             <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" type="text" class="form-control inline inputTime" maxlength="2">
           </span>
           <!-- <span class="labelTimeFormat">hh:mm:ss</span> -->

@@ -598,12 +598,48 @@
   visibility:visible;
 }
 
-/* Font for everything inside inputtimeerr */
-.inputTimeErr > span, .inputTimeErrInvis > span {
-  font-family: "Helvetica";
-    font-weight: 500;
-    font-size: 18px;
+
+
+/* Invisible version of time error div swapped out by by ng-class 
+  Protects against margin/padding problems -- 
+  Needs to be b4 the visible one in css or doesnt work?*/
+.inputFormTopErrInvis {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+  padding: 13px 0px 12px 0px;
+  border-radius: 5px;
+  border: 1px solid #CC0000;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
+  visibility:collapse;
+}
+
+/* Visible version of the time error div shown by ng-class */
+.inputFormTopErr {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+  padding: 13px 0px 12px 0px;
+  padding-right: 0px;
+  border-radius: 5px;
+  border: 1px solid #CC0000;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
   visibility:visible;
+}
+
+/* Making everything inside inputtimeerr visible */
+.inputFormTopErrInvis > input, .inputFormTopErr > input {
+  visibility:visible;
+}
+
+/* Font for input text */
+.betweenInputTxt {
+
+  font-family: "Helvetica";
+  font-weight: 500;
+  font-size: 18px;
+  visibility:visible;
+
 }
 
 /* Visible version of the gender err div shown by ng-class */
