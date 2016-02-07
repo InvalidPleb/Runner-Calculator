@@ -4,12 +4,6 @@
 angular.module('runnerCalcApp')
 	.controller('MainTabCtrl', function ($scope) {
 
-	  	$scope.isSelected0 = true;
-	  	$scope.isSelected1 = false;
-	  	$scope.isSelected2 = false;
-	  	$scope.isSelected3 = false;
-	  	var trackClick = 0;
-
 	  	$scope.ageGrade = {
 
 	  		title: "Age Grade",
@@ -31,90 +25,9 @@ angular.module('runnerCalcApp')
 
 	  	};
 
-
-	  	$scope.toggleSelect0 = function () {
-
-	  		if (trackClick === 1) {
-	  			$scope.isSelected0 = !$scope.isSelected0;
-	  			$scope.isSelected1 = !$scope.isSelected1;
-	  			trackClick = 0;
-	  		} else if (trackClick === 2) {
-	  			$scope.isSelected0 = !$scope.isSelected0;
-	  			$scope.isSelected2 = !$scope.isSelected2;
-	  			trackClick = 0;
-	  		} else if (trackClick === 3) {
-	  			$scope.isSelected0 = !$scope.isSelected0;
-	  			$scope.isSelected3 = !$scope.isSelected3;
-	  			trackClick = 0;
-	  		} else {
-	  			return true;
-	  		}   
-	  	};
-
-	  	$scope.toggleSelect1 = function () {
-
-	  		if (trackClick === 0) {
-	  			$scope.isSelected1 = !$scope.isSelected1;
-	  			$scope.isSelected0 = !$scope.isSelected0;
-	  			trackClick = 1;
-	  		} else if (trackClick === 2) {
-	  			$scope.isSelected1 = !$scope.isSelected1;
-	  			$scope.isSelected2 = !$scope.isSelected2;
-	  			trackClick = 1;
-	  		} else if (trackClick === 3) {
-	  			$scope.isSelected1 = !$scope.isSelected1;
-	  			$scope.isSelected3 = !$scope.isSelected3;
-	  			trackClick = 1;
-	  		} else {
-	  			return true;
-	  		}  
-	  	};
-
-	  	
-
-	  	$scope.toggleSelect2 = function () {
-
-	  		if (trackClick === 0) {
-	  			$scope.isSelected2 = !$scope.isSelected2;
-	  			$scope.isSelected0 = !$scope.isSelected0;
-	  			trackClick = 2;
-	  		} else if (trackClick === 1) {
-	  			$scope.isSelected2 = !$scope.isSelected2;
-	  			$scope.isSelected1 = !$scope.isSelected1;
-	  			trackClick = 2;
-	  		} else if (trackClick === 3) {
-	  			$scope.isSelected2 = !$scope.isSelected2;
-	  			$scope.isSelected3 = !$scope.isSelected3;
-	  			trackClick = 2;
-	  		} else {
-	  			return true;
-	  		}  
-	  		
-	  	};
-
-	  	$scope.toggleSelect3 = function () {
-
-	  		if (trackClick === 0) {
-	  			$scope.isSelected3 = !$scope.isSelected3;
-	  			$scope.isSelected0 = !$scope.isSelected0;
-	  			trackClick = 3;
-	  		} else if (trackClick === 1) {
-	  			$scope.isSelected3 = !$scope.isSelected3;
-	  			$scope.isSelected1 = !$scope.isSelected1;
-	  			trackClick = 3;
-	  		} else if (trackClick === 2) {
-	  			$scope.isSelected3 = !$scope.isSelected3;
-	  			$scope.isSelected2 = !$scope.isSelected2;
-	  			trackClick = 3;
-	  		} else {
-	  			return true;
-	  		}  
-	  		
-	  	};
-
 	})
 
-	.controller('PaceCtrl', function($scope){
+	.controller('PaceCtrl', function($scope, inputDistDropDown, inputBlur){
 
 		$scope.calcTitleInfo = {
 
@@ -131,7 +44,6 @@ angular.module('runnerCalcApp')
   			outputLabelTxtTopRes: "result"
 
   		};
-
 
   		var calcBtnDisabled1;
 		var calcBtnDisabled2;
@@ -158,97 +70,27 @@ angular.module('runnerCalcApp')
 	    	}
 	  	};
 
-
-
-
-		// The following six functions control the responsiveness of
-	  	// the three time input fields, changing the value of the text boxes
-	  	// depending upon blur or focus. 
-
 	  	$scope.inputTime1 = '00';
 	  	$scope.inputTime2 = '00';
 	  	$scope.inputTime3 = '00';
 
-	  	$scope.timeInput1Focus = function () {
-	  		if ($scope.inputTime1 === '00') {
-	  			$scope.inputTime1 = '';
-	  		}
-	  	};
-
-	  	$scope.timeInput1Blur = function () {
-	  		if ($scope.inputTime1 === '') {
-	  			$scope.inputTime1 = '00';
-	  		}
-	  	};
-
-	  	$scope.timeInput2Focus = function () {
-	  		if ($scope.inputTime2 === '00') {
-	  			$scope.inputTime2 = '';
-	  		}
-	  	};
-
-	  	$scope.timeInput2Blur = function () {
-	  		if ($scope.inputTime2 === '') {
-	  			$scope.inputTime2 = '00';
-	  		}
-	  	};
-
-	  	$scope.timeInput3Focus = function () {
-	  		if ($scope.inputTime3 === '00') {
-	  			$scope.inputTime3 = '';
-	  		}
-	  	};
-
-	  	$scope.timeInput3Blur = function () {
-	  		if ($scope.inputTime3 === '') {
-	  			$scope.inputTime3 = '00';
-	  		}
-	  	};
-
-
-
+	  	$scope.timeInput1Focus = inputBlur.timeInput1Focus;
+	  	$scope.timeInput1Blur = inputBlur.timeInput1Blur;
+	  	$scope.timeInput2Focus = inputBlur.timeInput2Focus;
+	  	$scope.timeInput2Blur = inputBlur.timeInput2Blur;
+	  	$scope.timeInput3Focus = inputBlur.timeInput3Focus;
+	  	$scope.timeInput3Blur = inputBlur.timeInput3Blur;
 
 	  	$scope.inputFormTop1 = '00';
 	  	$scope.inputFormTop2 = '00';
 	  	$scope.inputFormTop3 = '00';
 
-
-
-	  	$scope.inputFormTop1Focus = function () {
-	  		if ($scope.inputFormTop1 === '00') {
-	  			$scope.inputFormTop1 = '';
-	  		}
-	  	};
-
-	  	$scope.inputFormTop1Blur = function () {
-	  		if ($scope.inputFormTop1 === '') {
-	  			$scope.inputFormTop1 = '00';
-	  		}
-	  	};
-
-	  	$scope.inputFormTop2Focus = function () {
-	  		if ($scope.inputFormTop2 === '00') {
-	  			$scope.inputFormTop2 = '';
-	  		}
-	  	};
-
-	  	$scope.inputFormTop2Blur = function () {
-	  		if ($scope.inputFormTop2 === '') {
-	  			$scope.inputFormTop2 = '00';
-	  		}
-	  	};
-
-	  	$scope.inputFormTop3Focus = function () {
-	  		if ($scope.inputFormTop3 === '00') {
-	  			$scope.inputFormTop3 = '';
-	  		}
-	  	};
-
-	  	$scope.inputFormTop3Blur = function () {
-	  		if ($scope.inputFormTop3 === '') {
-	  			$scope.inputFormTop3 = '00';
-	  		}
-	  	};
+	  	$scope.inputFormTop1Focus = inputBlur.inputFormTop1Focus;
+	  	$scope.inputFormTop1Blur = inputBlur.inputFormTop1Blur;
+	  	$scope.inputFormTop2Focus = inputBlur.inputFormTop2Focus;
+	  	$scope.inputFormTop2Blur = inputBlur.inputFormTop2Blur;
+	  	$scope.inputFormTop3Focus = inputBlur.inputFormTop3Focus;
+	  	$scope.inputFormTop3Blur = inputBlur.inputFormTop3Blur;
 
 
 	  	$scope.calcButton = function (){
@@ -279,23 +121,14 @@ angular.module('runnerCalcApp')
 		    var totalInputFormTop = inputFormTop1Adjusted + inputFormTop2Adjusted + inputFormTop3;
 
 
-
 		    if ($scope.inputFormTop !== "" && totalTimeInput !== 0 && totalTimeInput !== undefined) {
-
 				$scope.calcInfo.outputLabelTxtTopRes = "distance";
-
 			} else if (totalTimeInput !== 0 && totalTimeInput !== undefined && $scope.inputDist !== undefined) {
-
 				$scope.calcInfo.outputLabelTxtTopRes = "pace";
-		
 			} else if ($scope.inputFormTop !== "" && $scope.inputDist !== undefined) {
-
 				$scope.calcInfo.outputLabelTxtTopRes = "time";
-		
 			} else {
-
 				$scope.calcInfo.outputLabelTxtTopRes = "result";
-		
 			}
 
 			if (totalTimeInput === 0 || totalTimeInput === undefined) {
@@ -317,151 +150,11 @@ angular.module('runnerCalcApp')
 	    		calcBtnDisabled2 = true;
 	    	} 
 		    
-
 		};
 
-  		
-
-
-		$scope.run = '';
-	  	$scope.list = [
-		    {
-		      Event: 'run5km',
-		      Title: '5 km'
-		    }, {
-		      Event: 'run6km',
-		      Title: '6 km'
-		    }, {
-		      Event: 'run4Mile',
-		      Title: '4 mile'
-		    }, {
-		      Event: 'run8km',
-		      Title: '8 km'
-		    }, {
-		      Event: 'run5Mile',
-		      Title: '5 mile'
-		    }, {
-		      Event: 'run10km',
-		      Title: '10 km'
-		    }, {
-		      Event: 'run12km',
-		      Title: '12 km'
-		    }, {
-		      Event: 'run15km',
-		      Title: '15km'
-		    }, {
-		      Event: 'run10Mile',
-		      Title: '10 mile'
-		    }, {
-		      Event: 'run20km',
-		      Title: '20 km'
-		    }, {
-		      Event: 'runHalfMar',
-		      Title: 'half mar'
-		    }, {
-		      Event: 'run25km',
-		      Title: '25 km'
-		    }, {
-		      Event: 'run30km',
-		      Title: '30 km'
-		    }, {
-		      Event: 'runMarathon',
-		      Title: 'marathon'
-		    }, {
-		      Event: 'run50km',
-		      Title: '50 km'
-		    }, {
-		      Event: 'run50Mile',
-		      Title: '50 mile'
-		    }, {
-		      Event: 'run100km',
-		      Title: '100 km'
-		    }, {
-		      Event: 'run150km',
-		      Title: '150 km'
-		    }, {
-		      Event: 'run100Mile',
-		      Title: '100 mile'
-		    }, {
-		      Event: 'run200km',
-		      Title: '200 km'
-		    }
-		];
-
+		$scope.run = inputDistDropDown.run;
+	  	$scope.list = inputDistDropDown.list; 
 		
-		
-	})
+	});
 
-	.directive('mainTab', function(){
-	    // Runs during compile
-	    return {
-	      // name: '',
-	      // priority: 1,
-	      // terminal: true,
-	      scope: {
-	      	tabInfo: '=info'
-	      }, // {} = isolate, true = child, false/undefined = no change
-	      // controller: function($scope, $element, $attrs, $transclude) {},
-	      // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
-	      restrict: 'AEC', // E = Element, A = Attribute, C = Class, M = Comment
-	      templateUrl: '/views/tabdir.html',
-	      // templateUrl: '',
-	      replace: true, //doesnt include custom tab in html, instead replaces it
-	      // transclude: true,
-	      // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
-	    };
-  	})
-
-  	.directive('calcTitleSection', function(){
-	    // Runs during compile
-	    return {
-	      // name: '',
-	      // priority: 1,
-	      // terminal: true,
-	      // {} = isolate, true = child, false/undefined = no change
-	      // controller: function($scope, $element, $attrs, $transclude) {},
-	      // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
-	      restrict: 'AEC', // E = Element, A = Attribute, C = Class, M = Comment
-	      templateUrl: '/views/calctitledir.html',
-	      // templateUrl: '',
-	      replace: true, //doesnt include custom tab in html, instead replaces it
-	      // transclude: true,
-	      // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
-	    };
-  	})
-
-  	.directive('calcOutputSection', function(){
-	    // Runs during compile
-	    return {
-	      // name: '',
-	      // priority: 1,
-	      // terminal: true,
-	      // {} = isolate, true = child, false/undefined = no change
-	      // controller: function($scope, $element, $attrs, $transclude) {},
-	      // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
-	      restrict: 'AEC', // E = Element, A = Attribute, C = Class, M = Comment
-	      templateUrl: '/views/calcoutputdir.html',
-	      // templateUrl: '',
-	      replace: true, //doesnt include custom tab in html, instead replaces it
-	      // transclude: true,
-	      // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
-	    };
-  	})
-
-  	.directive('calcSection', function(){
-	    // Runs during compile
-	    return {
-	      // name: '',
-	      // priority: 1,
-	      // terminal: true,
-	      // {} = isolate, true = child, false/undefined = no change
-	      // controller: function($scope, $element, $attrs, $transclude) {},
-	      // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
-	      restrict: 'AEC', // E = Element, A = Attribute, C = Class, M = Comment
-	      templateUrl: '/views/calcdir.html',
-	      // templateUrl: '',
-	      replace: true, //doesnt include custom tab in html, instead replaces it
-	      // transclude: true,
-	      // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
-	    };
-  	});
+	
