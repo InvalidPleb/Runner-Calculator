@@ -4,7 +4,7 @@
     <span class="fontForText">{{calcInfo.inputFormTop}}{{outputLabelTxtTopRes}}:</span>
     <span class="{{calcInfo.inputFormTopClass}}">
 
-      <input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="2" ng-model="inputFormTop" ng-hide="true">
+      <input type="text" class="form-control inline inputFormTop ng-hide" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="2" ng-model="inputFormTop">
 
       <span class="inputFormTopErrInvis" ng-class="{true: 'inputFormTopErr', false: 'inputFormTopErrInvis'}[inputFormTopErr]" ng-model="inputFormTopErr">
         <input type="text" class="form-control inline inputFormTop" ng-focus="inputFormTop1Focus()" ng-blur="inputFormTop1Blur()" maxlength="2" ng-model="inputFormTop1">
@@ -70,7 +70,7 @@
     </div>
   </div>
 
-  <div class="errWarning fontForText"> <!-- hidden w/ jquery not angular-->
-    <div>Oops! You're missing some info in the fields above</div>
+  <div class="errWarning fontForText" ng-class="{true: 'errWarning fontForText', false: 'errWarningInvis fontForText'}[errWarning]" ng-model="errWarning">
+    <div>{{calcInfo.errWarningTxt}}</div>
   </div>
 </div>

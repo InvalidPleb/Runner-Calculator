@@ -675,10 +675,24 @@
   text-align: center;
   box-shadow: -2px 2px 7px 2px #888;
   border-radius: 10px;
+  visibility: visible;
 }
 
 .errWarning > div {
   padding-top: 8px;
+
+}
+
+.errWarningInvis {
+  position: relative;
+  left: 85px;
+  width: 75%;
+  height: 60px;
+  background: #ffa0a0;
+  text-align: center;
+  box-shadow: -2px 2px 7px 2px #888;
+  border-radius: 10px;
+  visibility: collapse; 
 
 }
 

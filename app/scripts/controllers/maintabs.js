@@ -45,7 +45,10 @@ angular.module('runnerCalcApp')
   			inputFormTop: "Pace",
   			inputFormTopClass: "movePace",
   			outputLabelTxtTop: "Your",
-  			outputLabelTxtTopRes: "result"
+  			outputLabelTxtTopRes: "result",
+  			errWarningTxt: "Oops! You're missing some info in the fields above",
+  			errWarningTxt2: "Oops! You only need to fill in two measures to find the third"
+
 
   		};
 
@@ -63,7 +66,6 @@ angular.module('runnerCalcApp')
 	  	};
 
 		$scope.updateInputTime = function() {
-
 	  		if (parseInt($scope.inputTime1 + $scope.inputTime2 + $scope.inputTime3) === 0) {
 	  			$scope.inputTimeErr = true;
 	  			return true;
@@ -73,7 +75,6 @@ angular.module('runnerCalcApp')
 	    		return false;
 	    	}
 	  	};
-
 
 
 	  	$scope.inputTime1 = inputBlur.inputDefault;
@@ -103,10 +104,13 @@ angular.module('runnerCalcApp')
 
 	  	}
 
+	  	$scope.errWarning = false;
+
 
 	  	$scope.calcButton = function (){
 
 
+	  		// Summing the input fields into total seconds
 	  		var totalTimeInput = parseTime($scope.inputTime1, $scope.inputTime2, $scope.inputTime3);
 	  		var totalInputFormTop = parseTime($scope.inputFormTop1, $scope.inputFormTop2, $scope.inputFormTop3);
 
@@ -123,9 +127,11 @@ angular.module('runnerCalcApp')
 
 			if (totalTimeInput === 0 || totalTimeInput === undefined) {
 	    		$scope.inputTimeErr = true;
+	    		$scope.errWarning = true;
 	    		calcBtnDisabled4 = true;
 	    	} else {
 	    		$scope.inputTimeErr = false;
+	    		$scope.errWarning = false;
 	    	}
 
 	    	if (totalInputFormTop === 0 || totalInputFormTop === undefined) {
@@ -141,6 +147,25 @@ angular.module('runnerCalcApp')
 	    	} 
 		    
 		};
+
+		$scope.clearButton = function (){
+
+	  		// Resets a bunch of elements to their default
+	  		// values and hides some other elements. 
+
+	  		$scope.inputFormTop1 = '00';
+	  		$scope.inputFormTop2 = '00';
+	  		$scope.inputFormTop3 = '00';
+	  		$scope.inputDist = undefined;
+	  		$scope.inputTime1 = '00';
+	  		$scope.inputTime2 = '00';
+	  		$scope.inputTime3 = '00';
+	  		$scope.inputTimeErr = false;
+	  		$scope.errWarning = false;
+	  		$scope.inputFormTopErr = false;
+	  		
+
+	  	};
 		
 	});
 

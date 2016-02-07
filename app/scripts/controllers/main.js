@@ -13,6 +13,11 @@ angular.module('runnerCalcApp')
     	return(value);
 	}
 
+	function parseTime (hours, mins, secs) {
+	  	return parseInt(((hours * 60) * 60), 10) + parseInt((mins * 60), 10) + parseInt(secs, 10);
+
+	}
+
   	angular.element(document).ready(function () {
 
   		$scope.calcTitleInfo = {
@@ -26,7 +31,8 @@ angular.module('runnerCalcApp')
 
   			inputFormTop: "Age",
   			inputFormTopClass: "moveAge",
-  			outputLabelTxtTop: "Your age-graded time"
+  			outputLabelTxtTop: "Your age-graded time",
+  			errWarningTxt: "Oops! You're missing some info in the fields above"
 
   		};
 
@@ -172,19 +178,8 @@ angular.module('runnerCalcApp')
 	  			$scope.calcBtnDisabled = true;
 	  		}
 
-	  		// Converting the time input fields to int for
-	  		// calculations.
-	  		var timeInput1 = parseInt($scope.inputTime1, 10);
-		    var timeInput2 = parseInt($scope.inputTime2, 10);
-		    var timeInput3 = parseInt($scope.inputTime3, 10);
-
-		    // Multiplying the left (timeInput1) and middle (timeInput2) input fields so
-		    // that all fields have the unit of seconds. 
-		    // They are then added together for the full time. 
-		     
-		    var timeInput1Adjusted = (timeInput1 * 60) * 60;
-		    var timeInput2Adjusted = timeInput2 * 60;
-		    var totalTimeInput = timeInput1Adjusted + timeInput2Adjusted + timeInput3;
+	  		// Summing the input fields into total seconds
+	  		var totalTimeInput = parseTime($scope.inputTime1, $scope.inputTime2, $scope.inputTime3);
 
 		    // Checks if the input fields have been filled properly, and
 		    // chooses the running event data array that corresponds to the info given.
