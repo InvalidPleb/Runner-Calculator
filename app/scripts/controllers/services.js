@@ -63,6 +63,10 @@ angular.module('runnerCalcApp')
 
 		this.run = '';
 		this.list = [
+			{
+		      Event: '',
+		      Title: ''
+		    },
 		    {
 		      Event: 'run5km',
 		      Title: '5 km'
@@ -134,6 +138,10 @@ angular.module('runnerCalcApp')
 		// The following 12 functions control the responsiveness of
 	  	// the three time input fields and the three top fields, changing 
 	  	// the value of the text boxes depending upon blur or focus. 
+	  	
+
+	  	this.inputDefault = '00';
+	  	
 
 	  	// Time input forms
 

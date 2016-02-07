@@ -29,6 +29,10 @@ angular.module('runnerCalcApp')
 
 	.controller('PaceCtrl', function($scope, inputDistDropDown, inputBlur){
 
+
+		$scope.run = inputDistDropDown.run;
+	  	$scope.list = inputDistDropDown.list; 
+
 		$scope.calcTitleInfo = {
 
   			title: "Pace Calculator"
@@ -70,9 +74,11 @@ angular.module('runnerCalcApp')
 	    	}
 	  	};
 
-	  	$scope.inputTime1 = '00';
-	  	$scope.inputTime2 = '00';
-	  	$scope.inputTime3 = '00';
+
+
+	  	$scope.inputTime1 = inputBlur.inputDefault;
+	  	$scope.inputTime2 = inputBlur.inputDefault;
+	  	$scope.inputTime3 = inputBlur.inputDefault;
 
 	  	$scope.timeInput1Focus = inputBlur.timeInput1Focus;
 	  	$scope.timeInput1Blur = inputBlur.timeInput1Blur;
@@ -81,9 +87,9 @@ angular.module('runnerCalcApp')
 	  	$scope.timeInput3Focus = inputBlur.timeInput3Focus;
 	  	$scope.timeInput3Blur = inputBlur.timeInput3Blur;
 
-	  	$scope.inputFormTop1 = '00';
-	  	$scope.inputFormTop2 = '00';
-	  	$scope.inputFormTop3 = '00';
+	  	$scope.inputFormTop1 = inputBlur.inputDefault;
+	  	$scope.inputFormTop2 = inputBlur.inputDefault;
+	  	$scope.inputFormTop3 = inputBlur.inputDefault;
 
 	  	$scope.inputFormTop1Focus = inputBlur.inputFormTop1Focus;
 	  	$scope.inputFormTop1Blur = inputBlur.inputFormTop1Blur;
@@ -92,33 +98,17 @@ angular.module('runnerCalcApp')
 	  	$scope.inputFormTop3Focus = inputBlur.inputFormTop3Focus;
 	  	$scope.inputFormTop3Blur = inputBlur.inputFormTop3Blur;
 
+	  	function parseTime (hours, mins, secs) {
+	  		return parseInt(((hours * 60) * 60), 10) + parseInt((mins * 60), 10) + parseInt(secs, 10);
+
+	  	}
+
 
 	  	$scope.calcButton = function (){
 
-	  		
-		    // Converting the time input fields to int for
-	  		// calculations.
-	  		var timeInput1 = parseInt($scope.inputTime1, 10);
-		    var timeInput2 = parseInt($scope.inputTime2, 10);
-		    var timeInput3 = parseInt($scope.inputTime3, 10);
 
-		    // Multiplying the left (timeInput1) and middle (timeInput2) input fields so
-		    // that all fields have the unit of seconds. 
-		    // They are then added together for the full time. 
-		     
-		    var timeInput1Adjusted = (timeInput1 * 60) * 60;
-		    var timeInput2Adjusted = timeInput2 * 60;
-		    var totalTimeInput = timeInput1Adjusted + timeInput2Adjusted + timeInput3;
-
-
-
-		    var inputFormTop1 = parseInt($scope.inputFormTop1, 10);
-		    var inputFormTop2 = parseInt($scope.inputFormTop2, 10);
-		    var inputFormTop3 = parseInt($scope.inputFormTop3, 10);
-
-		    var inputFormTop1Adjusted = (inputFormTop1 * 60) * 60;
-		    var inputFormTop2Adjusted = inputFormTop2 * 60;
-		    var totalInputFormTop = inputFormTop1Adjusted + inputFormTop2Adjusted + inputFormTop3;
+	  		var totalTimeInput = parseTime($scope.inputTime1, $scope.inputTime2, $scope.inputTime3);
+	  		var totalInputFormTop = parseTime($scope.inputFormTop1, $scope.inputFormTop2, $scope.inputFormTop3);
 
 
 		    if ($scope.inputFormTop !== "" && totalTimeInput !== 0 && totalTimeInput !== undefined) {
@@ -151,9 +141,6 @@ angular.module('runnerCalcApp')
 	    	} 
 		    
 		};
-
-		$scope.run = inputDistDropDown.run;
-	  	$scope.list = inputDistDropDown.list; 
 		
 	});
 
