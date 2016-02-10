@@ -51,30 +51,6 @@ angular.module('runnerCalcApp')
 
   		};
 
-  		/*
-
-		$scope.updateInputDist = function() {
-	  		if ($scope.inputDist === "") {
-				return true;
-			} else {
-				calcBtnDisabled2 = false;
-				return false;
-			}
-	  	};
-
-		$scope.updateInputTime = function() {
-	  		if (parseInt($scope.inputTime1 + $scope.inputTime2 + $scope.inputTime3) === 0) {
-	  			$scope.inputTimeErr = true;
-	  			return true;
-	    	} else {
-	    		$scope.inputTimeErr = false;
-	    		return false;
-	    	}
-	  	};
-
-	  	*/
-
-
 	  	$scope.inputTime1 = inputBlur.inputDefault;
 	  	$scope.inputTime2 = inputBlur.inputDefault;
 	  	$scope.inputTime3 = inputBlur.inputDefault;
@@ -170,31 +146,6 @@ angular.module('runnerCalcApp')
 				$scope.errWarning = true;
 
 			} 
-
-			/*
-
-			if (totalTimeInput === 0 || totalTimeInput === undefined) {
-	    		//$scope.inputTimeErr = true;
-	    		$scope.errWarning = true;
-	    		calcBtnDisabled4 = true;
-	    	} else {
-	    		//$scope.inputTimeErr = false;
-	    		$scope.errWarning = false;
-	    	}
-
-	    	if (totalInputFormTop === 0 || totalInputFormTop === undefined) {
-	    		//$scope.inputFormTopErr = true;
-	    		calcBtnDisabled1 = true;
-	    	} else {
-	    		//$scope.inputFormTopErr = false;
-	    	}
-
-	    	if ($scope.inputDist === undefined) {
-	    		$scope.inputDist = "";
-	    		calcBtnDisabled2 = true;
-	    	} 
-
-	    	*/
 		    
 		};
 
