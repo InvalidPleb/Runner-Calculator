@@ -44,12 +44,29 @@ angular.module('runnerCalcApp')
 
   			inputFormTop: "Pace",
   			inputFormTopClass: "movePace",
+  			inputDistClass: "sizeDist",
   			outputLabelTxtTop: "Your",
   			outputLabelTxtTopRes: "result",
   			errWarningTxt: "Oops! You need to fill in two options to find the third",
 
 
+
   		};
+
+  		$scope.unitMeasure = '';
+  		$scope.unitSystems = 
+  		[
+	  		{
+	  			unit: "0",
+	  			title: "mi"
+
+	  		},
+	  		{
+	  			unit: "1",
+	  			title: "km"
+	  		}
+
+  		];
 
 	  	$scope.inputTime1 = inputBlur.inputDefault;
 	  	$scope.inputTime2 = inputBlur.inputDefault;
@@ -91,6 +108,11 @@ angular.module('runnerCalcApp')
 	  		var inputDistEmpty;
 	  		var totalInputFormTopEmpty;
 	  		var totalTimeInputEmpty;
+
+	  		console.log($scope.inputTypeDist);
+	  		console.log($scope.distUnits);
+
+
 
 	  		if ($scope.inputDist === undefined || $scope.inputDist === '') {
 
@@ -142,6 +164,7 @@ angular.module('runnerCalcApp')
 				$scope.errWarning = true;
 
 			} 
+
 		    
 		};
 
@@ -154,6 +177,8 @@ angular.module('runnerCalcApp')
 	  		$scope.inputFormTop2 = '00';
 	  		$scope.inputFormTop3 = '00';
 	  		$scope.inputDist = undefined;
+	  		$scope.inputTypeDist = undefined;
+	  		$scope.distUnits = undefined;
 	  		$scope.inputTime1 = '00';
 	  		$scope.inputTime2 = '00';
 	  		$scope.inputTime3 = '00';

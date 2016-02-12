@@ -12,6 +12,7 @@
         <input type="text" class="form-control inline inputFormTop" ng-focus="inputFormTop2Focus()" ng-blur="inputFormTop2Blur()" maxlength="2" ng-model="inputFormTop2">
         <span class="betweenInputTxt">:</span>
         <input type="text" class="form-control inline inputFormTop" ng-focus="inputFormTop3Focus()" ng-blur="inputFormTop3Blur()" maxlength="2" ng-model="inputFormTop3">
+        <span class="betweenInputTxt">hh:mm:ss</span>
       </span>
 
     </span>
@@ -20,7 +21,12 @@
   <div class="row">
     <span class="fontForText">Distance:</span>
     <span class="move2">
-      <select class= "form-control inline" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
+      <select class= "form-control inline {{calcInfo.inputDistClass}}" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
+      <span class="betweenInputTxt orText">or</span>
+      <input class="form-control inline inputFormTop moveDistUnits" ng-model="inputTypeDist" maxlength="2">
+      <select class="form-control inline distUnits" ng-model="distUnits" ng-options="unitMeasure.unit as unitMeasure.title for unitMeasure in unitSystems"></select>
+
+
     </span>
     <p></p>
   </div>
@@ -34,6 +40,7 @@
         <input ng-change="updateInputTime(inputTime2)" ng-model="inputTime2" ng-focus="timeInput2Focus()" ng-blur="timeInput2Blur()" class="form-control inline inputTime" maxlength="2">
         <span class="betweenInputTxt">:</span>
         <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" class="form-control inline inputTime" maxlength="2">
+        <span class="betweenInputTxt">hh:mm:ss</span>
       </span>
       <!-- <span class="labelTimeFormat">hh:mm:ss</span> -->
   </div>

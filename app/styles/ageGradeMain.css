@@ -48,7 +48,7 @@
 
 /* Main container that the main.html is routed into */
 .mainForm {
-  margin-top: 65px;
+  margin-top: 63px;
 } 
 
 /* ----------- General/Bootstrap Classes Style ----------- */
@@ -415,6 +415,26 @@
   width: 70px;
 }
 
+.distUnits {
+  position: relative;
+  left: 80px;
+  width: 72px;
+}
+
+.sizeDist {
+  width: 70px;
+}
+
+.orText {
+  position: relative;
+  left: 36px;
+}
+
+.moveDistUnits {
+  position: relative;
+  left: 72px;
+}
+
 /* Positioning of age input */
 .moveAge {
   position: relative;
@@ -527,7 +547,7 @@
 }
 
 .outputMargin {
-  margin-top: 100px;
+  margin-top: 12%;
 }
 
 /* Container for whole output section */
@@ -652,9 +672,9 @@
   position: relative;
   left: 35px;
   border: 1px solid #CC0000;
-    border-radius: 5px;
-    padding: 11px 9px 10px 0px;
-    transition: all .15s cubic-bezier(.27,1,1,.9);
+  border-radius: 5px;
+  padding: 11px 10px 10px 0px;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
   visibility: visible;
 }
 
