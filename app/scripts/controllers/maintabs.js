@@ -97,6 +97,9 @@ angular.module('runnerCalcApp')
 
 	  	$scope.errWarning = false;
 
+	  	$scope.distUnits = $scope.unitSystems[0].unit;
+	  	
+
 
 	  	$scope.calcButton = function (){
 
@@ -109,14 +112,20 @@ angular.module('runnerCalcApp')
 	  		var totalInputFormTopEmpty;
 	  		var totalTimeInputEmpty;
 
-	  		console.log($scope.inputTypeDist);
 	  		console.log($scope.distUnits);
+
+	  		inputDistEmpty = false;
+	  		totalInputFormTopEmpty = false;
+	  		totalTimeInputEmpty = false;
 
 
 
 	  		if ($scope.inputDist === undefined || $scope.inputDist === '') {
 
-	  			inputDistEmpty = true;
+	  			if ($scope.inputTypeDist === undefined || $scope.inputTypeDist === '') {
+
+	  				inputDistEmpty = true;
+	  			}
 	  		}
 
 	  		if (totalInputFormTop === 0 || totalInputFormTop === undefined) {
