@@ -57,12 +57,12 @@ angular.module('runnerCalcApp')
   		$scope.unitSystems = 
   		[
 	  		{
-	  			unit: "0",
+	  			unit: 0,
 	  			title: "mi"
 
 	  		},
 	  		{
-	  			unit: "1",
+	  			unit: 1,
 	  			title: "km"
 	  		}
 
@@ -109,24 +109,68 @@ angular.module('runnerCalcApp')
 	  		var totalInputFormTop = parseTime($scope.inputFormTop1, $scope.inputFormTop2, $scope.inputFormTop3);
 
 	  		var inputDistEmpty;
+	  		var inputDropDistEmpty;
+	  		var inputTypeDistEmpty;
 	  		var totalInputFormTopEmpty;
 	  		var totalTimeInputEmpty;
-
-	  		console.log($scope.distUnits);
+	  		var userDistance;
+	  		var chosenDistVal;
+	  		var chosenDistUnit;
+	  		var i;
 
 	  		inputDistEmpty = false;
+	  		inputDropDistEmpty = false;
+	  		inputTypeDistEmpty = false;
 	  		totalInputFormTopEmpty = false;
 	  		totalTimeInputEmpty = false;
 
 
+	  		for (i=0; i < $scope.list.length; i++) {
+
+	  			if ($scope.inputDist === $scope.list[i].distance) {
+
+	  				chosenDistVal = $scope.list[i].value;
+	  				chosenDistUnit = $scope.list[i].unit;
+	  			}
+	  		}
+
+	  		console.log(chosenDistVal);
+
+
+	  		if ($scope.inputTypeDist === undefined || $scope.inputTypeDist === '' || $scope.inputTypeDist === 0) {
+
+	  			inputTypeDistEmpty = true;
+	  		}
 
 	  		if ($scope.inputDist === undefined || $scope.inputDist === '') {
 
-	  			if ($scope.inputTypeDist === undefined || $scope.inputTypeDist === '') {
-
-	  				inputDistEmpty = true;
-	  			}
+	  			inputDropDistEmpty = true;
 	  		}
+
+
+
+
+	  		if (inputTypeDistEmpty === true && inputDropDistEmpty === true) {
+
+	  			inputDistEmpty = true;
+	  			
+	  		} else if (inputTypeDistEmpty === false && inputDropDistEmpty === false) {
+
+	  			inputDistEmpty = true;
+	  			
+	  		}
+
+	  		if (inputDropDistEmpty === true && inputTypeDistEmpty === false) {
+
+	  			userDistance = inputTypeDistEmpty;
+
+	  		} else if (inputDropDistEmpty === false && inputTypeDistEmpty === true) {
+
+
+
+	  		}
+
+
 
 	  		if (totalInputFormTop === 0 || totalInputFormTop === undefined) {
 
@@ -141,38 +185,40 @@ angular.module('runnerCalcApp')
 
 
 
-	  		if (totalInputFormTop !== 0 && totalInputFormTop !== undefined && totalTimeInput !== 0 && totalTimeInput !== undefined && $scope.inputDist !== undefined && $scope.inputDist !== '') {
+	  		if (totalInputFormTopEmpty === false && totalTimeInputEmpty === false && inputDistEmpty === false) {
 
 	  			$scope.calcInfo.outputLabelTxtTopRes = "result";
 	  			$scope.calcInfo.errWarningTxt = "Oops! You only need to fill in two of the options above";
 	  			$scope.errWarning = true;
 
 
-	  		} else if (totalInputFormTop !== 0 && totalInputFormTop !== undefined && totalTimeInput !== 0 && totalTimeInput !== undefined && inputDistEmpty === true) {
-
-		    	$scope.calcInfo.outputLabelTxtTopRes = "distance";
-		    	$scope.errWarning = false;
-
-		    	
-		    } else if (totalTimeInput !== 0 && totalTimeInput !== undefined && $scope.inputDist !== undefined && $scope.inputDist !== '' && totalInputFormTopEmpty === true) {
-		    	
-		    	$scope.calcInfo.outputLabelTxtTopRes = "pace";
-		    	$scope.errWarning = false;
-
-
-		    } else if (totalInputFormTop !== 0 && totalInputFormTop !== undefined && $scope.inputDist !== undefined && $scope.inputDist !== '' && totalTimeInputEmpty === true) {
-
-		    	$scope.calcInfo.outputLabelTxtTopRes = "time";
-		    	$scope.errWarning = false;
-
-
-			} else if (inputDistEmpty === true && totalInputFormTopEmpty === true && totalTimeInputEmpty === true) {
+	  		} else if (inputDistEmpty === true && totalInputFormTopEmpty === true && totalTimeInputEmpty === true) {
 
 				$scope.calcInfo.outputLabelTxtTopRes = "result";
 				$scope.calcInfo.errWarningTxt = "Oops! You need to fill in two options to find the third";
 				$scope.errWarning = true;
 
-			} 
+			} else if (totalInputFormTopEmpty === false && totalTimeInputEmpty === false && inputDistEmpty === true) {
+
+		    	$scope.calcInfo.outputLabelTxtTopRes = "distance";
+		    	$scope.errWarning = false;
+
+
+
+		    	
+		    } else if (totalTimeInputEmpty === false && inputDistEmpty === false && totalInputFormTopEmpty === true) {
+		    	
+		    	$scope.calcInfo.outputLabelTxtTopRes = "pace";
+		    	$scope.errWarning = false;
+
+
+		    } else if (totalInputFormTopEmpty === false && inputDistEmpty === false && totalTimeInputEmpty === true) {
+
+		    	$scope.calcInfo.outputLabelTxtTopRes = "time";
+		    	$scope.errWarning = false;
+
+
+			}
 
 		    
 		};
@@ -187,7 +233,7 @@ angular.module('runnerCalcApp')
 	  		$scope.inputFormTop3 = '00';
 	  		$scope.inputDist = undefined;
 	  		$scope.inputTypeDist = undefined;
-	  		$scope.distUnits = undefined;
+	  		$scope.distUnits = $scope.unitSystems[0].unit;
 	  		$scope.inputTime1 = '00';
 	  		$scope.inputTime2 = '00';
 	  		$scope.inputTime3 = '00';

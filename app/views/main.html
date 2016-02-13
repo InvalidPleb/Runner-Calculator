@@ -25,7 +25,7 @@
       <div class="row">
         <span class="fontForText">Distance:</span>
         <span class="move2">
-          <select ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.Event as run.Title for run in list"></select>
+          <select ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.distance as run.title for run in list"></select>
         </span>
         <p></p>
       </div>

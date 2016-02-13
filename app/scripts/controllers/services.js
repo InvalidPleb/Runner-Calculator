@@ -64,69 +64,109 @@ angular.module('runnerCalcApp')
 		this.run = '';
 		this.list = [
 			{
-		      Event: '',
-		      Title: ''
+		      distance: '',
+		      title: ''
 		    },
 		    {
-		      Event: 'run5km',
-		      Title: '5 km'
+		      distance: 'run5km',
+		      title: '5 km',
+		      value: 5,
+		      unit: 1
 		    }, {
-		      Event: 'run6km',
-		      Title: '6 km'
+		      distance: 'run6km',
+		      title: '6 km',
+		      value: 6,
+		      unit: 1
 		    }, {
-		      Event: 'run4Mile',
-		      Title: '4 mile'
+		      distance: 'run4Mile',
+		      title: '4 mile',
+		      value: 4,
+		      unit: 0
 		    }, {
-		      Event: 'run8km',
-		      Title: '8 km'
+		      distance: 'run8km',
+		      title: '8 km',
+		      value: 8,
+		      unit: 1
 		    }, {
-		      Event: 'run5Mile',
-		      Title: '5 mile'
+		      distance: 'run5Mile',
+		      title: '5 mile',
+		      value: 5,
+		      unit: 0
 		    }, {
-		      Event: 'run10km',
-		      Title: '10 km'
+		      distance: 'run10km',
+		      title: '10 km',
+		      value: 10,
+		      unit: 1
 		    }, {
-		      Event: 'run12km',
-		      Title: '12 km'
+		      distance: 'run12km',
+		      title: '12 km',
+		      value: 12,
+		      unit: 1
 		    }, {
-		      Event: 'run15km',
-		      Title: '15km'
+		      distance: 'run15km',
+		      title: '15km',
+		      value: 15,
+		      unit: 1
 		    }, {
-		      Event: 'run10Mile',
-		      Title: '10 mile'
+		      distance: 'run10Mile',
+		      title: '10 mile',
+		      value: 10,
+		      unit: 0
 		    }, {
-		      Event: 'run20km',
-		      Title: '20 km'
+		      distance: 'run20km',
+		      title: '20 km',
+		      value: 20,
+		      unit: 1
 		    }, {
-		      Event: 'runHalfMar',
-		      Title: 'half mar'
+		      distance: 'runHalfMar',
+		      title: 'half mar',
+		      value: 13.1094,
+		      unit: 0
 		    }, {
-		      Event: 'run25km',
-		      Title: '25 km'
+		      distance: 'run25km',
+		      title: '25 km',
+		      value: 25,
+		      unit: 1
 		    }, {
-		      Event: 'run30km',
-		      Title: '30 km'
+		      distance: 'run30km',
+		      title: '30 km',
+		      value: 30,
+		      unit: 1
 		    }, {
-		      Event: 'runMarathon',
-		      Title: 'marathon'
+		      distance: 'runMarathon',
+		      title: 'marathon',
+		      value: 26.21875,
+		      unit: 0
 		    }, {
-		      Event: 'run50km',
-		      Title: '50 km'
+		      distance: 'run50km',
+		      title: '50 km',
+		      value: 50,
+		      unit: 1
 		    }, {
-		      Event: 'run50Mile',
-		      Title: '50 mile'
+		      distance: 'run50Mile',
+		      title: '50 mile',
+		      value: 50,
+		      unit: 0
 		    }, {
-		      Event: 'run100km',
-		      Title: '100 km'
+		      distance: 'run100km',
+		      title: '100 km',
+		      value: 100,
+		      unit: 1
 		    }, {
-		      Event: 'run150km',
-		      Title: '150 km'
+		      distance: 'run150km',
+		      title: '150 km',
+		      value: 150,
+		      unit: 1
 		    }, {
-		      Event: 'run100Mile',
-		      Title: '100 mile'
+		      distance: 'run100Mile',
+		      title: '100 mile',
+		      value: 100,
+		      unit: 0
 		    }, {
-		      Event: 'run200km',
-		      Title: '200 km'
+		      distance: 'run200km',
+		      title: '200 km',
+		      value: 200,
+		      unit: 1
 		    }
 		];
 		
