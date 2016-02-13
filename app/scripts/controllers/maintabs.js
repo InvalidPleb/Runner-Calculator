@@ -47,6 +47,7 @@ angular.module('runnerCalcApp')
   			inputDistClass: "sizeDist",
   			outputLabelTxtTop: "Your",
   			outputLabelTxtTopRes: "result",
+  			outputDataTopUnit: "",
   			errWarningTxt: "Oops! You need to fill in two options to find the third",
 
 
@@ -116,6 +117,10 @@ angular.module('runnerCalcApp')
 	  		var userDistance;
 	  		var chosenDistVal;
 	  		var chosenDistUnit;
+	  		var outputPace;
+	  		var outputDistance;
+	  		var outputTime;
+	  		var distUnits;
 	  		var i;
 
 	  		inputDistEmpty = false;
@@ -123,6 +128,8 @@ angular.module('runnerCalcApp')
 	  		inputTypeDistEmpty = false;
 	  		totalInputFormTopEmpty = false;
 	  		totalTimeInputEmpty = false;
+	  		chosenDistVal = undefined;
+	  		chosenDistUnit = undefined;
 
 
 	  		for (i=0; i < $scope.list.length; i++) {
@@ -131,10 +138,15 @@ angular.module('runnerCalcApp')
 
 	  				chosenDistVal = $scope.list[i].value;
 	  				chosenDistUnit = $scope.list[i].unit;
+
+	  				
 	  			}
+
 	  		}
 
-	  		console.log(chosenDistVal);
+
+
+	  		
 
 
 	  		if ($scope.inputTypeDist === undefined || $scope.inputTypeDist === '' || $scope.inputTypeDist === 0) {
@@ -184,12 +196,19 @@ angular.module('runnerCalcApp')
 	  		}
 
 
+	  		if ($scope.distUnits === 0) {
+	  			distUnits = "mi";
+	  		} else if ($scope.distUnits === 1) {
+	  			distUnits = "km";
+	  		}
+
 
 	  		if (totalInputFormTopEmpty === false && totalTimeInputEmpty === false && inputDistEmpty === false) {
 
 	  			$scope.calcInfo.outputLabelTxtTopRes = "result";
 	  			$scope.calcInfo.errWarningTxt = "Oops! You only need to fill in two of the options above";
 	  			$scope.errWarning = true;
+	  			$scope.calcInfo.outputDataTopUnit = "";
 
 
 	  		} else if (inputDistEmpty === true && totalInputFormTopEmpty === true && totalTimeInputEmpty === true) {
@@ -197,11 +216,15 @@ angular.module('runnerCalcApp')
 				$scope.calcInfo.outputLabelTxtTopRes = "result";
 				$scope.calcInfo.errWarningTxt = "Oops! You need to fill in two options to find the third";
 				$scope.errWarning = true;
+				$scope.calcInfo.outputDataTopUnit = "";
 
 			} else if (totalInputFormTopEmpty === false && totalTimeInputEmpty === false && inputDistEmpty === true) {
 
 		    	$scope.calcInfo.outputLabelTxtTopRes = "distance";
 		    	$scope.errWarning = false;
+		    	outputDistance = (totalTimeInput / 60) / (totalInputFormTop / 60);
+		    	$scope.outputDataTop = outputDistance;
+		    	$scope.calcInfo.outputDataTopUnit = " " + distUnits;
 
 
 
@@ -210,15 +233,25 @@ angular.module('runnerCalcApp')
 		    	
 		    	$scope.calcInfo.outputLabelTxtTopRes = "pace";
 		    	$scope.errWarning = false;
+		    	outputPace = (totalTimeInput) / chosenDistVal;
+		    	$scope.outputDataTop = (new Date(outputPace * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
+		    	$scope.calcInfo.outputDataTopUnit = " per " + distUnits;
+
+
 
 
 		    } else if (totalInputFormTopEmpty === false && inputDistEmpty === false && totalTimeInputEmpty === true) {
 
 		    	$scope.calcInfo.outputLabelTxtTopRes = "time";
 		    	$scope.errWarning = false;
+		    	outputTime = chosenDistVal * (totalInputFormTop);
+		    	$scope.outputDataTop = $scope.outputDataTop = (new Date(outputTime * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
+		    	$scope.calcInfo.outputDataTopUnit = "";
 
 
 			}
+
+			console.log($scope.calcInfo.outputDataTopUnit);
 
 		    
 		};
@@ -242,6 +275,8 @@ angular.module('runnerCalcApp')
 	  		$scope.inputFormTopErr = false;
 	  		$scope.calcInfo.outputLabelTxtTopRes = "result";
 	  		$scope.calcInfo.errWarningTxt = "Oops! You need to fill in two options to find the third";
+	  		$scope.outputDataTop = '';
+	  		$scope.calcInfo.outputDataTopUnit = "";
 
 	  		
 

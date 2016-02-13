@@ -30,6 +30,7 @@ angular.module('runnerCalcApp')
 		inputFormTop: "Age",
 		inputFormTopClass: "moveAge",
 		outputLabelTxtTop: "Your age-graded time",
+    outputLabelTxtTopRes: "",
 		errWarningTxt: "Oops! You're missing some info in the fields above"
 
 	};
