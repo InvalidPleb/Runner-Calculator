@@ -2,8 +2,10 @@
 
 // Setting up Age Grade controller.
 
+
 angular.module('runnerCalcApp')
-  .controller('MainCtrl', function ($scope, inputDistDropDown, inputBlur, ageGradeData) {
+  .controller('MainCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', 'ageGradeData', 
+    function ($scope, inputDistDropDown, inputBlur, ageGradeData) {
 
 	// This function rounds to the nearest 100th.
 
@@ -295,4 +297,4 @@ angular.module('runnerCalcApp')
   	};
 
 
-});
+}]);

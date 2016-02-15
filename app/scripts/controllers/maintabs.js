@@ -1,8 +1,7 @@
 'use strict'; 
 
-
 angular.module('runnerCalcApp')
-	.controller('MainTabCtrl', function ($scope) {
+	.controller('MainTabCtrl', ['$scope', function ($scope) {
 
 	  	$scope.ageGrade = {
 
@@ -25,9 +24,9 @@ angular.module('runnerCalcApp')
 
 	  	};
 
-	})
+	}])
 
-	.controller('PaceCtrl', function($scope, inputDistDropDown, inputBlur){
+	.controller('PaceCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', function($scope, inputDistDropDown, inputBlur){
 
 
 		$scope.run = inputDistDropDown.run;
@@ -282,6 +281,6 @@ angular.module('runnerCalcApp')
 
 	  	};
 		
-	});
+	}]);
 
 	
