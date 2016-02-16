@@ -13,7 +13,7 @@ angular.module('runnerCalcApp')
 	      // controller: function($scope, $element, $attrs, $transclude) {},
 	      // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
 	      restrict: 'AEC', // E = Element, A = Attribute, C = Class, M = Comment
-	      template: '<a href="{{tabInfo.href}}" class="tabTabs"><li class="tabRowLi" ng-click="toggleSelect0()" ng-class="tabRowLi"><span class="tabText">{{tabInfo.title}}</span></li></a>',
+	      templateUrl: '/views/tabdir.html',
 	      // templateUrl: '',
 	      replace: true, //doesnt include custom tab in html, instead replaces it
 	      // transclude: true,
