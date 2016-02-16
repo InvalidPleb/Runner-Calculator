@@ -57,12 +57,12 @@ angular.module('runnerCalcApp')
   		$scope.unitSystems = 
   		[
 	  		{
-	  			unit: 0,
+	  			unit: "mi",
 	  			title: "mi"
 
 	  		},
 	  		{
-	  			unit: 1,
+	  			unit: "km",
 	  			title: "km"
 	  		}
 
@@ -119,7 +119,6 @@ angular.module('runnerCalcApp')
 	  		var outputPace;
 	  		var outputDistance;
 	  		var outputTime;
-	  		var distUnits;
 	  		var i;
 
 	  		inputDistEmpty = false;
@@ -129,23 +128,7 @@ angular.module('runnerCalcApp')
 	  		totalTimeInputEmpty = false;
 	  		chosenDistVal = undefined;
 	  		chosenDistUnit = undefined;
-
-
-	  		for (i=0; i < $scope.list.length; i++) {
-
-	  			if ($scope.inputDist === $scope.list[i].distance) {
-
-	  				chosenDistVal = $scope.list[i].value;
-	  				chosenDistUnit = $scope.list[i].unit;
-
-	  				
-	  			}
-
-	  		}
-
-
-
-	  		
+	  		userDistance = undefined;
 
 
 	  		if ($scope.inputTypeDist === undefined || $scope.inputTypeDist === '' || $scope.inputTypeDist === 0) {
@@ -173,14 +156,22 @@ angular.module('runnerCalcApp')
 
 	  		if (inputDropDistEmpty === true && inputTypeDistEmpty === false) {
 
-	  			userDistance = inputTypeDistEmpty;
+	  			userDistance = parseFloat($scope.inputTypeDist);
+
 
 	  		} else if (inputDropDistEmpty === false && inputTypeDistEmpty === true) {
 
+	  			for (i=0; i < $scope.list.length; i++) {
 
+		  			if ($scope.inputDist === $scope.list[i].distance) {
+
+		  				userDistance = $scope.list[i].value;
+
+		  			}
+
+	  			}
 
 	  		}
-
 
 
 	  		if (totalInputFormTop === 0 || totalInputFormTop === undefined) {
@@ -192,13 +183,6 @@ angular.module('runnerCalcApp')
 
 	  			totalTimeInputEmpty = true;
 
-	  		}
-
-
-	  		if ($scope.distUnits === 0) {
-	  			distUnits = "mi";
-	  		} else if ($scope.distUnits === 1) {
-	  			distUnits = "km";
 	  		}
 
 
@@ -223,27 +207,21 @@ angular.module('runnerCalcApp')
 		    	$scope.errWarning = false;
 		    	outputDistance = (totalTimeInput / 60) / (totalInputFormTop / 60);
 		    	$scope.outputDataTop = outputDistance;
-		    	$scope.calcInfo.outputDataTopUnit = " " + distUnits;
+		    	$scope.calcInfo.outputDataTopUnit = " " + $scope.distUnits;
 
-
-
-		    	
 		    } else if (totalTimeInputEmpty === false && inputDistEmpty === false && totalInputFormTopEmpty === true) {
 		    	
 		    	$scope.calcInfo.outputLabelTxtTopRes = "pace";
 		    	$scope.errWarning = false;
-		    	outputPace = (totalTimeInput) / chosenDistVal;
+		    	outputPace = (totalTimeInput) / userDistance;
 		    	$scope.outputDataTop = (new Date(outputPace * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
-		    	$scope.calcInfo.outputDataTopUnit = " per " + distUnits;
-
-
-
+		    	$scope.calcInfo.outputDataTopUnit = " per " + $scope.distUnits;
 
 		    } else if (totalInputFormTopEmpty === false && inputDistEmpty === false && totalTimeInputEmpty === true) {
 
 		    	$scope.calcInfo.outputLabelTxtTopRes = "time";
 		    	$scope.errWarning = false;
-		    	outputTime = chosenDistVal * (totalInputFormTop);
+		    	outputTime = userDistance * (totalInputFormTop);
 		    	$scope.outputDataTop = $scope.outputDataTop = (new Date(outputTime * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
 		    	$scope.calcInfo.outputDataTopUnit = "";
 
@@ -265,7 +243,6 @@ angular.module('runnerCalcApp')
 	  		$scope.inputFormTop3 = '00';
 	  		$scope.inputDist = undefined;
 	  		$scope.inputTypeDist = undefined;
-	  		$scope.distUnits = $scope.unitSystems[0].unit;
 	  		$scope.inputTime1 = '00';
 	  		$scope.inputTime2 = '00';
 	  		$scope.inputTime3 = '00';
