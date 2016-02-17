@@ -43,11 +43,17 @@ angular.module('runnerCalcApp')
 
   			inputFormTop: "Pace",
   			inputFormTopClass: "movePace",
+  			inputFormTopHide: "true",
+  			inputFormTrioHide: "false",
   			inputDistClass: "sizeDist",
+  			inputDistTypeHide: "false",
   			outputLabelTxtTop: "Your",
   			outputLabelTxtTopRes: "result",
   			outputDataTopUnit: "",
+  			outputBottomHide: "true",
+  			genderBtnHide: "true",
   			errWarningTxt: "Oops! You need to fill in two options to find the third",
+  			errWarningHide: "true"
 
 
 

@@ -8,7 +8,7 @@
         <input type="text" class="form-control fontForText ng-hide" maxlength="2" ng-model="outputDataTop" readonly type="text" >
       </div>
     </div>
-    <div class="outputInfo" ng-hide="true">
+    <div class="outputInfo" ng-hide="{{calcInfo.outputBottomHide}}">
       <h4 class="outputText2 outputText">Your age-graded percent</h4>
       <div class="outputContainer">
         <span class="outputData">{{outputAgePercent}}</span>

@@ -31,9 +31,14 @@ angular.module('runnerCalcApp')
 
 		inputFormTop: "Age",
 		inputFormTopClass: "moveAge",
+    inputFormTopHide: "false",
+    inputFormTrioHide: "true",
+    inputDistTypeHide: "true",
+    genderBtnHide: "false",
 		outputLabelTxtTop: "Your age-graded time",
     outputLabelTxtTopRes: "",
-		errWarningTxt: "Oops! You're missing some info in the fields above"
+    outputBottomHide: "false",
+		errWarningTxt: "Oops! You're missing some info in the fields above",
 
 	};
 
@@ -41,18 +46,19 @@ angular.module('runnerCalcApp')
 	// Populating the dropdown menu that selects the event.
 	
 	$scope.run = inputDistDropDown.run;
-  	$scope.list = inputDistDropDown.list;
+  $scope.list = inputDistDropDown.list;
 		
 
-		// Hiding things with jquery
-	var outputAgeGrade = $(".outputAgeGrade");
-	var errWarning = $('.errWarning');
-	var genCheckErr = $('.genCheckErrID');
-  	errWarning.hide();
+	// Hiding things with jquery
+  $scope.errWarning = false;
+  $scope.genCheckErr = false;
 
-  	$scope.hideTextCheck = "Static";
 
-  	// This controls the ng-show on the animated info text on AgeGradeMain.
+
+
+  $scope.hideTextCheck = "Static";
+
+  // This controls the ng-show on the animated info text on AgeGradeMain.
 
 	$scope.changeHideTextCheck = function() {
 		$scope.hideTextCheck = !$scope.hideTextCheck;
@@ -64,17 +70,11 @@ angular.module('runnerCalcApp')
 	// gender selection, and time input, respectively. If any missing
 	// info is found, true or false is returned and an error span
 	// is shown to the user. 
-	
-	var calcBtnDisabled1 = false;
-	var calcBtnDisabled2 = false;
-	var calcBtnDisabled3 = false;
-	var calcBtnDisabled4 = false;
 
 	$scope.updateInputFormTop = function() {
 		if ($scope.inputFormTop === "") {
 			return true;
 		} else {
-			calcBtnDisabled1 = false;
 			return false;
 		}
   	};
@@ -83,7 +83,6 @@ angular.module('runnerCalcApp')
   		if ($scope.inputDist === "") {
 			return true;
 		} else {
-			calcBtnDisabled2 = false;
 			return false;
 		}
   	};
@@ -93,9 +92,7 @@ angular.module('runnerCalcApp')
     		$scope.genCheckErr = true;
     		return true;
     	} else {
-    		calcBtnDisabled3 = false;
     		$scope.genCheckErr = false;
-    		genCheckErr.removeClass('genCheckErr').addClass('genCheckErrInvis');
     		return false;
     	}
   	};
@@ -106,20 +103,9 @@ angular.module('runnerCalcApp')
   			$scope.inputTimeErr = true;
   			return true;
     	} else {
-    		calcBtnDisabled4 = false;
     		$scope.inputTimeErr = false;
     		return false;
     	}
-  	};
-
-
-  	$scope.updateBtnDisabled = function() {
-
-  		if (calcBtnDisabled1 === false && calcBtnDisabled2 === false && calcBtnDisabled3 === false && calcBtnDisabled4 === false) {
-  			$scope.calcBtnDisabled = false;
-  			errWarning.fadeOut(2000);
-  		}
-
   	};
 
 
@@ -167,17 +153,10 @@ angular.module('runnerCalcApp')
   	//};
 
 
-  	// Initially enables the calc button
-  	
-  	$scope.calcBtnDisabled = false;
-
   	// Click function of the calculate button.
   	
   	$scope.calcButton = function (){
 
-  		if (calcBtnDisabled1 === true || calcBtnDisabled2 === true || calcBtnDisabled3 === true || calcBtnDisabled4 === true) {
-  			$scope.calcBtnDisabled = true;
-  		}
 
   		// Summing the input fields into total seconds
   		var totalTimeInput = parseTime($scope.inputTime1, $scope.inputTime2, $scope.inputTime3);
@@ -211,7 +190,7 @@ angular.module('runnerCalcApp')
   			ageGrade = chosenOption[ageInt-4] * numRound(totalTimeInput, 100);
     		ageGradePercent = chosenOption[0] / ageGrade;
 	        returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
-	        $scope.outputAgeGrade = returnAgeGrade;
+	        $scope.outputDataTop = returnAgeGrade;
 	        $scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
 	        
   		}
@@ -220,12 +199,10 @@ angular.module('runnerCalcApp')
 
     	if ($scope.inputFormTop % 1 !== 0) {
     		$scope.inputFormTop = "";
-    		calcBtnDisabled1 = true;
     	} 
 
     	if ($scope.inputDist === undefined) {
-    		$scope.inputDist = "";
-    		calcBtnDisabled2 = true;
+        $scope.inputDist = "";
     	} 
 
     	// Checks for missing values in the input
@@ -234,15 +211,12 @@ angular.module('runnerCalcApp')
    
     	if (totalTimeInput === 0 || totalTimeInput === undefined) {
     		$scope.inputTimeErr = true;
-    		calcBtnDisabled4 = true;
     	} else {
     		$scope.inputTimeErr = false;
     	}
 
     	if ($scope.genCheck === false || $scope.genCheck === undefined) {
     		$scope.genCheckErr = true;
-    		calcBtnDisabled3 = true;
-    		genCheckErr.removeClass('genCheckErrInvis').addClass('genCheckErr');
     	} else {
     		$scope.genCheckErr = false;
 
@@ -252,13 +226,13 @@ angular.module('runnerCalcApp')
     	
     	if ($scope.updateInputFormTop() === true || $scope.updateInputTime() === true || 
     		$scope.updateInputDist() === true || $scope.updateGenCheck() === true) {
-    		errWarning.fadeIn(500);
+    		$scope.errWarning = true;
     	} else {
-    		errWarning.fadeOut(2000);
+    		$scope.errWarning = false;
     	}
 
-    	if ($scope.outputAgeGrade !== undefined) {
-    		outputAgeGrade.fadeIn(100);
+    	if ($scope.outputDataTop !== undefined) {
+    		
     	}
 
   	};
@@ -272,7 +246,7 @@ angular.module('runnerCalcApp')
 
   		$scope.inputFormTop = undefined;
   		$scope.inputDist = undefined;
-  		$scope.outputAgeGrade = undefined;
+  		$scope.outputDataTop = undefined;
   		$scope.outputAgePercent = undefined;
   		$scope.inputTime1 = '00';
   		$scope.inputTime2 = '00';
@@ -280,18 +254,8 @@ angular.module('runnerCalcApp')
   		$scope.inputTimeErr = false;
   		$scope.genCheckErr = false;
   		$scope.genCheck = false;
-
-  		calcBtnDisabled1 = false;
-  		calcBtnDisabled2 = false;
-  		calcBtnDisabled3 = false;
-  		calcBtnDisabled4 = false;
-
-  		$scope.calcBtnDisabled = false;
-  		genCheckErr.removeClass('genCheckErr').addClass('genCheckErrInvis');
-
-
-
-  		errWarning.fadeOut(2000);
+  		$scope.errWarning = false;
+      
   		
 
   	};

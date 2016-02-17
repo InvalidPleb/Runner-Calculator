@@ -138,7 +138,7 @@
 }
 
 /*  The container that includes both the calc & and the output sections  */
-.calcWithOutput {
+.calcWithOutputPace {
   background-color: #fff;
   -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
@@ -146,10 +146,25 @@
   margin-top: -1px;
   padding: 5px;
   border-radius: 10px;
-  height: 420px;
+  height: 450px;
   position: relative;
   z-index: 1;
 }
+
+.calcWithOutputAge {
+  background-color: #fff;
+  -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  margin-top: -1px;
+  padding: 5px;
+  border-radius: 10px;
+  height: 470px;
+  position: relative;
+  z-index: 1;
+}
+
+
 
 /*  Just the calc widget section  */
 .buttonCalc {
@@ -402,7 +417,7 @@
 
 /* Label for the format needed for time input */
 .labelTimeFormat {
-  margin-left: 5px;
+  margin-left: 55px;
 }
 
 /* Sizing of each individual time input */
@@ -547,8 +562,12 @@
 
 }
 
-.outputMargin {
+.outputMarginPace {
   margin-top: 12%;
+}
+
+.outputMarginAge {
+  margin-top: 4%;
 }
 
 /* Container for whole output section */
@@ -676,7 +695,7 @@
   left: 35px;
   border: 1px solid #CC0000;
   border-radius: 5px;
-  padding: 11px 10px 10px 0px;
+  padding: 6px 9px 8px 0px;
   transition: all .15s cubic-bezier(.27,1,1,.9);
   visibility: visible;
 }
@@ -688,7 +707,7 @@
   left: 35px;
   border: 1px solid #CC0000;
   border-radius: 5px;
-  padding: 11px 10px 10px 0px;
+  padding: 6px 9px 8px 0px;
   transition: all .15s cubic-bezier(.27,1,1,.9);
   visibility: collapse;
 }
