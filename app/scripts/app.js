@@ -20,30 +20,30 @@ angular
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/agegrade.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .when('/densalt', {
-        templateUrl: 'views/densalt.html',
-        controller: 'DensAltCtrl',
-        controllerAs: 'densAlt'
-      })
+      //.when('/about', {
+      //  templateUrl: 'views/about.html',
+      //  controller: 'AboutCtrl',
+      //  controllerAs: 'about'
+      //})
+      //.when('/densalt', {
+      //  templateUrl: 'views/densalt.html',
+      //  controller: 'DensAltCtrl',
+      //  controllerAs: 'densAlt'
+      //})
       .when('/pace', {
         templateUrl: 'views/pacecalc.html',
         controller: 'PaceCtrl',
         controllerAs: 'pace'
       })
-      .when('/paceconvert', {
-        templateUrl: 'views/paceconvert.html',
-        controller: 'MainCtrl',
-        controllerAs: 'paceConvert'
-      })
+      //.when('/paceconvert', {
+      //  templateUrl: 'views/paceconvert.html',
+      //  controller: 'MainCtrl',
+      //  controllerAs: 'paceConvert'
+      //})
       .otherwise({
         redirectTo: '/'
       });
