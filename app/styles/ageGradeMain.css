@@ -159,7 +159,7 @@
   margin-top: -1px;
   padding: 5px;
   border-radius: 10px;
-  height: 470px;
+  height: 465px;
   position: relative;
   z-index: 1;
 }
@@ -220,17 +220,6 @@
   z-index: 2;
   bottom: 2px;
   box-shadow: -1px 1px 3px 0.5px #888;
-}
-
-/*  Title banner for the density altitude container  */
-.densAltTitle {
-  background-color: rgba(255, 87, 34, 1);
-  width: 100%;
-  height: 80px;
-  border-radius: 0px 16px 0px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 
@@ -350,7 +339,7 @@
   border: 1px solid #434343;
   background: #434343;
   border-radius: 5px;
-  margin-top: 5px;
+  margin-top: 10px;
   transition: all .15s cubic-bezier(.27,1,1,.9);
   box-shadow: -1px 1px 5px 1px #888;
   position: relative;
@@ -622,7 +611,6 @@
   padding: 13px 0px 12px 0px;
   border-radius: 5px;
   border: 1px solid #CC0000;
-  transition: all .15s cubic-bezier(.27,1,1,.9);
   visibility:collapse;
 }
 
@@ -636,7 +624,6 @@
   padding-right: 0px;
   border-radius: 5px;
   border: 1px solid #CC0000;
-  transition: all .15s cubic-bezier(.27,1,1,.9);
   visibility:visible;
 }
 
@@ -657,7 +644,6 @@
   padding: 13px 0px 12px 0px;
   border-radius: 5px;
   border: 1px solid #CC0000;
-  transition: all .15s cubic-bezier(.27,1,1,.9);
   visibility:collapse;
 }
 
@@ -670,7 +656,6 @@
   padding-right: 0px;
   border-radius: 5px;
   border: 1px solid #CC0000;
-  transition: all .15s cubic-bezier(.27,1,1,.9);
   visibility:visible;
 }
 
@@ -696,7 +681,6 @@
   border: 1px solid #CC0000;
   border-radius: 5px;
   padding: 6px 9px 8px 0px;
-  transition: all .15s cubic-bezier(.27,1,1,.9);
   visibility: visible;
 }
 
@@ -708,7 +692,6 @@
   border: 1px solid #CC0000;
   border-radius: 5px;
   padding: 6px 9px 8px 0px;
-  transition: all .15s cubic-bezier(.27,1,1,.9);
   visibility: collapse;
 }
 

@@ -1,0 +1,51 @@
+.allCalcBtns {
+  left: 0px;
+}
+
+.calcButton {
+  width: 100%;
+
+}
+
+.clearButton {
+    width: 30%;
+}
+
+.calcWithOutputPace {
+  
+  height: 825px;
+  min-width: 500px;
+ 
+}
+
+.calcWithOutputAge {
+  height: 968px;
+  min-width: 500px;
+}
+
+
+.outputMarginPace {
+  margin-top: 71%;
+}
+
+.outputMarginAge {
+  margin-top: 83%;
+}
+
+.calcTitle {
+  min-width: 500px;
+}
+
+.errWarning {
+  left: 0px;
+  width: 100%;
+}
+
+.errWarningInvis {
+  left: 0px;
+  width: 100%;
+}
+
+.tabRow {
+  min-width: 500px;
+}
