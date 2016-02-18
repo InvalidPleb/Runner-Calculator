@@ -14,13 +14,13 @@
 .calcWithOutputPace {
   
   height: 825px;
-  min-width: 500px;
+  min-width: 450px;
  
 }
 
 .calcWithOutputAge {
   height: 968px;
-  min-width: 500px;
+  min-width: 450px;
 }
 
 
@@ -33,7 +33,7 @@
 }
 
 .calcTitle {
-  min-width: 500px;
+  min-width: 450px;
 }
 
 .errWarning {
@@ -47,5 +47,24 @@
 }
 
 .tabRow {
-  min-width: 500px;
+  min-width: 450px;
 }
+
+.container {
+	padding-left: 13px;
+}
+
+.container-fluid {
+	padding-left: 0px;
+	min-width: 450px;
+}
+
+#main {
+	min-width: 450px;
+}
+
+.mainHeader {
+	min-width: 450px;
+
+}
+
