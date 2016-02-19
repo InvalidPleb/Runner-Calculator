@@ -13,23 +13,23 @@
 
 .calcWithOutputPace {
   
-  height: 825px;
+  height: 835px;
   min-width: 450px;
  
 }
 
 .calcWithOutputAge {
-  height: 968px;
+  height: 995px;
   min-width: 450px;
 }
 
 
 .outputMarginPace {
-  margin-top: 71%;
+  margin-top: 81%;
 }
 
 .outputMarginAge {
-  margin-top: 83%;
+  margin-top: 92%;
 }
 
 .calcTitle {
