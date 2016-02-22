@@ -53,9 +53,6 @@ angular.module('runnerCalcApp')
   $scope.errWarning = false;
   $scope.genCheckErr = false;
 
-
-
-
   $scope.hideTextCheck = "Static";
 
   // This controls the ng-show on the animated info text on AgeGradeMain.
@@ -142,7 +139,6 @@ angular.module('runnerCalcApp')
 
 
   	};
-
   	// Fades out the error warning div that
   	// appears below the calculator when info is missing. This is called by
   	// the error functions above.
@@ -231,12 +227,10 @@ angular.module('runnerCalcApp')
     		$scope.errWarning = false;
     	}
 
-    	if ($scope.outputDataTop !== undefined) {
-    		
+    	if ($scope.outputDataTop !== undefined) {		
     	}
-
   	};
-
+    
   	// Clear button click function.
 
   	$scope.clearButton = function (){
