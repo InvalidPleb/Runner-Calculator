@@ -18,12 +18,22 @@ angular.module('runnerCalcApp')
 
 	  	};
 
-	  	$scope.paceConvert = {
+	  	$scope.bmiCalc = {
 
-	  		title: "Pace Converter",
-	  		href: "#/paceconvert"
+	  		title: "BMI Calculator",
+	  		href: "#/bmi"
 
 	  	};
+
+	}])
+
+	.controller('BmiCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', function($scope, inputDistDropDown, inputBlur){
+
+		$scope.calcTitleInfo = {
+
+  			title: "BMI Calculator"
+
+  		};
 
 	}])
 

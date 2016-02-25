@@ -163,7 +163,7 @@
   margin-top: -1px;
   padding: 5px;
   border-radius: 3px;
-  height: 465px;
+  height: 485px;
   position: relative;
   z-index: 1;
 }
@@ -560,7 +560,7 @@
 }
 
 .outputMarginAge {
-  margin-top: 4%;
+  margin-top: 6%;
 }
 
 /* Container for whole output section */

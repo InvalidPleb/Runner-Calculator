@@ -39,11 +39,11 @@ angular
         controller: 'PaceCtrl',
         controllerAs: 'pace'
       })
-      //.when('/paceconvert', {
-      //  templateUrl: 'views/paceconvert.html',
-      //  controller: 'MainCtrl',
-      //  controllerAs: 'paceConvert'
-      //})
+      .when('/bmi', {
+        templateUrl: 'views/bmi.html',
+        controller: 'BmiCtrl',
+        controllerAs: 'bmi'
+      })
       .otherwise({
         redirectTo: '/'
       });
