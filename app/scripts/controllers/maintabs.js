@@ -29,6 +29,12 @@ angular.module('runnerCalcApp')
 
 	.controller('PaceCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', function($scope, inputDistDropDown, inputBlur){
 
+		$scope.myFunct = function(keyEvent) {
+    		if (keyEvent.which === 13) {
+      			$scope.calcButton();
+    		}
+  		};
+
 
 		// Populating distance dropdown with service info.
 		$scope.run = inputDistDropDown.run;

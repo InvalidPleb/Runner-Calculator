@@ -10,15 +10,19 @@ angular.module('runnerCalcApp')
 	// This function rounds to the nearest 100th.
 
 	function numRound (value,dec){
-
-    	value=Math.floor(value * dec + 0.05) / dec;
-    	return(value);
+    value=Math.floor(value * dec + 0.05) / dec;
+    return(value);
 	}
 
 	function parseTime (hours, mins, secs) {
-	  	return parseInt(((hours * 60) * 60), 10) + parseInt((mins * 60), 10) + parseInt(secs, 10);
-
+	  return parseInt(((hours * 60) * 60), 10) + parseInt((mins * 60), 10) + parseInt(secs, 10);
 	}
+
+  $scope.myFunct = function(keyEvent) {
+    if (keyEvent.which === 13) {
+      $scope.calcButton();
+    }
+  };
 
 	$scope.calcTitleInfo = {
 
@@ -253,6 +257,7 @@ angular.module('runnerCalcApp')
   		
 
   	};
+
 
 
 }]);
