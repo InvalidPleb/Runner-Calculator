@@ -38,12 +38,44 @@ angular.module('runnerCalcApp')
 
   			inputFormTop: "Weight",
   			inputFormBot: "Height",
-  			inputFormTopClass: "moveAge",
-  			inputFormBotClass: "moveHeight",
+  			inputFormTopClass: "move30",
+  			inputFormTopTxt: "pounds",
+  			inputFormBotClass: "move30",
+  			inputFormBotTxt: "feet",
   			outputLabelTxtTop: "Your BMI",
   			outputBottomHide: "true",
   			errWarningTxt: "Oops! You're missing some info in the fields above"
 
+
+  		};
+
+  		$scope.unitCheck = "US";
+
+  		$scope.updateUnitCheck = function () {
+
+	  		if ($scope.unitCheck === "US") {
+
+	  			$('.moveHeight2').show();
+	  			$scope.calcInfo.inputFormTopTxt = "pounds";
+	  			$scope.calcInfo.inputFormBotTxt = "feet";
+
+
+
+	  		} else {
+
+	  			$('.moveHeight2').hide();
+	  			$scope.calcInfo.inputFormTopTxt = "kilograms";
+	  			$scope.calcInfo.inputFormBotTxt = "centimeters";
+	  			
+
+	  		}
+	  		
+
+  		};
+
+  		$scope.calcButton = function () {
+
+  			console.log($scope.calcInfo.inputFormBot2Hide);
   		};
 
 

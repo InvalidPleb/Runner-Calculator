@@ -458,13 +458,13 @@
 
 .moveHeight1 {
   position: relative;
-  left: 66px;
+  left: 35px;
 
 }
 
 .moveHeight2 {
   position: relative;
-  left: 86px;
+  left: 50px;
 
 }
 
@@ -473,6 +473,12 @@
   position: relative;
   left: 27px;
   
+}
+
+.move30 {
+  position: relative;
+  left: 30px;
+
 }
 
 /* Section that contains the gender buttons */

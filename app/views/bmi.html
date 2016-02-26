@@ -2,33 +2,44 @@
 <section class="calcWithOutputPace col-lg-12 col-md-12">
 	<div class="calcInstructions fontForText col-lg-12 col-md-12">
 	    <p>
-	      This calculator finds out your <strong>BMI</strong> when you fill in your <strong>weight</strong> and <strong>height</strong>. It can take use either US standard units (lb/in) or metric (kg/m) for the input.
+	      This calculator finds out your <strong>BMI</strong> when you fill in your <strong>weight</strong> and <strong>height</strong>. It can take use either US standard units (lb/in) or metric (kg/cm) for the input.
 	    </p>
 	    <p>
 	      Press the <strong>Calculate</strong> button to get your result
 	    </p>
 	</div>
 
-	<div class="buttonCalc container col-lg-6 col-md-6 col-sm-12 col-xs-12" ng-keypress="myFunct($event)">
+	<div class="buttonCalc container col-lg-6 col-md-6 col-sm-12 col-xs-12" ng-keypress="enterPress($event)">
 	<br>
 	<div class="row">
 	    <span class="fontForText">{{calcInfo.inputFormTop}}:</span>
 	    <span class="{{calcInfo.inputFormTopClass}}">
-			<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="3" ng-model="inputFormTop" ng-hide="{{calcInfo.inputFormTopHide}}">
-			<span class="fontForText">pounds</span>
-		</span>
+			<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="3" ng-model="inputFormTop">
+			<span class="fontForText">{{calcInfo.inputFormTopTxt}}</span>
 
+			<span class="justGenBtns move2">
+	          	<label class="genLabel" ng-class="{false: 'genLabel fontForText', US: 'genSelected fontForText animated bounceIn', Metric: 'genLabel fontForText'}[unitCheck]">
+		            <input type="radio" class="inputGender" ng-model="unitCheck" value="US" ng-change="updateUnitCheck()">
+		            <span class="fontForText">US</span>
+	          	</label>
+	          	<label class="femaleLabel genLabel" ng-class="{false: 'genLabel fontForText', US: 'genLabel fontForText', Metric: 'genSelected fontForText animated bounceIn'}[unitCheck]">
+		            <input type="radio" class="inputGender" ng-model="unitCheck" value="Metric" ng-change="updateUnitCheck()">
+		            <span class="fontForText">Metric</span>
+          		</label>
+			</span>
+
+		</span>
 	</div>
 	<br>
 	<div class="row">
 		<span class="fontForText">{{calcInfo.inputFormBot}}:</span>
 		<span class="moveHeight1">
 			<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="3" ng-model="inputFormBot">
-			<span class="fontForText">feet</span>
+			<span class="fontForText">{{calcInfo.inputFormBotTxt}}</span>
 		</span>
 		
 		<span class="moveHeight2">
-			<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="3" ng-model="inputFormBot">
+			<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="3" ng-model="inputFormBot2">
 			<span class="fontForText">inches</span>
 		</span>
 		<div class="allCalcBtns">
