@@ -456,6 +456,18 @@
 
 }
 
+.moveHeight1 {
+  position: relative;
+  left: 66px;
+
+}
+
+.moveHeight2 {
+  position: relative;
+  left: 86px;
+
+}
+
 /* Positioning of Distance input */
 .move2 {
   position: relative;

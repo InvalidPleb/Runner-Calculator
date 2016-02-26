@@ -18,7 +18,7 @@ angular.module('runnerCalcApp')
 	  return parseInt(((hours * 60) * 60), 10) + parseInt((mins * 60), 10) + parseInt(secs, 10);
 	}
 
-  $scope.myFunct = function(keyEvent) {
+  $scope.enterPress = function(keyEvent) {
     if (keyEvent.which === 13) {
       $scope.calcButton();
     }
@@ -42,7 +42,7 @@ angular.module('runnerCalcApp')
 		outputLabelTxtTop: "Your age-graded time",
     outputLabelTxtTopRes: "",
     outputBottomHide: "false",
-		errWarningTxt: "Oops! You're missing some info in the fields above",
+		errWarningTxt: "Oops! You're missing some info in the fields above"
 
 	};
 

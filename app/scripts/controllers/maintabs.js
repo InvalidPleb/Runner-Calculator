@@ -32,14 +32,28 @@ angular.module('runnerCalcApp')
 		$scope.calcTitleInfo = {
 
   			title: "BMI Calculator"
+  		};
+
+  		$scope.calcInfo = {
+
+  			inputFormTop: "Weight",
+  			inputFormBot: "Height",
+  			inputFormTopClass: "moveAge",
+  			inputFormBotClass: "moveHeight",
+  			outputLabelTxtTop: "Your BMI",
+  			outputBottomHide: "true",
+  			errWarningTxt: "Oops! You're missing some info in the fields above"
 
   		};
+
+
+
 
 	}])
 
 	.controller('PaceCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', function($scope, inputDistDropDown, inputBlur){
 
-		$scope.myFunct = function(keyEvent) {
+		$scope.enterPress = function(keyEvent) {
     		if (keyEvent.which === 13) {
       			$scope.calcButton();
     		}
