@@ -49,6 +49,7 @@ angular.module('runnerCalcApp')
 
   		};
 
+  		$scope.errWarning = false;
   		$scope.unitCheck = "US";
 
   		$scope.updateUnitCheck = function () {
@@ -73,10 +74,83 @@ angular.module('runnerCalcApp')
 
   		};
 
+  		var inputFormTop = 0;
+  		var inputFormBot = 0;
+  		var inputFormBot2 = 0;
+  		var inputFormBotEmpty = true;
+  		var calcWeight;
+  		var calcHeightTotal;
+  		var calcBMI;
+
   		$scope.calcButton = function () {
 
-  			console.log($scope.calcInfo.inputFormBot2Hide);
+
+  			if ($scope.inputFormTop === undefined || $scope.inputFormTop === "") {
+
+  				calcWeight = 0;
+  				
+  			} else {
+
+  				calcWeight = parseInt($scope.inputFormTop);
+  			}
+
+  			if ($scope.inputFormBot === undefined || $scope.inputFormBot === "") {
+
+  				inputFormBot = 0;
+
+  			} else {
+
+  				inputFormBot = parseInt($scope.inputFormBot);
+
+  			}
+
+  			if ($scope.inputFormBot2 === undefined || $scope.inputFormBot2 === "") {
+
+  				inputFormBot2 = 0;
+  				
+  			} else {
+
+  				inputFormBot2 = parseInt($scope.inputFormBot2);
+  			}
+
+  			if (inputFormBot === 0 && inputFormBot2 === 0) {
+
+  				inputFormBotEmpty = true;
+
+  			} else {
+
+  				inputFormBotEmpty = false;
+  			}
+
+
+  		    if ($scope.unitCheck === "US" && calcWeight !== 0 && inputFormBotEmpty === false){
+
+	  			calcHeightTotal = Math.pow((inputFormBot * 12) + inputFormBot2, 2);
+	  			calcBMI = (calcWeight / calcHeightTotal) * 703;
+	  			$scope.outputDataTop = Math.round(calcBMI * 100) / 100;
+
+  			} else if ($scope.unitCheck === "Metric" && calcWeight !== 0 && inputFormBotEmpty === false) {
+
+  				calcBMI = calcWeight / Math.pow((inputFormBot / 100), 2);
+  				$scope.outputDataTop = Math.round(calcBMI * 100) / 100;
+  			}
+
+
   		};
+
+  		$scope.clearButton = function () {
+
+  			$scope.outputDataTop = "";
+  			$scope.inputFormTop = "";
+  			$scope.inputFormBot = "";
+  			$scope.inputFormBot2 = "";
+  			inputFormTop = 0;
+  			inputFormBot = 0;
+  			inputFormBot2 = 0;
+
+  		};
+
+
 
 
 
