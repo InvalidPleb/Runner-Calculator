@@ -60,19 +60,31 @@ angular.module('runnerCalcApp')
 	  			$scope.calcInfo.inputFormTopTxt = "pounds";
 	  			$scope.calcInfo.inputFormBotTxt = "feet";
 
-
-
 	  		} else {
 
 	  			$('.moveHeight2').hide();
 	  			$scope.calcInfo.inputFormTopTxt = "kilograms";
 	  			$scope.calcInfo.inputFormBotTxt = "centimeters";
-	  			
-
 	  		}
-	  		
-
   		};
+
+  		$scope.updateInputFormTop = function() {
+			if ($scope.inputFormTop === "") {
+				return true;
+			} else {
+				return false;
+			}
+  		};
+
+  		$scope.updateInputFormBot = function() {
+			if ($scope.inputFormBot === "") {
+				return true;
+			} else {
+				return false;
+			}
+  		};
+
+
 
   		var inputFormTop = 0;
   		var inputFormBot = 0;
@@ -171,14 +183,38 @@ angular.module('runnerCalcApp')
 	  			}
   			}
 
+
+
   			if (weightWarning === true || heightWarning === true) {
 
   				$scope.errWarning = true;
 
+  				if (weightWarning === true) {
+
+  					$scope.inputFormTop = "";
+  				}
+
+  				if (heightWarning === true) {
+
+  					$scope.inputFormBot = "";
+
+  				}
+
+
   			} else if (weightWarning === false && heightWarning === false) {
+
+  				if (inputFormBot === 0) {
+
+  					$scope.inputFormBot = undefined;
+  					console.log($scope.inputFormBot);
+
+  				}
 
   				$scope.errWarning = false;
   			}
+
+  			console.log(heightWarning);
+  			console.log(inputFormBot);
 
   			
 
@@ -201,9 +237,9 @@ angular.module('runnerCalcApp')
   		$scope.clearButton = function () {
 
   			$scope.outputDataTop = "";
-  			$scope.inputFormTop = "";
-  			$scope.inputFormBot = "";
-  			$scope.inputFormBot2 = "";
+  			$scope.inputFormTop = undefined;
+  			$scope.inputFormBot = undefined;
+  			$scope.inputFormBot2 = undefined;
   			inputFormTop = 0;
   			inputFormBot = 0;
   			inputFormBot2 = 0;
