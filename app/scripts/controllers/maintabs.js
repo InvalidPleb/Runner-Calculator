@@ -81,8 +81,13 @@ angular.module('runnerCalcApp')
   		var calcWeight;
   		var calcHeightTotal;
   		var calcBMI;
+  		var weightWarning;
+  		var heightWarning;
+
 
   		$scope.calcButton = function () {
+
+  			
 
 
   			if ($scope.inputFormTop === undefined || $scope.inputFormTop === "") {
@@ -111,16 +116,71 @@ angular.module('runnerCalcApp')
   			} else {
 
   				inputFormBot2 = parseInt($scope.inputFormBot2);
+
   			}
 
-  			if (inputFormBot === 0 && inputFormBot2 === 0) {
 
-  				inputFormBotEmpty = true;
+  			weightWarning = true;
+  			heightWarning = true;
+
+
+  			if ($scope.unitCheck === "US") {
+
+  				if (calcWeight === 0) {
+
+	  				weightWarning = true;
+
+  				} else {
+
+  					weightWarning = false;
+  				}
+
+
+	  			if (inputFormBot === 0 && inputFormBot2 === 0) {
+
+	  				inputFormBotEmpty = true;
+	  				heightWarning = true;
+
+	  			} else {
+
+	  				inputFormBotEmpty = false;
+	  				heightWarning = false;
+	  			}
 
   			} else {
 
-  				inputFormBotEmpty = false;
+
+  				if (calcWeight === 0) {
+
+	  				weightWarning = true;
+
+  				} else {
+
+  					weightWarning = false;
+  				}
+
+  				if (inputFormBot === 0) {
+
+  					inputFormBotEmpty = true;
+	  				heightWarning = true;
+
+  				} else {
+
+	  				inputFormBotEmpty = false;
+	  				heightWarning = false;
+	  			}
   			}
+
+  			if (weightWarning === true || heightWarning === true) {
+
+  				$scope.errWarning = true;
+
+  			} else if (weightWarning === false && heightWarning === false) {
+
+  				$scope.errWarning = false;
+  			}
+
+  			
 
 
   		    if ($scope.unitCheck === "US" && calcWeight !== 0 && inputFormBotEmpty === false){
@@ -147,6 +207,9 @@ angular.module('runnerCalcApp')
   			inputFormTop = 0;
   			inputFormBot = 0;
   			inputFormBot2 = 0;
+  			weightWarning = false;
+  			heightWarning = false;
+  			$scope.errWarning = false;
 
   		};
 
