@@ -108,7 +108,7 @@ angular.module('runnerCalcApp')
   				
   			} else {
 
-  				calcWeight = parseInt($scope.inputFormTop);
+  				calcWeight = parseFloat($scope.inputFormTop);
   			}
 
   			if ($scope.inputFormBot === undefined || $scope.inputFormBot === "") {
@@ -117,7 +117,7 @@ angular.module('runnerCalcApp')
 
   			} else {
 
-  				inputFormBot = parseInt($scope.inputFormBot);
+  				inputFormBot = parseFloat($scope.inputFormBot);
 
   			}
 
@@ -127,7 +127,7 @@ angular.module('runnerCalcApp')
   				
   			} else {
 
-  				inputFormBot2 = parseInt($scope.inputFormBot2);
+  				inputFormBot2 = parseFloat($scope.inputFormBot2);
 
   			}
 

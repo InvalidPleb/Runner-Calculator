@@ -22,3 +22,78 @@
 	height: 700px;
 }
 
+/* ----------- Tab Style ----------- */
+
+
+/* Container for all the tabs in agegrademain */
+.tabRow {
+  list-style: none;
+  padding: 0;
+  line-height: 35px;
+  height: 37px;
+  overflow: hidden;
+  font-size: 12px;
+  position: relative;
+}
+
+/* Class for the unselected/default tabs */
+.tabRowLi {
+  background-color: rgba(255, 87, 34, 0.6);
+  color: #FFF;
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 12px;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  z-index: 3;
+  border: 0px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  margin-left: -2px;
+  padding: 0 35px 1px;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
+}
+
+.tabRowLi:hover {
+  background-color: #FF7939;
+}
+
+/* Selected class for the tabs added by ng-class when user selects a tab */
+.selected {
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 12px;
+  display: inline-block;
+  position:relative;
+  border:0px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.4);
+  margin-left: -5px;
+  padding: 0 35px 1px;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
+  background: #FF7939;
+  color: #FFF;
+  z-index: 2;
+}
+
+
+.tabRow:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.tabText {
+  color: #FFF;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 12px;
+}
+
