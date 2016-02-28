@@ -1,9 +1,9 @@
 .allCalcBtns {
-  left: 0px;
+  left: 20px;
 }
 
 .calcButton {
-  width: 100%;
+  width: 90%;
 
 }
 
@@ -70,5 +70,24 @@
 .mainHeader {
 	min-width: 500px;
 
+}
+
+.tabRowLi {
+  width: 30%;
+  height: 50px;
+
+}
+
+
+.selected {
+  width: 30%;
+}
+
+.tabText {
+  right: 25px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+ 
 }
 
