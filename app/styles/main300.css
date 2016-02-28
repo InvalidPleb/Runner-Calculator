@@ -56,7 +56,7 @@
 
 .container-fluid {
 	padding-left: 0px;
-	min-width: 470px;
+	min-width: 500px;
   background-image: url("/images/runnersunsetmdorg.jpg");
   height: 700px;
   
@@ -64,7 +64,7 @@
 }
 
 #main {
-	min-width: 470px;
+	min-width: 500px;
 }
 
 .mainHeader {
