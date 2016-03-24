@@ -27,7 +27,7 @@ angular.module('runnerCalcApp')
 
 	}])
 
-	.controller('BmiCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', function($scope, inputDistDropDown, inputBlur){
+	.controller('BmiCtrl', ['$scope', function($scope){
 
 		$scope.calcTitleInfo = {
 
