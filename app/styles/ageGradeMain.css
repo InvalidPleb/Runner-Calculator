@@ -14,23 +14,14 @@
 }
 
 .runnerLogo {
-  background-image: url('/images/runnernumsliorg.png');
-  height: 192px;
-  width: 192px;
+  background-image: url('/images/runnerLogoWhite1.png');
+  height: 132px;
+  width: 162px;
   position: relative;
   z-index: 1;
-  left: 20%;
-  top: 40px;
+  top: 30px;
 }
 
-#main{
-    display:block;
-    width:100%;
-    padding:50px;
-    background: #000;
-    position: absolute;
-    z-index: 1;
-}
 
 .siteTitle {
   font-family: "Open Sans Condensed";
@@ -42,7 +33,11 @@
 }
 
 .siteTitleContainer {
-  height: 150px;
+  position: relative;
+  width: 200px;
+  left: 20%;
+  top: 40px;
+  height: 60px;
 
 }
 
@@ -93,12 +88,13 @@
 /* Editing bootstrap container */
 .container {
   position:relative;
+  top: 70px;
 }
 
 /* Editing bootstrap container-fluid */
 .container-fluid {
   width: 100%;
-  height: 1200px; 
+  height: 1250px; 
   position:relative;
   background-image: url("/images/seamlessRoad2.png");
   background-color: rgba(255, 204, 188, 1);
@@ -191,22 +187,6 @@
   opacity: 0;
 }
 
-
-/*  Label for the radio button for text animation */
-.stackButton {
-  background-image: url('/images/menu24Grey.png');
-  height: 24px;
-  width: 24px;
-  margin: 36px 0px 0px 0px;
-}
-
-.stackButton:hover{
-  background-image: url('/images/menu24f.png');
-  height: 24px;
-  width: 24px;
-}
-
-
 /* ----------- Title Banner Style ----------- */
 
 
@@ -235,20 +215,6 @@
   padding-top: 35px;
 }
 
-/*  Social media links section  */
-.socialMedia {
-  padding: 35px 0px 0px 250px;
-}
-
-/*  Text for the social media   */
-#shareText {
-  color: #000;
-  text-decoration: none;
-  font-size: 12px;
-  padding-right: 10px;
-}
-
-
 /* ----------- Tab Style ----------- */
 
 
@@ -261,6 +227,7 @@
   overflow: hidden;
   font-size: 12px;
   position: relative;
+  z-index: 3;
 }
 
 /* Class for the unselected/default tabs */
@@ -273,7 +240,7 @@
   text-decoration: none;
   display: inline-block;
   position: relative;
-  z-index: 3;
+  z-index: 2;
   border: 0px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
@@ -781,29 +748,31 @@
   font-weight: 300;
   font-size: 20px;
   position: relative;
-  left: 40%;
   top: 5px;
   border-bottom: 1px solid black;
 }
 
 .calcInfoTitleAge {
+  left: 42%;
   width: 200px;
 
 }
 
 .calcInfoTitleBMI {
+  left: 44%;
   width: 170px;
 
 }
 
 .calcInfoTitlePace {
+  left: 45%;
   width: 130px;
 
 }
 
 .BMItable {
   position: relative;
-  left: 38%;
+  left: 42%;
   width: 220px;
   height: 140px;
   padding: 0px 10px 10px 10px;
