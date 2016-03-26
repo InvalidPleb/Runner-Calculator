@@ -43,7 +43,7 @@
 
 /* Main container that the main.html is routed into */
 .mainForm {
-  margin-top: 80px;
+  margin-top: 150px;
   position: relative;
   z-index: 0;
 } 
@@ -88,7 +88,6 @@
 /* Editing bootstrap container */
 .container {
   position:relative;
-  top: 70px;
 }
 
 /* Editing bootstrap container-fluid */
@@ -169,6 +168,11 @@
 .buttonCalc {
   padding-left: 50px;
   
+}
+
+.mainContainer {
+  position: relative;
+  top: 70px;
 }
 
 
@@ -252,26 +256,6 @@
 .tabRowLi:hover {
   background-color: #FF7939;
 }
-
-/* Selected class for the tabs added by ng-class when user selects a tab */
-.selected {
-  font-family: "Open Sans";
-  font-weight: 300;
-  font-size: 12px;
-  display: inline-block;
-  position:relative;
-  border:0px;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.4);
-  margin-left: -5px;
-  padding: 0 35px 1px;
-  transition: all .15s cubic-bezier(.27,1,1,.9);
-  background: #FF7939;
-  color: #FFF;
-  z-index: 2;
-}
-
 
 .tabRow:before {
   position: absolute;
