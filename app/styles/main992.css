@@ -1,0 +1,33 @@
+.container-fluid {
+	height: 1300px;
+}
+
+.calcOutputAgeHeight {
+	height: 383px;
+	top: 5px;
+}
+
+.calcInfoAgeHeight {
+	height: 455px;
+}
+
+.calcInfoPaceHeight {
+	height: 345px;
+
+}
+
+.calcInfoTitleAge {
+	left: 39%
+}
+
+.calcInfoTitlePace {
+	left: 43%;
+}
+
+.calcInfoTitleBMI {
+	left: 42%;
+}
+
+.BMItable {
+	left: 40%;
+}

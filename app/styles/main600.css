@@ -1,0 +1,72 @@
+.calcWithOutputPace {
+  height: 810px;
+}
+
+.calcWithOutputAge {
+  height: 1015px;
+}
+
+.calcWithOutputBMI {
+  height: 785px;
+}
+
+.outputMarginPace {
+  margin-top: 350px;
+}
+
+.outputMarginAge {
+  margin-top: 58%;
+}
+
+.container-fluid {
+  padding-left: 0px;
+  background-image: url("/images/seamlessRoad2.png");
+  height: 1850px;
+}
+
+.tabRowLi {
+  width: 30%;
+  height: 50px;
+
+}
+
+.tabText {
+  left: 0px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.calcInfoAgeHeight {
+  height: 588px;
+}
+
+.calcInfoPaceHeight {
+  height: 390px;
+
+}
+
+.calcInfoBMIHeight {
+  height: 465px;
+}
+
+.calcInfoTitleAge {
+  left: 31%
+}
+
+.calcInfoTitlePace {
+  left: 37%;
+}
+
+.calcInfoTitleBMI {
+  left: 35%;
+}
+
+.BMItable {
+  left: 31%;
+}
+
+.disableAdBlockTxt {
+  font-size: 24px;
+
+} 

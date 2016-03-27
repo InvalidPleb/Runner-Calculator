@@ -44,6 +44,7 @@ angular.module('runnerCalcApp')
   			inputFormBotTxt: "feet",
   			outputLabelTxtTop: "Your BMI",
   			outputBottomHide: "true",
+  			outputHeight: "calcOutputBMIHeight",
   			errWarningTxt: "Oops! You're missing some info in the fields above"
 
 
@@ -290,6 +291,7 @@ angular.module('runnerCalcApp')
   			outputLabelTxtTopRes: "result",
   			outputDataTopUnit: "",
   			outputBottomHide: "true",
+  			outputHeight: "calcOutputPaceHeight",
   			genderBtnHide: "true",
   			errWarningTxt: "Oops! You need to fill in two options to find the third",
   			errWarningHide: "true"

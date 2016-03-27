@@ -12,16 +12,20 @@
 }
 
 .calcWithOutputPace {
-  
-  height: 835px;
+  height: 843px;
   min-width: 450px;
  
 }
 
 .calcWithOutputAge {
-  height: 995px;
+  height: 1035px;
   min-width: 450px;
 }
+
+.calcWithOutputBMI {
+  height: 800px;
+}
+
 
 
 .outputMarginPace {
@@ -57,8 +61,7 @@
 .container-fluid {
 	padding-left: 0px;
 	min-width: 500px;
-  background-image: url("/images/runnersunsetmdorg.jpg");
-  height: 700px;
+  height: 1950px;
   
 
 }
@@ -90,4 +93,40 @@
   overflow: hidden;
  
 }
+
+.calcInfoAgeHeight {
+  height: 675px;
+}
+
+.calcInfoPaceHeight {
+  height: 413px;
+
+}
+
+.calcInfoBMIHeight {
+  height: 485px;
+}
+
+.calcInfoTitleAge {
+  left: 27%
+}
+
+.calcInfoTitlePace {
+  left: 34%;
+}
+
+.calcInfoTitleBMI {
+  left: 31%;
+}
+
+.BMItable {
+  left: 26%;
+}
+
+.disableAdBlockTxt {
+  font-size: 24px;
+  top: 40px;
+
+} 
+
 

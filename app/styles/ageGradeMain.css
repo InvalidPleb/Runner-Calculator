@@ -41,7 +41,7 @@
 
 }
 
-/* Main container that the main.html is routed into */
+/* Main container that the templates are routed into */
 .mainForm {
   margin-top: 150px;
   position: relative;
@@ -118,9 +118,7 @@
 
 .calcInstructions {
   border-bottom: 1px solid black;
-
 }
-
 
 /*  Main container for calc widget  */
 .calcMain {
@@ -143,7 +141,7 @@
   box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   margin-top: -1px;
   padding: 5px;
-  border-radius: 3px;
+  border-radius: 5px;
   height: 450px;
   position: relative;
   z-index: 1;
@@ -156,23 +154,29 @@
   box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   margin-top: -1px;
   padding: 5px;
-  border-radius: 3px;
+  border-radius: 5px;
   height: 485px;
   position: relative;
   z-index: 1;
 }
 
-
+.calcWithOutputBMI {
+  background-color: #fff;
+  -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  margin-top: -1px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 450px;
+  position: relative;
+  z-index: 1;
+}
 
 /*  Just the calc widget section  */
 .buttonCalc {
   padding-left: 50px;
   
-}
-
-.mainContainer {
-  position: relative;
-  top: 70px;
 }
 
 
@@ -563,7 +567,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
   height: 75px;
   width: 50%;
   left: 25%;
@@ -638,12 +641,10 @@
 
 /* Font for input text */
 .betweenInputTxt {
-
   font-family: "Helvetica";
   font-weight: 500;
   font-size: 18px;
   visibility:visible;
-
 }
 
 /* Visible version of the gender err div shown by ng-class */
@@ -682,7 +683,6 @@
 
 .errWarning > div {
   padding-top: 8px;
-
 }
 
 .errWarningInvis {
@@ -705,7 +705,7 @@
   z-index: 1;
   background-color: #FFF;
   top: 20px;
-  border-radius: 3px;
+  border-radius: 5px;
   -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);

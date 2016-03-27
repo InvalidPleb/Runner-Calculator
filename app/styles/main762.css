@@ -1,0 +1,77 @@
+.calcWithOutputPace {
+  height: 785px;
+}
+
+.calcWithOutputAge {
+  height: 1015px;
+}
+
+.calcWithOutputBMI {
+
+  height: 765px;
+
+}
+
+.outputMarginPace {
+  margin-top: 350px;
+}
+
+.outputMarginAge {
+  margin-top: 58%;
+}
+
+.container-fluid {
+	padding-left: 0px;
+	height: 1775px;
+}
+
+.tabRowLi {
+  width: 30%;
+  height: 50px;
+
+}
+
+.tabText {
+	left: 10px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.calcInfoAgeHeight {
+  height: 524px;
+}
+
+.calcInfoPaceHeight {
+  height: 368px;
+
+}
+
+.calcInfoBMIHeight {
+  
+  height: 443px;
+}
+
+.calcInfoTitleAge {
+  left: 35%
+}
+
+.calcInfoTitlePace {
+  left: 41%;
+}
+
+.calcInfoTitleBMI {
+  left: 38%;
+}
+
+.BMItable {
+  left: 35%;
+}
+
+.disableAdBlockTxt {
+  font-size: 24px;
+
+}
+
+
+

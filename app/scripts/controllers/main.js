@@ -42,6 +42,7 @@ angular.module('runnerCalcApp')
 		outputLabelTxtTop: "Your age-graded time",
     outputLabelTxtTopRes: "",
     outputBottomHide: "false",
+    outputHeight: "calcOutputAgeHeight",
 		errWarningTxt: "Oops! You're missing some info in the fields above"
 
 	};
