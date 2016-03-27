@@ -32,6 +32,11 @@
   left: 20%;
 }
 
+.siteTitle:hover, .siteTitle:focus {
+  text-decoration:none;
+  color: #FFF;
+}
+
 .siteTitleContainer {
   position: relative;
   width: 200px;
