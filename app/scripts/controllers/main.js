@@ -1,13 +1,10 @@
 'use strict';
 
-// Setting up Age Grade controller.
-
-
+// Setting up controllers.
 angular.module('runnerCalcApp')
   .controller('MainCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', 'ageGradeData', function ($scope, inputDistDropDown, inputBlur, ageGradeData) {
 
   	// This function rounds to the nearest 100th.
-
   	function numRound (value,dec){
       value=Math.floor(value * dec + 0.05) / dec;
       return(value);
@@ -24,14 +21,11 @@ angular.module('runnerCalcApp')
     };
 
   	$scope.calcTitleInfo = {
-
   		title: "Age-Graded Calculator"
-
   	};
 
   	
   	$scope.calcInfo = {
-
   		inputFormTop: "Age",
   		inputFormTopClass: "moveAge",
       inputFormTopHide: "false",
@@ -43,12 +37,10 @@ angular.module('runnerCalcApp')
       outputBottomHide: "false",
       outputHeight: "calcOutputAgeHeight",
   		errWarningTxt: "Oops! You're missing some info in the fields above"
-
   	};
 
 
   	// Populating the dropdown menu that selects the event.
-  	
   	$scope.run = inputDistDropDown.run;
     $scope.list = inputDistDropDown.list;
   		
@@ -56,22 +48,18 @@ angular.module('runnerCalcApp')
   	// Hiding things with jquery
     $scope.errWarning = false;
     $scope.genCheckErr = false;
-
     $scope.hideTextCheck = "Static";
 
     // This controls the ng-show on the animated info text on AgeGradeMain.
-
   	$scope.changeHideTextCheck = function() {
   		$scope.hideTextCheck = !$scope.hideTextCheck;
   	};
-
 
   	// The following four functions check for missing info on 
   	// the age input, distance/event dropdown menu,
   	// gender selection, and time input, respectively. If any missing
   	// info is found, true or false is returned and an error span
   	// is shown to the user. 
-
   	$scope.updateInputFormTop = function() {
   		if ($scope.inputFormTop === "") {
   			return true;
@@ -112,7 +100,6 @@ angular.module('runnerCalcApp')
   	// The following six functions control the responsiveness of
   	// the three time input fields, changing the value of the text boxes
   	// depending upon blur or focus. 
-
   	$scope.inputTime1 = inputBlur.inputDefault;
   	$scope.inputTime2 = inputBlur.inputDefault;
   	$scope.inputTime3 = inputBlur.inputDefault;
@@ -124,27 +111,14 @@ angular.module('runnerCalcApp')
   	$scope.timeInput3Focus = inputBlur.timeInput3Focus;
   	$scope.timeInput3Blur = inputBlur.timeInput3Blur;
 
-  	// Fades out the error warning div that
-  	// appears below the calculator when info is missing. This is called by
-  	// the error functions above.
-
-  	//var hideErrWhenFilled = function() {
-
-  	//	errWarning.fadeOut(3000);
-  	//};
-
-
   	// Click function of the calculate button.
-    	
   	$scope.calcButton = function (){
-
 
   		// Summing the input fields into total seconds
   		var totalTimeInput = parseTime($scope.inputTime1, $scope.inputTime2, $scope.inputTime3);
 
       // Checks if the input fields have been filled properly, and
       // chooses the running event data array that corresponds to the info given.
-
       var chosenOption = 0;
       if ($scope.genCheck === "Male" && $scope.inputDist !== undefined) {
   			chosenOption = ageGradeData.menEventOptions[$scope.inputDist];
@@ -159,7 +133,6 @@ angular.module('runnerCalcApp')
   		// those values. The calculation is done by multiplying the age-graded index score
   		// in the data above by the user's input time. This number is then converted from
   		// seconds to the hh:mm:ss notation and shown to the user. 
-
   		var ageInt = parseInt($scope.inputFormTop);
   		var ageGrade = 0;
   		var ageGradePercent = 0;
@@ -177,7 +150,6 @@ angular.module('runnerCalcApp')
   		}
 
     	// Normalizes the different values in the age and distance input fields
-
     	if ($scope.inputFormTop % 1 !== 0) {
     		$scope.inputFormTop = "";
     	} 
@@ -189,7 +161,6 @@ angular.module('runnerCalcApp')
     	// Checks for missing values in the input
     	// fields and shows error divs and red outlines
     	// if any are missing
-   
     	if (totalTimeInput === 0 || totalTimeInput === undefined) {
     		$scope.inputTimeErr = true;
     	} else {
@@ -200,29 +171,22 @@ angular.module('runnerCalcApp')
     		$scope.genCheckErr = true;
     	} else {
     		$scope.genCheckErr = false;
-
     	}
 
     	// Fades in the error div if any of the errors are true.
-    	
     	if ($scope.updateInputFormTop() === true || $scope.updateInputTime() === true || 
     		$scope.updateInputDist() === true || $scope.updateGenCheck() === true) {
     		$scope.errWarning = true;
     	} else {
     		$scope.errWarning = false;
     	}
-
-    	if ($scope.outputDataTop !== undefined) {		
-    	}
   	};
       
   	// Clear button click function.
-
   	$scope.clearButton = function (){
 
   		// Resets a bunch of elements to their default
   		// values and hides some other elements. 
-
   		$scope.inputFormTop = undefined;
   		$scope.inputDist = undefined;
   		$scope.outputDataTop = undefined;
@@ -238,41 +202,35 @@ angular.module('runnerCalcApp')
 
   }])
 
+  // Tab template controller
   .controller('MainTabCtrl', ['$scope', function ($scope) {
 
     // These objects contain the information for the titledir templates individiually.
     $scope.ageGrade = {
-
       title: "Age Grade",
       href: "#/"
-
     };
 
     $scope.paceCalc = {
-
       title: "Running Pace",
       href: "#/pace"
-
     };
 
     $scope.bmiCalc = {
-
       title: "BMI Calculator",
       href: "#/bmi"
-
     };
 
   }])
 
+  // BMI calculator controller
   .controller('BmiCtrl', ['$scope', function($scope){
 
     $scope.calcTitleInfo = {
-
       title: "BMI Calculator"
     };
 
     $scope.calcInfo = {
-
       inputFormTop: "Weight",
       inputFormBot: "Height",
       inputFormTopClass: "move30",
@@ -283,28 +241,26 @@ angular.module('runnerCalcApp')
       outputBottomHide: "true",
       outputHeight: "calcOutputBMIHeight",
       errWarningTxt: "Oops! You're missing some info in the fields above"
-
     };
-
+    // Initially clearing errors and setting locale to US
     $scope.errWarning = false;
     $scope.unitCheck = "US";
 
+    // Changes the form setup depending upon US or metric units.
     $scope.updateUnitCheck = function () {
 
       if ($scope.unitCheck === "US") {
-
         $('.moveHeight2').show();
         $scope.calcInfo.inputFormTopTxt = "pounds";
         $scope.calcInfo.inputFormBotTxt = "feet";
-
       } else {
-
         $('.moveHeight2').hide();
         $scope.calcInfo.inputFormTopTxt = "kilograms";
         $scope.calcInfo.inputFormBotTxt = "centimeters";
       }
     };
 
+    // Checks if the input forms are clean or dirty
     $scope.updateInputFormTop = function() {
       if ($scope.inputFormTop === "") {
         return true;
@@ -313,7 +269,7 @@ angular.module('runnerCalcApp')
       }
     };
 
-      $scope.updateInputFormBot = function() {
+    $scope.updateInputFormBot = function() {
       if ($scope.inputFormBot === "") {
         return true;
       } else {
@@ -321,6 +277,7 @@ angular.module('runnerCalcApp')
       }
     };
 
+    // Declaring global scope vars to be used later
     var inputFormTop = 0;
     var inputFormBot = 0;
     var inputFormBot2 = 0;
@@ -331,128 +288,87 @@ angular.module('runnerCalcApp')
     var weightWarning;
     var heightWarning;
 
-
+    // Calculate button function
     $scope.calcButton = function () {
 
+      // Gives the forms float type if they are dirty
       if ($scope.inputFormTop === undefined || $scope.inputFormTop === "") {
-
         calcWeight = 0;
-        
       } else {
-
         calcWeight = parseFloat($scope.inputFormTop);
       }
 
       if ($scope.inputFormBot === undefined || $scope.inputFormBot === "") {
-
         inputFormBot = 0;
-
       } else {
-
         inputFormBot = parseFloat($scope.inputFormBot);
-
       }
 
       if ($scope.inputFormBot2 === undefined || $scope.inputFormBot2 === "") {
-
         inputFormBot2 = 0;
-        
       } else {
-
         inputFormBot2 = parseFloat($scope.inputFormBot2);
-
       }
 
-
+      // Defining the errors for empty fields as boolean 
       weightWarning = true;
       heightWarning = true;
 
-
+      // Turns on errors if the height and weight fields are empty
       if ($scope.unitCheck === "US") {
-
         if (calcWeight === 0) {
-
           weightWarning = true;
-
         } else {
-
           weightWarning = false;
         }
 
-
         if (inputFormBot === 0 && inputFormBot2 === 0) {
-
           inputFormBotEmpty = true;
           heightWarning = true;
-
         } else {
-
           inputFormBotEmpty = false;
           heightWarning = false;
         }
-
       } else {
-
-
         if (calcWeight === 0) {
-
           weightWarning = true;
-
         } else {
-
           weightWarning = false;
         }
 
         if (inputFormBot === 0) {
-
           inputFormBotEmpty = true;
           heightWarning = true;
-
         } else {
-
           inputFormBotEmpty = false;
           heightWarning = false;
         }
       }
 
-
-
+      // If any errors are true, show the error text div
       if (weightWarning === true || heightWarning === true) {
-
         $scope.errWarning = true;
 
         if (weightWarning === true) {
-
           $scope.inputFormTop = "";
         }
 
         if (heightWarning === true) {
-
           $scope.inputFormBot = "";
-
         }
-
-
+      // Else, hide the error div
       } else if (weightWarning === false && heightWarning === false) {
-
-        if (inputFormBot === 0) {
-
-          $scope.inputFormBot = undefined;
-          console.log($scope.inputFormBot);
-        }
-
         $scope.errWarning = false;
       }
 
-      console.log(heightWarning);
-      console.log(inputFormBot);
-
+      // If the locale is US & no fields are empty, do the BMI calculation
       if ($scope.unitCheck === "US" && calcWeight !== 0 && inputFormBotEmpty === false){
 
         calcHeightTotal = Math.pow((inputFormBot * 12) + inputFormBot2, 2);
         calcBMI = (calcWeight / calcHeightTotal) * 703;
         $scope.outputDataTop = Math.round(calcBMI * 100) / 100;
 
+      // Else, if the locale is Metric & no fields are empty, do the BMI calculation
       } else if ($scope.unitCheck === "Metric" && calcWeight !== 0 && inputFormBotEmpty === false) {
 
         calcBMI = calcWeight / Math.pow((inputFormBot / 100), 2);
@@ -460,8 +376,8 @@ angular.module('runnerCalcApp')
       }
     };
 
+    // Clear button to reset values
     $scope.clearButton = function () {
-
       $scope.outputDataTop = "";
       $scope.inputFormTop = undefined;
       $scope.inputFormBot = undefined;
@@ -475,14 +391,15 @@ angular.module('runnerCalcApp')
     };
 
   }])
-
+  // Pace controller
   .controller('PaceCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', function($scope, inputDistDropDown, inputBlur){
 
+    // Hits the calc button on enter keypress
     $scope.enterPress = function(keyEvent) {
-        if (keyEvent.which === 13) {
-            $scope.calcButton();
-        }
-      };
+      if (keyEvent.which === 13) {
+          $scope.calcButton();
+      }
+    };
 
     // Populating distance dropdown with service info.
     $scope.run = inputDistDropDown.run;
@@ -493,9 +410,7 @@ angular.module('runnerCalcApp')
         title: "Pace Calculator"
     };
 
-
     $scope.calcInfo = {
-
       inputFormTop: "Pace",
       inputFormTopClass: "movePace",
       inputFormTopHide: "true",
@@ -557,7 +472,6 @@ angular.module('runnerCalcApp')
     }
 
     $scope.errWarning = false;
-
     $scope.distUnits = $scope.unitSystems[0].unit;
 
     // Calculate button scope.
@@ -580,7 +494,6 @@ angular.module('runnerCalcApp')
       var outputTime;
       var i;
 
-
       // Setting var and field defaults per calc btn click.
       inputDistEmpty = false;
       inputDropDistEmpty = false;
@@ -591,33 +504,24 @@ angular.module('runnerCalcApp')
       chosenDistUnit = undefined;
       userDistance = undefined;
 
-
       // These two functions find out which distance input the user decided to use. 
-
       if ($scope.inputTypeDist === undefined || $scope.inputTypeDist === '' || $scope.inputTypeDist === 0) {
-
         inputTypeDistEmpty = true;
       }
 
       if ($scope.inputDist === undefined || $scope.inputDist === '') {
-
         inputDropDistEmpty = true;
       }
 
       if (inputTypeDistEmpty === true && inputDropDistEmpty === true) {
-
         inputDistEmpty = true;
         
       } else if (inputTypeDistEmpty === false && inputDropDistEmpty === false) {
-
         inputDistEmpty = true;
-        
       }
 
       // If the distance dropdown is empty ... 
-
       if (inputDropDistEmpty === true && inputTypeDistEmpty === false) {
-
         // ... then the user distance that will used for calc is the
         // typed in distance field.
         userDistance = parseFloat($scope.inputTypeDist);
@@ -722,9 +626,9 @@ angular.module('runnerCalcApp')
 
     // Clear button scope.
     $scope.clearButton = function (){
+      
       // Resets a bunch of elements to their default
       // values and hides some other elements. 
-
       $scope.inputFormTop1 = '00';
       $scope.inputFormTop2 = '00';
       $scope.inputFormTop3 = '00';
