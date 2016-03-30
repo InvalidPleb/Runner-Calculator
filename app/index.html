@@ -20,8 +20,9 @@
     <!-- endbuild -->
 
   </head>
+  <!-- Main body for the app --> 
   <body ng-app="runnerCalcApp">
-
+    <!-- Title header --> 
     <div class="mainHeader header col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <a href="#/" class="siteTitle">Runner Calculator</a>
       <div class="container navbar-default">
@@ -29,35 +30,30 @@
         </div>
       </div>
     </div>
-
-    
+    <!-- Logo container --> 
     <div class="siteTitleContainer">
       <div class="runnerLogo"></div>
     </div>
-
+    <!-- Main form that makes up the background image -->  
     <div class="container-fluid">
       <div class="mainForm container">
       <ul class="nav nav-tabs responsive">
-
+        <!-- Templated nav tabs on top of calc --> 
         <div class="tabRow" ng-controller="MainTabCtrl">
-
         <main-tab info="ageGrade"></main-tab>
         <main-tab info="paceCalc"></main-tab>
         <main-tab info="bmiCalc"></main-tab>
-      
         </div>
       </ul>
       </div>
+      <!-- Container for the calculator template injection --> 
       <div class="container">
       <div ng-view="" class="viewSwitch"></div>
       </div>
+      <!-- Footer --> 
+      <div class="mainFooter">
+      </div>
     </div>
-
-    <div class="mainFooter">
-
-    </div>
-
-
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
@@ -68,7 +64,6 @@
        ga('send', 'pageview');
     </script>
 
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>

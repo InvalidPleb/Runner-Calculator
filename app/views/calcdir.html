@@ -1,11 +1,12 @@
 <div class="buttonCalc container col-lg-6 col-md-6 col-sm-12 col-xs-12" ng-keypress="enterPress($event)">
   <br>
+  <!-- First row of input forms -->
   <div class="row">
     <span class="fontForText">{{calcInfo.inputFormTop}}:</span>
     <span class="{{calcInfo.inputFormTopClass}}">
-
+      <!-- Top left input form. Hidden in pace calculator -->
       <input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="2" ng-model="inputFormTop" ng-hide="{{calcInfo.inputFormTopHide}}">
-
+      <!-- The three input forms at the top, currently only used by pace calc -->
       <span ng-hide="{{calcInfo.inputFormTrioHide}}">
         <span class="inputFormTopErrInvis" ng-class="{true: 'inputFormTopErr', false: 'inputFormTopErrInvis'}[inputFormTopErr]" ng-model="inputFormTopErr">
           <input type="text" class="form-control inline inputFormTop" ng-focus="inputFormTop1Focus()" ng-blur="inputFormTop1Blur()" maxlength="2" ng-model="inputFormTop1">
@@ -19,23 +20,27 @@
     </span>
   </div>
   <p></p>
+  <!-- Second row of input forms --> 
   <div class="row">
     <span class="fontForText">Distance:</span>
     <span class="move2">
+      <!-- Distance form drop down --> 
       <select class= "form-control inline {{calcInfo.inputDistClass}}" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.distance as run.title for run in list"></select>
       <span ng-hide="{{calcInfo.inputDistTypeHide}}">
         <span class="betweenInputTxt orText">or</span>
         <input class="form-control inline inputFormTop moveDistUnits" ng-model="inputTypeDist" maxlength="2">
+        <!-- Distance units (US / Metric) dropdown --> 
         <select class="form-control inline distUnits" ng-model="distUnits" ng-options="unitMeasure.unit as unitMeasure.title for unitMeasure in unitSystems"></select>
       </span>
     </span>
     <p></p>
   </div>
-
+  <!-- Thrid row of input forms --> 
   <div class="allTimeInput row">
       <span class="fontForText">Time:</span>
+      <!-- Error div that appears over the three time inputs --> 
       <span class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
-        
+        <!-- The three time inputs --> 
         <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" class="form-control inline inputTime" maxlength="2">
         <span class="betweenInputTxt">:</span>
         <input ng-change="updateInputTime(inputTime2)" ng-model="inputTime2" ng-focus="timeInput2Focus()" ng-blur="timeInput2Blur()" class="form-control inline inputTime" maxlength="2">
@@ -43,21 +48,21 @@
         <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" class="form-control inline inputTime" maxlength="2"> 
       </span>
       <span class="labelTimeFormat fontForText">hh:mm:ss</span>
-      <!-- <span class="labelTimeFormat">hh:mm:ss</span> -->
   </div>
-
+  <!-- Fourth input row --> 
   <div class="allGenInput row" ng-hide="{{calcInfo.genderBtnHide}}">
     <span class="fontForText">Gender:</span>
-    <!-- class swap with jquery not angular -->
     <span class="genCheckErr" ng-model="genCheckErr" ng-class="{true: 'genCheckErr fontForText', false: 'genCheckErrInvis fontForText'}[genCheckErr]">
       <span class="justGenBtns">
         <span>
+          <!-- Male gender button --> 
           <label class="genLabel" ng-class="{false: 'genLabel fontForText', Male: 'genSelected fontForText animated bounceIn', Female: 'genLabel fontForText'}[genCheck]">
             <input type="radio" class="inputGender" ng-change="updateGenCheck(maleCheck)" ng-model="genCheck" value="Male" >
             <span class="fontForText">Male</span>
           </label>
         </span>
         <span>
+          <!-- Female gender button --> 
           <label class="femaleLabel genLabel" ng-class="{false: 'genLabel fontForText', Male: 'genLabel fontForText', Female: 'genSelected fontForText animated bounceIn'}[genCheck]">
             <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model="genCheck" value="Female">
             <span class="fontForText">Female</span>
@@ -66,7 +71,7 @@
       </span>
     </span>
   </div>
-
+  <!-- Calculate & clear buttons --> 
   <div class="allCalcBtns">
     <div class="calcBtnHoverSpan" ng-mouseover="updateBtnDisabled()">
     </div>
@@ -77,7 +82,7 @@
       <input ng-click="clearButton()" type="button" class="clearButton fontForText" value="Clear">
     </div>
   </div>
-
+  <!-- Error warning div that appears at bottom of calculator --> 
   <div class="errWarning fontForText" ng-class="{true: 'errWarning fontForText', false: 'errWarningInvis fontForText'}[errWarning]" ng-model="errWarning">
     <div>{{calcInfo.errWarningTxt}}</div>
   </div>
