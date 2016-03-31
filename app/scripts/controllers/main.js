@@ -2,30 +2,51 @@
 
 // Setting up controllers.
 angular.module('runnerCalcApp')
+
+  // Tab template controller
+  .controller('MainTabCtrl', ['$scope', function ($scope) {
+
+    // These objects contain the information for the tabdir instances
+    $scope.ageGrade = {
+      title: "Age Grade",
+      href: "#/"
+    };
+
+    $scope.paceCalc = {
+      title: "Running Pace",
+      href: "#/pace"
+    };
+
+    $scope.bmiCalc = {
+      title: "BMI Calculator",
+      href: "#/bmi"
+    };
+
+  }])
+
   .controller('MainCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', 'ageGradeData', function ($scope, inputDistDropDown, inputBlur, ageGradeData) {
 
-  	// This function rounds to the nearest 100th.
+  	// Function to round to the nearest 100th
   	function numRound (value,dec){
       value=Math.floor(value * dec + 0.05) / dec;
       return(value);
   	}
 
+    // Function to convert the hh:mm:ss time fields into one float in seconds
   	function parseTime (hours, mins, secs) {
-  	  return parseInt(((hours * 60) * 60), 10) + parseInt((mins * 60), 10) + parseInt(secs, 10);
+  	  return parseFloat(((hours * 60) * 60), 10) + parseFloat((mins * 60), 10) + parseFloat(secs, 10);
   	}
 
+    // Function to call the calc button on enter keypress
     $scope.enterPress = function(keyEvent) {
       if (keyEvent.which === 13) {
         $scope.calcButton();
       }
     };
 
-  	$scope.calcTitleInfo = {
-  		title: "Age-Graded Calculator"
-  	};
-
-  	
+    // This object contains the information for the age grade calculator instance
   	$scope.calcInfo = {
+      title: "Age-Graded Calculator",
   		inputFormTop: "Age",
   		inputFormTopClass: "moveAge",
       inputFormTopHide: "false",
@@ -39,13 +60,12 @@ angular.module('runnerCalcApp')
   		errWarningTxt: "Oops! You're missing some info in the fields above"
   	};
 
-
   	// Populating the dropdown menu that selects the event.
   	$scope.run = inputDistDropDown.run;
     $scope.list = inputDistDropDown.list;
   		
 
-  	// Hiding things with jquery
+  	// Initially hiding things
     $scope.errWarning = false;
     $scope.genCheckErr = false;
     $scope.hideTextCheck = "Static";
@@ -129,9 +149,9 @@ angular.module('runnerCalcApp')
   		}
 
   		// The If statement below checks if there are any missing
-  		// values in the input fields, and if not, does an age graded calculation on
+  		// values in the input fields, and if not, does an age-graded calculation on
   		// those values. The calculation is done by multiplying the age-graded index score
-  		// in the data above by the user's input time. This number is then converted from
+  		// in the data in services.js by the user's input time. This number is then converted from
   		// seconds to the hh:mm:ss notation and shown to the user. 
   		var ageInt = parseInt($scope.inputFormTop);
   		var ageGrade = 0;
@@ -143,9 +163,9 @@ angular.module('runnerCalcApp')
 
   			ageGrade = chosenOption[ageInt-4] * numRound(totalTimeInput, 100);
     		ageGradePercent = chosenOption[0] / ageGrade;
-          returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
-          $scope.outputDataTop = returnAgeGrade;
-          $scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
+        returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
+        $scope.outputDataTop = returnAgeGrade;
+        $scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
           
   		}
 
@@ -202,35 +222,19 @@ angular.module('runnerCalcApp')
 
   }])
 
-  // Tab template controller
-  .controller('MainTabCtrl', ['$scope', function ($scope) {
-
-    // These objects contain the information for the titledir templates individiually.
-    $scope.ageGrade = {
-      title: "Age Grade",
-      href: "#/"
-    };
-
-    $scope.paceCalc = {
-      title: "Running Pace",
-      href: "#/pace"
-    };
-
-    $scope.bmiCalc = {
-      title: "BMI Calculator",
-      href: "#/bmi"
-    };
-
-  }])
-
   // BMI calculator controller
   .controller('BmiCtrl', ['$scope', function($scope){
 
-    $scope.calcTitleInfo = {
-      title: "BMI Calculator"
+    // Function to call the calc button on enter keypress
+    $scope.enterPress = function(keyEvent) {
+      if (keyEvent.which === 13) {
+          $scope.calcButton();
+      }
     };
 
+    // This object contains the information for the BMI calculator instance
     $scope.calcInfo = {
+      title: "BMI Calculator",
       inputFormTop: "Weight",
       inputFormBot: "Height",
       inputFormTopClass: "move30",
@@ -394,7 +398,7 @@ angular.module('runnerCalcApp')
   // Pace controller
   .controller('PaceCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', function($scope, inputDistDropDown, inputBlur){
 
-    // Hits the calc button on enter keypress
+    // Function to call the calc button on enter keypress
     $scope.enterPress = function(keyEvent) {
       if (keyEvent.which === 13) {
           $scope.calcButton();
@@ -405,12 +409,9 @@ angular.module('runnerCalcApp')
     $scope.run = inputDistDropDown.run;
     $scope.list = inputDistDropDown.list; 
 
-    // These objects contain the information for the calcdir templates individually.
-    $scope.calcTitleInfo = {
-        title: "Pace Calculator"
-    };
-
+    // This object contains the information for the pace calculator instance
     $scope.calcInfo = {
+      title: "Pace Calculator",
       inputFormTop: "Pace",
       inputFormTopClass: "movePace",
       inputFormTopHide: "true",
@@ -540,6 +541,13 @@ angular.module('runnerCalcApp')
             userDistance = $scope.list[i].value;
           }
         }
+      // If both the typed and dropdown distance fields are filled, display error.
+      } else if (inputTypeDistEmpty === false && inputDropDistEmpty === false){
+
+        $scope.calcInfo.outputLabelTxtTopRes = "result";
+        $scope.calcInfo.errWarningTxt = "Oops! Please only fill in one distance above";
+        $scope.errWarning = true;
+        $scope.calcInfo.outputDataTopUnit = "";
       }
 
       // Checking if the top field and middle time input fields are empty.
@@ -554,9 +562,7 @@ angular.module('runnerCalcApp')
 
       }
 
-      // -------- Pace Calculation -------- //
-
-      // ---- Error Combinations---- //
+      // ---- Error Combinations ---- //
 
       // If all the fields are filled ...
       if (totalInputFormTopEmpty === false && totalTimeInputEmpty === false && inputDistEmpty === false) {
@@ -610,7 +616,6 @@ angular.module('runnerCalcApp')
 
       // If the pace and distance forms are filled but the time is empty ... 
       } else if (totalInputFormTopEmpty === false && inputDistEmpty === false && totalTimeInputEmpty === true) {
-
 
         // Time is calculated and outputted to the user.
         $scope.calcInfo.outputLabelTxtTopRes = "time";
