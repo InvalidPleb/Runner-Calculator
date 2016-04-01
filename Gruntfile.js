@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(grunt) {
 	
   var appConfig = {
@@ -51,7 +53,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ['app/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all'],
+        tasks: ['jshint:all'],
         options: {
           livereload: 'true'
         }
@@ -166,7 +168,7 @@ module.exports = function(grunt) {
             'app/views/bmi.html',
             'app/views/pacecalc.html'
           ],
-          'dist/directives/directives.html': [
+          'dist/views/directives.html': [
             'app/views/calcdir.html',
             'app/views/calcoutputdir.html',
             'app/views/calctitledir.html',
@@ -184,23 +186,55 @@ module.exports = function(grunt) {
           dest: 'dist/images'
         }]
       }
+    },
+    useminPrepare: {
+      html: 'app/index.html',
+      options: {
+        dest: 'dist',
+        flow: {
+          html: {
+            steps: {
+              js: ['concat', 'uglifyjs'],
+              css: ['cssmin']
+            },
+            post: {}
+          }
+        }
+      }
+    },
+    usemin: {
+      html: ['dist/{,*/}*.html'],
+      css: ['dist/styles/{,*/}*.css'],
+      js: ['dist/scripts/{,*/}*.js'],
+      options: {
+        assetsDirs: [
+          'dist',
+          'dist/images',
+          'dist/styles'
+        ],
+        patterns: {
+          js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
+        }
+      }
     }
   });
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
+      return grunt.task.run(['build', 'connect:livereload:keepalive']);
     }
 
     grunt.task.run([
       'clean:server',
       'autoprefixer:server',
+      'connect:livereload',
       'watch'
     ]);
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -208,18 +242,21 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-usemin');
   grunt.registerTask('build', [
     'clean:dist',
+    'useminPrepare',
     'autoprefixer',
     'concat',
     'cssmin',
     'uglify',
     'htmlmin',
-    'imagemin'
+    'imagemin',
+    'usemin',
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
+    'jshint',
     'build'
   ]);
 
