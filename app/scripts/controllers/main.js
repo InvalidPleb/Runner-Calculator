@@ -244,7 +244,7 @@ angular.module('runnerCalcApp')
       outputLabelTxtTop: "Your BMI",
       outputBottomHide: "true",
       outputHeight: "calcOutputBMIHeight",
-      errWarningTxt: "Oops! You're missing some info in the fields above"
+      errWarningTxt: "Oops! You're missing some info in the fields above",
     };
     // Initially clearing errors and setting locale to US
     $scope.errWarning = false;
