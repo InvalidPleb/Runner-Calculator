@@ -103,7 +103,7 @@ module.exports = function(grunt) {
       dist: {
         options: {
           open: true,
-          base: '<%= appConfig.dist %>'
+          base: 'dist'
         }
       }
     },
