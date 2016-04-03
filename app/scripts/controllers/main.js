@@ -296,23 +296,17 @@ angular.module('runnerCalcApp')
     $scope.calcButton = function () {
 
       // Gives the forms float type if they are dirty
-      if ($scope.inputFormTop === undefined || $scope.inputFormTop === "") {
-        calcWeight = 0;
-      } else {
-        calcWeight = parseFloat($scope.inputFormTop);
+      function parseFormsFloat(form) {
+        if (form === undefined || form === '') {
+          return 0;
+        } else {
+          return parseFloat(form);
+        }
       }
 
-      if ($scope.inputFormBot === undefined || $scope.inputFormBot === "") {
-        inputFormBot = 0;
-      } else {
-        inputFormBot = parseFloat($scope.inputFormBot);
-      }
-
-      if ($scope.inputFormBot2 === undefined || $scope.inputFormBot2 === "") {
-        inputFormBot2 = 0;
-      } else {
-        inputFormBot2 = parseFloat($scope.inputFormBot2);
-      }
+      calcWeight = parseFormsFloat($scope.inputFormTop);
+      inputFormBot = parseFormsFloat($scope.inputFormBot);
+      inputFormBot2 = parseFormsFloat($scope.inputFormBot2);
 
       // Defining the errors for empty fields as boolean 
       weightWarning = true;
@@ -443,10 +437,24 @@ angular.module('runnerCalcApp')
 
     ];
 
-    // Creating local scopes containing the info in the inputBlur service.
-    $scope.inputTime1 = inputBlur.inputDefault;
-    $scope.inputTime2 = inputBlur.inputDefault;
-    $scope.inputTime3 = inputBlur.inputDefault;
+    // Calling the inputFocusBlur service
+    $scope.inputTime1 = '00';
+    $scope.inputTime2 = '00';
+    $scope.inputTime3 = '00';
+
+    $scope.inputFormTop1 = '00';
+    $scope.inputFormTop2 = '00';
+    $scope.inputFormTop3 = '00';
+
+    /*
+
+    console.log(inputBlur.inputFocus);
+
+    $scope.timeInput1Focus = inputBlur.inputFocus;
+    $scope.timeInput1Blur = inputBlur.inputBlur($scope.inputTime1);
+
+
+    */
 
     $scope.timeInput1Focus = inputBlur.timeInput1Focus;
     $scope.timeInput1Blur = inputBlur.timeInput1Blur;
@@ -455,16 +463,15 @@ angular.module('runnerCalcApp')
     $scope.timeInput3Focus = inputBlur.timeInput3Focus;
     $scope.timeInput3Blur = inputBlur.timeInput3Blur;
 
-    $scope.inputFormTop1 = inputBlur.inputDefault;
-    $scope.inputFormTop2 = inputBlur.inputDefault;
-    $scope.inputFormTop3 = inputBlur.inputDefault;
-
     $scope.inputFormTop1Focus = inputBlur.inputFormTop1Focus;
     $scope.inputFormTop1Blur = inputBlur.inputFormTop1Blur;
     $scope.inputFormTop2Focus = inputBlur.inputFormTop2Focus;
     $scope.inputFormTop2Blur = inputBlur.inputFormTop2Blur;
     $scope.inputFormTop3Focus = inputBlur.inputFormTop3Focus;
     $scope.inputFormTop3Blur = inputBlur.inputFormTop3Blur;
+    
+
+    
 
     // Function to multiply and sum the time input fields so that a time in unit
     // seconds is the output.

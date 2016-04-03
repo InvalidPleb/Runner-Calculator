@@ -73,6 +73,7 @@ module.exports = function(grunt) {
       }
     },
     // The actual grunt server settings
+
     connect: {
       options: {
         port: 8000,
@@ -95,7 +96,7 @@ module.exports = function(grunt) {
                 '/app/styles',
                 connect.static('./app/styles')
               ),
-              connect.static(appConfig.app)
+              connect.static('./app')
             ];
           }
         }
