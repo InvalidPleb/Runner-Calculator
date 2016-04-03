@@ -445,7 +445,8 @@
 
 /* Section that contains the gender buttons */
 .allGenInput {
-  margin-top: 10px;
+  position: relative;
+  top: 10px;
 }
 
 /* Label for the the gender selection btns */
@@ -456,14 +457,34 @@
   box-shadow: -1px 1px 3px 0.5px #888;
   border-radius: 5px;
   text-align: center;
-  padding-top: 5px;
-  padding-right: 3px;
+  position: relative;
+
   transition: all .15s cubic-bezier(.27,1,1,.9);
+}
+
+.genTxt {
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+  top: 4px;
+  right: 3px;
+}
+
+@-moz-document url-prefix() {
+    .genTxt {
+      right: 12px;
+      top: 0px;
+      font-size: 13px;
+    }
+}
+
+.unitTxt {
+
 }
 
 .genLabel:hover {
   background: #8eceff;
-  box-shadow: 0px 0px 0px;
 }
 
 /* Class added by ng-class to indicate selected gen btn */
@@ -474,8 +495,6 @@
   box-shadow: 0px 0px 0px;
   border-radius: 5px;
   text-align: center;
-  padding-top: 5px;
-  padding-right: 3px;
   background: #8eceff;
   transition: all .15s cubic-bezier(.27,1,1,.9);
 }
@@ -495,7 +514,7 @@
 }
 
 .justGenBtns > span {
-  width: 100%;
+  
 }
 
 /* Text for the female label b/c it's longer than male */

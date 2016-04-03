@@ -58,14 +58,14 @@
           <!-- Male gender button --> 
           <label class="genLabel" ng-class="{false: 'genLabel fontForText', Male: 'genSelected fontForText animated bounceIn', Female: 'genLabel fontForText'}[genCheck]">
             <input type="radio" class="inputGender" ng-change="updateGenCheck(maleCheck)" ng-model="genCheck" value="Male" >
-            <span class="fontForText">Male</span>
+            <span class="genTxt">Male</span>
           </label>
         </span>
         <span>
           <!-- Female gender button --> 
           <label class="femaleLabel genLabel" ng-class="{false: 'genLabel fontForText', Male: 'genLabel fontForText', Female: 'genSelected fontForText animated bounceIn'}[genCheck]">
             <input type="radio" class="inputGender" ng-change="updateGenCheck(femaleCheck)" ng-model="genCheck" value="Female">
-            <span class="fontForText">Female</span>
+            <span class="genTxt">Female</span>
           </label>
         </span>
       </span>
