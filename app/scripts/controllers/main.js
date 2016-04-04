@@ -9,18 +9,32 @@ angular.module('runnerCalcApp')
     // These objects contain the information for the tabdir instances
     $scope.ageGrade = {
       title: "Age Grade",
-      href: "#/"
+      href: "#/",
+      model: "one",
+      0: "tabRowLiSelect",
+      1: "tabRowLi",
+      2: "tabRowLi" 
     };
 
     $scope.paceCalc = {
       title: "Running Pace",
-      href: "#/pace"
+      href: "#/pace",
+      model: "two",
+      0: "tabRowLi",
+      1: "tabRowLiSelect",
+      2: "tabRowLi"  
     };
 
     $scope.bmiCalc = {
       title: "BMI Calculator",
-      href: "#/bmi"
+      href: "#/bmi",
+      model: "three",
+      0: "tabRowLi",
+      1: "tabRowLi",
+      2: "tabRowLiSelect"  
     };
+
+
 
   }])
 
@@ -552,7 +566,7 @@ angular.module('runnerCalcApp')
       } else if (inputTypeDistEmpty === false && inputDropDistEmpty === false){
 
         $scope.calcInfo.outputLabelTxtTopRes = "result";
-        $scope.calcInfo.errWarningTxt = "Oops! Please only fill in one distance above";
+        $scope.calcInfo.errWarningTxt = "Oops! Please only fill in one type of distance form above";
         $scope.errWarning = true;
         $scope.calcInfo.outputDataTopUnit = "";
       }
