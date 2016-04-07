@@ -23,7 +23,7 @@
   <!-- Second row of input forms --> 
   <div class="row">
     <span class="fontForText">Distance:</span>
-    <span class="move2">
+    <span class="moveDist">
       <!-- Distance form drop down --> 
       <select class= "form-control inline {{calcInfo.inputDistClass}}" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.distance as run.title for run in list"></select>
       <span ng-hide="{{calcInfo.inputDistTypeHide}}">
