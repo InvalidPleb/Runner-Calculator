@@ -26,8 +26,6 @@
   height: 800px;
 }
 
-
-
 .outputMarginPace {
   margin-top: 81%;
 }
@@ -55,14 +53,17 @@
 }
 
 .container {
-	padding-left: 13px;
+	padding-left: 5px;
+}
+
+.buttonCalc {
+  padding-left: 20px;
 }
 
 .container-fluid {
 	padding-left: 0px;
 	min-width: 500px;
   height: 100%;
-  
 
 }
 
@@ -80,7 +81,6 @@
   height: 50px;
 
 }
-
 
 .selected {
   width: 30%;
@@ -126,7 +126,6 @@
 .disableAdBlockTxt {
   font-size: 24px;
   top: 40px;
-
 } 
 
 

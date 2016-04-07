@@ -14,7 +14,7 @@
           <input type="text" class="form-control inline inputFormTop" ng-focus="inputFormTop2Focus()" ng-blur="inputFormTop2Blur()" maxlength="2" ng-model="inputFormTop2">
           <span class="betweenInputTxt">:</span>
           <input type="text" class="form-control inline inputFormTop" ng-focus="inputFormTop3Focus()" ng-blur="inputFormTop3Blur()" maxlength="2" ng-model="inputFormTop3">
-          <span class="fontForText">hh:mm:ss</span>
+          <span class="fontForText timeInfoLabel">hh:mm:ss</span>
         </span>
       </span>
     </span>
@@ -36,7 +36,7 @@
     <p></p>
   </div>
   <!-- Thrid row of input forms --> 
-  <div class="allTimeInput row">
+  <div class="row">
       <span class="fontForText">Time:</span>
       <!-- Error div that appears over the three time inputs --> 
       <span class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">

@@ -72,7 +72,7 @@
 
 /* Editing bootstrap default form */
 .form-control {
-  width: 153px;
+  width: 151px;
   height: 40px;
   box-shadow: -1px 1px 3px 0.5px #888;
   font-family: "Open Sans";
@@ -187,7 +187,6 @@
   padding-left: 50px;
   
 }
-
 
 /* ----------- Paragraph Text Style ----------- */
 
@@ -312,7 +311,8 @@
 /* Positioning for the calc and clear btns  */
 .allCalcBtns {
   position: relative;
-  left: 100px;
+  left: 99px;
+  top: 2px;
 }
 
 
@@ -400,16 +400,15 @@
   margin-right: -3px;
   visibility:visible;
 }
+.timeInfoLabel {
+  position: relative;
+  left: 5px;
+}
 
 /* Sizing of age input */
 .inputFormTop {
   width: 70px;
-}
-
-.distUnits {
-  position: relative;
-  left: 80px;
-  width: 72px;
+  margin-right: -2px;
 }
 
 .sizeDist {
@@ -418,12 +417,18 @@
 
 .orText {
   position: relative;
-  left: 36px;
+  left: 33px;
+}
+
+.distUnits {
+  position: relative;
+  left: 72px;
+  width: 72px;
 }
 
 .moveDistUnits {
   position: relative;
-  left: 72px;
+  left: 67px;
 }
 
 /* Positioning of age input */
@@ -434,7 +439,7 @@
 
 .movePace {
   position: relative;
-  left: 56px;
+  left: 53px;
 
 }
 
@@ -461,6 +466,10 @@
   position: relative;
   left: 30px;
 
+}
+
+.txtPadding {
+  padding-left: 5px;
 }
 
 /* Section that contains the gender buttons */
@@ -877,6 +886,14 @@ select:-moz-focusring {
     .femaleLabel {
       position: relative;
       left: 5px;
+    }
+
+    .moveAge {
+      left: 63px;
+    }
+
+    .move2 {
+      left: 25px;
     }
 }
 
