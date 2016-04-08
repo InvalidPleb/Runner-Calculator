@@ -58,7 +58,7 @@ angular.module('runnerCalcApp')
       }
     };
 
-    // This object contains the information for the age grade calculator instance
+    // This object contains the information for the age grade calculator template instance
   	$scope.calcInfo = {
       title: "Age-Graded Calculator",
   		inputFormTop: "Age",
@@ -162,6 +162,8 @@ angular.module('runnerCalcApp')
   			chosenOption = 0;
   		}
 
+
+
   		// The If statement below checks if there are any missing
   		// values in the input fields, and if not, does an age-graded calculation on
   		// those values. The calculation is done by multiplying the age-graded index score
@@ -246,7 +248,7 @@ angular.module('runnerCalcApp')
       }
     };
 
-    // This object contains the information for the BMI calculator instance
+    // This object contains the information for the BMI calculator template instance
     $scope.calcInfo = {
       title: "BMI Calculator",
       inputFormTop: "Weight",
@@ -417,7 +419,7 @@ angular.module('runnerCalcApp')
     $scope.run = inputDistDropDown.run;
     $scope.list = inputDistDropDown.list; 
 
-    // This object contains the information for the pace calculator instance
+    // This object contains the information for the pace calculator template instance
     $scope.calcInfo = {
       title: "Pace Calculator",
       inputFormTop: "Pace",
