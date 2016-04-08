@@ -119,8 +119,9 @@
   transition: all .1s cubic-bezier(.27,1,1,.9);
 }
 
-
-
+.hideElement {
+  display: none;
+}
 
 
 /* ----------- Container Style ----------- */
@@ -148,9 +149,9 @@
   -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
-  margin-top: -1px;
+  top: -5px;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 0px 0px 5px 5px;
   height: 460px;
   position: relative;
   z-index: 1;
@@ -161,9 +162,9 @@
   -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
-  margin-top: -1px;
+  top: -5px;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 0px 0px 5px 5px;
   height: 485px;
   position: relative;
   z-index: 1;
@@ -174,9 +175,9 @@
   -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
-  margin-top: -1px;
+  top: -5px;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 0px 0px 5px 5px;
   height: 450px;
   position: relative;
   z-index: 1;
@@ -217,8 +218,8 @@
   border-radius: 0px 4px 0px 0px;
   position: relative;
   z-index: 2;
-  bottom: 2px;
-  box-shadow: -1px 1px 3px 0.5px #888;
+  bottom: 4px;
+  box-shadow: -1px 1px 3px 0px #888;
 }
 
 
@@ -253,15 +254,15 @@
   font-family: "Open Sans";
   font-weight: 300;
   font-size: 12px;
-  text-decoration: none;
   display: inline-block;
   position: relative;
+  text-decoration: none;
   z-index: 2;
   border: 0px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   margin-left: -2px;
-  padding: 0 35px 1px;
+  padding: 0px 35px 1px;
   transition: all .15s cubic-bezier(.27,1,1,.9);
 }
 
@@ -279,12 +280,13 @@
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   margin-left: -2px;
-  padding: 0 35px 1px;
+  padding: 0px 35px 1px;
   transition: all .15s cubic-bezier(.27,1,1,.9);
 }
 
-.tabRowLi:hover {
+.tabRowLi:hover, .tabRowLi:focus, .tabRowLiSelect:hover, .tabRowLiSelect:active, .tabRowLiSelect:focus{
   background-color: #FF7939;
+  text-decoration: none;
 }
 
 .tabRow:before {
@@ -303,6 +305,11 @@
   font-family: "Open Sans";
   font-weight: 300;
   font-size: 12px;
+
+}
+
+.tabText:hover {
+  text-decoration: none;
 }
 
 

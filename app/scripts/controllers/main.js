@@ -10,29 +10,37 @@ angular.module('runnerCalcApp')
     $scope.ageGrade = {
       title: "Age Grade",
       href: "#/",
-      model: "one",
-      0: "tabRowLiSelect",
-      1: "tabRowLi",
-      2: "tabRowLi" 
     };
 
     $scope.paceCalc = {
       title: "Running Pace",
       href: "#/pace",
-      model: "two",
-      0: "tabRowLi",
-      1: "tabRowLiSelect",
-      2: "tabRowLi"  
     };
 
     $scope.bmiCalc = {
       title: "BMI Calculator",
       href: "#/bmi",
-      model: "three",
-      0: "tabRowLi",
-      1: "tabRowLi",
-      2: "tabRowLiSelect"  
     };
+
+    $scope.mainTabs = "ageGrade";
+
+    $scope.updateMainTabOne = function() {
+      $scope.mainTabs = "ageGrade";
+    };
+
+    $scope.updateMainTabTwo = function() {
+      $scope.mainTabs = "pace";
+    };
+
+    $scope.updateMainTabThree = function() {
+      $scope.mainTabs = "bmi";
+    };
+
+
+
+
+
+    
 
 
 
@@ -262,7 +270,8 @@ angular.module('runnerCalcApp')
       outputHeight: "calcOutputBMIHeight",
       errWarningTxt: "Oops! You're missing some info in the fields above",
     };
-    // Initially clearing errors and setting locale to US
+
+    // Initially clearing errors and setting unit locale to US
     $scope.errWarning = false;
     $scope.unitCheck = "US";
 
@@ -270,11 +279,10 @@ angular.module('runnerCalcApp')
     $scope.updateUnitCheck = function () {
 
       if ($scope.unitCheck === "US") {
-        $('.moveHeight2').show();
         $scope.calcInfo.inputFormTopTxt = "pounds";
         $scope.calcInfo.inputFormBotTxt = "feet";
-      } else {
-        $('.moveHeight2').hide();
+
+      } else if ($scope.unitCheck === "Metric"){
         $scope.calcInfo.inputFormTopTxt = "kilograms";
         $scope.calcInfo.inputFormBotTxt = "centimeters";
       }

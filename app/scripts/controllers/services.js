@@ -84,12 +84,12 @@ angular.module('runnerCalcApp')
 		      title: ''
 		    }, {
 		      distance: 'run1000m',
-		      title: '1000 m',
+		      title: '1 km',
 		      value: 1,
 		      unit: 1
 		    }, {
 		      distance: 'run1500m',
-		      title: '1500 m',
+		      title: '1.5 km',
 		      value: 1.5,
 		      unit: 1
 		    }, {

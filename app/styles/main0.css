@@ -1,3 +1,7 @@
+.calcTitle {
+  bottom: 6px;
+}
+
 .allCalcBtns {
   left: 20px;
 }
@@ -82,12 +86,12 @@
 
 }
 
-.selected {
+.tabRowLiSelect {
   width: 30%;
 }
 
 .tabText {
-  right: 25px;
+  right: 24px;
   position: relative;
   white-space: nowrap;
   overflow: hidden;
