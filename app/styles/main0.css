@@ -16,18 +16,18 @@
 }
 
 .calcWithOutputPace {
-  height: 843px;
+  height: 900px;
   min-width: 450px;
  
 }
 
 .calcWithOutputAge {
-  height: 1035px;
+  height: 1080px;
   min-width: 450px;
 }
 
 .calcWithOutputBMI {
-  height: 800px;
+  height: 850px;
 }
 
 .outputMarginPace {

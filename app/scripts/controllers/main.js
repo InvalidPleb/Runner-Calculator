@@ -6,7 +6,7 @@ angular.module('runnerCalcApp')
   // Tab template controller
   .controller('MainTabCtrl', ['$scope', function ($scope) {
 
-    // These objects contain the information for the tabdir instances
+    // These objects contain the information for the tabdir template instances
     $scope.ageGrade = {
       title: "Age Grade",
       href: "#/",
@@ -35,14 +35,6 @@ angular.module('runnerCalcApp')
     $scope.updateMainTabThree = function() {
       $scope.mainTabs = "bmi";
     };
-
-
-
-
-
-    
-
-
 
   }])
 
@@ -86,7 +78,6 @@ angular.module('runnerCalcApp')
   	$scope.run = inputDistDropDown.run;
     $scope.list = inputDistDropDown.list;
   		
-
   	// Initially hiding things
     $scope.errWarning = false;
     $scope.genCheckErr = false;
@@ -607,12 +598,11 @@ angular.module('runnerCalcApp')
       // If none of the fields are filled ...
       } else if (inputDistEmpty === true && totalInputFormTopEmpty === true && totalTimeInputEmpty === true) {
 
-
-      // Nothing is calculated and errors are shown.
-      $scope.calcInfo.outputLabelTxtTopRes = "result";
-      $scope.calcInfo.errWarningTxt = "Oops! You need to fill in two options to find the third";
-      $scope.errWarning = true;
-      $scope.calcInfo.outputDataTopUnit = "";
+        // Nothing is calculated and errors are shown.
+        $scope.calcInfo.outputLabelTxtTopRes = "result";
+        $scope.calcInfo.errWarningTxt = "Oops! You need to fill in two options to find the third";
+        $scope.errWarning = true;
+        $scope.calcInfo.outputDataTopUnit = "";
 
       // ---- Valid Combinations ---- //
 
@@ -620,7 +610,7 @@ angular.module('runnerCalcApp')
       } else if (totalInputFormTopEmpty === false && totalTimeInputEmpty === false && inputDistEmpty === true) {
 
 
-      // Distance is calculated and outputted to the user using $scope.calcInfo.
+        // Distance is calculated and outputted to the user using $scope.calcInfo.
         $scope.calcInfo.outputLabelTxtTopRes = "distance";
         $scope.errWarning = false;
 
