@@ -1,11 +1,4 @@
 'use strict';
-function hideScreen () {
-  setTimeout(function() {
-    $('.loadingScreen').fadeOut(1250);
-    $('.loading').fadeOut(1250);
-  }, 1000);
-  
-}
 
 // Setting up controllers.
 angular.module('runnerCalcApp')
@@ -14,22 +7,35 @@ angular.module('runnerCalcApp')
   .controller('MainTabCtrl', ['$scope', function ($scope) {
 
     // These objects contain the information for the tabdir template instances
+    $scope.paceCalc = {
+      title: "Pace",
+      href: "#/",
+      tabTextClass: "paceTabTxt"
+    };
     $scope.ageGrade = {
       title: "Age Grade",
-      href: "#/",
+      href: "#/ageGrade",
+      tabTextClass: "ageGradeTabTxt"
     };
-
-    $scope.paceCalc = {
-      title: "Running Pace",
-      href: "#/pace",
-    };
-
     $scope.bmiCalc = {
-      title: "BMI Calculator",
+      title: "BMI",
       href: "#/bmi",
+      tabTextClass: "bmiTabTxt"
     };
 
-    $scope.mainTabs = "ageGrade";
+   
+    var windowHref, windowHash;
+
+    windowHref = window.location.href;
+    windowHash = windowHref.slice(20, windowHref.length);
+
+    if (windowHash === '#/') {
+      $scope.mainTabs = "pace";
+     } else if (windowHash === '#/ageGrade') {
+      $scope.mainTabs = "ageGrade";
+     } else if (windowHash === '#/bmi') {
+      $scope.mainTabs = "bmi";
+     }
 
     $scope.updateMainTabOne = function() {
       $scope.mainTabs = "ageGrade";
@@ -45,7 +51,7 @@ angular.module('runnerCalcApp')
 
   }])
 
-  .controller('MainCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', 'ageGradeData', function ($scope, inputDistDropDown, inputBlur, ageGradeData) {
+  .controller('AgeGradeCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', 'ageGradeData', function ($scope, inputDistDropDown, inputBlur, ageGradeData) {
 
   	// Function to round to the nearest 100th
   	function numRound (value,dec){
@@ -679,3 +685,17 @@ angular.module('runnerCalcApp')
       $scope.calcInfo.outputDataTopUnit = "";
     };
   }]);
+function hideScreen () {
+  // Checking if user browser has a firefox only feature
+  if (typeof InstallTrigger !== 'undefined') {
+    setTimeout(function() {
+      $('.loadingScreen').fadeOut(1000);
+      $('.loading').fadeOut(1000);
+    }, 1750);
+  } else {
+    setTimeout(function() {
+      $('.loadingScreen').fadeOut(1000);
+      $('.loading').fadeOut(1000);
+    }, 1000);
+  }
+}

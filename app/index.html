@@ -37,8 +37,8 @@
       <div class="loading"></div>
     </div>
     <!-- Title header -->
-    <div class="mainHeader header col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <a href="#/" class="siteTitle">Runner Calculator</a>
+    <div class="mainHeader header col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-controller="MainTabCtrl">
+      <a class="siteTitle">Runner Calculator</a>
       <div class="container navbar-default">
         <div class="navbar-header">
         </div>
@@ -54,8 +54,8 @@
       <ul class="nav nav-tabs responsive">
         <!-- Templated nav tabs on top of calc --> 
         <div class="tabRow" ng-controller="MainTabCtrl">
-          <main-tab info="ageGrade" ng-click="updateMainTabOne()" ng-model="mainTabs" class="tabRowLi" ng-class="{ageGrade: 'tabRowLiSelect', pace: 'tabRowLi', bmi: 'tabRowLi'}[mainTabs]"></main-tab>
           <main-tab info="paceCalc" ng-click="updateMainTabTwo()" ng-model="mainTabs" class="tabRowLi" ng-class="{ageGrade: 'tabRowLi', pace: 'tabRowLiSelect', bmi: 'tabRowLi'}[mainTabs]"></main-tab>
+          <main-tab info="ageGrade" ng-click="updateMainTabOne()" ng-model="mainTabs" class="tabRowLi" ng-class="{ageGrade: 'tabRowLiSelect', pace: 'tabRowLi', bmi: 'tabRowLi'}[mainTabs]"></main-tab>  
           <main-tab info="bmiCalc" ng-click="updateMainTabThree()" ng-model="mainTabs" class="tabRowLi" ng-class="{ageGrade: 'tabRowLi', pace: 'tabRowLi', bmi: 'tabRowLiSelect'}[mainTabs]"></main-tab>
         </div>
       </ul>

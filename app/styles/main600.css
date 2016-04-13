@@ -35,7 +35,6 @@
 
 .tabRowLiSelect {
   width: 30%;
-
 }
 
 .tabText {
@@ -43,6 +42,17 @@
   position: relative;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.ageGradeTabTxt {
+  left: 8%;
+}
+.paceTabTxt {
+  left: 15%;
+}
+
+.bmiTabTxt {
+  left: 18%;
 }
 
 .calcInfoAgeHeight {

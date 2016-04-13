@@ -29,20 +29,24 @@
 }
 
 .tabRowLi {
-  width: 30%;
+  width: 20%;
   height: 50px;
 }
 
 .tabRowLiSelect {
-  width: 30%;
+  width: 20%;
 }
 
 .tabText {
-	left: 10px;
   position: relative;
   white-space: nowrap;
   overflow: hidden;
 }
+
+.ageGradeTabTxt {
+  left: -12%;
+}
+
 
 .calcInfoAgeHeight {
   height: 524px;

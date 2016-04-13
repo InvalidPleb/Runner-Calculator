@@ -20,13 +20,13 @@ angular
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/agegrade.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/pace', {
         templateUrl: 'views/pacecalc.html',
         controller: 'PaceCtrl',
+        controllerAs: 'main'
+      })
+      .when('/ageGrade', {
+        templateUrl: 'views/agegrade.html',
+        controller: 'AgeGradeCtrl',
         controllerAs: 'pace'
       })
       .when('/bmi', {
