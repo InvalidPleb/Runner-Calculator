@@ -1,7 +1,10 @@
 'use strict';
 function hideScreen () {
-  $('.loadingScreen').fadeOut(1500);
-  $('.loading').fadeOut(1500);
+  setTimeout(function() {
+    $('.loadingScreen').fadeOut(1250);
+    $('.loading').fadeOut(1250);
+  }, 1000);
+  
 }
 
 // Setting up controllers.

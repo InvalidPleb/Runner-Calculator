@@ -32,7 +32,7 @@
     <!-- endbuild -->
   </head>
   <!-- Main body for the app --> 
-  <body ng-app="runnerCalcApp" onload="hideScreen()">
+  <body ng-app="runnerCalcApp">
     <div class="loadingScreen">
       <div class="loading"></div>
     </div>
@@ -108,6 +108,10 @@
     <script src="scripts/controllers/services.js"></script>
     <script src="scripts/controllers/directives.js"></script>
     <!-- endbuild -->
+
+    <script type="text/javascript">
+      hideScreen();
+    </script>
  
 </body>
 </html>
