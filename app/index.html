@@ -14,6 +14,7 @@
     <!--
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
     -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/loaders.css/0.1.2/loaders.min.css" >
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -29,12 +30,13 @@
     <!-- build:css(.tmp) styles/main0.css -->
     <link rel="stylesheet" media="only screen and (min-width:0px) and (max-width:599px)" href="styles/main0.css">
     <!-- endbuild -->
-    
-
   </head>
   <!-- Main body for the app --> 
-  <body ng-app="runnerCalcApp">
-    <!-- Title header --> 
+  <body ng-app="runnerCalcApp" onload="hideScreen()">
+    <div class="loadingScreen">
+      <div class="loading"></div>
+    </div>
+    <!-- Title header -->
     <div class="mainHeader header col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <a href="#/" class="siteTitle">Runner Calculator</a>
       <div class="container navbar-default">
@@ -86,7 +88,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-sanitize.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-touch.js"></script>
     -->
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>

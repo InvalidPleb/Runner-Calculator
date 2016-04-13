@@ -173,14 +173,14 @@ module.exports = function (grunt) {
         }]
       }
     },
-    html2js: {
-      options: {
-      },
-      main: {
-        src: ['app/directives/*.html'],
-        dest: '<%= yeoman.dist %>/directives/directives.js'
-      },
-    },
+    //html2js: {
+      //options: {
+      //},
+      //main: {
+       // src: ['app/directives/*.html'],
+        //dest: '<%= yeoman.dist %>/directives/directives.js'
+      //},
+    //},
     copy: {
       dist: {
         files: [{
@@ -247,7 +247,7 @@ module.exports = function (grunt) {
     //'cdnify',
     'cssmin',
     'imagemin',
-    'html2js',
+    //'html2js',
     //'uglify',
     //'filerev',
     'copy:dist',

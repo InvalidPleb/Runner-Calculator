@@ -1,4 +1,8 @@
 'use strict';
+function hideScreen () {
+  $('.loadingScreen').fadeOut(1500);
+  $('.loading').fadeOut(1500);
+}
 
 // Setting up controllers.
 angular.module('runnerCalcApp')
