@@ -7,7 +7,7 @@ angular.module('runnerCalcApp')
 	      	tabInfo: '=info'
 	      },
 	      restrict: 'AEC', 
-	      templateUrl: '/views/tabdir.html',
+	      templateUrl: '/directives/tabdir.html',
 	      // templateUrl: '',
 	      replace: true
 	    };
@@ -16,7 +16,7 @@ angular.module('runnerCalcApp')
   	.directive('calcTitleSection', function(){
 	    return {
 	    	restrict: 'AEC',
-	        templateUrl: '/views/calctitledir.html',
+	        templateUrl: '/directives/calctitledir.html',
 	        replace: true
 	    };
   	})
@@ -24,7 +24,7 @@ angular.module('runnerCalcApp')
   	.directive('calcOutputSection', function(){
 	    return {
 	        restrict: 'AEC',
-	        templateUrl: '/views/calcoutputdir.html',
+	        templateUrl: '/directives/calcoutputdir.html',
 	        replace: true
 	    };
   	})
@@ -32,7 +32,7 @@ angular.module('runnerCalcApp')
   	.directive('calcSection', function(){
 	    return {
 	        restrict: 'AEC',
-	        templateUrl: '/views/calcdir.html',
+	        templateUrl: '/directives/calcdir.html',
 	        replace: true,
 	    };
   	});
