@@ -103,7 +103,7 @@
 }
 
 .calcInfoAgeHeight {
-  height: 675px;
+  height: 655px;
 }
 
 .calcInfoPaceHeight {
@@ -112,7 +112,7 @@
 }
 
 .calcInfoBMIHeight {
-  height: 485px;
+  height: 495px;
 }
 
 .calcInfoTitleAge {
@@ -134,6 +134,6 @@
 .disableAdBlockTxt {
   font-size: 24px;
   top: 40px;
-} 
+}
 
 
