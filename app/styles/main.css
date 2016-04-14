@@ -913,30 +913,50 @@ select:-moz-focusring {
 }
 
 @-moz-document url-prefix() {
-    .genTxt {
-      right: 12px;
-      top: 0px;
-      font-size: 13px;
-    }
-    .genCheckErr {
-      padding: 6px 3px 8px 3px;
-    }
-    .genCheckErrInvis {
-      padding: 6px 3px 8px 3px;
-    }
+  .genTxt {
+    right: 12px;
+    top: 0px;
+    font-size: 13px;
+  }
+  .genCheckErr {
+    padding: 6px 3px 8px 3px;
+  }
+  .genCheckErrInvis {
+    padding: 6px 3px 8px 3px;
+  }
 
-    .femaleLabel {
-      position: relative;
-      left: 5px;
-    }
+  .femaleLabel {
+    position: relative;
+    left: 5px;
+  }
 
-    .moveAge {
-      left: 63px;
-    }
+  .moveAge {
+    left: 63px;
+  }
 
-    .moveDist {
-      left: 25px;
-    }
+  .moveDist {
+    left: 25px;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+  .outputContainer {
+    box-shadow: -4px 3px 9px 0px rgba(0,0,0,0.68);
+  }
+  a:focus, *:focus {
+    noFocusLine: expression(this.onFocus=this.blur());
+  }
+
+  a:focus {
+    outline: 0;
+    outline: none;
+  }
+
+  select::-ms-expand{
+    border: 0px;
+    background-color: white; 
+  }
 }
 
 /* Animate.css library */

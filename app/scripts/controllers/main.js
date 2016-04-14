@@ -23,20 +23,26 @@ angular.module('runnerCalcApp')
       tabTextClass: "bmiTabTxt"
     };
 
-   
+    // These conditions check what the hash is and set the default selected tab accordingly
     var windowHref, windowHash;
-
     windowHref = window.location.href;
-    windowHash = windowHref.slice(20, windowHref.length);
 
-    if (windowHash === '#/') {
+    if (windowHref.indexOf('#') === 20) {
+      windowHash = windowHref.slice(20, windowHref.length);
+    } else if (windowHref.indexOf('#') === 22) {
+      windowHash = windowHref.slice(22, windowHref.length);
+    } else if (windowHref.indexOf('#') === 28) {
+      windowHash = windowHref.slice(28, windowHref.length);
+    }
+    if (windowHash === "#/" || windowHash === undefined) {
       $scope.mainTabs = "pace";
-     } else if (windowHash === '#/ageGrade') {
+    } else if (windowHash === "#/ageGrade") {
       $scope.mainTabs = "ageGrade";
-     } else if (windowHash === '#/bmi') {
+    } else if (windowHash === "#/bmi") {
       $scope.mainTabs = "bmi";
-     }
-
+    }
+    
+    // These three functions change the class of the selected tab
     $scope.updateMainTabOne = function() {
       $scope.mainTabs = "ageGrade";
     };
