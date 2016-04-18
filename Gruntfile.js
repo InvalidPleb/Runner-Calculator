@@ -143,7 +143,7 @@ module.exports = function (grunt) {
         flow: {
           html: {
             steps: {
-              js: ['concat'],
+              js: ['concat', 'uglifyjs'],
               css: ['cssmin']
             },
             post: {}
@@ -153,7 +153,6 @@ module.exports = function (grunt) {
     },
     usemin: {
       html: ['<%= yeoman.dist %>/**/*.html'],
-      css: ['<%= yeoman.dist %>/**/*.css'],
       js: ['<%= yeoman.dist %>/**/*.js'],
       options: {
         assetsDirs: [
@@ -164,6 +163,17 @@ module.exports = function (grunt) {
         patterns: {
           js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
         }
+      }
+    },
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/styles',
+          src: ['*.css', '!*.min.css'],
+          dest: '<%= yeoman.dist %>/styles',
+          ext: '.css'
+        }]
       }
     },
     imagemin: {
@@ -197,7 +207,7 @@ module.exports = function (grunt) {
             '*.html',
             'views/*.html',
             'directives/*.html',
-            'styles/*.css',
+            'styles/*.min.css',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*',
           ]
@@ -217,7 +227,7 @@ module.exports = function (grunt) {
         expand: true,
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
-        src: '{,*/}*.css'
+        src: '{,*/}*.min.css'
       }
     }
   });
@@ -251,9 +261,9 @@ module.exports = function (grunt) {
     'cssmin',
     'imagemin',
     //'html2js',
-    //'uglify',
-    //'filerev',
+    'uglify',
     'copy:dist',
+    //'filerev',
     'usemin',
     //'htmlmin'
   ]);

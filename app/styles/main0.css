@@ -16,7 +16,7 @@
 }
 
 .calcWithOutputPace {
-  height: 900px;
+  height: 880px;
   min-width: 450px;
  
 }
@@ -102,9 +102,6 @@
   left: -17%;
 }
 
-.calcInfoAgeHeight {
-  height: 655px;
-}
 
 .calcInfoPaceHeight {
   height: 413px;

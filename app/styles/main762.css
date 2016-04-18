@@ -3,7 +3,7 @@
 }
 
 .calcWithOutputPace {
-  height: 785px;
+  height: 795px;
 }
 
 .calcWithOutputAge {
@@ -11,9 +11,7 @@
 }
 
 .calcWithOutputBMI {
-
   height: 765px;
-
 }
 
 .outputMarginPace {
@@ -48,9 +46,7 @@
 }
 
 
-.calcInfoAgeHeight {
-  height: 530px;
-}
+
 
 .calcInfoPaceHeight {
   height: 375px;
@@ -81,6 +77,21 @@
 .disableAdBlockTxt {
   font-size: 24px;
 
+}
+
+@-moz-document url-prefix() {
+
+  .calcWithOutputPace {
+    height: 820px;
+  }
+
+  .calcWithOutputAge {
+    height: 1015px;
+  }
+
+  .calcWithOutputBMI {
+    height: 765px;
+  }
 }
 
 

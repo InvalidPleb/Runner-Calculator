@@ -3,7 +3,7 @@
 }
 
 .calcWithOutputPace {
-  height: 810px;
+  height: 820px;
 }
 
 .calcWithOutputAge {
@@ -20,6 +20,7 @@
 
 .outputMarginAge {
   margin-top: 58%;
+  padding-bottom: 58%;
 }
 
 .container-fluid {
@@ -55,9 +56,6 @@
   left: 18%;
 }
 
-.calcInfoAgeHeight {
-  height: 558px;
-}
 
 .calcInfoPaceHeight {
   height: 380px;
@@ -87,4 +85,10 @@
 .disableAdBlockTxt {
   font-size: 24px;
 
-} 
+}
+
+@-moz-document url-prefix() {
+  .calcWithOutputAge {
+    height: 1025px;
+  }
+}
