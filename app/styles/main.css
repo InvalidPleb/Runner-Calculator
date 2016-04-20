@@ -40,7 +40,7 @@
   position: relative;
   background-color: rgba(0,0,0,0.5);
   border-radius: 5px;
-  width: 50%;
+  width: 200px;
   left: 22%;
   top: 73px;
   z-index: 1;
@@ -273,8 +273,15 @@
 /* ----------- Tab Style ----------- */
 
 
-/* Container for all the tabs in agegrademain */
+/* Container for all the tabs */
 .tabRow {
+  position: relative;
+  z-index: 3;
+  height: 50px;
+  left: 30%;
+  bottom: 147px;
+
+  /*
   list-style: none;
   padding: 0;
   line-height: 35px;
@@ -283,43 +290,30 @@
   font-size: 12px;
   position: relative;
   z-index: 3;
+  */
 }
 
 /* Class for the unselected/default tabs */
 .tabRowLi {
   background-color: rgba(255, 87, 34, 0.9);
-  color: #FFF;
-  font-family: "Open Sans";
-  font-weight: 300;
-  font-size: 12px;
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
   z-index: 2;
-  border: 0px;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  margin-left: -2px;
-  padding: 0px 35px 1px;
-  transition: all .15s cubic-bezier(.27,1,1,.9);
+  position: relative;
+  display: inline-block;
+  height: 194px;
+  width: 200px;
+  margin-right: -4px;
+  transition: all .5s cubic-bezier(.18,1,.31,.77);
 }
 
 .tabRowLiSelect {
   background-color: #ff7939;
-  color: #FFF;
-  font-family: "Open Sans";
-  font-weight: 300;
-  font-size: 12px;
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
   z-index: 2;
-  border: 0px;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  margin-left: -2px;
-  padding: 0px 35px 1px;
-  transition: all .15s cubic-bezier(.27,1,1,.9);
+  position: relative;
+  display: inline-block;
+  height: 194px;
+  width: 200px;
+  margin-right: -4px;
+  transition: all .5s cubic-bezier(.18,1,.31,.77);
 }
 
 .tabRowLi:hover, .tabRowLi:focus, .tabRowLiSelect:hover, .tabRowLiSelect:active, .tabRowLiSelect:focus{
@@ -328,12 +322,14 @@
 }
 
 .tabRow:before {
+  /*
   position: absolute;
   content: "";
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1;
+  */
 }
 
 .tabText {

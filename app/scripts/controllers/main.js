@@ -180,8 +180,6 @@ angular.module('runnerCalcApp')
   			chosenOption = 0;
   		}
 
-
-
   		// The If statement below checks if there are any missing
   		// values in the input fields, and if not, does an age-graded calculation on
   		// those values. The calculation is done by multiplying the age-graded index score
