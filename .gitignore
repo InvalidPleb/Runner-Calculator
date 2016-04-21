@@ -3,3 +3,6 @@
 /.tmp
 /.sass-cache
 /bower_components
+/.directory
+/app/.directory
+/app/*/.directory
