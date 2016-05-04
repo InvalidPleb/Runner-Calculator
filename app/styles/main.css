@@ -38,18 +38,18 @@
 
 .siteTitleContainer {
   position: relative;
-  background-color: rgba(0,0,0,0.5);
+  background: #ff7939;
   border-radius: 5px;
   width: 200px;
+  height: 197px;
   left: 22%;
-  top: 73px;
+  top: 70px;
   z-index: 1;
 
 }
 
 /* Main container that the templates are routed into */
 .mainForm {
-  margin-top: 150px;
   position: relative;
   z-index: 0;
 } 
@@ -139,7 +139,7 @@
   background-color: rgba(255, 204, 188, 1);
   box-shadow: 0px 0px 1px #888;
   padding: 0px;
-  margin-top: -70px;
+  margin-top: -135px;
 
 }
 
@@ -275,11 +275,14 @@
 
 /* Container for all the tabs */
 .tabRow {
+  background-color: #fff;
   position: relative;
   z-index: 3;
-  height: 50px;
+  width: 607px;
+  height: 215px;
   left: 30%;
-  bottom: 147px;
+  padding-left: 2px;
+  border-radius: 8px;
 
   /*
   list-style: none;
@@ -295,30 +298,58 @@
 
 /* Class for the unselected/default tabs */
 .tabRowLi {
-  background-color: rgba(255, 87, 34, 0.9);
+  background-color: #c6dcf2;
+  color: black;
   z-index: 2;
   position: relative;
   display: inline-block;
-  height: 194px;
+  height: 209px;
   width: 200px;
-  margin-right: -4px;
-  transition: all .5s cubic-bezier(.18,1,.31,.77);
+  text-align: center;
+  margin-right: -2px;
+  border-top: 1px solid rgba(0,0,0,0);
+  border-bottom: 1px solid rgba(0,0,0,0);
+  border-radius: 3px;
+  transition: background-color .5s cubic-bezier(.18,1,.31,.77);
+  -webkit-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
+  -moz-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
+  box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
+  
 }
 
 .tabRowLiSelect {
   background-color: #ff7939;
+  color: white;
   z-index: 2;
   position: relative;
   display: inline-block;
-  height: 194px;
+  height: 209px;
   width: 200px;
-  margin-right: -4px;
+  text-align: center;
+  margin-right: -2px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  border-radius: 3px;
+  transition: background-color .5s cubic-bezier(.18,1,.31,.77);
+  -webkit-box-shadow: -4px 3px 0px -4px rgba(0,0,0,0.68);
+  -moz-box-shadow: -4px 3px 0px -4px rgba(0,0,0,0.68);
+  box-shadow: -4px 3px 0px -4px rgba(0,0,0,0.68);
+}
+
+.tabRowLiSelect-add-active, .tabRowLiSelect-remove-active, .tabRowLi-add-active, .tabRowLi-remove-active {
   transition: all .5s cubic-bezier(.18,1,.31,.77);
+
 }
 
 .tabRowLi:hover, .tabRowLi:focus, .tabRowLiSelect:hover, .tabRowLiSelect:active, .tabRowLiSelect:focus{
   background-color: #FF7939;
+  color: white;
   text-decoration: none;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: -4px 3px 0px -4px rgba(0,0,0,0.68);
+  -moz-box-shadow: -4px 3px 0px -4px rgba(0,0,0,0.68);
+  box-shadow: -4px 3px 0px -4px rgba(0,0,0,0.68);
 }
 
 .tabRow:before {
@@ -333,14 +364,13 @@
 }
 
 .tabText {
-  color: #FFF;
   margin: 10px 10px 10px 10px;
   padding: 10px 10px 10px 10px;
   font-family: "Open Sans";
   font-weight: 300;
-  font-size: 12px;
-  left: 0px;
-  right: 0px;
+  font-size: 18px;
+  position: relative;
+  top: 60px;
 
 }
 
