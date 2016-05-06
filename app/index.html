@@ -29,8 +29,10 @@
     <!-- Title header -->
     <div class="mainHeader header col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-controller="MainTabCtrl">
       <a class="siteTitle">Runner Calculator</a>
-      <div class="tabChooseTxt">Choose your calculator</div>
-      <div class="curlyBrace"></div>
+      <div class="tabTitle">
+        <div class="tabChooseTxt">Choose your calculator</div>
+        <div class="curlyBrace"></div>
+      </div>
       
     </div>
     <!-- Logo container --> 
@@ -50,7 +52,7 @@
       </ul>
       </div>
       <!-- Container for the calculator template injection --> 
-      <div class="container">
+      <div class="mainContainer container">
       <div ng-view="" class="viewSwitch"></div>
       </div>
       <!-- Footer --> 

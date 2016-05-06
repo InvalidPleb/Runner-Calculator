@@ -78,7 +78,7 @@
 .mainForm {
   position: relative;
   z-index: 0;
-} 
+}
 
 /* ----------- General/Bootstrap Classes Style ----------- */
 
@@ -293,7 +293,7 @@
   margin: 0px;
   position: relative;
   top: 35px;
-  right: 12px;
+  
 }
 
 /* ----------- Tab Style ----------- */
@@ -1111,8 +1111,200 @@ select:-moz-focusring {
   }
 
 }
+@media (min-width:875px) and (max-width:991px) {
 
-@media (min-width:762px) and (max-width:991px) {
+  .siteTitle {
+    left: 35%;
+
+  }
+  .siteTitleContainer {
+    left: 39%;
+
+  }
+
+  .mainContainer {
+    position: relative;
+    margin-top: 250px;
+  }
+
+  .tabRow {
+    left: 18%;
+    top: 247px;
+    height: 125px;
+    width: 458px;
+
+  }
+
+  .tabRowLi {
+    width: 150px;
+    height: 120px;
+
+  }
+
+  .tabRowLiSelect {
+    width: 150px;
+    height: 120px;
+    
+  }
+
+  .tabTitle {
+    position: relative;
+    top: 250px;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .tabChooseTxt {
+    left: 36.5%;
+    border-radius: 20px;
+
+  }
+
+  .curlyBrace {
+    left: 29.5%;
+    
+  }
+
+  .tabText {
+    top: 25px;
+  }
+
+
+  .calcTitle {
+    bottom: 6px;
+  }
+
+  .calcWithOutputPace {
+    height: 795px;
+    border-radius: 90px 90px 0px 0px;
+  }
+
+  .calcWithOutputAge {
+    height: 1015px;
+    border-radius: 90px 90px 0px 0px;
+  }
+
+  .calcWithOutputBMI {
+    height: 765px;
+    border-radius: 90px 90px 0px 0px;
+  }
+
+  .outputMarginPace {
+    margin-top: 350px;
+  }
+
+  .outputMarginAge {
+    margin-top: 58%;
+  }
+
+  .container-fluid {
+    padding-left: 0px;
+  }
+
+  .calcInfoPaceHeight {
+    height: 375px;
+  }
+
+  .calcInfoBMIHeight {
+    height: 450px;
+  }
+
+  .calcInfoTitleAge {
+    left: 35%
+  }
+
+  .calcInfoTitlePace {
+    left: 41%;
+  }
+
+  .calcInfoTitleBMI {
+    left: 38%;
+  }
+
+  .BMItable {
+    left: 35%;
+  }
+
+  .disableAdBlockTxt {
+    font-size: 24px;
+
+  }
+
+  @-moz-document url-prefix() {
+
+    .calcWithOutputPace {
+      height: 820px;
+    }
+
+    .calcWithOutputAge {
+      height: 1015px;
+    }
+
+    .calcWithOutputBMI {
+      height: 765px;
+    }
+  }
+
+
+}
+
+@media (min-width:762px) and (max-width:874px) {
+  .siteTitle {
+    left: 32.5%;
+
+  }
+  .siteTitleContainer {
+    left: 38%;
+
+  }
+
+  .mainContainer {
+    position: relative;
+    margin-top: 250px;
+  }
+
+  .tabRow {
+    left: 18%;
+    top: 247px;
+    height: 125px;
+    width: 458px;
+
+  }
+
+  .tabRowLi {
+    width: 150px;
+    height: 120px;
+
+  }
+
+  .tabRowLiSelect {
+    width: 150px;
+    height: 120px;
+    
+  }
+
+  .tabTitle {
+    position: relative;
+    top: 250px;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .tabChooseTxt {
+    left: 35.5%;
+    border-radius: 20px;
+
+  }
+
+  .curlyBrace {
+    left: 27.5%;
+    
+  }
+
+  .tabText {
+    top: 25px;
+  }
+
 
   .calcTitle {
     bottom: 6px;
@@ -1191,6 +1383,65 @@ select:-moz-focusring {
 }
 
 @media (min-width:600px) and (max-width:761px) {
+  .siteTitle {
+    left: 29%;
+
+  }
+  .siteTitleContainer {
+    left: 35%;
+
+  }
+
+  .mainContainer {
+    position: relative;
+    margin-top: 250px;
+  }
+
+  .tabRow {
+    left: 21%;
+    top: 247px;
+    height: 105px;
+    width: 367px;
+
+  }
+
+  .tabRowLi {
+    width: 120px;
+    height: 100px;
+
+  }
+
+  .tabRowLiSelect {
+    width: 120px;
+    height: 100px;
+    
+  }
+
+  .tabTitle {
+    position: relative;
+    top: 250px;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .tabChooseTxt {
+    left: 32%;
+    border-radius: 20px;
+
+  }
+
+  .curlyBrace {
+    left: 29%;
+    width: 270px;
+    
+  }
+
+  .tabText {
+    top: 18px;
+    font-size: 16px;
+  }
+
+
 
   .calcTitle {
   bottom: 6px;
@@ -1198,14 +1449,17 @@ select:-moz-focusring {
 
   .calcWithOutputPace {
     height: 820px;
+    border-radius: 90px 90px 0px 0px;
   }
 
   .calcWithOutputAge {
     height: 1015px;
+    border-radius: 90px 90px 0px 0px;
   }
 
   .calcWithOutputBMI {
     height: 785px;
+    border-radius: 90px 90px 0px 0px;
   }
 
   .outputMarginPace {
@@ -1220,33 +1474,6 @@ select:-moz-focusring {
   .container-fluid {
     padding-left: 0px;
     background-image: url("/images/seamlessRoad2.png");
-  }
-
-  .tabRowLi {
-    width: 30%;
-    height: 50px;
-  }
-
-  .tabRowLiSelect {
-    width: 30%;
-  }
-
-  .tabText {
-    left: 0px;
-    position: relative;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  .ageGradeTabTxt {
-    left: 8%;
-  }
-  .paceTabTxt {
-    left: 15%;
-  }
-
-  .bmiTabTxt {
-    left: 18%;
   }
 
   .calcInfoPaceHeight {
@@ -1286,8 +1513,68 @@ select:-moz-focusring {
 
 @media (min-width:0px) and (max-width:599px) {
 
+  .siteTitle {
+    left: 20%;
+
+  }
+  .siteTitleContainer {
+    left: 30%;
+
+  }
+
+  .mainContainer {
+    position: relative;
+    margin-top: 250px;
+  }
+
+  .tabRow {
+    left: 16%;
+    top: 247px;
+    height: 105px;
+    width: 338px;
+
+  }
+
+  .tabRowLi {
+    width: 110px;
+    height: 100px;
+
+  }
+
+  .tabRowLiSelect {
+    width: 110px;
+    height: 100px;
+    
+  }
+
+  .tabTitle {
+    position: relative;
+    top: 250px;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .tabChooseTxt {
+    left: 26%;
+    border-radius: 20px;
+
+  }
+
+  .curlyBrace {
+    left: 22%;
+    width: 270px;
+    
+  }
+
+  .tabText {
+    top: 18px;
+    font-size: 14px;
+  }
+
   .calcTitle {
-  bottom: 6px;
+    bottom: 6px;
+    min-width: 450px;
+    border-radius: 50px 50px 0px 0px;
   }
 
   .allCalcBtns {
@@ -1305,15 +1592,18 @@ select:-moz-focusring {
   .calcWithOutputPace {
     height: 880px;
     min-width: 450px;
+    border-radius: 90px 90px 0px 0px;
   }
 
   .calcWithOutputAge {
     height: 1080px;
     min-width: 450px;
+    border-radius: 90px 90px 0px 0px;
   }
 
   .calcWithOutputBMI {
     height: 850px;
+    border-radius: 90px 90px 0px 0px;
   }
 
   .outputMarginPace {
@@ -1324,10 +1614,6 @@ select:-moz-focusring {
     margin-top: 92%;
   }
 
-  .calcTitle {
-    min-width: 450px;
-  }
-
   .errWarning {
     left: 0px;
     width: 100%;
@@ -1336,10 +1622,6 @@ select:-moz-focusring {
   .errWarningInvis {
     left: 0px;
     width: 100%;
-  }
-
-  .tabRow {
-    min-width: 450px;
   }
 
   .container {
@@ -1363,27 +1645,6 @@ select:-moz-focusring {
   .mainHeader {
     min-width: 500px;
   }
-
-  .tabRowLi {
-    width: 30%;
-    height: 50px;
-  }
-
-  .tabRowLiSelect {
-    width: 30%;
-  }
-
-  .tabText {
-    right: 24px;
-    position: relative;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  .ageGradeTabTxt {
-    left: -17%;
-  }
-
 
   .calcInfoPaceHeight {
     height: 413px;
