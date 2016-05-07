@@ -5,102 +5,103 @@
 
 .mainHeader {
   height: 65px;
+  z-index: 2;
   background: #ff7939;
   background: -moz-linear-gradient(left,  #ff7939 0%, #ff7939 67%, #f9b039 100%);
   background: -webkit-linear-gradient(left,  #ff7939 0%,#ff7939 67%,#f9b039 100%);
   background: linear-gradient(to right,  #ff7939 0%,#ff7939 67%,#f9b039 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7939', endColorstr='#f9b039',GradientType=1 );
-  z-index: 2;
+  
 }
 
-
 .runnerLogo {
-  background-image: url('/images/runnernumsliorg.png');
   height: 192px;
   width: 192px;
+  z-index: 1;
   left: 25px;
   position: relative;
-  z-index: 1;
+  background-image: url('/images/runnernumsliorg.png');
 }
 
 .siteTitle {
+  z-index: 2;
+  left: 20%;
+  position: relative;
   font-family: "Open Sans Condensed";
   font-size: 50px;
   color: #FFF;
-  position: relative;
-  z-index: 2;
-  left: 20%;
+  
 }
 
 .tabChooseTxt {
+  width: 232px;
+  z-index: 2;
+  bottom: 50px;
+  left: 47.5%;
+  padding-left: 10px;
+  position: relative;
   background-color: #ff7939;
   font-family: "Open Sans";
   font-size: 20px;
   color: #FFF;
-  position: relative;
-  z-index: 2;
-  width: 232px;
-  left: 47.5%;
-  padding-left: 10px;
-  bottom: 50px;
 }
 
 .curlyBrace {
-  border-top: 3px solid white;
-  border-radius: 10px;
   width: 350px;
   height: 50px;
-  position: relative;
+  z-index: 1;
   left: 44%;
   bottom: 63px;
-  z-index: 1;
+  position: relative;
+  border-top: 3px solid white;
+  border-radius: 10px;
 }
 
-.siteTitle:hover, .siteTitle:focus {
+.siteTitle:hover, 
+.siteTitle:focus {
   text-decoration:none;
   color: #FFF;
 }
 
 .siteTitleContainer {
-  position: relative;
-  background: #FFF;
-  border-radius: 5px;
   width: 200px;
   height: 197px;
-  left: 22%;
-  top: 70px;
-  border-radius: 50%;
   z-index: 1;
-
+  top: 70px;
+  left: 22%;
+  position: relative;
+  background: #FFF;
+  border-radius: 50%;
 }
 
 /* Main container that the templates are routed into */
 .mainForm {
-  position: relative;
   z-index: 0;
+  position: relative;
+  
 }
 
 /* ----------- General/Bootstrap Classes Style ----------- */
 
 /* Clearing margin and padding for all */
 * {
-  padding:0;
   margin:0;
+  padding:0;
 }
 
 .loading {
   width: 50px;
   height: 50px;
+  z-index: 4;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: auto;
+  position: fixed;
   border: 5px solid #FFF;
   border-top-color: #ff0000;
   border-radius: 100%;
-  position: fixed;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  margin: auto;
-  z-index: 4;
   animation: round 1s linear infinite;
 }
 
@@ -112,23 +113,22 @@
 .loadingScreen {
   width: 100%;
   height: 400%;
-  position: fixed;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  margin: auto;
-  background-color: #ff7939;
   z-index: 3;
-
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: auto;
+  position: fixed;
+  background-color: #ff7939;
 }
 
 /*  Font class for various text in the widget  */
 .fontForText {
+  visibility:visible;
   font-family: "Open Sans";
   font-weight: 500;
-  font-size: 16px;
-  visibility:visible;
+  font-size: 16px; 
 }
 
 /* Editing bootstrap default form */
@@ -143,9 +143,9 @@
 }
 
 .form-control:focus {
-  box-shadow: -1px 1px 3px 1.5px #888;
-  outline: 0;
   border-color: #a0a0a0;
+  box-shadow: -1px 1px 3px 1.5px #888;
+  outline: 0; 
 }
 
 .form-control:hover {
@@ -160,13 +160,12 @@
 /* Editing bootstrap container-fluid */
 .container-fluid {
   width: 100%;
+  padding: 0px;
+  margin-top: -134px;
   position:relative;
   background-image: url("/images/seamlessRoad2.png");
   background-color: rgba(255, 204, 188, 1);
   box-shadow: 0px 0px 1px #888;
-  padding: 0px;
-  margin-top: -134px;
-
 }
 
 /* General class added to sections to set inline */
@@ -175,7 +174,9 @@
 }
 
 /* General class added to forms for red error border */
-.formErr, .formErr:active, .formErr:focus {
+.formErr, 
+.formErr:active, 
+.formErr:focus {
   border-color: #CC0000;
   transition: all .1s cubic-bezier(.27,1,1,.9);
 }
@@ -194,61 +195,59 @@
 /*  Main container for calc widget  */
 .calcMain {
   min-height: 900px;
-  background-color: #e0e0e0;
-	border-radius: 0px 16px 0px 0px;
-  margin-top: -2px;
-  box-shadow: -1px 1px 3px 0.5px #888;
-  position: absolute;
   z-index: 2;
+  margin-top: -2px;
+  position: absolute;
   overflow: auto;
-
+  background-color: #e0e0e0;
+  border-radius: 0px 16px 0px 0px;
+  box-shadow: -1px 1px 3px 0.5px #888;
 }
 
 /*  The container that includes both the calc & and the output sections  */
 .calcWithOutputPace {
+  height: 100%;
+  z-index: 1;
+  top: -5px;
+  padding: 5px;
+  position: relative;
   background-color: #fff;
   -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
-  top: -5px;
-  padding: 5px;
-  border-radius: 0px 0px 5px 5px;
-  height: 100%;
-  position: relative;
-  z-index: 1;
+  border-radius: 0px 0px 5px 5px; 
 }
 
 .calcWithOutputAge {
+  height: 100%;
+  z-index: 1;
+  top: -5px;
+  padding: 5px;
+  position: relative;
   background-color: #fff;
   -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
-  top: -5px;
-  padding: 5px;
   border-radius: 0px 0px 5px 5px;
-  height: 100%;
-  position: relative;
-  z-index: 1;
 }
 
 .calcWithOutputBMI {
+  height: 450px;
+  z-index: 1;
+  top: -5px;
+  padding: 5px;
+  position: relative;
+  border-radius: 0px 0px 5px 5px;
   background-color: #fff;
   -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
-  top: -5px;
-  padding: 5px;
-  border-radius: 0px 0px 5px 5px;
-  height: 450px;
-  position: relative;
-  z-index: 1;
 }
 
 /*  Just the calc widget section  */
 .buttonCalc {
-  padding-left: 50px;
   padding-bottom: 20px;
-  
+  padding-left: 50px; 
 }
 
 /* ----------- Paragraph Text Style ----------- */
@@ -256,9 +255,9 @@
 
 /*  Paragraph of text in the age grade section  */
 .calcTextLeft {
+  z-index: 0;
   padding: 15px 15px 15px 15px;
   color: rgba(0, 0, 0, 0.87);
-  z-index: 0;
 }
 
 /*  Hides the radio button that controls the text animation  */
@@ -271,29 +270,28 @@
 
 /*  Title banner for the main container  */
 .calcTitle {
+  height: 100px;
+  z-index: 2;
+  bottom: 4px;
+  position: relative;
   background: #ff7939;
   background: -moz-linear-gradient(left,  #ff7939 0%, #ff7939 67%, #f9b039 100%);
   background: -webkit-linear-gradient(left,  #ff7939 0%,#ff7939 67%,#f9b039 100%);
   background: linear-gradient(to right,  #ff7939 0%,#ff7939 67%,#f9b039 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7939', endColorstr='#f9b039',GradientType=1 );
-  height: 100px;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7939', endColorstr='#f9b039',GradientType=1);
   border-radius: 90px 90px 0px 0px;
-  position: relative;
-  z-index: 2;
-  bottom: 4px;
   box-shadow: -1px 1px 3px 0px #888;
 }
 
 
 /*  Text inside agegradetitle  */
 .calcTitle > .page-header {
-  color: #FFF;
-  text-align: center;
-  border: 0px;
+  top: 35px;
   margin: 0px;
   position: relative;
-  top: 35px;
-  
+  border: 0px;
+  color: #FFF;
+  text-align: center;
 }
 
 /* ----------- Tab Style ----------- */
@@ -301,38 +299,25 @@
 
 /* Container for all the tabs */
 .tabRow {
-  background-color: #fff;
-  position: relative;
-  z-index: 3;
   width: 607px;
   height: 215px;
+  z-index: 3;
   left: 30%;
   padding-left: 2px;
-  border-radius: 8px;
-
-  /*
-  list-style: none;
-  padding: 0;
-  line-height: 35px;
-  height: 37px;
-  overflow: hidden;
-  font-size: 12px;
   position: relative;
-  z-index: 3;
-  */
+  background-color: #fff;
+  border-radius: 8px;
 }
 
 /* Class for the unselected/default tabs */
 .tabRowLi {
-  background-color: #c6dcf2;
-  color: black;
+  width: 200px;
+  height: 209px;
   z-index: 2;
+  margin-right: -2px;
   position: relative;
   display: inline-block;
-  height: 209px;
-  width: 200px;
-  text-align: center;
-  margin-right: -2px;
+  background-color: #c6dcf2;
   border-top: 1px solid rgba(0,0,0,0);
   border-bottom: 1px solid rgba(0,0,0,0);
   border-radius: 3px;
@@ -340,19 +325,18 @@
   -webkit-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
   -moz-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
   box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
-  
+  color: black;
+  text-align: center; 
 }
 
 .tabRowLiSelect {
-  background-color: #ff7939;
-  color: white;
+  width: 200px;
+  height: 209px;
   z-index: 2;
+  margin-right: -2px;
   position: relative;
   display: inline-block;
-  height: 209px;
-  width: 200px;
-  text-align: center;
-  margin-right: -2px;
+  background-color: #ff7939;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   border-radius: 3px;
@@ -360,14 +344,22 @@
   -webkit-box-shadow: -4px 3px 0px -4px rgba(0,0,0,0.68);
   -moz-box-shadow: -4px 3px 0px -4px rgba(0,0,0,0.68);
   box-shadow: -4px 3px 0px -4px rgba(0,0,0,0.68);
+  color: white;
+  text-align: center;
 }
 
-.tabRowLiSelect-add-active, .tabRowLiSelect-remove-active, .tabRowLi-add-active, .tabRowLi-remove-active {
+.tabRowLiSelect-add-active, 
+.tabRowLiSelect-remove-active, 
+.tabRowLi-add-active, 
+.tabRowLi-remove-active {
   transition: all .5s cubic-bezier(.18,1,.31,.77);
-
 }
 
-.tabRowLi:hover, .tabRowLi:focus, .tabRowLiSelect:hover, .tabRowLiSelect:active, .tabRowLiSelect:focus{
+.tabRowLi:hover, 
+.tabRowLi:focus, 
+.tabRowLiSelect:hover, 
+.tabRowLiSelect:active, 
+.tabRowLiSelect:focus {
   background-color: #FF7939;
   color: white;
   text-decoration: none;
@@ -378,74 +370,65 @@
   box-shadow: -4px 3px 0px -4px rgba(0,0,0,0.68);
 }
 
-.tabRow:before {
-  /*
-  position: absolute;
-  content: "";
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  */
-}
-
 .tabText {
+  top: 65px;
   margin: 10px 10px 10px 10px;
   padding: 10px 10px 10px 10px;
+  position: relative;
   font-family: "Open Sans";
   font-weight: 300;
   font-size: 18px;
-  position: relative;
-  top: 65px;
-
 }
 
 .tabText:hover {
   text-decoration: none;
 }
 
+.tabTitle {
+  pointer-events: none;
+}
 
 /* ----------- Calc Style ----------- */
 
 /* Positioning for the calc and clear btns  */
 .allCalcBtns {
-  position: relative;
-  left: 80px;
   top: 5px;
+  left: 80px;
+  position: relative;
 }
-
 
 /* Button used to calculate age grade */
 .calcButton {
   width: 70%;
   height: 50px;
-  color: #8eceff;
-  border: 1px solid #434343;
-  background: #434343;
-  border-radius: 5px;
-  margin-top: 10px;
-  transition: all .15s cubic-bezier(.27,1,1,.9);
-  box-shadow: -1px 1px 5px 1px #888;
-  position: relative;
   z-index: 1;
-
+  margin-top: 10px;
+  position: relative;
+  background: #434343;
+  border: 1px solid #434343;
+  border-radius: 5px;
+  box-shadow: -1px 1px 5px 1px #888; 
+  color: #8eceff;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
 }
 
 .calcButton:hover {
-    color: #000000;
-    background: #8eceff; /* #51c64f */
-    border: 1px solid #8eceff;
-    cursor: pointer;
+  background: #8eceff; /* #51c64f */
+  border: 1px solid #8eceff;
+  color: #000000;
+  cursor: pointer;
 }
 
 .calcButton:active {
-    background: #ffffff;
-    border: 1px solid white;
-    color: #8eceff;
+  background: #ffffff;
+  border: 1px solid white;
+  color: #8eceff;
 }
 
-.calcButton:focus, .clearButton:focus, .form-control {
-    outline: 0;
+.calcButton:focus, 
+.clearButton:focus, 
+.form-control {
+  outline: 0;
 }
 
 /* Span that covers the area around the calc btn.
@@ -453,39 +436,39 @@
 .calcBtnHoverSpan {
   width: 250px;
   height: 62px;
-  margin: 1px 0px 0px -22px;
-  background-color: rgba(0,0,0,0);
-  position: absolute;
   z-index: 0;
+  margin: 1px 0px 0px -22px;
+  position: absolute;
+  background-color: rgba(0,0,0,0);
 }
 
 /* Button that clears the calc forms and output */
 .clearButton {
-    width: 118px;
-    height: 35px;
-    color: #CC0000;
-    border: 1px solid #434343;
-    background: #434343;
-    margin-top: 8px;
-    margin-bottom: 15px;
-    transition: all .15s cubic-bezier(.27,1,1,.9);
-    border-radius: 5px;
-    box-shadow: -1px 1px 5px 1px #888;
-    position: relative;
+  width: 118px;
+  height: 35px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  position: relative;
+  background: #434343;
+  border: 1px solid #434343;
+  border-radius: 5px;
+  box-shadow: -1px 1px 5px 1px #888;
+  color: #CC0000;
+  transition: all .15s cubic-bezier(.27,1,1,.9);
 }
 
 .clearButton:hover {
-    color:  #000000;
-    background: #CC0000;
-    border: 1px solid #CC0000;
-    cursor: pointer;
+  background: #CC0000;
+  border: 1px solid #CC0000;
+  color:  #000000;
+  cursor: pointer;
 }
 
 
 .clearButton:active {
-    background: #ffffff;
-    border: 1px solid white;
-    color: #CC0000;
+  background: #ffffff;
+  border: 1px solid white;
+  color: #CC0000;
 }
 
 /* Label for the format needed for time input */
@@ -500,8 +483,8 @@
   visibility:visible;
 }
 .timeInfoLabel {
-  position: relative;
   left: 5px;
+  position: relative;
 }
 
 /* Sizing of age input */
@@ -515,55 +498,55 @@
 }
 
 .orText {
-  position: relative;
   left: 33px;
+  position: relative;
 }
 
 .distUnits {
-  position: relative;
-  left: 72px;
   width: 72px;
+  left: 72px;
+  position: relative;
 }
 
 .moveDistUnits {
-  position: relative;
   left: 67px;
+  position: relative;
 }
 
 /* Positioning of age input */
 .moveAge {
-  position: relative;
   left: 61px;
+  position: relative;
 }
 
 .movePace {
-  position: relative;
   left: 53px;
+  position: relative;
 
 }
 
 .moveHeight1 {
-  position: relative;
   left: 35px;
+  position: relative;
 
 }
 
 .moveHeight2 {
-  position: relative;
   left: 50px;
+  position: relative;
 
 }
 
 /* Positioning of Distance input */
 .moveDist {
-  position: relative;
   left: 25px;
+  position: relative;
   
 }
 
 .move30 {
-  position: relative;
   left: 30px;
+  position: relative;
 
 }
 
@@ -573,29 +556,30 @@
 
 /* Section that contains the gender buttons */
 .allGenInput {
-  position: relative;
   top: 10px;
+  position: relative;
 }
 
 /* Label for the the gender selection btns */
 .genLabel {
-  width: 70px;
   height: 35px;
-  border: 1px solid #ccc;
-  box-shadow: -1px 1px 3px 0.5px #888;
-  border-radius: 5px;
-  text-align: center;
+  width: 70px;
   position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: -1px 1px 3px 0.5px #888;
+  text-align: center;
   transition: all .15s cubic-bezier(.27,1,1,.9);
+
 }
 
 .genTxt {
+  top: 4px;
+  right: 3px;
+  position: relative;
   font-family: "Open Sans";
   font-weight: 500;
   font-size: 14px;
-  position: relative;
-  top: 4px;
-  right: 3px;
 }
 
 
@@ -608,11 +592,11 @@
 .genSelected {
   width: 70px;
   height: 35px;
-  border: 1px solid #ccc;
-  box-shadow: 0px 0px 0px;
-  border-radius: 5px;
-  text-align: center;
   background: #8eceff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px;
+  text-align: center;
   transition: all .15s cubic-bezier(.27,1,1,.9);
 }
 
@@ -620,22 +604,21 @@
 .inputGender {
   width: 1px;
   height: 1px;
-  opacity: 0;
-  
+  opacity: 0; 
 }
 
 /* Section of the gen btns that doesn't include the error span */
 .justGenBtns {
+  right: 2px;
   position: relative;
   visibility: visible;
-  right: 2px;
 }
 
 
 /* Text for the female label b/c it's longer than male */
 .femaleLabel {
-  position: relative;
   left: 6px;
+  position: relative;
 }
 
 /* ----------- Output Style ----------- */
@@ -662,11 +645,10 @@
 /* Inset output section  */
 .outputColumn {
   background-color: #c6dcf2;
+  border-radius: 10px;
   -webkit-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
   -moz-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
   box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
-  border-radius: 10px;
-
 }
 
 .outputMarginPace {
@@ -680,7 +662,6 @@
 /* Container for whole output section */
 .outputCalc {
   padding-bottom: 50px;
-
 }
 
 /* Text inside the output section that labels the output numbers */
@@ -699,129 +680,128 @@
 
 /* Output sections inside the output column that display output numbers */
 .outputContainer {
-  position: relative;
+  width: 50%;
+  height: 75px;
+  left: 25%;
   margin-top: 25px;
-  background-color: #fff;
-  -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
-  -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
-  box-shadow: -4px 3px 9px -4px rgba(0,0,0,0.68);
-  border-radius: 10px;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 75px;
-  width: 50%;
-  left: 25%;
-
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
+  box-shadow: -4px 3px 9px -4px rgba(0,0,0,0.68);
 }
 
 /* ----------- Error Handling Style ----------- */
 
 /* Invisible version of time error div swapped out by by ng-class 
-  Protects against margin/padding problems -- 
-  Needs to be b4 the visible one in css or doesnt work?*/
+  Protects against margin/padding problems */
 .inputTimeErrInvis {
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
   z-index: 1;
-  margin-right: 5px;
   left: 52px;
+  margin-right: 5px;
   padding: 13px 0px 12px 0px;
-  border-radius: 5px;
+  position: relative;
+  visibility: collapse;
+  background-color: rgba(0, 0, 0, 0);
   border: 1px solid #CC0000;
-  visibility:collapse;
+  border-radius: 5px;
+  
 }
 
 /* Visible version of the time error div shown by ng-class */
 .inputTimeErr {
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
   z-index: 1;
-  margin-right: 5px;
   left: 52px;
+  margin-right: 5px;
   padding: 13px 0px 12px 0px;
-  border-radius: 5px;
-  border: 1px solid #CC0000;
+  background-color: rgba(0, 0, 0, 0);
+  position: relative;
   visibility:visible;
+  border: 1px solid #CC0000;
+  border-radius: 5px;
 }
 
 /* Making everything inside inputtimeerr visible */
-.inputTimeErr > input, .inputTimeErrInvis > input {
+.inputTimeErr > input, 
+.inputTimeErrInvis > input {
   visibility:visible;
 }
-
-
 
 /* Invisible version of time error div swapped out by by ng-class 
   Protects against margin/padding problems -- 
   Needs to be b4 the visible one in css or doesnt work?*/
 .inputFormTopErrInvis {
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
   z-index: 1;
   padding: 13px 0px 12px 0px;
+  position: relative;
+  visibility:collapse;
+  background-color: rgba(0, 0, 0, 0);
   border-radius: 5px;
   border: 1px solid #CC0000;
-  visibility:collapse;
 }
 
 /* Visible version of the time error div shown by ng-class */
 .inputFormTopErr {
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
   z-index: 1;
   padding: 13px 0px 12px 0px;
   padding-right: 0px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
   border-radius: 5px;
   border: 1px solid #CC0000;
   visibility:visible;
 }
 
 /* Making everything inside inputtimeerr visible */
-.inputFormTopErrInvis > input, .inputFormTopErr > input {
+.inputFormTopErrInvis > input, 
+.inputFormTopErr > input {
   visibility:visible;
 }
 
 /* Font for input text */
 .betweenInputTxt {
+  visibility:visible;
   font-family: "Helvetica";
   font-weight: 500;
   font-size: 18px;
-  visibility:visible;
 }
 
 /* Visible version of the gender err div shown by ng-class */
 .genCheckErr {
-  position: relative;
   left: 32px;
+  padding: 2px 5px 13px 3px;
+  position: relative;
+  visibility: visible;
   border: 1px solid #CC0000;
   border-radius: 5px;
-  padding: 2px 5px 13px 3px;
-  visibility: visible;
 }
 
 /* Invisible version of age error div swapped out by by ng-class 
   Protects against margin/padding problems */
 .genCheckErrInvis {
-  position: relative;
   left: 32px;
+  padding: 2px 5px 13px 3px;
+  position: relative;
+  visibility: collapse;
   border: 1px solid #CC0000;
   border-radius: 5px;
-  padding: 2px 5px 13px 3px;
-  visibility: collapse;
 }
 
 /* Error div that fades in when any forms are missing data */
 .errWarning {
-  position: relative;
-  left: 65px;
   width: 75%;
   height: 60px;
+  left: 65px;
+  position: relative;
+  visibility: visible;
   background: #ffa0a0;
-  text-align: center;
   box-shadow: -2px 2px 7px 2px #888;
   border-radius: 10px;
-  visibility: visible;
+  text-align: center;
 }
 
 .errWarning > div {
@@ -829,31 +809,29 @@
 }
 
 .errWarningInvis {
-  position: relative;
-  left: 85px;
   width: 75%;
   height: 60px;
+  left: 85px;
+  position: relative;
+  visibility: collapse; 
   background: #ffa0a0;
-  text-align: center;
   box-shadow: -2px 2px 7px 2px #888;
   border-radius: 10px;
-  visibility: collapse; 
-
+  text-align: center;
 }
 
 /* ---------- Sections below the calc ---------- */
 
 .calcInfoSection {
-  position: relative;
   z-index: 1;
-  background-color: #FFF;
   top: 20px;
   padding: 0px;
+  position: relative;
+  background-color: #FFF;
   border-radius: 5px;
   -webkit-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   -moz-box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
   box-shadow: -4px 3px 15px -4px rgba(0,0,0,0.68);
-
 }
 
 .calcInfoPadding {
@@ -863,18 +841,17 @@
 }
 
 .calcInfoAgeHeight {
-    height: 100%;
-  }
+  height: 100%;
+}
 
 .calcInfoPaceHeight {
   height: 330px;
-  
 }
 
 .calcInfoBMIHeight {
   height: 425px;
-  
 }
+
 .calcInfoHeader {
   width: 100%;
   height: 50px;
@@ -887,54 +864,51 @@
 }
 
 .calcInfoTitle {
-  position: relative;
   top: 12px;
-  color: #FFF;
-  text-align: center;
-  border: 0px;
   margin: 0px;
+  color: #FFF;
+  position: relative;
+  border: 0px;
+  text-align: center;
 }
 
 .calcInfoTitleAge {
-  left: 41%;
   width: 200px;
-
+  left: 41%;
 }
 
 .calcInfoTitleBMI {
-  left: 42%;
   width: 170px;
-
+  left: 42%;
 }
 
 .calcInfoTitlePace {
-  left: 44%;
   width: 130px;
-
+  left: 44%;
 }
 
 .BMItable {
-  position: relative;
-  left: 42%;
   width: 240px;
   height: 140px;
+  left: 42%;
   padding: 0px 10px 10px 10px;
+  position: relative;
   border: 1px solid black;
 }
 
 .calcInfoTxt {
-  position: relative;
   top: 10px;
+  position: relative;
   font-family: "Open Sans";
   font-weight: 300;
   font-size: 16px;
 }
 
 .calcInfoAd {
-  position: relative;
-  top: 20px;
   width: 100%;
   height: 150px;
+  top: 20px;
+  position: relative;
   background-color: #c6dcf2;
   -webkit-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
   -moz-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
@@ -943,25 +917,25 @@
 }
 
 .disableAdBlockTxt {
+  top: 50px;
+  position: relative;
+  opacity: 0.3;
   font-family: "Open Sans";
   font-weight: 300;
   font-size: 30px;
-  opacity: 0.3;
   text-align: center;
-  position: relative;
-  top: 50px;
-
 }
 
 .mainFooter {
+  width: 100%;
+  height: 100px;
+  position: relative;
   background: #ff7939;
   background: -moz-linear-gradient(left,  #ff7939 0%, #ff7939 67%, #f9b039 100%);
   background: -webkit-linear-gradient(left,  #ff7939 0%,#ff7939 67%,#f9b039 100%);
   background: linear-gradient(to right,  #ff7939 0%,#ff7939 67%,#f9b039 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7939', endColorstr='#f9b039',GradientType=1 );
-  position: relative;
-  width: 100%;
-  height: 100px;
+  
 }
 
 select:-moz-focusring {
@@ -972,20 +946,22 @@ select:-moz-focusring {
 
 @-moz-document url-prefix() {
   .genTxt {
-    right: 12px;
     top: 0px;
+    right: 12px;
     font-size: 13px;
   }
+
   .genCheckErr {
     padding: 6px 3px 8px 3px;
   }
+
   .genCheckErrInvis {
     padding: 6px 3px 8px 3px;
   }
 
   .femaleLabel {
-    position: relative;
     left: 5px;
+    position: relative;
   }
 
   .moveAge {
@@ -1151,7 +1127,7 @@ select:-moz-focusring {
     position: relative;
     top: 250px;
     z-index: -1;
-    pointer-events: none;
+    
   }
 
   .tabChooseTxt {
@@ -1287,7 +1263,7 @@ select:-moz-focusring {
     position: relative;
     top: 250px;
     z-index: -1;
-    pointer-events: none;
+    
   }
 
   .tabChooseTxt {
@@ -1421,7 +1397,6 @@ select:-moz-focusring {
     position: relative;
     top: 250px;
     z-index: -1;
-    pointer-events: none;
   }
 
   .tabChooseTxt {
@@ -1551,7 +1526,6 @@ select:-moz-focusring {
     position: relative;
     top: 250px;
     z-index: -1;
-    pointer-events: none;
   }
 
   .tabChooseTxt {
