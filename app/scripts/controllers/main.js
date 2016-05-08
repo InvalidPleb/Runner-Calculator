@@ -149,9 +149,6 @@ angular.module('runnerCalcApp')
     	}
   	};
 
-  	// The following six functions control the responsiveness of
-  	// the three time input fields, changing the value of the text boxes
-  	// depending upon blur or focus. 
   	$scope.inputTime1 = '00';
   	$scope.inputTime2 = '00';
   	$scope.inputTime3 = '00';
