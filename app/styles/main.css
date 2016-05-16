@@ -1225,6 +1225,11 @@ select:-moz-focusring {
 }
 
 @media (min-width:762px) and (max-width:874px) {
+  
+  html, body {
+    overflow-x: hidden; 
+  }
+
   .siteTitle {
     left: 32.5%;
 

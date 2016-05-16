@@ -8,7 +8,6 @@
 	      Press the <strong>Calculate</strong> button to get your result
 	    </p>
 	</div>
-
 	<div class="buttonCalc container col-lg-6 col-md-6 col-sm-12 col-xs-12" ng-keypress="enterPress($event)">
 		<br>
 		<!-- First row of input forms -->
@@ -49,10 +48,10 @@
 			<div class="allCalcBtns">
 			    <div class="calcBtnHoverSpan" ng-mouseover="updateBtnDisabled()">
 			    </div>
-			    <div class="row">
+			    <div>
 			      <input ng-click="calcButton()" type="button" class="calcButton fontForText" value="Calculate" ng-disabled="calcBtnDisabled">
 			    </div>
-			    <div class="row">
+			    <div>
 			      <input ng-click="clearButton()" type="button" class="clearButton fontForText" value="Clear">
 			    </div>
 			</div>
@@ -61,7 +60,6 @@
 			    <div>{{calcInfo.errWarningTxt}}</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	<div class="outputMarginPace">
 		<calc-output-section></calc-output-section>
