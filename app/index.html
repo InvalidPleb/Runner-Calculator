@@ -1,8 +1,8 @@
 <!doctype html>
-<html>
+<html ng-app="runnerCalcApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>{{$root.titleText}}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -22,7 +22,7 @@
     -->
   </head>
   <!-- Main body for the app --> 
-  <body ng-app="runnerCalcApp">
+  <body ngCloak>
     <div class="loadingScreen">
       <div class="loading"></div>
     </div>
@@ -101,7 +101,24 @@
     <!-- endbuild -->
 
     <script type="text/javascript">
-      hideScreen();
+      (function() {
+        function hideScreen () {
+          'use strict';
+          // Checking if user browser has a firefox only feature
+          if (typeof InstallTrigger !== 'undefined') {
+            setTimeout(function() {
+              $('.loadingScreen').fadeOut(1000);
+              $('.loading').fadeOut(1000);
+            }, 1750);
+          } else {
+            setTimeout(function() {
+              $('.loadingScreen').fadeOut(1000);
+              $('.loading').fadeOut(1000);
+            }, 1000);
+          }
+        }
+        hideScreen();
+      })();   
     </script>
  
 </body>

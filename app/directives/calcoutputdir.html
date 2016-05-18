@@ -1,4 +1,4 @@
-<section class="{{calcInfo.outputHeight}} outputColumn col-lg-6 col-md-6 col-sm-12 col-xs-12">
+<section class="{{::calcInfo.outputHeight}} outputColumn col-lg-6 col-md-6 col-sm-12 col-xs-12">
   <div class="outputCalc"> <!-- hidden w/ jquery not angular-->
     <div class="outputInfo">
       <h4 class="outputText1 outputText">{{calcInfo.outputLabelTxtTop}} {{calcInfo.outputLabelTxtTopRes}}</h4>
@@ -8,7 +8,7 @@
         <input type="text" class="form-control fontForText ng-hide" maxlength="2" ng-model="outputDataTop" readonly type="text" >
       </div>
     </div>
-    <div class="outputInfo" ng-hide="{{calcInfo.outputBottomHide}}">
+    <div class="outputInfo" ng-hide="{{::calcInfo.outputBottomHide}}">
       <h4 class="outputText2 outputText">Your age-graded percent</h4>
       <div class="outputContainer">
         <span class="outputData">{{outputAgePercent}}</span>

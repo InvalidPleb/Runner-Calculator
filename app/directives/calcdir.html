@@ -2,12 +2,12 @@
   <br>
   <!-- First row of input forms -->
   <div class="row">
-    <span class="fontForText">{{calcInfo.inputFormTop}}:</span>
-    <span class="{{calcInfo.inputFormTopClass}}">
+    <span class="fontForText">{{::calcInfo.inputFormTop}}:</span>
+    <span class="{{::calcInfo.inputFormTopClass}}">
       <!-- Top left input form. Hidden in pace calculator -->
-      <input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="2" ng-model="inputFormTop" ng-hide="{{calcInfo.inputFormTopHide}}">
+      <input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="2" ng-model="inputFormTop" ng-hide="{{::calcInfo.inputFormTopHide}}">
       <!-- The three input forms at the top, currently only used by pace calc -->
-      <span ng-hide="{{calcInfo.inputFormTrioHide}}">
+      <span ng-hide="{{::calcInfo.inputFormTrioHide}}">
         <span class="inputFormTopErrInvis" ng-class="{true: 'inputFormTopErr', false: 'inputFormTopErrInvis'}[inputFormTopErr]" ng-model="inputFormTopErr">
           <input type="text" class="form-control inline inputFormTop" ng-focus="inputFormTop1Focus()" ng-blur="inputFormTop1Blur()" maxlength="2" ng-model="inputFormTop1">
           <span class="betweenInputTxt">:</span>
@@ -26,7 +26,7 @@
     <span class="moveDist">
       <!-- Distance form drop down --> 
       <select class= "form-control inline {{calcInfo.inputDistClass}}" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.distance as run.title for run in list"></select>
-      <span ng-hide="{{calcInfo.inputDistTypeHide}}">
+      <span ng-hide="{{::calcInfo.inputDistTypeHide}}">
         <span class="betweenInputTxt orText">or</span>
         <input class="form-control inline inputFormTop moveDistUnits" ng-model="inputTypeDist" maxlength="2">
         <!-- Distance units (US / Metric) dropdown --> 
@@ -50,7 +50,7 @@
       <span class="labelTimeFormat fontForText">hh:mm:ss</span>
   </div>
   <!-- Fourth input row --> 
-  <div class="allGenInput row" ng-hide="{{calcInfo.genderBtnHide}}">
+  <div class="allGenInput row" ng-hide="{{::calcInfo.genderBtnHide}}">
     <span class="fontForText">Gender:</span>
     <span class="genCheckErr" ng-model="genCheckErr" ng-class="{true: 'genCheckErr fontForText', false: 'genCheckErrInvis fontForText'}[genCheckErr]">
       <span class="justGenBtns">
@@ -84,6 +84,6 @@
   </div>
   <!-- Error warning div that appears at bottom of calculator --> 
   <div class="errWarning fontForText" ng-class="{true: 'errWarning fontForText', false: 'errWarningInvis fontForText'}[errWarning]" ng-model="errWarning">
-    <div>{{calcInfo.errWarningTxt}}</div>
+    <div>{{::calcInfo.errWarningTxt}}</div>
   </div>
 </div>

@@ -390,6 +390,11 @@
 
 /* ----------- Calc Style ----------- */
 
+.calcHeadTxt {
+  font-size: 20px;
+  margin: 0;
+}
+
 /* Positioning for the calc and clear btns  */
 .allCalcBtns {
   top: 5px;
@@ -845,11 +850,11 @@
 }
 
 .calcInfoPaceHeight {
-  height: 330px;
+  height: 100%;
 }
 
 .calcInfoBMIHeight {
-  height: 425px;
+  height: 100%;
 }
 
 .calcInfoHeader {
@@ -867,25 +872,13 @@
   top: 12px;
   margin: 0px;
   color: #FFF;
+  font-size: 20px;
   position: relative;
   border: 0px;
   text-align: center;
+
 }
 
-.calcInfoTitleAge {
-  width: 200px;
-  left: 41%;
-}
-
-.calcInfoTitleBMI {
-  width: 170px;
-  left: 42%;
-}
-
-.calcInfoTitlePace {
-  width: 130px;
-  left: 44%;
-}
 
 .BMItable {
   width: 240px;
@@ -901,7 +894,8 @@
   position: relative;
   font-family: "Open Sans";
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
+  padding: 10px 50px 10px 50px;
 }
 
 .calcInfoAd {
@@ -1364,6 +1358,11 @@ select:-moz-focusring {
 }
 
 @media (min-width:600px) and (max-width:761px) {
+
+  html, body {
+    overflow-x: hidden; 
+  }
+
   .siteTitle {
     left: 29%;
 
