@@ -388,6 +388,11 @@
   pointer-events: none;
 }
 
+.paceInstruction {
+  font-size: 18px;
+  text-align: center;
+}
+
 /* ----------- Calc Style ----------- */
 
 .calcHeadTxt {
@@ -805,6 +810,7 @@
   visibility: visible;
   background: #ffa0a0;
   box-shadow: -2px 2px 7px 2px #888;
+  padding-top: 10px;
   border-radius: 10px;
   text-align: center;
 }

@@ -37,17 +37,19 @@
   </div>
   <!-- Thrid row of input forms --> 
   <div class="row">
-      <span class="fontForText">Time:</span>
+      <span class="fontForText">{{::calcInfo.inputFormBot}}:</span>
       <!-- Error div that appears over the three time inputs --> 
       <span class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
         <!-- The three time inputs --> 
-        <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" class="form-control inline inputTime" maxlength="2">
-        <span class="betweenInputTxt">:</span>
+        <span ng-hide="{{::calcInfo.inputFormBot1Hide}}">
+          <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" class="form-control inline inputTime" maxlength="2">
+          <span class="betweenInputTxt">:</span>
+        </span>
         <input ng-change="updateInputTime(inputTime2)" ng-model="inputTime2" ng-focus="timeInput2Focus()" ng-blur="timeInput2Blur()" class="form-control inline inputTime" maxlength="2">
         <span class="betweenInputTxt">:</span>
         <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" class="form-control inline inputTime" maxlength="2"> 
       </span>
-      <span class="labelTimeFormat fontForText">hh:mm:ss</span>
+      <span class="labelTimeFormat fontForText">{{::calcInfo.inputFormBotLabel}}</span>
   </div>
   <!-- Fourth input row --> 
   <div class="allGenInput row" ng-hide="{{::calcInfo.genderBtnHide}}">
@@ -84,6 +86,6 @@
   </div>
   <!-- Error warning div that appears at bottom of calculator --> 
   <div class="errWarning fontForText" ng-class="{true: 'errWarning fontForText', false: 'errWarningInvis fontForText'}[errWarning]" ng-model="errWarning">
-    <div>{{::calcInfo.errWarningTxt}}</div>
+    <div>{{calcInfo.errWarningTxt}}</div>
   </div>
 </div>
