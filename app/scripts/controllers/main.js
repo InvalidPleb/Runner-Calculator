@@ -535,9 +535,6 @@
         var userDistance;
         var chosenDistVal;
         var chosenDistUnit;
-        var outputPace;
-        var outputDistance;
-        var outputTime;
 
         // Setting var and field defaults per calc btn click.
         allInputDistErr = false;
@@ -553,28 +550,27 @@
 
         function listLoop(i, max) {
 
-        if ($scope.inputDist === $scope.list[i].distance) {
+          if ($scope.inputDist === $scope.list[i].distance) {
 
-          // The distance value that will be used for calc is the
-          // value specified in that object.
-          userDistance = $scope.list[i].value;
-          userUnits = $scope.list[i].unit;
+            // The distance value that will be used for calc is the
+            // value specified in that object.
+            userDistance = $scope.list[i].value;
+            userUnits = $scope.list[i].unit;
 
-          if (userUnits === 0) {
-            userUnits = 'mi';
-          } else {
-            userUnits = 'km';
+            if (userUnits === 0) {
+              userUnits = 'mi';
+            } else {
+              userUnits = 'km';
+            }
           }
+
+          i++;
+
+          if (i < max) {
+
+            return listLoop(i, max);
+          }  
         }
-
-        i++;
-
-        if (i < max) {
-
-          return listLoop(i, max);
-
-        }  
-      }
 
         // These statements find out which distance input the user decided to use. 
         if ($scope.inputTypeDist === undefined || $scope.inputTypeDist === '' || $scope.inputTypeDist === 0) {
@@ -630,23 +626,18 @@
           totalTimeInputEmpty = true;
         }
 
-        function errTemplate(inputDistTrue, inputFormTopTrue, inputTimeTrue, errType) {
+        function errCombo(inputDistTrue, inputFormTopTrue, inputTimeTrue, errType) {
 
           if (inputDistEmpty === inputDistTrue && totalInputFormTopEmpty === inputFormTopTrue && totalTimeInputEmpty === inputTimeTrue) {
 
             if (allInputDistErr === true) {
-
               $scope.calcInfo.errWarningTxt = distErrStr;
-
             } else {
-
               $scope.calcInfo.errWarningTxt = errType;
-
             }
 
             $scope.calcInfo.outputLabelTxtTop = "Your ";
             $scope.calcInfo.outputLabelTxtTopRes = "result";
-            
             $scope.errWarning = true;
             $scope.calcInfo.outputDataTopUnit = "";
             $scope.outputDataTop = "";
@@ -654,58 +645,39 @@
           }
         }
 
-        // ---- Error Combinations ---- //
-        errTemplate(false, false, false, tooManyErrStr);
-        errTemplate(true, true, true, tooFewErrStr);
-        errTemplate(false, true, true, tooFewErrStr);
-        errTemplate(true, false, true, tooFewErrStr);
-        errTemplate(true, true, false, tooFewErrStr);
+        function successCombo(inputDistTrue, inputFormTopTrue, inputTimeTrue, str1, str2, str3, units, func) {
 
-        // ---- Valid Combinations ---- //
-
-        // If the time and pace(inputFormTop) forms are filled but the distance is empty ...
-        if (totalInputFormTopEmpty === false && totalTimeInputEmpty === false && inputDistEmpty === true) {
-
-          // Distance is calculated and outputted to the user using $scope.calcInfo.
-          $scope.calcInfo.outputLabelTxtTop = "The ";
-          $scope.calcInfo.outputLabelTxtTopRes = "distance you can run";
-          $scope.errWarning = false;
-
-          // Distance calculation.
-          outputDistance = (totalTimeInput / 60) / (totalInputFormTop / 60);
-
-          $scope.outputDataTop = outputDistance;
-          $scope.calcInfo.outputDataTopUnit = " " + $scope.distUnits;
-
-
-        // If the time and and distance forms are filled but the pace is empty ... 
-        } else if (totalTimeInputEmpty === false && inputDistEmpty === false && totalInputFormTopEmpty === true) {
-
-          // Pace is calculated and outputted to the user.
-          $scope.calcInfo.outputLabelTxtTop = "The ";
-          $scope.calcInfo.outputLabelTxtTopRes = "average pace needed for each " + userUnits;
-          $scope.errWarning = false;
-
-          // Pace calculation. 
-          outputPace = (totalTimeInput) / userDistance;
-          $scope.outputDataTop = (new Date(outputPace * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
-          $scope.calcInfo.outputDataTopUnit = " per " + userUnits;
-
-
-        // If the pace and distance forms are filled but the time is empty ... 
-        } else if (totalInputFormTopEmpty === false && inputDistEmpty === false && totalTimeInputEmpty === true) {
-
-          // Time is calculated and outputted to the user.
-          $scope.calcInfo.outputLabelTxtTop = "Your ";
-          $scope.calcInfo.outputLabelTxtTopRes = 'time to run  ' + userDistance + ' ' + userUnits;
-          $scope.errWarning = false;
-
-          // Time calculation. 
-          outputTime = userDistance * (totalInputFormTop);
-
-          $scope.outputDataTop = $scope.outputDataTop = (new Date(outputTime * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
-          $scope.calcInfo.outputDataTopUnit = "";
+          if (inputDistEmpty === inputDistTrue && totalInputFormTopEmpty === inputFormTopTrue && totalTimeInputEmpty === inputTimeTrue) {
+            $scope.calcInfo.outputLabelTxtTop = str1;
+            $scope.calcInfo.outputLabelTxtTopRes = str2;
+            $scope.errWarning = false;
+            $scope.outputDataTop = func;
+            $scope.calcInfo.outputDataTopUnit = str3 + units;
+          }
         }
+
+        function timeToHMS(time) {
+          if (isNaN(time) === false) {
+            return (new Date(time * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
+          }
+        }
+
+        function calcDist(a, b) {
+          return (a / 60) / (b / 60);
+        }
+
+        // ---- Error Combinations ---- //
+        errCombo(false, false, false, tooManyErrStr);
+        errCombo(true, true, true, tooFewErrStr);
+        errCombo(false, true, true, tooFewErrStr);
+        errCombo(true, false, true, tooFewErrStr);
+        errCombo(true, true, false, tooFewErrStr);
+
+        // ---- Success Combinations ---- //
+        successCombo(true, false, false, "The ", "distance you can run", " ", $scope.distUnits, calcDist(totalTimeInput, totalInputFormTop));
+        successCombo(false, true, false, "The ", "average pace needed for each " + userUnits, " per ", userUnits, timeToHMS((totalTimeInput / userDistance)));
+        successCombo(false, false, true, "Your ", "time to run " + userDistance + " " + userUnits, "", "", timeToHMS((userDistance * totalInputFormTop)));
+
       };
 
       // Clear button scope.
