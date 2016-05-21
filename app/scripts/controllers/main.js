@@ -514,7 +514,9 @@
       $scope.errWarning = false;
       $scope.distUnits = $scope.unitSystems[0].unit;
 
-
+      var distErrStr = "Oops! Please only fill in one type of distance form";
+      var tooFewErrStr = "Oops! Please fill in two options";
+      var tooManyErrStr = "Oops! You only need to fill in two options";
 
       // Calculate button scope.
       $scope.calcButton = function (){
@@ -524,6 +526,7 @@
         var totalInputFormTop = parseTime($scope.inputTime1, $scope.inputTime2, $scope.inputTime3);
         var totalTimeInput = parseTime($scope.inputFormTop1, $scope.inputFormTop2, $scope.inputFormTop3);
 
+        var allInputDistErr;
         var inputDistEmpty;
         var inputDropDistEmpty;
         var inputTypeDistEmpty;
@@ -535,9 +538,9 @@
         var outputPace;
         var outputDistance;
         var outputTime;
-        var i;
 
         // Setting var and field defaults per calc btn click.
+        allInputDistErr = false;
         inputDistEmpty = false;
         inputDropDistEmpty = false;
         inputTypeDistEmpty = false;
@@ -548,7 +551,32 @@
         userDistance = undefined;
         var userUnits;
 
-        // These two functions find out which distance input the user decided to use. 
+        function listLoop(i, max) {
+
+        if ($scope.inputDist === $scope.list[i].distance) {
+
+          // The distance value that will be used for calc is the
+          // value specified in that object.
+          userDistance = $scope.list[i].value;
+          userUnits = $scope.list[i].unit;
+
+          if (userUnits === 0) {
+            userUnits = 'mi';
+          } else {
+            userUnits = 'km';
+          }
+        }
+
+        i++;
+
+        if (i < max) {
+
+          return listLoop(i, max);
+
+        }  
+      }
+
+        // These statements find out which distance input the user decided to use. 
         if ($scope.inputTypeDist === undefined || $scope.inputTypeDist === '' || $scope.inputTypeDist === 0) {
           inputTypeDistEmpty = true;
         }
@@ -569,7 +597,6 @@
           // ... then the user distance that will used for calc is the
           // typed in distance field.
           userDistance = parseFloat($scope.inputTypeDist);
-
           userUnits = $scope.distUnits;
           
         // Alternatively, if the typed distance field is empty ...
@@ -577,28 +604,17 @@
 
           // Loop through the distance service to find the corresponding unit and value
           // in that object.
-          for (i=0; i < $scope.list.length; i++) {
+          
 
-            if ($scope.inputDist === $scope.list[i].distance) {
-
-              // The distance value that will be used for calc is the
-              // value specified in that object.
-              userDistance = $scope.list[i].value;
-              userUnits = $scope.list[i].unit;
-
-              if (userUnits === 0) {
-                userUnits = 'mi';
-              } else {
-                userUnits = 'km';
-              }
-            }
-          }
+          listLoop(0, $scope.list.length);
+          
 
         // If both the typed and dropdown distance fields are filled, display error.
         } else if (inputTypeDistEmpty === false && inputDropDistEmpty === false){
 
+          allInputDistErr = true;
           $scope.calcInfo.outputLabelTxtTopRes = "result";
-          $scope.calcInfo.errWarningTxt = "Oops! Please only fill in one type of distance form";
+          $scope.calcInfo.errWarningTxt = distErrStr;
           $scope.errWarning = true;
           $scope.calcInfo.outputDataTopUnit = "";
         }
@@ -614,61 +630,41 @@
           totalTimeInputEmpty = true;
         }
 
+        function errTemplate(inputDistTrue, inputFormTopTrue, inputTimeTrue, errType) {
+
+          if (inputDistEmpty === inputDistTrue && totalInputFormTopEmpty === inputFormTopTrue && totalTimeInputEmpty === inputTimeTrue) {
+
+            if (allInputDistErr === true) {
+
+              $scope.calcInfo.errWarningTxt = distErrStr;
+
+            } else {
+
+              $scope.calcInfo.errWarningTxt = errType;
+
+            }
+
+            $scope.calcInfo.outputLabelTxtTop = "Your ";
+            $scope.calcInfo.outputLabelTxtTopRes = "result";
+            
+            $scope.errWarning = true;
+            $scope.calcInfo.outputDataTopUnit = "";
+            $scope.outputDataTop = "";
+
+          }
+        }
+
         // ---- Error Combinations ---- //
-
-        // If all the fields are filled ...
-        if (totalInputFormTopEmpty === false && totalTimeInputEmpty === false && inputDistEmpty === false) {
-
-          // Nothing is calculated and errors are shown. 
-          $scope.calcInfo.outputLabelTxtTop = "Your ";
-          $scope.calcInfo.outputLabelTxtTopRes = "result";
-          $scope.calcInfo.errWarningTxt = "Oops! Please only fill in two options";
-          $scope.errWarning = true;
-          $scope.calcInfo.outputDataTopUnit = "";
-          $scope.outputDataTop = "";
-
-        // If none of the fields are filled ...
-        } else if (inputDistEmpty === true && totalInputFormTopEmpty === true && totalTimeInputEmpty === true) {
-
-          // Nothing is calculated and errors are shown.
-          $scope.calcInfo.outputLabelTxtTop = "Your ";
-          $scope.calcInfo.outputLabelTxtTopRes = "result";
-          $scope.calcInfo.errWarningTxt = "Oops! You need to fill in two options";
-          $scope.errWarning = true;
-          $scope.calcInfo.outputDataTopUnit = "";
-          $scope.outputDataTop = "";
-
-        } else if (inputDistEmpty === false && totalInputFormTopEmpty === true && totalTimeInputEmpty === true){
-
-          $scope.calcInfo.outputLabelTxtTop = "Your ";
-          $scope.calcInfo.outputLabelTxtTopRes = "result";
-          $scope.calcInfo.errWarningTxt = "Oops! You need to fill in two options";
-          $scope.errWarning = true;
-          $scope.calcInfo.outputDataTopUnit = "";
-          $scope.outputDataTop = "";
-
-        } else if (inputDistEmpty === true && totalInputFormTopEmpty === false && totalTimeInputEmpty === true){
-
-          $scope.calcInfo.outputLabelTxtTop = "Your ";
-          $scope.calcInfo.outputLabelTxtTopRes = "result";
-          $scope.calcInfo.errWarningTxt = "Oops! You need to fill in two options";
-          $scope.errWarning = true;
-          $scope.calcInfo.outputDataTopUnit = "";
-          $scope.outputDataTop = "";
-
-        } else if (inputDistEmpty === true && totalInputFormTopEmpty === true && totalTimeInputEmpty === false){
-
-          $scope.calcInfo.outputLabelTxtTop = "Your ";
-          $scope.calcInfo.outputLabelTxtTopRes = "result";
-          $scope.calcInfo.errWarningTxt = "Oops! You need to fill in two options";
-          $scope.errWarning = true;
-          $scope.calcInfo.outputDataTopUnit = "";
-          $scope.outputDataTop = "";
+        errTemplate(false, false, false, tooManyErrStr);
+        errTemplate(true, true, true, tooFewErrStr);
+        errTemplate(false, true, true, tooFewErrStr);
+        errTemplate(true, false, true, tooFewErrStr);
+        errTemplate(true, true, false, tooFewErrStr);
 
         // ---- Valid Combinations ---- //
 
         // If the time and pace(inputFormTop) forms are filled but the distance is empty ...
-        } else if (totalInputFormTopEmpty === false && totalTimeInputEmpty === false && inputDistEmpty === true) {
+        if (totalInputFormTopEmpty === false && totalTimeInputEmpty === false && inputDistEmpty === true) {
 
           // Distance is calculated and outputted to the user using $scope.calcInfo.
           $scope.calcInfo.outputLabelTxtTop = "The ";
@@ -729,7 +725,7 @@
         $scope.errWarning = false;
         $scope.inputFormTopErr = false;
         $scope.calcInfo.outputLabelTxtTopRes = "result";
-        $scope.calcInfo.errWarningTxt = "Oops! You need to fill in two options to find the third";
+        $scope.calcInfo.errWarningTxt = tooFewErrStr;
         $scope.outputDataTop = '';
         $scope.calcInfo.outputDataTopUnit = "";
         $scope.calcInfo.outputLabelTxtTop = "Your ";

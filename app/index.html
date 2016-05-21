@@ -52,8 +52,8 @@
       </ul>
       </div>
       <!-- Container for the calculator template injection --> 
-      <div class="mainContainer container">
-      <div ng-view="" class="viewSwitch"></div>
+      <div class="mainContainer container ">
+      <div ng-view="" class="viewSwitch" ng-keypress="enterPress($event)"></div>
       </div>
       <!-- Footer --> 
       <div class="mainFooter">

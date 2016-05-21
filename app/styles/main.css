@@ -189,7 +189,26 @@
 /* ----------- Container Style ----------- */
 
 .calcInstructions {
+  top: 10px;
   border-bottom: 1px solid black;
+  position: relative;
+}
+
+.paceInstruction {
+
+  position: relative;
+  border-radius: 3px;
+  background-color: #c6dcf2;
+  -webkit-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
+  -moz-box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
+  box-shadow: inset 0px 0px 9px 1px rgba(0,0,0,0.45);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  
 }
 
 /*  Main container for calc widget  */
@@ -231,6 +250,10 @@
   border-radius: 0px 0px 5px 5px;
 }
 
+.calcOutputAgeHeight {
+  height: 383px;
+  top: 11px;
+}
 .calcWithOutputBMI {
   height: 450px;
   z-index: 1;
@@ -386,11 +409,6 @@
 
 .tabTitle {
   pointer-events: none;
-}
-
-.paceInstruction {
-  font-size: 18px;
-  text-align: center;
 }
 
 /* ----------- Calc Style ----------- */
@@ -834,6 +852,7 @@
 /* ---------- Sections below the calc ---------- */
 
 .calcInfoSection {
+  height: 100%;
   z-index: 1;
   top: 20px;
   padding: 0px;
@@ -849,18 +868,6 @@
   padding: 0px 10px 20px 10px;
   bottom: 5px;
   position: relative;
-}
-
-.calcInfoAgeHeight {
-  height: 100%;
-}
-
-.calcInfoPaceHeight {
-  height: 100%;
-}
-
-.calcInfoBMIHeight {
-  height: 100%;
 }
 
 .calcInfoHeader {
