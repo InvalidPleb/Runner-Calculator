@@ -5,6 +5,29 @@
   // Setting up controllers.
   angular.module('runnerCalcApp')
 
+    .directive("scroll", function ($window) {
+      return function(scope, element, attrs) {
+          angular.element($window).bind("scroll", function() {
+            function parallax(image, offsetX, offsetY) {
+              let ypos = window.pageYOffset;
+              image.css('transform', 'translate3d(' + (ypos * offsetX) + 'px,' + (ypos * offsetY) + 'px,0px)');
+            }
+
+            $(window).scroll(function(){
+              parallax($('#background'), 0, -0.4);
+            });
+               
+            scope.$apply();
+          });
+      };
+    })
+
+    // -------- Background Parallax -------- //
+
+
+        
+
+
     // Tab template controller
     .controller('MainTabCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
@@ -600,11 +623,8 @@
 
           // Loop through the distance service to find the corresponding unit and value
           // in that object.
-          
-
           listLoop(0, $scope.list.length);
           
-
         // If both the typed and dropdown distance fields are filled, display error.
         } else if (inputTypeDistEmpty === false && inputDropDistEmpty === false){
 
