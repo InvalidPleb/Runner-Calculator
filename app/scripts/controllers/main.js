@@ -8,13 +8,14 @@
     .directive("scroll", function ($window) {
       return function(scope, element, attrs) {
           angular.element($window).bind("scroll", function() {
+
             function parallax(image, offsetX, offsetY) {
               let ypos = window.pageYOffset;
               image.css('transform', 'translate3d(' + (ypos * offsetX) + 'px,' + (ypos * offsetY) + 'px,0px)');
             }
 
             $(window).scroll(function(){
-              parallax($('#background'), 0, -0.4);
+              parallax($('.background-road'), 0, -0.3);
             });
                
             scope.$apply();
