@@ -91,9 +91,10 @@
   background-image: url("/images/seamlessRoad2.png");
   width: 100%;
   bottom: 250px;
-  height: calc(100%);
+  height: 100%;
   position: absolute;
-  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+
 }
 
 /* ----------- General/Bootstrap Classes Style ----------- */

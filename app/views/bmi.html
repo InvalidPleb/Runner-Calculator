@@ -16,7 +16,7 @@
 		    <span class="fontForText">{{calcInfo.inputFormTop.name}}:</span>
 		    <span class="{{calcInfo.inputFormTop.class}}">
 		    	<!-- US / Metric radio btns -->
-				<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="3" ng-model="inputFormTop">
+				<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" no-special-char maxlength="3" ng-model="inputFormTop">
 				<span class="fontForText txtPadding">{{calcInfo.inputFormTop.text}}</span>
 				<span class="justGenBtns moveDist">
 		          	<label class="genLabel" ng-class="{false: 'genLabel fontForText', US: 'genSelected fontForText animated bounceIn', Metric: 'genLabel fontForText'}[unitCheck]">
@@ -36,12 +36,12 @@
 			<!-- Height input forms-->
 			<span class="fontForText">{{calcInfo.inputFormBot.name}}:</span>
 			<span class="moveHeight1">
-				<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormBot()]" maxlength="3" ng-model="inputFormBot">
+				<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormBot()]" no-special-char maxlength="3" ng-model="inputFormBot">
 				<span class="fontForText txtPadding">{{calcInfo.inputFormBot.text}}</span>
 			</span>
 			
 			<span class="moveHeight2" ng-class="{US: 'moveHeight2', Metric: 'moveHeight2 hideElement'}[unitCheck]">
-				<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormBot2()]" maxlength="3" ng-model="inputFormBot2">
+				<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormBot2()]" no-special-char maxlength="3" ng-model="inputFormBot2">
 				<span class="fontForText txtPadding">inches</span>
 			</span>
 			<!-- Calculate & clear buttons --> 

@@ -5,9 +5,28 @@
   // Setting up controllers.
   angular.module('runnerCalcApp')
 
+    .directive('noSpecialChar', function() {
+      return {
+        require: 'ngModel',
+        restrict: 'A',
+        link: function(scope, element, attrs, modelCtrl) {
+          modelCtrl.$parsers.push(function(inputValue) {
+            if (inputValue == null)
+              return ''
+            var cleanInputValue = inputValue.replace(/[^\w\s]/gi, '');
+            if (cleanInputValue != inputValue) {
+              modelCtrl.$setViewValue(cleanInputValue);
+              modelCtrl.$render();
+            }
+            return cleanInputValue;
+          });
+        }
+      }
+    })
+
+
     // Tab template controller
     .controller('MainTabCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
-
 
       function parallax(image, offsetX, offsetY) {
         let ypos = window.pageYOffset;
@@ -17,8 +36,6 @@
       $(window).scroll(function(){
         parallax($('.background-road'), 0, 0.5);
       });
-
-      
 
       // These objects contain the information for the tabdir template instances
       $scope.paceCalc = {
@@ -77,7 +94,14 @@
 
     }])
 
-    .controller('AgeGradeCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', 'ageGradeData', function ($scope, inputDistDropDown, inputBlur, ageGradeData) {
+    .controller('AgeGradeCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', 'ageGradeData', 'checkKey', function ($scope, inputDistDropDown, inputBlur, ageGradeData, checkKey) {
+
+      function checkKey (e) {
+            var k;
+            document.all ? k = e.keyCode : k = e.which;
+            return ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57));
+        }
+
 
     	// Function to round to the nearest 100th
     	function numRound (value,dec){
