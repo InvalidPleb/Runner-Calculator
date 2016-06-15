@@ -5,32 +5,20 @@
   // Setting up controllers.
   angular.module('runnerCalcApp')
 
-    .directive("scroll", function ($window) {
-      return function(scope, element, attrs) {
-          angular.element($window).bind("scroll", function() {
-
-            function parallax(image, offsetX, offsetY) {
-              let ypos = window.pageYOffset;
-              image.css('transform', 'translate3d(' + (ypos * offsetX) + 'px,' + (ypos * offsetY) + 'px,0px)');
-            }
-
-            $(window).scroll(function(){
-              parallax($('.background-road'), 0, -0.3);
-            });
-               
-            scope.$apply();
-          });
-      };
-    })
-
-    // -------- Background Parallax -------- //
-
-
-        
-
-
     // Tab template controller
     .controller('MainTabCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+
+
+      function parallax(image, offsetX, offsetY) {
+        let ypos = window.pageYOffset;
+        image.css('transform', 'translate3d(' + (ypos * offsetX) + 'px,' + (ypos * offsetY) + 'px,0px)');
+      }
+
+      $(window).scroll(function(){
+        parallax($('.background-road'), 0, 0.5);
+      });
+
+      
 
       // These objects contain the information for the tabdir template instances
       $scope.paceCalc = {
@@ -111,21 +99,35 @@
 
       // This object contains the information for the age grade calculator template instance
     	$scope.calcInfo = {
-        title: "Age-Graded Calculator",
-    		inputFormTop: "Age",
-    		inputFormTopClass: "moveAge",
-        inputFormTopHide: "false",
-        inputFormTrioHide: "true",
-        inputDistTypeHide: "true",
-        inputFormBot: "Time",
-        inputFormBot1Hide: "false",
-        inputFormBotLabel: "hh:mm:ss",
+
+        errWarningText: "Oops! You're missing some info in the fields above",
         genderBtnHide: "false",
-    		outputLabelTxtTop: "Your age-graded time",
-        outputLabelTxtTopRes: "",
-        outputBottomHide: "false",
-        outputHeight: "calcOutputAgeHeight",
-    		errWarningTxt: "Oops! You're missing some info in the fields above"
+
+        inputDist:    {
+                        class: "",
+                        hide: "true"
+                      },
+        inputFormBot: {
+                        hide: "false",
+                        label: "hh:mm:ss",
+                        name: "Time"
+                      },
+        inputFormTop: {
+                        class: "moveAge",
+                        hide: "false",
+                        name: "Age"
+                      },
+        inputFormTrioHide: "true",
+
+        output:       {
+                        bottomHide: "",
+                        height: "calcOutputAgeHeight",
+                        textTop: "Your age-graded time",
+                        textTopRes: "",
+                        topUnit: ""
+                      },
+
+        title: "Age-Graded Calculator"
     	};
 
     	// Populating the dropdown menu that selects the event.
@@ -228,7 +230,6 @@
           returnAgeGrade = (new Date(ageGrade * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
           $scope.outputDataTop = returnAgeGrade;
           $scope.outputAgePercent = numRound((ageGradePercent * 100), 100) + '%';
-            
     		}
 
       	// Normalizes the different values in the age and distance input fields
@@ -294,19 +295,40 @@
         }
       };
 
-      // This object contains the information for the BMI calculator template instance
       $scope.calcInfo = {
-        title: "BMI Calculator",
-        inputFormTop: "Weight",
-        inputFormBot: "Height",
-        inputFormTopClass: "move30",
-        inputFormTopTxt: "pounds",
-        inputFormBotClass: "move30",
-        inputFormBotTxt: "feet",
-        outputLabelTxtTop: "Your BMI",
-        outputBottomHide: "true",
-        outputHeight: "calcOutputBMIHeight",
-        errWarningTxt: "Oops! You're missing some info in the fields above",
+
+        errWarningText: "Oops! You're missing some info in the fields above",
+        genderBtnHide: "false",
+
+        inputDist:    {
+                        class: "",
+                        hide: "true"
+                      },
+        inputFormBot: {
+                        class: "move30",
+                        hide: "false",
+                        label: "",
+                        name: "Height",
+                        text: "feet"
+                      },
+        inputFormTop: {
+                        class: "move30",
+                        hide: "false",
+                        name: "Weight",
+                        text: "pounds"
+                      },
+
+        inputFormTrioHide: "true",
+
+        output:       {
+                        bottomHide: "true",
+                        height: "calcOutputBMIHeight",
+                        textTop: "Your BMI",
+                        textTopRes: "",
+                        topUnit: ""
+                      },
+
+        title: "BMI Calculator"
       };
 
       // Initially clearing errors and setting unit locale to US
@@ -465,26 +487,36 @@
       $scope.run = inputDistDropDown.run;
       $scope.list = inputDistDropDown.list; 
 
-      // This object contains the information for the pace calculator template instance
+
       $scope.calcInfo = {
-        title: "Running Pace Calculator",
-        inputFormTop: "Time",
-        inputFormTopClass: "movePace",
-        inputFormTopHide: "true",
-        inputFormTrioHide: "false",
-        inputDistClass: "sizeDist",
-        inputDistTypeHide: "false",
-        inputFormBot: "Pace",
-        inputFormBot1Hide: "true",
-        inputFormBotLabel: "mm:ss per mile or km",
-        outputLabelTxtTop: "Your",
-        outputLabelTxtTopRes: "result",
-        outputDataTopUnit: "",
-        outputBottomHide: "true",
-        outputHeight: "calcOutputPaceHeight",
+
+        errWarningText: "Oops! You need to fill in two options",
         genderBtnHide: "true",
-        errWarningTxt: "Oops! You need to fill in two options",
-        errWarningHide: "true"
+
+        inputDist:    {
+                        class: "sizeDist",
+                        hide: "false"
+                      },
+        inputFormBot: {
+                        hide: "true",
+                        label: "mm:ss per mile or km",
+                        name: "Pace"
+                      },
+        inputFormTop: {
+                        class: "movePace",
+                        hide: "true",
+                        name: "Time"
+                      },
+        inputFormTrioHide: "false",
+
+        output:       {
+                        bottomHide: "true",
+                        height: "calcOutputPaceHeight",
+                        textTop: "Your",
+                        textTopRes: "result",
+                        topUnit: ""
+                      },
+        title: "Running Pace Calculator"
       };
 
       $scope.unitMeasure = '';

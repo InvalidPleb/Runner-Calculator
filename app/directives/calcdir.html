@@ -2,10 +2,10 @@
   <br>
   <!-- First row of input forms -->
   <div class="row">
-    <span class="fontForText">{{::calcInfo.inputFormTop}}:</span>
-    <span class="{{::calcInfo.inputFormTopClass}}">
+    <span class="fontForText">{{::calcInfo.inputFormTop.name}}:</span>
+    <span class="{{::calcInfo.inputFormTop.class}}">
       <!-- Top left input form. Hidden in pace calculator -->
-      <input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="2" ng-model="inputFormTop" ng-hide="{{::calcInfo.inputFormTopHide}}">
+      <input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="2" ng-model="inputFormTop" ng-hide="{{::calcInfo.inputFormTop.hide}}">
       <!-- The three input forms at the top, currently only used by pace calc -->
       <span ng-hide="{{::calcInfo.inputFormTrioHide}}">
         <span class="inputFormTopErrInvis" ng-class="{true: 'inputFormTopErr', false: 'inputFormTopErrInvis'}[inputFormTopErr]" ng-model="inputFormTopErr">
@@ -25,8 +25,8 @@
     <span class="fontForText">Distance:</span>
     <span class="moveDist">
       <!-- Distance form drop down --> 
-      <select class= "form-control inline {{calcInfo.inputDistClass}}" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.distance as run.title for run in list"></select>
-      <span ng-hide="{{::calcInfo.inputDistTypeHide}}">
+      <select class= "form-control inline {{calcInfo.inputDist.class}}" ng-class="{true: 'form-control inline formErr', false: 'form-control inline'}[updateInputDist()]" ng-model="inputDist" ng-options="run.distance as run.title for run in list"></select>
+      <span ng-hide="{{::calcInfo.inputDist.hide}}">
         <span class="betweenInputTxt orText">or</span>
         <input class="form-control inline inputFormTop moveDistUnits" ng-model="inputTypeDist" maxlength="2">
         <!-- Distance units (US / Metric) dropdown --> 
@@ -37,11 +37,11 @@
   </div>
   <!-- Thrid row of input forms --> 
   <div class="row">
-      <span class="fontForText">{{::calcInfo.inputFormBot}}:</span>
+      <span class="fontForText">{{::calcInfo.inputFormBot.name}}:</span>
       <!-- Error div that appears over the three time inputs --> 
       <span class="inputTimeErrInvis" ng-class="{true: 'inputTimeErr', false: 'inputTimeErrInvis'}[inputTimeErr]" ng-model="inputTimeErr">
         <!-- The three time inputs --> 
-        <span ng-hide="{{::calcInfo.inputFormBot1Hide}}">
+        <span ng-hide="{{::calcInfo.inputFormBot.hide}}">
           <input ng-change="updateInputTime(inputTime1)" ng-model="inputTime1" ng-focus="timeInput1Focus()" ng-blur="timeInput1Blur()" class="form-control inline inputTime" maxlength="2">
           <span class="betweenInputTxt">:</span>
         </span>
@@ -49,7 +49,7 @@
         <span class="betweenInputTxt">:</span>
         <input ng-change="updateInputTime(inputTime3)" ng-model="inputTime3" ng-focus="timeInput3Focus()" ng-blur="timeInput3Blur()" class="form-control inline inputTime" maxlength="2"> 
       </span>
-      <span class="labelTimeFormat fontForText">{{::calcInfo.inputFormBotLabel}}</span>
+      <span class="labelTimeFormat fontForText">{{::calcInfo.inputFormBot.label}}</span>
   </div>
   <!-- Fourth input row --> 
   <div class="allGenInput row" ng-hide="{{::calcInfo.genderBtnHide}}">
@@ -86,6 +86,6 @@
   </div>
   <!-- Error warning div that appears at bottom of calculator --> 
   <div class="errWarning fontForText" ng-class="{true: 'errWarning fontForText', false: 'errWarningInvis fontForText'}[errWarning]" ng-model="errWarning">
-    <div>{{calcInfo.errWarningTxt}}</div>
+    <div>{{calcInfo.errWarningText}}</div>
   </div>
 </div>

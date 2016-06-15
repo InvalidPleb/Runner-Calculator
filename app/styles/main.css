@@ -11,6 +11,9 @@
   background: -webkit-linear-gradient(left,  #ff7939 0%,#ff7939 67%,#f9b039 100%);
   background: linear-gradient(to right,  #ff7939 0%,#ff7939 67%,#f9b039 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7939', endColorstr='#f9b039',GradientType=1 );
+  -webkit-box-shadow: -19px -1px 53px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: -19px -1px 53px -10px rgba(0,0,0,0.75);
+  box-shadow: -19px -1px 53px -10px rgba(0,0,0,0.75);
   
 }
 
@@ -87,8 +90,10 @@
 .background-road {
   background-image: url("/images/seamlessRoad2.png");
   width: 100%;
-  height: calc(100% + 120px);
+  bottom: 250px;
+  height: calc(100%);
   position: absolute;
+  -webkit-backface-visibility: hidden;
 }
 
 /* ----------- General/Bootstrap Classes Style ----------- */
@@ -313,8 +318,8 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7939', endColorstr='#f9b039',GradientType=1);
   border-radius: 90px 90px 0px 0px;
   -webkit-box-shadow: -19px -1px 53px -10px rgba(0,0,0,0.75);
--moz-box-shadow: -19px -1px 53px -10px rgba(0,0,0,0.75);
-box-shadow: -19px -1px 53px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: -19px -1px 53px -10px rgba(0,0,0,0.75);
+  box-shadow: -19px -1px 53px -10px rgba(0,0,0,0.75);
 }
 
 

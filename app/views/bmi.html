@@ -13,11 +13,11 @@
 		<!-- First row of input forms -->
 		<div class="row">
 			<!-- Top left input form -->
-		    <span class="fontForText">{{calcInfo.inputFormTop}}:</span>
-		    <span class="{{calcInfo.inputFormTopClass}}">
+		    <span class="fontForText">{{calcInfo.inputFormTop.name}}:</span>
+		    <span class="{{calcInfo.inputFormTop.class}}">
 		    	<!-- US / Metric radio btns -->
 				<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" maxlength="3" ng-model="inputFormTop">
-				<span class="fontForText txtPadding">{{calcInfo.inputFormTopTxt}}</span>
+				<span class="fontForText txtPadding">{{calcInfo.inputFormTop.text}}</span>
 				<span class="justGenBtns moveDist">
 		          	<label class="genLabel" ng-class="{false: 'genLabel fontForText', US: 'genSelected fontForText animated bounceIn', Metric: 'genLabel fontForText'}[unitCheck]">
 			            <input type="radio" class="inputGender" ng-model="unitCheck" value="US" ng-change="updateUnitCheck()">
@@ -34,10 +34,10 @@
 		<!-- Second row of input forms --> 
 		<div class="row">
 			<!-- Height input forms-->
-			<span class="fontForText">{{calcInfo.inputFormBot}}:</span>
+			<span class="fontForText">{{calcInfo.inputFormBot.name}}:</span>
 			<span class="moveHeight1">
 				<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormBot()]" maxlength="3" ng-model="inputFormBot">
-				<span class="fontForText txtPadding">{{calcInfo.inputFormBotTxt}}</span>
+				<span class="fontForText txtPadding">{{calcInfo.inputFormBot.text}}</span>
 			</span>
 			
 			<span class="moveHeight2" ng-class="{US: 'moveHeight2', Metric: 'moveHeight2 hideElement'}[unitCheck]">
@@ -57,7 +57,7 @@
 			</div>
 			<!-- Error warning div that appears at bottom of calculator -->
 			<div class="errWarning fontForText" ng-class="{true: 'errWarning fontForText', false: 'errWarningInvis fontForText'}[errWarning]" ng-model="errWarning">
-			    <div>{{calcInfo.errWarningTxt}}</div>
+			    <div>{{calcInfo.errWarningText}}</div>
 			</div>
 		</div>
 	</div>
