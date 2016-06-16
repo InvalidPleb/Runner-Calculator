@@ -11,8 +11,9 @@
         restrict: 'A',
         link: function(scope, element, attrs, modelCtrl) {
           modelCtrl.$parsers.push(function(inputValue) {
-            if (inputValue == null)
-              return ''
+            if (inputValue == null){
+              return '';
+            }
             var cleanInputValue = inputValue.replace(/[^\w\s]/gi, '');
             if (cleanInputValue != inputValue) {
               modelCtrl.$setViewValue(cleanInputValue);
@@ -23,7 +24,6 @@
         }
       }
     })
-
 
     // Tab template controller
     .controller('MainTabCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
@@ -120,10 +120,8 @@
         container:    {
                         class: 'ageGradeContainer'
                       },
-
         errWarningText: "Oops! You're missing some info in the fields above",
         genderBtnHide: "false",
-
         inputDist:    {
                         class: "",
                         hide: "true"
@@ -139,7 +137,6 @@
                         name: "Age"
                       },
         inputFormTrioHide: "true",
-
         output:       {
                         bottomHide: "",
                         height: "calcOutputAgeHeight",
@@ -147,7 +144,6 @@
                         textTopRes: "",
                         topUnit: ""
                       },
-
         title: "Age-Graded Calculator"
     	};
 
@@ -321,10 +317,8 @@
         container:    {
                         class: 'bmiContainer'
                       },
-
         errWarningText: "Oops! You're missing some info in the fields above",
         genderBtnHide: "false",
-
         inputDist:    {
                         class: "",
                         hide: "true"
@@ -342,9 +336,7 @@
                         name: "Weight",
                         text: "pounds"
                       },
-
         inputFormTrioHide: "true",
-
         output:       {
                         bottomHide: "true",
                         height: "calcOutputBMIHeight",
@@ -352,7 +344,6 @@
                         textTopRes: "",
                         topUnit: ""
                       },
-
         title: "BMI Calculator"
       };
 
@@ -518,10 +509,8 @@
         container:    {
                         class: 'paceContainer'
                       },
-
         errWarningText: "Oops! You need to fill in two options",
         genderBtnHide: "true",
-
         inputDist:    {
                         class: "sizeDist",
                         hide: "false"
@@ -537,7 +526,6 @@
                         name: "Time"
                       },
         inputFormTrioHide: "false",
-
         output:       {
                         bottomHide: "true",
                         height: "calcOutputPaceHeight",
@@ -572,7 +560,6 @@
       $scope.inputFormTop2 = '00';
       $scope.inputFormTop3 = '00';
 
-
       $scope.timeInput1Focus = inputBlur.timeInput1Focus;
       $scope.timeInput1Blur = inputBlur.timeInput1Blur;
       $scope.timeInput2Focus = inputBlur.timeInput2Focus;
@@ -587,9 +574,6 @@
       $scope.inputFormTop3Focus = inputBlur.inputFormTop3Focus;
       $scope.inputFormTop3Blur = inputBlur.inputFormTop3Blur;
       
-
-      
-
       // Function to multiply and sum the time input fields so that a time in unit
       // seconds is the output.
       function parseTime (hours, mins, secs) {
