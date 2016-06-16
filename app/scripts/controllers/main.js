@@ -94,14 +94,7 @@
 
     }])
 
-    .controller('AgeGradeCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', 'ageGradeData', 'checkKey', function ($scope, inputDistDropDown, inputBlur, ageGradeData, checkKey) {
-
-      function checkKey (e) {
-            var k;
-            document.all ? k = e.keyCode : k = e.which;
-            return ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57));
-        }
-
+    .controller('AgeGradeCtrl', ['$scope', 'inputDistDropDown', 'inputBlur', 'ageGradeData', function ($scope, inputDistDropDown, inputBlur, ageGradeData) {
 
     	// Function to round to the nearest 100th
     	function numRound (value,dec){
@@ -123,6 +116,10 @@
 
       // This object contains the information for the age grade calculator template instance
     	$scope.calcInfo = {
+
+        container:    {
+                        class: 'ageGradeContainer'
+                      },
 
         errWarningText: "Oops! You're missing some info in the fields above",
         genderBtnHide: "false",
@@ -321,6 +318,10 @@
 
       $scope.calcInfo = {
 
+        container:    {
+                        class: 'bmiContainer'
+                      },
+
         errWarningText: "Oops! You're missing some info in the fields above",
         genderBtnHide: "false",
 
@@ -513,6 +514,10 @@
 
 
       $scope.calcInfo = {
+
+        container:    {
+                        class: 'paceContainer'
+                      },
 
         errWarningText: "Oops! You need to fill in two options",
         genderBtnHide: "true",

@@ -1,6 +1,6 @@
 <calc-title-section></calc-title-section>
 <section class="calcWithOutputBMI col-lg-12 col-md-12">
-	<div class="calcInstructions fontForText col-lg-12 col-md-12">
+	<div class="calcInstructionsBMI fontForText col-lg-12 col-md-12">
 	    <p>
 	      This calculator finds out your <strong>BMI</strong> when you fill in your <strong>weight</strong> and <strong>height</strong>. It can take use either US standard units (lb/in) or metric (kg/cm) for the input.
 	    </p>
@@ -8,7 +8,7 @@
 	      Press the <strong>Calculate</strong> button to get your result
 	    </p>
 	</div>
-	<div class="buttonCalc container col-lg-6 col-md-6 col-sm-12 col-xs-12" ng-keypress="enterPress($event)">
+	<div class="bmiContainer container col-lg-6 col-md-6 col-sm-12 col-xs-12" ng-keypress="enterPress($event)">
 		<br>
 		<!-- First row of input forms -->
 		<div class="row">
@@ -61,7 +61,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="outputMarginPace">
+	<div class="outputMarginBMI">
 		<calc-output-section></calc-output-section>
 	</div>
 </section>
@@ -69,10 +69,10 @@
 	<div class="calcInfoHeader">
 		<div class="calcInfoTitle fontForText">What is your BMI?</div>
 	</div>
-	<div class="calcInfoPadding">
-		<p class="calcInfoTxt">&nbsp; &nbsp; Your <strong>BMI</strong> or <strong>Body Mass Index</strong> is a value intended to give you an idea of what a normal weight should be for your height, and whether you fall in that normal range or not. BMI is calculated by dividing your mass (weight) by your height squared. 
+	<div class="calcInfoText">
+		<p>&nbsp; &nbsp; Your <strong>BMI</strong> or <strong>Body Mass Index</strong> is a value intended to give you an idea of what a normal weight should be for your height, and whether you fall in that normal range or not. BMI is calculated by dividing your mass (weight) by your height squared. 
 		</p>
-		<div class="calcInfoTxt BMItable">
+		<div id="BMItable">
 			<p></p>
 			<p>
 			<strong>Below 18.5</strong> = Underweight
