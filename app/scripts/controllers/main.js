@@ -11,31 +11,22 @@
         restrict: 'A',
         link: function(scope, element, attrs, modelCtrl) {
           modelCtrl.$parsers.push(function(inputValue) {
-            if (inputValue == null){
+            if (inputValue === null){
               return '';
             }
             var cleanInputValue = inputValue.replace(/[^\w\s]/gi, '');
-            if (cleanInputValue != inputValue) {
+            if (cleanInputValue !== inputValue) {
               modelCtrl.$setViewValue(cleanInputValue);
               modelCtrl.$render();
             }
             return cleanInputValue;
           });
         }
-      }
+      };
     })
 
     // Tab template controller
     .controller('MainTabCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
-
-      function parallax(image, offsetX, offsetY) {
-        let ypos = window.pageYOffset;
-        image.css('transform', 'translate3d(' + (ypos * offsetX) + 'px,' + (ypos * offsetY) + 'px,0px)');
-      }
-
-      $(window).scroll(function(){
-        parallax($('.background-road'), 0, 0.5);
-      });
 
       // These objects contain the information for the tabdir template instances
       $scope.paceCalc = {
@@ -355,12 +346,12 @@
       $scope.updateUnitCheck = function () {
 
         if ($scope.unitCheck === "US") {
-          $scope.calcInfo.inputFormTopTxt = "pounds";
-          $scope.calcInfo.inputFormBotTxt = "feet";
+          $scope.calcInfo.inputFormTop.text = "pounds";
+          $scope.calcInfo.inputFormBot.text = "feet";
 
         } else if ($scope.unitCheck === "Metric"){
-          $scope.calcInfo.inputFormTopTxt = "kilograms";
-          $scope.calcInfo.inputFormBotTxt = "centimeters";
+          $scope.calcInfo.inputFormTop.text = "kilograms";
+          $scope.calcInfo.inputFormBot.text = "centimeters";
         }
       };
 

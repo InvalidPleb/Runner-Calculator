@@ -101,7 +101,7 @@
 .background-road {
   background-image: url("/images/seamlessRoad2.png");
   width: 100%;
-  bottom: 280px;
+  bottom: 0px;
   height: 100%;
   position: absolute;
   -webkit-backface-visibility: hidden !important;
@@ -932,14 +932,15 @@
 
 
 #BMItable {
+  top: 20px;
   width: 240px;
   height: 140px;
-  padding: 0px 0px 0px 23px;
+  padding: 2px 0px 0px 23px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  border: 1px solid black;
+  box-shadow: -1px 6px 44px -6px rgba(0,0,0,0.75);
 }
 
 #BMItable > p {
