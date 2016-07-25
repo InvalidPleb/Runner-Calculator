@@ -373,15 +373,15 @@
       };
 
       // Declaring global scope vars to be used later
-      var inputFormTop = 0;
-      var inputFormBot = 0;
-      var inputFormBot2 = 0;
-      var inputFormBotEmpty = true;
-      var calcWeight;
-      var calcHeightTotal;
-      var calcBMI;
-      var weightWarning;
-      var heightWarning;
+      var inputFormTop = 0,
+          inputFormBot = 0,
+          inputFormBot2 = 0,
+          inputFormBotEmpty = true,
+          calcWeight,
+          calcHeightTotal,
+          calcBMI,
+          weightWarning,
+          heightWarning;
 
       // Calculate button function
       $scope.calcButton = function () {
@@ -586,27 +586,24 @@
         var totalInputFormTop = parseTime($scope.inputTime1, $scope.inputTime2, $scope.inputTime3);
         var totalTimeInput = parseTime($scope.inputFormTop1, $scope.inputFormTop2, $scope.inputFormTop3);
 
-        var allInputDistErr;
-        var inputDistEmpty;
-        var inputDropDistEmpty;
-        var inputTypeDistEmpty;
-        var totalInputFormTopEmpty;
-        var totalTimeInputEmpty;
-        var userDistance;
-        var chosenDistVal;
-        var chosenDistUnit;
+        var allInputDistErr,
+            inputDistEmpty,
+            inputDropDistEmpty,
+            inputTypeDistEmpty,
+            totalInputFormTopEmpty,
+            totalTimeInputEmpty,
+            userDistance,
+            chosenDistVal,
+            chosenDistUnit,
+            userUnits;
 
         // Setting var and field defaults per calc btn click.
-        allInputDistErr = false;
-        inputDistEmpty = false;
-        inputDropDistEmpty = false;
-        inputTypeDistEmpty = false;
-        totalInputFormTopEmpty = false;
-        totalTimeInputEmpty = false;
+        allInputDistErr = inputDistEmpty = inputDropDistEmpty =
+        inputDropDistEmpty = inputDropDistEmpty = inputDropDistEmpty =
+        totalInputFormTopEmpty = totalTimeInputEmpty = false;
         chosenDistVal = undefined;
         chosenDistUnit = undefined;
         userDistance = undefined;
-        var userUnits;
 
         function listLoop(i, max) {
 
@@ -666,7 +663,7 @@
         } else if (inputTypeDistEmpty === false && inputDropDistEmpty === false){
 
           allInputDistErr = true;
-          $scope.calcInfo.outputLabelTxtTopRes = "result";
+          $scope.calcInfo.output.textTopRes = "result";
           $scope.calcInfo.errWarningTxt = distErrStr;
           $scope.errWarning = true;
           $scope.calcInfo.outputDataTopUnit = "";
@@ -693,8 +690,8 @@
               $scope.calcInfo.errWarningTxt = errType;
             }
 
-            $scope.calcInfo.outputLabelTxtTop = "Your ";
-            $scope.calcInfo.outputLabelTxtTopRes = "result";
+            $scope.calcInfo.output.textTop = "Your ";
+            $scope.calcInfo.output.textTopRes = "result";
             $scope.errWarning = true;
             $scope.calcInfo.outputDataTopUnit = "";
             $scope.outputDataTop = "";
@@ -705,8 +702,8 @@
         function successCombo(inputDistTrue, inputFormTopTrue, inputTimeTrue, str1, str2, str3, units, func) {
 
           if (inputDistEmpty === inputDistTrue && totalInputFormTopEmpty === inputFormTopTrue && totalTimeInputEmpty === inputTimeTrue) {
-            $scope.calcInfo.outputLabelTxtTop = str1;
-            $scope.calcInfo.outputLabelTxtTopRes = str2;
+            $scope.calcInfo.output.textTop = str1;
+            $scope.calcInfo.output.textTopRes = str2;
             $scope.errWarning = false;
             $scope.outputDataTop = func;
             $scope.calcInfo.outputDataTopUnit = str3 + units;
@@ -753,11 +750,11 @@
         $scope.inputTimeErr = false;
         $scope.errWarning = false;
         $scope.inputFormTopErr = false;
-        $scope.calcInfo.outputLabelTxtTopRes = "result";
+        $scope.calcInfo.output.textTopRes = "result";
         $scope.calcInfo.errWarningTxt = tooFewErrStr;
         $scope.outputDataTop = '';
         $scope.calcInfo.outputDataTopUnit = "";
-        $scope.calcInfo.outputLabelTxtTop = "Your ";
+        $scope.calcInfo.output.textTop = "Your ";
       };
     }]);
 })();
