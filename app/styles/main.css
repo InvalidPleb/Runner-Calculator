@@ -34,6 +34,12 @@
   
 }
 
+.siteTitle:hover, 
+.siteTitle:focus {
+  text-decoration:none;
+  color: #FFF;
+}
+
 .tabChooseTxt {
   width: 232px;
   z-index: 2;
@@ -59,11 +65,7 @@
   border-radius: 10px;
 }
 
-.siteTitle:hover, 
-.siteTitle:focus {
-  text-decoration:none;
-  color: #FFF;
-}
+
 
 .siteTitleContainer {
   width: 200px;
@@ -242,7 +244,6 @@
   border-radius: 5px;
   background-color: #FFF;
   margin-top: -5px;
-  box-shadow: -1px 6px 33px -8px rgba(0,0,0,0.75);
   padding-top: 10px;
   padding-bottom: 10px;
   font-family: "Open Sans";
@@ -267,7 +268,6 @@
 
 /*  The container that includes both the calc & and the output sections  */
 .calcWithOutputPace {
-  height: 100%;
   z-index: 1;
   top: -5px;
   position: relative;
@@ -277,7 +277,6 @@
 }
 
 .calcWithOutputAge {
-  height: 100%;
   z-index: 1;
   top: -5px;
   padding: 5px;
@@ -292,7 +291,6 @@
   top: 11px;
 }
 .calcWithOutputBMI {
-  height: 450px;
   z-index: 1;
   top: -5px;
   padding: 5px;
@@ -1154,12 +1152,19 @@ select:-moz-focusring {
 
   }
 
+  .mainHeader {
+    text-align: center;
+  }
+
   .siteTitle {
-    left: 35%;
+    left: 0;
+    margin: 0 auto;
+
 
   }
   .siteTitleContainer {
-    left: 39%;
+    left: 0;
+    margin: 0 auto;
 
   }
 
@@ -1169,7 +1174,8 @@ select:-moz-focusring {
   }
 
   .tabRow {
-    left: 18%;
+    left: 0;
+    margin: 0 auto;
     top: 247px;
     height: 125px;
     width: 458px;
@@ -1196,14 +1202,15 @@ select:-moz-focusring {
   }
 
   .tabChooseTxt {
-    left: 36.5%;
+    left: 0;
+    margin: 0 auto;
     border-radius: 20px;
 
   }
 
   .curlyBrace {
-    left: 29.5%;
-    
+    left: 0;
+    margin: 0 auto;
   }
 
   .tabText {
@@ -1216,17 +1223,17 @@ select:-moz-focusring {
   }
 
   .calcWithOutputPace {
-    height: 855px;
+    padding-bottom: 230px;
     border-radius: 90px 90px 5px 5px;
   }
 
   .calcWithOutputAge {
-    height: 1015px;
+    padding-bottom: 400px;
     border-radius: 90px 90px 5px 5px;
   }
 
   .calcWithOutputBMI {
-    height: 765px;
+    padding-bottom: 230px;
     border-radius: 90px 90px 5px 5px;
   }
 
@@ -1287,6 +1294,10 @@ select:-moz-focusring {
 
 @media (min-width:762px) and (max-width:874px) {
 
+  html, body {
+    overflow-x: hidden; 
+  }
+
   .paceInstruction {
     top: 100px;
     height: 50px;
@@ -1306,16 +1317,17 @@ select:-moz-focusring {
 
   }
   
-  html, body {
-    overflow-x: hidden; 
+  .mainHeader {
+    text-align: center;
   }
 
   .siteTitle {
-    left: 32.5%;
+    left: 0;
 
   }
   .siteTitleContainer {
-    left: 38%;
+    left: 0%;
+    margin: 0 auto;
 
   }
 
@@ -1325,7 +1337,8 @@ select:-moz-focusring {
   }
 
   .tabRow {
-    left: 18%;
+    left: 0;
+    margin: 0 auto;
     top: 247px;
     height: 125px;
     width: 458px;
@@ -1352,13 +1365,15 @@ select:-moz-focusring {
   }
 
   .tabChooseTxt {
-    left: 35.5%;
+    left: 0;
+    margin: 0 auto;
     border-radius: 20px;
 
   }
 
   .curlyBrace {
-    left: 27.5%;
+    left: 0;
+    margin: 0 auto;
     
   }
 
@@ -1463,13 +1478,17 @@ select:-moz-focusring {
     top: 70px;
   }
 
+  .mainHeader {
+    text-align: center;
+  }
+
   .siteTitle {
-    left: 29%;
+    left: 0;
 
   }
   .siteTitleContainer {
-    left: 35%;
-
+    left: 0%;
+    margin: 0 auto;
   }
 
   .mainContainer {
@@ -1478,7 +1497,8 @@ select:-moz-focusring {
   }
 
   .tabRow {
-    left: 21%;
+    left: 0;
+    margin: 0 auto;
     top: 247px;
     height: 105px;
     width: 367px;
@@ -1504,13 +1524,15 @@ select:-moz-focusring {
   }
 
   .tabChooseTxt {
-    left: 32%;
+    left: 0;
+    margin: 0 auto;
     border-radius: 20px;
 
   }
 
   .curlyBrace {
-    left: 29%;
+    left: 0;
+    margin: 0 auto;
     width: 270px;
     
   }
@@ -1527,17 +1549,17 @@ select:-moz-focusring {
   }
 
   .calcWithOutputPace {
-    height: 880px;
+    padding-bottom: 230px;
     border-radius: 90px 90px 5px 5px;
   }
 
   .calcWithOutputAge {
-    height: 1015px;
+    padding-bottom: 100px;
     border-radius: 90px 90px 5px 5px;
   }
 
   .calcWithOutputBMI {
-    height: 785px;
+    padding-bottom: 230px;
     border-radius: 90px 90px 5px 5px;
   }
 
@@ -1584,7 +1606,7 @@ select:-moz-focusring {
   }
 }
 
-@media (min-width:0px) and (max-width:599px) {
+@media (min-width:515px) and (max-width:599px) {
 
   .paceInstruction {
     top: 100px;
@@ -1604,13 +1626,17 @@ select:-moz-focusring {
     top: 70px;
   }
 
+  .mainHeader {
+    text-align: center;
+  }
 
   .siteTitle {
-    left: 20%;
+    left: 0;
 
   }
   .siteTitleContainer {
-    left: 30%;
+    left: 0px;
+    margin: 0 auto;
 
   }
 
@@ -1620,7 +1646,8 @@ select:-moz-focusring {
   }
 
   .tabRow {
-    left: 16%;
+    left: 0;
+    margin: 0 auto;
     top: 247px;
     height: 105px;
     width: 338px;
@@ -1646,13 +1673,15 @@ select:-moz-focusring {
   }
 
   .tabChooseTxt {
-    left: 26%;
+    left: 0;
+    margin: 0 auto;
     border-radius: 20px;
 
   }
 
   .curlyBrace {
-    left: 22%;
+    left: 0;
+    margin: 0 auto;
     width: 270px;
     
   }
@@ -1681,19 +1710,218 @@ select:-moz-focusring {
   }
 
   .calcWithOutputPace {
-    height: 905px;
+    padding-bottom: 230px;
     min-width: 450px;
     border-radius: 90px 90px 5px 5px;
   }
 
   .calcWithOutputAge {
-    height: 1080px;
+    padding-bottom: 400px;
     min-width: 450px;
     border-radius: 90px 90px 5px 5px;
   }
 
   .calcWithOutputBMI {
-    height: 850px;
+    padding-bottom: 230px;
+    border-radius: 90px 90px 5px 5px;
+  }
+
+  .outputMarginPace {
+    margin-top: 81%;
+  }
+  .outputMarginBMI {
+    margin-top: 81%;
+  }
+
+  .outputMarginAge {
+    margin-top: 92%;
+  }
+
+  .errWarning {
+    left: 0px;
+    width: 100%;
+  }
+
+  .errWarningInvis {
+    left: 0px;
+    width: 100%;
+  }
+
+  .container {
+    padding-left: 5px;
+  }
+
+  .paceContainer {
+    padding-left: 20px;
+  }
+
+  .ageGradeContainer {
+    padding-left: 20px;
+  }
+
+  .bmiContainer {
+   padding-left: 20px;
+  }
+
+
+  .container-fluid {
+    padding-left: 0px;
+    min-width: 500px;
+    height: 100%;
+  }
+
+  #main {
+    min-width: 500px;
+  }
+
+  .mainHeader {
+    min-width: 500px;
+  }
+
+  .calcInfoTitleAge {
+    left: 27%
+  }
+
+  .calcInfoTitlePace {
+    left: 34%;
+  }
+
+  .calcInfoTitleBMI {
+    left: 31%;
+  }
+
+  .BMItable {
+    left: 26%;
+  }
+
+  .disableAdBlockTxt {
+    font-size: 24px;
+    top: 40px;
+  }
+
+  .page-header {
+    width: 180px;
+    right: 20px;
+  }
+
+}
+
+@media (min-width:0px) and (max-width:515px) {
+
+  .paceInstruction {
+    top: 100px;
+    height: 60px;
+    font-size: 17.2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+
+  }
+
+  .calcInstructionsPace {
+    top: 70px;
+  }
+
+  .paceContainer {
+    top: 70px;
+  }
+
+  .mainHeader {
+    text-align: center;
+  }
+
+  .siteTitle {
+    left: 0;
+
+  }
+  .siteTitleContainer {
+    left: 150px;
+
+  }
+
+  .mainContainer {
+    position: relative;
+    margin-top: 250px;
+  }
+
+  .tabRow {
+    left: 0;
+    margin: 0 auto;
+    top: 247px;
+    height: 105px;
+    width: 338px;
+
+  }
+
+  .tabRowLi {
+    width: 110px;
+    height: 100px;
+
+  }
+
+  .tabRowLiSelect {
+    width: 110px;
+    height: 100px;
+    
+  }
+
+  .tabTitle {
+    position: relative;
+    top: 250px;
+    z-index: -1;
+  }
+
+  .tabChooseTxt {
+    left: 0;
+    margin: 0 auto;
+    border-radius: 20px;
+
+  }
+
+  .curlyBrace {
+    left: 0;
+    margin: 0 auto;
+    width: 270px;
+    
+  }
+
+  .tabText {
+    top: 18px;
+    font-size: 14px;
+  }
+
+  .calcTitle {
+    bottom: 6px;
+    min-width: 450px;
+    border-radius: 50px 50px 0px 0px;
+  }
+
+  .allCalcBtns {
+    left: 20px;
+  }
+
+  .calcButton {
+    width: 90%;
+  }
+
+  .clearButton {
+    width: 30%;
+  }
+
+  .calcWithOutputPace {
+    padding-bottom: 230px;
+    min-width: 450px;
+    border-radius: 90px 90px 5px 5px;
+  }
+
+  .calcWithOutputAge {
+    padding-bottom: 400px;
+    min-width: 450px;
+    border-radius: 90px 90px 5px 5px;
+  }
+
+  .calcWithOutputBMI {
+    padding-bottom: 230px;
     border-radius: 90px 90px 5px 5px;
   }
 
