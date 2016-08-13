@@ -15,6 +15,12 @@
   
 }
 
+@-moz-document url-prefix() { 
+    .mainHeader {
+        box-shadow: -8px 8px 15px -7px rgba(0,0,0,0.75);
+    }
+}
+
 .runnerLogo {
   height: 192px;
   width: 192px;
@@ -243,9 +249,10 @@
   position: relative;
   border-radius: 5px;
   background-color: #FFF;
-  margin-top: -5px;
+  top: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+  color: #FF7939;
   font-family: "Open Sans";
   font-weight: 500;
   font-size: 18px;
@@ -344,11 +351,19 @@
   background: white;
   border-radius: 90px 90px 0px 0px;
   box-shadow: -19px -1px 53px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: -7px 7px 44px 30px rgba(0,0,0,0.75);
+}
+
+@-moz-document url-prefix() {
+  .calcTitle {
+    box-shadow: -8px 8px 15px -11px rgba(0,0,0,0.75);
+  }
+    
 }
 
 
 /*  Text inside agegradetitle  */
-.calcTitle > .page-header {
+.page-header {
   top: 35px;
   margin: 0px;
   position: relative;
@@ -570,7 +585,7 @@
 }
 
 .moveDistUnits {
-  left: 67px;
+  left: 68px;
   position: relative;
 }
 
@@ -600,7 +615,7 @@
 
 /* Positioning of Distance input */
 .moveDist {
-  left: 25px;
+  left: 24px;
   position: relative;
   
 }
@@ -763,7 +778,7 @@
   z-index: 1;
   left: 52px;
   margin-right: 5px;
-  padding: 13px 0px 12px 0px;
+  padding: 14px 0px 12px 0px;
   position: relative;
   visibility: collapse;
   background-color: rgba(0, 0, 0, 0);
@@ -777,7 +792,7 @@
   z-index: 1;
   left: 52px;
   margin-right: 5px;
-  padding: 13px 0px 12px 0px;
+  padding: 14px 0px 12px 0px;
   background-color: rgba(0, 0, 0, 0);
   position: relative;
   visibility:visible;
@@ -796,6 +811,7 @@
   Needs to be b4 the visible one in css or doesnt work?*/
 .inputFormTopErrInvis {
   z-index: 1;
+  right: 3px;
   padding: 13px 0px 12px 0px;
   position: relative;
   visibility:collapse;
@@ -807,6 +823,7 @@
 /* Visible version of the time error div shown by ng-class */
 .inputFormTopErr {
   z-index: 1;
+  right: 3px;
   padding: 13px 0px 12px 0px;
   padding-right: 0px;
   position: relative;
@@ -856,11 +873,13 @@
   width: 75%;
   height: 60px;
   left: 65px;
+  line-height: 40px;
   position: relative;
   visibility: visible;
   background: #ffa0a0;
   box-shadow: -2px 2px 7px 2px #888;
-  padding-top: 10px;
+  padding: 5px;
+  padding-top: 0px;
   border-radius: 10px;
   text-align: center;
 }
@@ -917,6 +936,13 @@
   box-shadow: -19px -1px 53px -10px rgba(0,0,0,0.75);
 }
 
+@-moz-document url-prefix() { 
+    .calcInfoHeader {
+      box-shadow: -8px 8px 15px -11px rgba(0,0,0,0.75);
+    }
+}
+
+
 .calcInfoTitle {
   top: 12px;
   margin: 0px;
@@ -930,7 +956,7 @@
 
 
 #BMItable {
-  top: 20px;
+  top: 10px;
   width: 240px;
   height: 140px;
   padding: 2px 0px 0px 23px;
@@ -938,7 +964,13 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  box-shadow: -1px 6px 44px -6px rgba(0,0,0,0.75);
+  box-shadow: -7px 7px 44px -14px rgba(0,0,0,0.75);
+}
+
+@-moz-document url-prefix() { 
+    .BMItable {
+      box-shadow: -1px 4px 19px -4px rgba(0,0,0,0.75);
+    }
 }
 
 #BMItable > p {
@@ -954,6 +986,12 @@
   background-color: #FFF;
   box-shadow: -1px 6px 43px -6px rgba(0,0,0,0.75);
   border-radius: 10px;
+}
+
+@-moz-document url-prefix() { 
+    .calcInfoAd {
+      box-shadow: -1px 4px 19px -4px rgba(0,0,0,0.75);
+    }
 }
 
 .disableAdBlockTxt {
@@ -1941,7 +1979,7 @@ select:-moz-focusring {
   }
 
   .outputMarginPace {
-    margin-top: 81%;
+    margin-top: 93%;
   }
   .outputMarginBMI {
     margin-top: 81%;

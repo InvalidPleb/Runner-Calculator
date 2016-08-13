@@ -111,7 +111,7 @@
         container:    {
                         class: 'ageGradeContainer'
                       },
-        errWarningText: "Oops! You're missing some info in the fields above",
+        errWarningText: "Oops! You're missing some information above",
         genderBtnHide: "false",
         inputDist:    {
                         class: "",
@@ -308,7 +308,7 @@
         container:    {
                         class: 'bmiContainer'
                       },
-        errWarningText: "Oops! You're missing some info in the fields above",
+        errWarningText: "Oops! You're missing some information above",
         genderBtnHide: "false",
         inputDist:    {
                         class: "",

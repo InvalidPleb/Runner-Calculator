@@ -55,11 +55,12 @@
 			      <input ng-click="clearButton()" type="button" class="clearButton fontForText" value="Clear">
 			    </div>
 			</div>
-			<!-- Error warning div that appears at bottom of calculator -->
+			
+		</div>
+		<!-- Error warning div that appears at bottom of calculator -->
 			<div class="errWarning fontForText" ng-class="{true: 'errWarning fontForText', false: 'errWarningInvis fontForText'}[errWarning]" ng-model="errWarning">
 			    <div>{{calcInfo.errWarningText}}</div>
 			</div>
-		</div>
 	</div>
 	<div class="outputMarginBMI">
 		<calc-output-section></calc-output-section>
