@@ -19,11 +19,11 @@
 				<input type="text" class="form-control inline inputFormTop" ng-class="{true: 'form-control inline inputTime formErr', false: 'form-control inline inputTime'}[updateInputFormTop()]" no-special-char maxlength="3" ng-model="inputFormTop">
 				<span class="fontForText txtPadding">{{calcInfo.inputFormTop.text}}</span>
 				<span class="justGenBtns moveDist">
-		          	<label class="genLabel" ng-class="{false: 'genLabel fontForText', US: 'genSelected fontForText animated bounceIn', Metric: 'genLabel fontForText'}[unitCheck]">
+		          	<label class="genLabel" ng-class="{false: 'genLabel fontForText', US: 'genSelected fontForText', Metric: 'genLabel fontForText'}[unitCheck]">
 			            <input type="radio" class="inputGender" ng-model="unitCheck" value="US" ng-change="updateUnitCheck()">
 			            <span class="genTxt">US</span>
 		          	</label>
-		          	<label class="femaleLabel genLabel" ng-class="{false: 'genLabel fontForText', US: 'genLabel fontForText', Metric: 'genSelected fontForText animated bounceIn'}[unitCheck]">
+		          	<label class="femaleLabel genLabel" ng-class="{false: 'genLabel fontForText', US: 'genLabel fontForText', Metric: 'genSelected fontForText'}[unitCheck]">
 			            <input type="radio" class="inputGender" ng-model="unitCheck" value="Metric" ng-change="updateUnitCheck()">
 			            <span class="genTxt">Metric</span>
 	          		</label>

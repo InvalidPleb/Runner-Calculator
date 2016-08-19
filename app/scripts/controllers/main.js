@@ -58,13 +58,13 @@
       }
       if (windowHash === "#/pace-calculator" || windowHash === undefined || windowHash ==="#/") {
         $scope.mainTabs = "pace";
-        $rootScope.titleText = "Pace Calculator | Runner Calculator";
+        $rootScope.titleText = "Pace Calculator | RunnerCalculator.com";
       } else if (windowHash === "#/age-graded-calculator") {
         $scope.mainTabs = "ageGrade";
-        $rootScope.titleText = "Age-Graded Calculator | Runner Calculator";
+        $rootScope.titleText = "Age-Graded Calculator | RunnerCalculator.com";
       } else if (windowHash === "#/bmi-calculator") {
         $scope.mainTabs = "bmi";
-        $rootScope.titleText = "BMI Calculator | Runner Calculator";
+        $rootScope.titleText = "BMI Calculator | RunnerCalculator.com";
       }
       
       // These three functions change the class of the selected tab
