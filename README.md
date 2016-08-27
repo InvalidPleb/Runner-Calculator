@@ -1,6 +1,12 @@
-# runner-calc
+# RunnerCalculator
 
-Pre-alpha build available for use at www.runnercalculator.com. Alpha release planned in the coming weeks (as of 2/5/2016).
+This is the development repository for www.runnercalculator.com.
 
+## Build & development
 
+If for any reason you want to test the site yourself:
 
+1. Clone the repository.
+2. Install/update Node.js, npm, and Grunt.
+3. Install Grunt dependencies with 'npm install' in the application folder.
+4. Launch the development code with 'grunt serve' or build code with 'grunt serve:dist'.
