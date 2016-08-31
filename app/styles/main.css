@@ -1052,6 +1052,16 @@ select:-moz-focusring {
   }
 }
 
+
+.mainFooter {
+  text-align: center;
+}
+
+.mainFooter > h5 {
+  top: 40px;
+  position: relative;
+}
+
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 
   .outputContainer {
